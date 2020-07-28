@@ -21,7 +21,7 @@ In the source folder, run FreakC.bat. Then type in the name of the file (does no
 <li>EnterMatrix[fnc] - Printing out random numbers to make you feel like a hacker :)</li>
 <li>EnterMatrixHacker[fnc] - Like the previuos but has green color :)</li>
 
-
+<br/>
 <b>The compiler only works on Windows, and can only be compiled to Batch. This compiler won't compile it to other languages or bytecodes.</b>
 
 ## Copyrights and License

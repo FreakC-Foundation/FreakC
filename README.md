@@ -1,5 +1,4 @@
-# FreakC
-The FreakC Programming Language
+<img src="Resources/Branding/logo.png" />
 
 ## What is FreakC ?
 FreakC is an esoteric programming language that... has nothing to do with the C programming language. This programming language can not do anything useful, it is created to be a joke for fun.

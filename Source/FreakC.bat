@@ -81,5 +81,10 @@ set /a cmake=%cmake%+1
 goto compile2
 :done
 echo pause>nul >>%a%.bat
+if "%option%" == "interpreter" goto run
+set a=
+goto menu
+:run
+call %a%.bat
 set a=
 goto menu

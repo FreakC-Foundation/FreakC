@@ -38,3 +38,4 @@ Because FreakC compiles to Batch, you can comments in FreakC just like in Batch 
 
 ## Copyrights and License
 Copyright © 2020 Nguyen Phu Minh
+This language is licensed under the MIT License

@@ -15,6 +15,8 @@ In the source folder, run FreakC.bat. Then type in the name of the file (does no
 <li>GrabMeADrink[str] - Print out "GrabMeADrink"</li>
 <li>Loop[fnc] - Loop the program endlessly</li>
 <li>Sleep[fnc] - Timeout for a random time from 0 to 9</li>
+<li>EnterMatrix[fnc] - Printing out random numbers to make you feel like a hacker :)</li>
+<li>EnterMatrixHacker[fnc] - Like the previuos but has green color :)</li>
 
 
 <b>The compiler only works on Windows, and can only be compiled to Batch. This compiler won't compile it to other languages or bytecodes.</b>

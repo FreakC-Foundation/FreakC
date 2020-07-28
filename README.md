@@ -29,8 +29,8 @@ In the source folder, run FreakC.bat. Then type in the name of the file (does no
 
 Because FreakC compiles to Batch, you can comments in FreakC just like in Batch using:
 
-  REM This is a comment in FreakC and Batch
-  ::This is also a comment in FreakC and Batch
+    REM This is a comment in FreakC and Batch
+    ::This is also a comment in FreakC and Batch
 
 <br/>
 

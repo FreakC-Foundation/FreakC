@@ -11,6 +11,7 @@ FreakC is an esoteric programming language that... has nothing to do with the C 
 In the source folder, run FreakC.bat. Then type in the name of the file (does not include .fclang) to compile the code. You will see a Batch file being generated because FreakC is compiled to Batch. Simply click on that Batch file to run the file.
 
 <b>The compiler only works on Windows, and can only be compiled to Batch. This compiler won't compile it to other languages or bytecodes.</b>
+<b>Please notice that this compiler only compiles codes in the range between line 1 and line 10, line 11 won't be compiled. That what makes this language even weirder</b>
 
 ## Commands
 <b>All necessary commands:</b>
@@ -25,6 +26,7 @@ In the source folder, run FreakC.bat. Then type in the name of the file (does no
 <li>EnterMatrix[fnc] - Printing out random numbers to make you feel like a hacker :)</li>
 <li>EnterMatrixHacker[fnc] - Like the previuos but has green color :)</li>
 
+<br/>
 <b>Comments</b>
 
 Because FreakC compiles to Batch, you can comments in FreakC just like in Batch using:

@@ -26,9 +26,11 @@ In the source folder, run FreakC.bat. Then type in the name of the file (does no
 <li>EnterMatrixHacker[fnc] - Like the previuos but has green color :)</li>
 
 <b>Comments</b>
+
 Because FreakC compiles to Batch, you can comments in FreakC just like in Batch using:
-REM This is a comment in FreakC and Batch
-::This is also a comment in FreakC and Batch
+
+  REM This is a comment in FreakC and Batch
+  ::This is also a comment in FreakC and Batch
 
 <br/>
 

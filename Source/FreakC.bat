@@ -58,7 +58,9 @@ for /f %%x in ('find /n "Sleep[fnc]" %a%.fclang') do (
 for /f %%x in ('find /n "EnterMatrix[fnc]" %a%.fclang') do (
 	if %%x == [%cmake%]EnterMatrix[fnc] (
 		echo :matrix>>%a%.bat
-		echo echo %random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%>>%a%.bat
+		echo echo %random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%>>%a%.bat
+		echo echo %random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%>>%a%.bat
+		echo echo %random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%>>%a%.bat
 		echo goto matrix>>%a%.bat
 	)
 )

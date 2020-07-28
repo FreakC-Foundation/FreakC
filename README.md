@@ -12,9 +12,10 @@ In the source folder, run FreakC.bat. Then type in the name of the file (does no
 <li>RandomNumMinimum[int] - Print out a random number from 0 to 99</li>
 <li>RandomNumShort[int]] - Print out a random number from 0 to 999</li>
 <li>RandomNum[int] - Print out a random number from 0 to 99999</li>
-<li>GrabMeADrink[fnc] - Print out "GrabMeADrink"</li>
+<li>GrabMeADrink[str] - Print out "GrabMeADrink"</li>
 <li>Loop[fnc] - Loop the program endlessly</li>
 <li>Sleep[fnc] - Timeout for a random time from 0 to 9</li>
+
 
 <b>The compiler only works on Windows, and can only be compiled to Batch. This compiler won't compile it to other languages or bytecodes.</b>
 

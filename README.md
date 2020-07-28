@@ -1,4 +1,8 @@
-<img src="Resources/Branding/logo.png" />
+ <div align="center">
+  <img src="Resources/Branding/logo.png" />
+  <br/>
+  <p>The FreakC Programming Language</p>
+</div>
 
 ## What is FreakC ?
 FreakC is an esoteric programming language that... has nothing to do with the C programming language. This programming language can not do anything useful, it is created to be a joke for fun.

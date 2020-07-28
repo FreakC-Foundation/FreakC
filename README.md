@@ -10,7 +10,7 @@ In the source folder, run FreakC.bat. Then type in the name of the file (does no
 ## Commands
 <li>HelloWorld[str] - Print out "Hello, World!"</li>
 <li>RandomNumMinimum[int] - Print out a random number from 0 to 99</li>
-<li>RandomNumShort[int]] - Print out a random number from 0 to 999</li>
+<li>RandomNumShort[int] - Print out a random number from 0 to 999</li>
 <li>RandomNum[int] - Print out a random number from 0 to 99999</li>
 <li>GrabMeADrink[str] - Print out "GrabMeADrink"</li>
 <li>Loop[fnc] - Loop the program endlessly</li>

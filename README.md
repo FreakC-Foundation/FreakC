@@ -20,7 +20,7 @@ In the source folder, run FreakC.bat. Then type in the name of the file (does no
 <li>RandomNumMinimum[int] - Print out a random number from 0 to 99</li>
 <li>RandomNumShort[int] - Print out a random number from 0 to 999</li>
 <li>RandomNum[int] - Print out a random number from 0 to 99999</li>
-<li>GrabMeADrink[str] - Print out "GrabMeADrink"</li>
+<li>GrabMeADrink[str] - Print out "Grab me a drink"</li>
 <li>Loop[fnc] - Loop the program endlessly</li>
 <li>Sleep[fnc] - Timeout for a random time from 0 to 9</li>
 <li>EnterMatrix[fnc] - Printing out random numbers to make you feel like a hacker :)</li>

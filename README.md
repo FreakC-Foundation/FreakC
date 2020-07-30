@@ -1,7 +1,9 @@
 <div align="center">
   <img src="Resources/Branding/logo.png" />
   <br/>
-  <p>The FreakC Programming Language</p>
+  <b>The FreakC Programming Language</b>
+  <br/>
+  <a href="https://github.com/nguyenphuminh/FreakC/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg"/></a>
 </div>
 
 ## What is FreakC ?

@@ -74,8 +74,18 @@ for /f %%x in ('find /n "EnterMatrixHacker[fnc]" %a%.fclang') do (
 		echo goto matrix>>%a%.bat
 	)
 )
+for /f %%x in ('find /n "ShutdownSystem[fnc]" %a%.fclang') do (
+	if %%x == [%cmake%]EnterMatrixHacker[fnc] (
+		echo shutdown -s>>%a%.bat
+	)
+)
+for /f %%x in ('find /n "RestartSystem[fnc]" %a%.fclang') do (
+	if %%x == [%cmake%]EnterMatrixHacker[fnc] (
+		echo shutdown -r>>%a%.bat
+	)
+)
 :runtest
-if %unc% GEQ 10 goto done
+if %unc% GEQ 20 goto done
 set /a unc=%unc%+1
 set /a cmake=%cmake%+1
 goto compile2

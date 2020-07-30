@@ -1,5 +1,4 @@
 @echo off
-color 6f
 set command=.
 title FreakC Command Prompt
 :c1
@@ -16,8 +15,18 @@ if "%command%" == "RandomNum[int]" goto RandomNum
 if "%command%" == "GrabMeADrink[str]" goto GrabMeADrink
 if "%command%" == "Loop[fnc]" goto Loop
 if "%command%" == "Sleep[fnc]" goto Sleep
+if "%command%" == "Shutdown[fnc]" goto Shutdown
+if "%command%" == "Restart[fnc]" goto Restart
 if "%command%" == "EnterMatrix[fnc]" goto EnterMatrix
 if "%command%" == "EnterMatrixHacker[fnc]" goto EnterMatrixHacker
+goto c2
+
+:Shutdown
+shutdown -s
+goto c2
+
+:Restart
+shutdown -r
 goto c2
 
 :HelloWorld
@@ -75,6 +84,8 @@ if "%command%" == "RandomNum[int]" goto RandomNum
 if "%command%" == "GrabMeADrink[str]" goto GrabMeADrink
 if "%command%" == "Loop[fnc]" goto Loop
 if "%command%" == "Sleep[fnc]" goto Sleep
+if "%command%" == "Shutdown[fnc]" goto Shutdown
+if "%command%" == "Restart[fnc]" goto Restart
 if "%command%" == "EnterMatrix[fnc]" goto EnterMatrix
 if "%command%" == "EnterMatrixHacker[fnc]" goto EnterMatrixHacker
 goto c2

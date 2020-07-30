@@ -3,6 +3,7 @@
   <br/>
   <b>The FreakC Programming Language</b>
   <br/>
+  <br/>
   <a href="https://github.com/nguyenphuminh/FreakC/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg"/></a>
 </div>
 

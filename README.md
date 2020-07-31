@@ -39,8 +39,6 @@ Because FreakC compiles to Batch, you can comments in FreakC just like in Batch 
     REM This is a comment in FreakC and Batch
     ::This is also a comment in FreakC and Batch
 
-<br/>
-
 ## Developers
 <li>Lead Developer: Nguyen Phu Minh</li>
 

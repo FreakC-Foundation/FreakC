@@ -24,14 +24,18 @@ for /f %%x in ('find /n "HelloWorld[str]" %a%.fclang') do (
 )
 for /f %%x in ('find /n "RandomNumMinimum[int]" %a%.fclang') do (
 	if %%x == [%cmake%]RandomNumMinimum[int] (
-		set /a rnd=%random% %% 99 + 0 
+		:set1
+		set /a rnd=%random% %% 99 + 0
+		if "%rnd%" == "" goto set1
 		echo echo %rnd%>>%a%.bat
 	)
 )
 for /f %%x in ('find /n "RandomNumShort[int]" %a%.fclang') do (
 	if %%x == [%cmake%]RandomNumShort[int] (
-		set /a rnd=%random% %% 999 + 0
-		echo echo %rnd%>>%a%.bat
+		:set2
+		set /a rnd1=%random% %% 999 + 0
+		if "%rnd1%" == "" goto set2
+		echo echo %rnd1%>>%a%.bat
 	)
 )
 for /f %%x in ('find /n "RandomNum[int]" %a%.fclang') do (
@@ -40,7 +44,7 @@ for /f %%x in ('find /n "RandomNum[int]" %a%.fclang') do (
 	)
 )
 for /f %%x in ('find /n "GrabMeADrink[str]" %a%.fclang') do (
-	if %%x == [%cmake%]Loop[fnc] (
+	if %%x == [%cmake%]GrabMeADrink[fnc] (
 		echo echo Grab me a drink!>>%a%.bat
 	)
 )
@@ -50,9 +54,11 @@ for /f %%x in ('find /n "Loop[fnc]" %a%.fclang') do (
 	)
 )
 for /f %%x in ('find /n "Sleep[fnc]" %a%.fclang') do (
-	if %%x == [%cmake%]Loop[fnc] (
-		set /a rnd=%random% %% 9 + 0
-		echo timeout %rnd% /nobreak>>%a%.bat
+	if %%x == [%cmake%]Sleep[fnc] (
+		:set3
+		set /a rnd2=%random% %% 9 + 0
+		if "%rnd2%" == "" goto set3
+		echo timeout %rnd2% /nobreak>>%a%.bat
 	)
 )
 for /f %%x in ('find /n "EnterMatrix[fnc]" %a%.fclang') do (
@@ -75,12 +81,12 @@ for /f %%x in ('find /n "EnterMatrixHacker[fnc]" %a%.fclang') do (
 	)
 )
 for /f %%x in ('find /n "ShutdownSystem[fnc]" %a%.fclang') do (
-	if %%x == [%cmake%]EnterMatrixHacker[fnc] (
+	if %%x == [%cmake%]ShutdownSystem[fnc] (
 		echo shutdown -s>>%a%.bat
 	)
 )
 for /f %%x in ('find /n "RestartSystem[fnc]" %a%.fclang') do (
-	if %%x == [%cmake%]EnterMatrixHacker[fnc] (
+	if %%x == [%cmake%]RestartSystem[fnc] (
 		echo shutdown -r>>%a%.bat
 	)
 )

@@ -44,7 +44,7 @@ for /f %%x in ('find /n "RandomNum[int]" %a%.fclang') do (
 	)
 )
 for /f %%x in ('find /n "GrabMeADrink[str]" %a%.fclang') do (
-	if %%x == [%cmake%]GrabMeADrink[fnc] (
+	if %%x == [%cmake%]GrabMeADrink[str] (
 		echo echo Grab me a drink!>>%a%.bat
 	)
 )

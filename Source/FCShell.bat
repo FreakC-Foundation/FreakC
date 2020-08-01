@@ -67,7 +67,7 @@ echo %random%%random%%random%%random%%random%%random%%random%%random%%random%%ra
 echo %random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%
 goto matrix
 
-:EnterMatrix
+:EnterMatrixHacker
 color 0a
 :matrix
 echo %random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%

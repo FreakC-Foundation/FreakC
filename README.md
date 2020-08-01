@@ -26,8 +26,8 @@ In the source folder, run FreakC.bat. Then type in the name of the file (does no
 <li>GrabMeADrink[str] - Print out "Grab me a drink"</li>
 <li>Loop[fnc] - Loop the program endlessly</li>
 <li>Sleep[fnc] - Timeout for a random time from 0 to 9 second(s)</li>
-<li>Shutdown[fnc] - Shutdown system</li>
-<li>Restart[fnc] - Restart system</li>
+<li>ShutdownSystem[fnc] - Shutdown system</li>
+<li>RestartSystem[fnc] - Restart system</li>
 <li>EnterMatrix[fnc] - Printing out random numbers to make you feel like a hacker :)</li>
 <li>EnterMatrixHacker[fnc] - Like the previuos but has green color :)</li>
 

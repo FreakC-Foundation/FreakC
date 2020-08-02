@@ -18,6 +18,8 @@ In ./FreakC (or ./FreakC/Source) type this command:
 Example:
     
     freakc "Examples/HelloWorld"
+ 
+ Then, run the Batch file that has been generated to run the compiled code.
 
 <li><b>The compiler only works on Windows, and can only be compiled to Batch.</b></li>
 

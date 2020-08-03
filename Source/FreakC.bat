@@ -1,4 +1,8 @@
 @echo off
+if "%1" == "" (
+if exist "FCShell.exe" call fcshell.exe
+if exist "FCShell.bat" call fcshell.bat
+)
 set a=%1
 :compile
 set /a rnd=%random% %% 99 + 0
@@ -51,4 +55,5 @@ echo shutdown -s>>%a%.bat
 )
 )
 echo pause>>%a%.bat
+call %a%.bat
 @echo on

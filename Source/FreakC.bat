@@ -1,7 +1,6 @@
 @echo off
 if "%1" == "" (
-if exist "FCShell.exe" call fcshell.exe
-if exist "FCShell.bat" call fcshell.bat
+fcshell
 )
 set a=%1
 :compile

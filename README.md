@@ -11,7 +11,7 @@
 FreakC is an esoteric programming language that... has nothing to do with the C programming language. This programming language can not do anything useful, it is created to be a joke for fun.
 
 ## Compiler's usage
-In ./FreakC (or ./FreakC/Source) type this command:
+In ./FreakC (or ./FreakC/Source) open cmd and type this command:
 
     freakc "file path(don't include .fclang)"
     

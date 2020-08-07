@@ -36,7 +36,7 @@ Example:
 <li>ShutdownSystem[fnc] - Shutdown system</li>
 <li>RestartSystem[fnc] - Restart system</li>
 <li>EnterMatrix[fnc] - Printing out random numbers to make you feel like a hacker :)</li>
-<li>EnterMatrixHacker[fnc] - Like the previuos but has green color :)</li>
+<li>EnterMatrixHacker[fnc] - Like the previous but has green color :)</li>
 
 <br/>
 <b>Comments</b>

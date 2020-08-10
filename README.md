@@ -70,4 +70,5 @@ All the 1.x releases have the compiler rebuilt completely different from all the
 
 ## Copyrights and License
 Copyright © 2020 Nguyen Phu Minh
+
 This language is licensed under the MIT License

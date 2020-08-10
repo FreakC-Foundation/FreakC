@@ -19,7 +19,7 @@ if "%command%" == "Shutdown[fnc]" goto Shutdown
 if "%command%" == "Restart[fnc]" goto Restart
 if "%command%" == "EnterMatrix[fnc]" goto EnterMatrix
 if "%command%" == "EnterMatrixHacker[fnc]" goto EnterMatrixHacker
-if "%command%" == "ILoveYou[fnc]" goto ILoveYou
+if "%command%" == "ILoveYou[str]" goto ILoveYou
 goto c2
 
 :ILoveYou

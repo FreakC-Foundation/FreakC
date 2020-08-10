@@ -1,12 +1,12 @@
 @echo off
 set command=.
 title FreakC Command Prompt
-:c1
 echo.
 echo Copyrighted (C) 2020 Nguyen Phu Minh
 echo FreakC Command Prompt
 echo.
 echo.
+:c2
 set /p command=~
 if "%command%" == "HelloWorld[str]" goto HelloWorld
 if "%command%" == "RandomNumMinimum[int]" goto RandomNumMinimum
@@ -19,6 +19,11 @@ if "%command%" == "Shutdown[fnc]" goto Shutdown
 if "%command%" == "Restart[fnc]" goto Restart
 if "%command%" == "EnterMatrix[fnc]" goto EnterMatrix
 if "%command%" == "EnterMatrixHacker[fnc]" goto EnterMatrixHacker
+if "%command%" == "ILoveYou[fnc]" goto ILoveYou
+goto c2
+
+:ILoveYou
+echo I love you!
 goto c2
 
 :Shutdown
@@ -74,18 +79,3 @@ echo %random%%random%%random%%random%%random%%random%%random%%random%%random%%ra
 echo %random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%
 echo %random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%
 goto matrix
-
-:c2
-set /p command=~
-if "%command%" == "HelloWorld[str]" goto HelloWorld
-if "%command%" == "RandomNumMinimum[int]" goto RandomNumMinimum
-if "%command%" == "RandomNumShort[int]" goto RandomNumShort
-if "%command%" == "RandomNum[int]" goto RandomNum
-if "%command%" == "GrabMeADrink[str]" goto GrabMeADrink
-if "%command%" == "Loop[fnc]" goto Loop
-if "%command%" == "Sleep[fnc]" goto Sleep
-if "%command%" == "Shutdown[fnc]" goto Shutdown
-if "%command%" == "Restart[fnc]" goto Restart
-if "%command%" == "EnterMatrix[fnc]" goto EnterMatrix
-if "%command%" == "EnterMatrixHacker[fnc]" goto EnterMatrixHacker
-goto c2

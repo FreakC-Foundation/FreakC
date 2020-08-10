@@ -8,10 +8,11 @@ echo @echo off>%a%.bat
 echo :FreakCCompiled>>%a%.bat
 for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 if %%x == HelloWorld[str] echo echo Hello, World!>>%a%.bat
+if %%x == ILoveYou[str] echo I love you!>>%a%.bat
+if %%x == GrabMeADrink[str] echo echo Grab me a drink!>>%a%.bat
 if %%x == RandomNumMinimum[int] echo echo %rnd%>>%a%.bat
 if %%x == RandomNumShort[int] echo echo %rnd1%>>%a%.bat
 if %%x == RandomNum[int] echo echo %random%>>%a%.bat
-if %%x == GrabMeADrink[str] echo echo Grab me a drink!>>%a%.bat
 if %%x == Loop[fnc] echo goto FreakCCompiled>>%a%.bat
 if %%x == Sleep[fnc] echo timeout %rnd2% /nobreak>>%a%.bat
 if %%x == ShutdownSystem[fnc] echo shutdown -s>>%a%.bat

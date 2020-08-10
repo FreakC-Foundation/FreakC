@@ -45,6 +45,8 @@ Because FreakC compiles to Batch, you can comments in FreakC just like in Batch 
 
     REM This is a comment in FreakC and Batch
     ::This is also a comment in FreakC and Batch
+
+Note: After FreakC is compiled to Batch, all the comments will be removed in the generated Batch file
     
 ## What is in the devkit ?
 <li>A FreakC compiler</li>

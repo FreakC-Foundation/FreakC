@@ -46,8 +46,12 @@ Because FreakC compiles to Batch, you can comments in FreakC just like in Batch 
     REM This is a comment in FreakC and Batch
     ::This is also a comment in FreakC and Batch
     
-## 1.0 Release
-This is an official 1.0 release, which has the compiler rebuilt completely different from all the 0.x version. It is now fast and versatile.
+## What is in the devkit ?
+<li>A FreakC compiler</li>
+<li>A FreakC terminal</li>
+    
+## 1.x Release
+All the 1.x release has the compiler rebuilt completely different from all the 0.x version. It is now fast and versatile.
 
 ## Developers
 <li>Lead Developer: Nguyen Phu Minh</li>

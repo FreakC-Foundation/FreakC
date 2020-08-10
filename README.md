@@ -50,8 +50,8 @@ Because FreakC compiles to Batch, you can comments in FreakC just like in Batch 
 <li>A FreakC compiler</li>
 <li>A FreakC terminal</li>
     
-## 1.x Release
-All the 1.x release has the compiler rebuilt completely different from all the 0.x version. It is now fast and versatile.
+## 1.x Releases
+All the 1.x releases have the compiler rebuilt completely different from all the 0.x version. It is now fast and versatile.
 
 ## Developers
 <li>Lead Developer: Nguyen Phu Minh</li>

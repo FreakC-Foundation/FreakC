@@ -8,7 +8,7 @@ echo @echo off>%a%.bat
 echo :FreakCCompiled>>%a%.bat
 for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 if %%x == HelloWorld[str] echo echo Hello, World!>>%a%.bat
-if %%x == ILoveYou[str] echo I love you!>>%a%.bat
+if %%x == ILoveYou[str] echo echo I love you!>>%a%.bat
 if %%x == GrabMeADrink[str] echo echo Grab me a drink!>>%a%.bat
 if %%x == RandomNumMinimum[int] echo echo %rnd%>>%a%.bat
 if %%x == RandomNumShort[int] echo echo %rnd1%>>%a%.bat

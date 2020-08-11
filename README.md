@@ -24,13 +24,22 @@ Example:
 <li><b>The compiler only works on Windows, and can only be compiled to Batch.</b></li>
 
 ## Commands
-<b>All necessary commands:</b>
+<b><u>All necessary commands:</u></b>
 
+<b>Functions that uses string:</b>
+<br/>
 <li>HelloWorld[str] - Print out "Hello, World!"</li>
+<li>GrabMeADrink[str] - Print out "Grab me a drink"</li>
+<li>ILoveYou[str] - Print out "I love you!"</li>
+<br/>
+<b>Functions that uses integer:</b>
+<br/>
 <li>RandomNumMinimum[int] - Print out a random number from 0 to 99</li>
 <li>RandomNumShort[int] - Print out a random number from 0 to 999</li>
 <li>RandomNum[int] - Print out a random number from 0 to 99999</li>
-<li>GrabMeADrink[str] - Print out "Grab me a drink"</li>
+<br/>
+<b>Additional functions:</b>
+<br/>
 <li>Loop[fnc] - Loop the program endlessly</li>
 <li>Sleep[fnc] - Timeout for a random time from 0 to 9 second(s)</li>
 <li>ShutdownSystem[fnc] - Shutdown system</li>

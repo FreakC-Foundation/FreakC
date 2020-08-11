@@ -27,7 +27,6 @@ Example:
 <b><u>All necessary commands:</u></b>
 
 <b>Functions that uses string:</b>
-<br/>
 <li>HelloWorld[str] - Print out "Hello, World!"</li>
 <li>GrabMeADrink[str] - Print out "Grab me a drink"</li>
 <li>ILoveYou[str] - Print out "I love you!"</li>

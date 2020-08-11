@@ -33,12 +33,14 @@ Example:
 <br/>
 <b>Functions that uses integer:</b>
 <br/>
+
 <li>RandomNumMinimum[int] - Print out a random number from 0 to 99</li>
 <li>RandomNumShort[int] - Print out a random number from 0 to 999</li>
 <li>RandomNum[int] - Print out a random number from 0 to 99999</li>
 <br/>
 <b>Additional functions:</b>
 <br/>
+
 <li>Loop[fnc] - Loop the program endlessly</li>
 <li>Sleep[fnc] - Timeout for a random time from 0 to 9 second(s)</li>
 <li>ShutdownSystem[fnc] - Shutdown system</li>

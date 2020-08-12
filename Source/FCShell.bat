@@ -1,4 +1,5 @@
 @echo off
+@setlocal enabledelayedexpansion
 set command=.
 title FreakC Command Prompt
 echo.
@@ -37,7 +38,7 @@ for %%a in (%command%) do (
 		type !printString:~16!
 	)
 	if %%a == HackerMan[fnc] (
-		echo !printString:~15!
+		!printString:~15!
 	)
 )
 goto c2

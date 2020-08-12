@@ -2,7 +2,6 @@
 setlocal enabledelayedexpansion
 if "%1" == "" fcshell
 set a=%1
-set b=0
 echo @echo off>%a%.bat
 echo :FreakCCompiled>>%a%.bat
 for /f "tokens=* delims= " %%x in (%a%.fclang) do (

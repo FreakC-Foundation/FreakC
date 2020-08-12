@@ -1,5 +1,5 @@
 @echo off
-@setlocal enabledelayedexpansion
+setlocal enabledelayedexpansion
 if "%1" == "" fcshell
 set a=%1
 set b=0
@@ -8,21 +8,11 @@ echo :FreakCCompiled>>%a%.bat
 for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 	for %%a in (%%x) do (
 		set printString=%%x
-		if %%a == Swear[fnc] (
-			echo echo !printString:~11!>>%a%.bat
-		)
-		if %%a == PukeDir[fnc] (
-			echo md !printString:~13!>>%a%.bat
-		)
-		if %%a == EatDir[fnc] (
-			echo cd !printString:~12!>>%a%.bat
-		)
-		if %%a == StealDiary[fnc] (
-			echo type !printString:~16!>>%a%.bat
-		)
-		if %%a == HackerMan[fnc] (
-			echo !printString:~15!>>%a%.bat
-		)
+		if %%a == Swear[fnc] echo echo !printString:~11!>>%a%.bat
+		if %%a == PukeDir[fnc] echo md !printString:~13!>>%a%.bat
+		if %%a == EatDir[fnc] echo cd !printString:~12!>>%a%.bat
+		if %%a == StealDiary[fnc] echo type !printString:~16!>>%a%.bat
+		if %%a == HackerMan[fnc] echo !printString:~15!>>%a%.bat
 	)
 	if %%x == HelloWorld[str] echo echo Hello, World!>>%a%.bat
 	if %%x == ILoveYou[str] echo echo I love you!>>%a%.bat
@@ -35,9 +25,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		set /a rnd1=%random% %% 999 + 0
 		echo echo !rnd1!>>%a%.bat
 	)
-	if %%x == RandomNum[int] (
-		echo echo %random%>>%a%.bat
-	)
+	if %%x == RandomNum[int] echo echo %random%>>%a%.bat
 	if %%x == Sleep[fnc] (
 		set /a rnd2=%random% %% 9 + 0
 		echo timeout !rnd2! /nobreak>>%a%.bat

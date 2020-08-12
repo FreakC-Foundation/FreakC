@@ -26,19 +26,19 @@ Example:
 ## Commands
 <b><u>All necessary commands:</u></b>
 
-<b>Functions that uses string:</b>
+<b>Troll functions:</b>
 <li>HelloWorld[str] - Print out "Hello, World!"</li>
 <li>GrabMeADrink[str] - Print out "Grab me a drink"</li>
 <li>ILoveYou[str] - Print out "I love you!"</li>
 <br/>
-<b>Functions that uses integer:</b>
+<b>Functions about number:</b>
 <br/>
 <br/>
 <li>RandomNumMinimum[int] - Print out a random number from 0 to 99</li>
 <li>RandomNumShort[int] - Print out a random number from 0 to 999</li>
 <li>RandomNum[int] - Print out a random number from 0 to 99999</li>
 <br/>
-<b>Additional functions:</b>
+<b>Essential functions:</b>
 <br/>
 <br/>
 <li>Loop[fnc] - Loop the program endlessly</li>
@@ -47,6 +47,13 @@ Example:
 <li>RestartSystem[fnc] - Restart system</li>
 <li>EnterMatrix[fnc] - Printing out random numbers to make you feel like a hacker :)</li>
 <li>EnterMatrixHacker[fnc] - Like the previous but has green color :)</li>
+<li>Swear[fnc] <String> - Prints out a string (Works like echo in Batch)</li>
+<li>PukeDir[fnc] <Path> - Create a folder</li>
+<li>EatDir[fnc] <Path> - Access a folder</li>
+<li>StealDiary[fnc] <Path> - Read a file</li>
+<li>HackerMan[fnc] <Batch Command> - Execute a Batch command</li>
+<li>Forget[fnc] - Clear the screen</li>
+<li>GotoToilet[fnc] - Pause</li>
 
 <br/>
 <b>Comments</b>

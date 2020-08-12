@@ -40,6 +40,12 @@ for %%a in (%command%) do (
 	if %%a == HackerMan[fnc] (
 		!printString:~15!
 	)
+	if %%a == OddOrEven[fnc] (
+		set /a num=!printString:~15! %% 2
+		if !num! == 0 set result=Is even
+		if not !num! == 0 set result=Is odd
+		echo !result!
+	)
 )
 goto c2
 

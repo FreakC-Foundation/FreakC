@@ -61,8 +61,10 @@ Example:
 <br/>
 <br/>
 
-    Swear[fnc] Storing Data>>data.txt ::Storing data
-    Swear[fnc] %random% ::Prints out a random number from 0 to 99999
+    ::Storing data
+    Swear[fnc] Storing Data>>data.txt
+    ::Prints out a random number from 0 to 99999
+    Swear[fnc] %random%
 
 <br/>
 <b>Comments</b>

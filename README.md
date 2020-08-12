@@ -55,12 +55,13 @@ Example:
 <li>Forget[fnc] - Clear the screen</li>
 <li>GotoToilet[fnc] - Pause</li>
 
+<br/>
+<br/>
 <b>You can actually use some Batch logics in FreakC:</b>
 
     Swear[fnc] Storing Data>>data.txt ::Storing data
     Swear[fnc] %random% ::Prints out a random number from 0 to 99999
 
-<br/>
 <br/>
 <br/>
 <b>Comments</b>

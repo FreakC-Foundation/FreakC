@@ -16,10 +16,30 @@ if "%command%" == "GrabMeADrink[str]" goto GrabMeADrink
 if "%command%" == "Loop[fnc]" goto Loop
 if "%command%" == "Sleep[fnc]" goto Sleep
 if "%command%" == "Shutdown[fnc]" goto Shutdown
+if "%command%" == "Forget[fnc]" goto Forget
+if "%command%" == "GotoToilet[fnc]" goto GotoToilet
 if "%command%" == "Restart[fnc]" goto Restart
 if "%command%" == "EnterMatrix[fnc]" goto EnterMatrix
 if "%command%" == "EnterMatrixHacker[fnc]" goto EnterMatrixHacker
 if "%command%" == "ILoveYou[str]" goto ILoveYou
+for %%a in (%command%) do (
+	set printString=%command%
+	if %%a == Swear[fnc] (
+		echo !printString:~11!
+	)
+	if %%a == PukeDir[fnc] (
+		md !printString:~13!
+	)
+	if %%a == EatDir[fnc] (
+		cd !printString:~12!
+	)
+	if %%a == StealDiary[fnc] (
+		type !printString:~16!
+	)
+	if %%a == HackerMan[fnc] (
+		echo !printString:~15!
+	)
+)
 goto c2
 
 :ILoveYou
@@ -27,11 +47,11 @@ echo I love you!
 goto c2
 
 :Shutdown
-shutdown -s
+shutdown -s -t 0
 goto c2
 
 :Restart
-shutdown -r
+shutdown -r -t 0
 goto c2
 
 :HelloWorld
@@ -79,3 +99,11 @@ echo %random%%random%%random%%random%%random%%random%%random%%random%%random%%ra
 echo %random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%
 echo %random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%
 goto matrix
+
+:Forget
+cls
+goto c2
+
+:GotoToilet
+pause
+goto c2

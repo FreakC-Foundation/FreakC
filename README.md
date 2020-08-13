@@ -58,9 +58,9 @@ Example:
 <li>PoopString[fnc] - Declares a variable as a string</li>
 <li>Trash[fnc] - Delele a file</li>
 
-<b>Some variables that you can't use: %a%, %printString%,...</b>
-
 <br/>
+<br/>
+<b>Some variables that you can't use: %a%, %printString%,...</b>
 <br/>
 <b>Note: Most of the functions in the "Essential functions" category are just compiled to many Batch commands, so you can actually apply Batch logic in it</b>
 <br/>

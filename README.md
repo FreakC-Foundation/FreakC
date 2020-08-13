@@ -60,6 +60,7 @@ Example:
 <li>EatFnc[fnc] - Jump to a function</li>
 <li>Trash[fnc] - Delele a file</li>
 <li>TrashDir[fnc] - Delele a folder</li>
+<li>OddOrEven[fnc] - Check if a number is odd or is even</li>
 
 <br/>
 <br/>

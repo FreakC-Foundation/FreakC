@@ -39,6 +39,7 @@ for %%a in (%command%) do (
 	)
 	if %%a == PoopInt[fnc] set /a !printString:~13!
 	if %%a == PoopString[fnc] set !printString:~16!
+	if %%a == PoopInput[fnc] set /p !printString:~15!
 	if %%a == Trash[fnc] del !printString:~11!
 	if %%a == TrashDir[fnc] rmdir !printString:~14!
 )

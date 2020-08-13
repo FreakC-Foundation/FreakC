@@ -22,6 +22,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		)
 		if %%a == PoopInt[fnc] echo set /a !printString:~13!>>%a%.bat
 		if %%a == PoopString[fnc] echo set !printString:~16!>>%a%.bat
+		if %%a == PoopInput[fnc] echo set /p !printString:~15!>>%a%.bat
 		if %%a == PoopFnc[fnc] echo :!printString:~13!>>%a%.bat
 		if %%a == EatFnc[fnc] echo goto !printString:~12!>>%a%.bat
 	)

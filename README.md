@@ -27,11 +27,12 @@ Example:
 <b><u>All necessary commands:</u></b>
 
 <b>Troll functions:</b>
-<li>HelloWorld[str] - Print out "Hello, World!"</li>
-<li>GrabMeADrink[str] - Print out "Grab me a drink"</li>
-<li>ILoveYou[str] - Print out "I love you!"</li>
+<li>HelloWorld[str] - Print out "Hello, World!" :)</li>
+<li>GrabMeADrink[str] - Print out "Grab me a drink" :)</li>
+<li>ILoveYou[str] - Print out "I love you!" :)</li>
 <li>EnterMatrix[fnc] - Printing out random numbers to make you feel like a hacker :)</li>
 <li>EnterMatrixHacker[fnc] - Like the previous but has green color :)</li>
+<li>Sleep[fnc] - Timeout for a random time from 0 to 9 second(s) :)</li>
 <br/>
 <b>Functions about number:</b>
 <br/>
@@ -44,7 +45,6 @@ Example:
 <br/>
 <br/>
 <li>Loop[fnc] - Loop the program endlessly</li>
-<li>Sleep[fnc] - Timeout for a random time from 0 to 9 second(s)</li>
 <li>ShutdownSystem[fnc] - Shutdown system</li>
 <li>RestartSystem[fnc] - Restart system</li>
 <li>Swear[fnc] <String> - Prints out a string (Works like echo in Batch)</li>
@@ -54,18 +54,19 @@ Example:
 <li>HackerMan[fnc] <Batch Command> - Execute a Batch command</li>
 <li>Forget[fnc] - Clear the screen</li>
 <li>GotoToilet[fnc] - Pause</li>
+<li>PoopInt[fnc] - Declares a variable as an integer</li>
+<li>PoopString[fnc] - Declares a variable as a string</li>
+<li>Trash[fnc] - Delele a file</li>
+
+<b>Some variables that you can't use: %a%, %printString%,...</b>
 
 <br/>
 <br/>
-<b>You can actually use some Batch logics in FreakC:</b>
+<b>Note: Most of the functions in the "Essential functions" category are just compiled to many Batch commands, so you can actually apply Batch logic in it</b>
 <br/>
 <br/>
-
-    ::Storing data
-    Swear[fnc] Storing Data>>data.txt
-    ::Prints out a random number from 0 to 99999
-    Swear[fnc] %random%
-
+<b>Ex: Swear[fnc], PukeDir[fnc], EatDir[fnc], StealDiary[fnc], Forget[fnc], GotoToilet[fnc], PoopInt[fnc], PoopString[fnc] logics and usages are just the same as echo, md, cd, type, cls, pause, set, set /a.</b>
+<br/>
 <br/>
 <b>Comments</b>
 

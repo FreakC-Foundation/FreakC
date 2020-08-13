@@ -56,6 +56,7 @@ Example:
 <li>GotoToilet[fnc] - Pause</li>
 <li>PoopInt[fnc] - Declares a variable as an integer</li>
 <li>PoopString[fnc] - Declares a variable as a string</li>
+<li>PoopInput[fnc] - Declares a variable through users' input</li>
 <li>PoopFnc[fnc] - Creates a function</li>
 <li>EatFnc[fnc] - Jump to a function</li>
 <li>Trash[fnc] - Delele a file</li>

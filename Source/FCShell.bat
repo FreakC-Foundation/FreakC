@@ -23,6 +23,7 @@ if "%command%" == "Restart[fnc]" goto Restart
 if "%command%" == "EnterMatrix[fnc]" goto EnterMatrix
 if "%command%" == "EnterMatrixHacker[fnc]" goto EnterMatrixHacker
 if "%command%" == "ILoveYou[str]" goto ILoveYou
+if "%command%" == "Die[fnc]" exit
 for %%a in (%command%) do (
 	set printString=%command%
 	if %%a == Swear[fnc] echo !printString:~11!
@@ -38,7 +39,8 @@ for %%a in (%command%) do (
 	)
 	if %%a == PoopInt[fnc] set /a !printString:~13!
 	if %%a == PoopString[fnc] set !printString:~16!
-	if %%a == Trash[fnc] del !printString:~12!
+	if %%a == Trash[fnc] del !printString:~11!
+	if %%a == TrashDir[fnc] rmdir !printString:~14!
 )
 goto c2
 

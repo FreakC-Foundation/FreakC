@@ -10,7 +10,8 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == Swear[fnc] echo echo !printString:~11!>>%a%.bat
 		if %%a == PukeDir[fnc] echo md !printString:~13!>>%a%.bat
 		if %%a == EatDir[fnc] echo cd !printString:~12!>>%a%.bat
-		if %%a == Trash[fnc] echo del !printString:~12!>>%a%.bat
+		if %%a == Trash[fnc] echo del !printString:~11!>>%a%.bat
+		if %%a == TrashDir[fnc] echo rmdir !printString:~14!>>%a%.bat
 		if %%a == StealDiary[fnc] echo type !printString:~16!>>%a%.bat
 		if %%a == HackerMan[fnc] echo !printString:~15!>>%a%.bat
 		if %%a == OddOrEven[fnc] (
@@ -21,7 +22,10 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		)
 		if %%a == PoopInt[fnc] echo set /a !printString:~13!>>%a%.bat
 		if %%a == PoopString[fnc] echo set !printString:~16!>>%a%.bat
+		if %%a == PoopFnc[fnc] echo :!printString:~13!>>%a%.bat
+		if %%a == EatFnc[fnc] echo goto !printString:~12!>>%a%.bat
 	)
+	if %%x == Die[fnc] echo exit>>%a%.bat
 	if %%x == HelloWorld[str] echo echo Hello, World!>>%a%.bat
 	if %%x == ILoveYou[str] echo echo I love you!>>%a%.bat
 	if %%x == GrabMeADrink[str] echo echo Grab me a drink!>>%a%.bat

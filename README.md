@@ -63,13 +63,16 @@ Example:
 
 <br/>
 <br/>
+<b>Variables in FreakC is similar to Batch, to use it please change it to %variable_name%</b>
+<br/>
+<br/>
 <b>Some variables that you can't use: %a%, %printString%,...</b>
 <br/>
 <br/>
-<b>Note: Most of the functions in the "Essential functions" category are just compiled to many Batch commands, so you can actually apply Batch logic in it</b>
+<b>Note: Most of the functions in the "Essential functions" category are just compiled to many Batch commands, so you can actually apply Batch logic in it.</b>
 <br/>
 <br/>
-<b>Ex: Swear[fnc], PukeDir[fnc], EatDir[fnc], StealDiary[fnc], Forget[fnc], GotoToilet[fnc], PoopInt[fnc], PoopString[fnc], Trash[fnc], TrashDir[], PoopFnc[fnc], EatFnc[fnc] logics and usages are just the same as echo, md, cd, type, cls, pause, set, set /a, del, rmdir, :function, goto in Batch</b>
+<b>Ex: Swear[fnc], PukeDir[fnc], EatDir[fnc], StealDiary[fnc], Forget[fnc], GotoToilet[fnc], PoopInt[fnc], PoopString[fnc], Trash[fnc], TrashDir[], PoopFnc[fnc], EatFnc[fnc] logics and usages are just the same as echo, md, cd, type, cls, pause, set, set /a, del, rmdir, :function, goto in Batch.</b>
 <br/>
 <br/>
 <b>Comments</b>

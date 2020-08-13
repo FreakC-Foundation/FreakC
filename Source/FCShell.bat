@@ -25,27 +25,20 @@ if "%command%" == "EnterMatrixHacker[fnc]" goto EnterMatrixHacker
 if "%command%" == "ILoveYou[str]" goto ILoveYou
 for %%a in (%command%) do (
 	set printString=%command%
-	if %%a == Swear[fnc] (
-		echo !printString:~11!
-	)
-	if %%a == PukeDir[fnc] (
-		md !printString:~13!
-	)
-	if %%a == EatDir[fnc] (
-		cd !printString:~12!
-	)
-	if %%a == StealDiary[fnc] (
-		type !printString:~16!
-	)
-	if %%a == HackerMan[fnc] (
-		!printString:~15!
-	)
+	if %%a == Swear[fnc] echo !printString:~11!
+	if %%a == PukeDir[fnc] md !printString:~13!
+	if %%a == EatDir[fnc] cd !printString:~12!
+	if %%a == StealDiary[fnc] type !printString:~16!
+	if %%a == HackerMan[fnc] !printString:~15!
 	if %%a == OddOrEven[fnc] (
 		set /a num=!printString:~15! %% 2
 		if !num! == 0 set result=Is even
 		if not !num! == 0 set result=Is odd
 		echo !result!
 	)
+	if %%a == PoopInt[fnc] set /a !printString:~13!
+	if %%a == PoopString[fnc] set !printString:~16!
+	if %%a == Trash[fnc] del !printString:~12!
 )
 goto c2
 

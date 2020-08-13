@@ -10,14 +10,17 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == Swear[fnc] echo echo !printString:~11!>>%a%.bat
 		if %%a == PukeDir[fnc] echo md !printString:~13!>>%a%.bat
 		if %%a == EatDir[fnc] echo cd !printString:~12!>>%a%.bat
+		if %%a == Trash[fnc] echo del !printString:~12!>>%a%.bat
 		if %%a == StealDiary[fnc] echo type !printString:~16!>>%a%.bat
 		if %%a == HackerMan[fnc] echo !printString:~15!>>%a%.bat
 		if %%a == OddOrEven[fnc] (
-			set /a num=!printString:~15! %% 2
-			if !num! == 0 set result=Is even
-			if not !num! == 0 set result=Is odd
+			set /a num=!printString:~15! %% 2>>%a%.bat
+			if !num! == 0 set result=Is even>>%a%.bat
+			if not !num! == 0 set result=Is odd>>%a%.bat
 			echo echo !result!>>%a%.bat
 		)
+		if %%a == PoopInt[fnc] echo set /a !printString:~13!>>%a%.bat
+		if %%a == PoopString[fnc] echo set !printString:~16!>>%a%.bat
 	)
 	if %%x == HelloWorld[str] echo echo Hello, World!>>%a%.bat
 	if %%x == ILoveYou[str] echo echo I love you!>>%a%.bat

@@ -56,7 +56,10 @@ Example:
 <li>GotoToilet[fnc] - Pause</li>
 <li>PoopInt[fnc] - Declares a variable as an integer</li>
 <li>PoopString[fnc] - Declares a variable as a string</li>
+<li>PoopFnc[fnc] - Creates a function</li>
+<li>EatFnc[fnc] - Jump to a function</li>
 <li>Trash[fnc] - Delele a file</li>
+<li>TrashDir[fnc] - Delele a folder</li>
 
 <br/>
 <br/>
@@ -66,7 +69,7 @@ Example:
 <b>Note: Most of the functions in the "Essential functions" category are just compiled to many Batch commands, so you can actually apply Batch logic in it</b>
 <br/>
 <br/>
-<b>Ex: Swear[fnc], PukeDir[fnc], EatDir[fnc], StealDiary[fnc], Forget[fnc], GotoToilet[fnc], PoopInt[fnc], PoopString[fnc] logics and usages are just the same as echo, md, cd, type, cls, pause, set, set /a.</b>
+<b>Ex: Swear[fnc], PukeDir[fnc], EatDir[fnc], StealDiary[fnc], Forget[fnc], GotoToilet[fnc], PoopInt[fnc], PoopString[fnc], Trash[fnc], TrashDir[], PoopFnc[fnc], EatFnc[fnc] logics and usages are just the same as echo, md, cd, type, cls, pause, set, set /a, del, rmdir, :function, goto in Batch</b>
 <br/>
 <br/>
 <b>Comments</b>

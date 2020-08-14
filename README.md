@@ -63,6 +63,8 @@ Example:
 <li>TrashDir[fnc] - Delele a folder</li>
 <li>OddOrEven[fnc] - Check if a number is odd or is even</li>
 <li>ChangeColor[fnc] - Change color, a pair of hex code is a color code</li>
+<li>ChangeName[fnc] - Change the title of the program</li>
+<li>ChangeSize[fnc] - Change the size of program's console</li>
 
 <br/>
 <br/>

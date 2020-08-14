@@ -8,7 +8,7 @@
 </div>
 
 ## What is FreakC ?
-FreakC is an esoteric programming language that... has nothing to do with the C programming language. This programming language can not do anything useful, it is created to be a joke for fun.
+FreakC is an esoteric programming language that... has nothing to do with the C programming language. This programming language's syntax is dirty and funny, but it can actually make many decent programs.
 
 ## Compiler's usage
 In ./FreakC (or ./FreakC/Source) open cmd and type this command:

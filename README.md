@@ -48,6 +48,7 @@ Example:
 <li>ShutdownSystem[fnc] - Shutdown system</li>
 <li>RestartSystem[fnc] - Restart system</li>
 <li>Swear[fnc] <String> - Prints out a string (Works like echo in Batch)</li>
+<li>Swear[fnc] <String> - Prints out a space and then a string. If no string was printed, it will print a new line</li>
 <li>PukeDir[fnc] <Path> - Create a folder</li>
 <li>EatDir[fnc] <Path> - Access a folder</li>
 <li>StealDiary[fnc] <Path> - Read a file</li>

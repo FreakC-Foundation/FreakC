@@ -42,6 +42,7 @@ for %%a in (%command%) do (
 	if %%a == PoopInput[fnc] set /p !printString:~15!
 	if %%a == Trash[fnc] del !printString:~11!
 	if %%a == TrashDir[fnc] rmdir !printString:~14!
+	if %%a == ChangeColor[fnc] color !printString:~17!
 )
 goto c2
 

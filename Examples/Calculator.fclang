@@ -1,0 +1,8 @@
+PoopFnc[fnc] menu
+Forget[fnc]
+Swear[fnc] Enter a Math problem:
+PoopInput[fnc] prob=
+PoopInt[fnc] ans=%prob%
+Swear[fnc] Answer: %ans%
+GotoToilet[fnc]
+EatFnc[fnc] menu

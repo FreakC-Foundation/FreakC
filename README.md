@@ -59,6 +59,7 @@ Example:
 <li>PoopInput[fnc] - Declares a variable through users' input</li>
 <li>PoopFnc[fnc] - Creates a function</li>
 <li>EatFnc[fnc] - Jump to a function</li>
+<li>GrabFnc[fnc] - Call a function, using this will allow you to use parameters for functions</li>
 <li>Trash[fnc] - Delele a file</li>
 <li>TrashDir[fnc] - Delele a folder</li>
 <li>OddOrEven[fnc] - Check if a number is odd or is even</li>
@@ -68,7 +69,7 @@ Example:
 
 <br/>
 <br/>
-<b>Variables in FreakC is similar to Batch, to use it please change it to %variable_name%</b>
+<b>Variables in FreakC is similar to Batch, to use it please change it to %variable_name%. Parameters in functions are %~1, %~2,...</b>
 <br/>
 <br/>
 <b>Some variables that you can't use: %a%, %printString%,...</b>
@@ -79,17 +80,6 @@ Example:
 <br/>
 <b>Ex: Swear[fnc], PukeDir[fnc], EatDir[fnc], StealDiary[fnc], Forget[fnc], GotoToilet[fnc], PoopInt[fnc], PoopString[fnc], PoopInput[fnc], Trash[fnc], TrashDir[fnc], PoopFnc[fnc], EatFnc[fnc],... logics and usages are just the same as echo, md, cd, type, cls, pause, set /a, set, set /p, del, rmdir, :function, goto,... in Batch.</b>
 <br/>
-<br/>
-<b>Comments</b>
-
-Because FreakC compiles to Batch, you can comments in FreakC just like in Batch using:
-
-    REM This is a comment in FreakC and Batch
-    ::This is also a comment in FreakC and Batch
-
-<b>Actually the informations above is not quite true because you can just comments by typing normal text :)</b>
-<br/>
-Note: After FreakC is compiled to Batch, all the comments will be removed in the generated Batch file.
 
 ## Convert FreakC to .EXE files
 In "FreakC/Utilities/Scripts" there is a file called battoexe.bat which helps to convert .bat files to .exe files.

@@ -26,6 +26,9 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == PoopFnc[fnc] echo :!printString:~13!>>%a%.bat
 		if %%a == EatFnc[fnc] echo goto !printString:~12!>>%a%.bat
 		if %%a == ChangeColor[fnc] echo color !printString:~17!>>%a%.bat
+		if %%a == ChangeName[fnc] echo title !printString:~16!>>%a%.bat
+		if %%a == ChangeSize[fnc] echo mode !printString:~16!>>%a%.bat
+		if %%a == RenameFile[fnc] echo ren !printString:~16!>>%a%.bat
 	)
 	if %%x == Die[fnc] echo exit>>%a%.bat
 	if %%x == HelloWorld[str] echo echo Hello, World!>>%a%.bat

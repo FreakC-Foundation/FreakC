@@ -43,6 +43,9 @@ for %%a in (%command%) do (
 	if %%a == Trash[fnc] del !printString:~11!
 	if %%a == TrashDir[fnc] rmdir !printString:~14!
 	if %%a == ChangeColor[fnc] color !printString:~17!
+	if %%a == ChangeName[fnc] title !printString:~16!
+	if %%a == ChangeSize[fnc] mode !printString:~16!
+	if %%a == RenameFile[fnc] ren !printString:~16!
 )
 goto c2
 

@@ -1,0 +1,22 @@
+ChangeName[fnc] Love Tester
+ChangeColor[fnc] 0a
+
+PoopFnc[fnc] game
+Forget[fnc]
+
+Swear[fnc] Person 1:
+PoopInput[fnc] person1=
+
+Swear[fnc] Person 2:
+PoopInput[fnc] person2=
+
+EatFnc[fnc] test
+
+PoopFnc[fnc] test
+
+PoopInt[fnc] test=%random% %% 100 + 0
+Swear[fnc] %test% percents of love
+
+GotoToilet[fnc]
+
+EatFnc[fnc] game

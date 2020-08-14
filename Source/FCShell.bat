@@ -27,6 +27,7 @@ if "%command%" == "Die[fnc]" exit
 for %%a in (%command%) do (
 	set printString=%command%
 	if %%a == Swear[fnc] echo !printString:~11!
+	if %%a == SwearLine[fnc] echo. !printString:~15!
 	if %%a == PukeDir[fnc] md !printString:~13!
 	if %%a == EatDir[fnc] cd !printString:~12!
 	if %%a == StealDiary[fnc] type !printString:~16!

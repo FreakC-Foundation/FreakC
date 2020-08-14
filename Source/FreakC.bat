@@ -8,6 +8,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 	for %%a in (%%x) do (
 		set printString=%%x
 		if %%a == Swear[fnc] echo echo !printString:~11!>>%a%.bat
+		if %%a == SwearLine[fnc] echo echo. !printString:~15!>>%a%.bat
 		if %%a == PukeDir[fnc] echo md !printString:~13!>>%a%.bat
 		if %%a == EatDir[fnc] echo cd !printString:~12!>>%a%.bat
 		if %%a == Trash[fnc] echo del !printString:~11!>>%a%.bat

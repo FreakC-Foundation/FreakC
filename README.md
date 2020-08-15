@@ -67,7 +67,12 @@ Example:
 <li>ChangeColor[fnc] - Change color, a pair of hex code is a color code</li>
 <li>ChangeName[fnc] - Change the title of the program</li>
 <li>ChangeSize[fnc] - Change the size of program's console</li>
+<li>RenameFile[fnc] - Rename a file</li>
 
+
+<br/>
+<br/>
+<b>FreakC doesn't have if statements or for loops, so you will need to use HackerMan[fnc] and a if statement or for loop in Batch. Because FreakC can interacts with Batch logics and variables, it is easy to use Batch commands in FreakC</b>
 <br/>
 <br/>
 <b>Variables in FreakC is similar to Batch, to use it please change it to %variable_name%. Parameters in functions are %~1, %~2,...</b>
@@ -77,7 +82,7 @@ Example:
 <br/>
 <b>Note: Most of the functions in the "Essential functions" category are just compiled to many Batch commands, so you can actually apply Batch logic in it.</b>
 <br/>
-<b>Ex: Swear[fnc], PukeDir[fnc], EatDir[fnc], StealDiary[fnc], Forget[fnc], GotoToilet[fnc], PoopInt[fnc], PoopString[fnc], PoopInput[fnc], Trash[fnc], TrashDir[fnc], PoopFnc[fnc], EatFnc[fnc],... logics and usages are just the same as echo, md, cd, type, cls, pause, set /a, set, set /p, del, rmdir, :function, goto,... in Batch.</b>
+Ex: Swear[fnc], PukeDir[fnc], EatDir[fnc], StealDiary[fnc], Forget[fnc], GotoToilet[fnc], PoopInt[fnc], PoopString[fnc], PoopInput[fnc], Trash[fnc], TrashDir[fnc], PoopFnc[fnc], EatFnc[fnc],... logics and usages are just the same as echo, md, cd, type, cls, pause, set /a, set, set /p, del, rmdir, :function, goto,... in Batch.
 <br/>
 
 ## Convert FreakC to .EXE files

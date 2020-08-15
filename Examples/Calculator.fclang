@@ -1,9 +1,29 @@
-ChangeName[fnc] Calculator made in FreakC
+ChangeName[fnc] Calculator
+ChangeColor[fnc] 8f
+ChangeSize[fnc] con cols=60 lines=20
+
 PoopFnc[fnc] menu
 Forget[fnc]
-Swear[fnc] Enter a Math problem:
+
+SwearLine[fnc] =========================================================
+SwearLine[fnc]                        Calculator 
+SwearLine[fnc]
+SwearLine[fnc]                         "+" Plus
+SwearLine[fnc]
+SwearLine[fnc]                        "-" Minus
+SwearLine[fnc]
+SwearLine[fnc]                       "*" Multiply
+SwearLine[fnc]
+SwearLine[fnc]                        "/" Divide
+SwearLine[fnc]
+SwearLine[fnc]
+SwearLine[fnc]     Enter your Math problem:
+
 PoopInput[fnc] prob=
 PoopInt[fnc] ans=%prob%
+
 Swear[fnc] Answer: %ans%
+
 GotoToilet[fnc]
+
 EatFnc[fnc] menu

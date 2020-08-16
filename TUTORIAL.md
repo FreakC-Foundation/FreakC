@@ -4,18 +4,18 @@ This tutorial is not for beginners at programming because it is very difficult t
 # Print text with Swear[fnc]
 To print out a string or text, you use:
 
-		Swear[fnc] string
+	Swear[fnc] string
 
 or you can prints text using:
 
-		SwearLine[fnc] string
+	SwearLine[fnc] string
 
 The differences between Swear[fnc] and SwearLine[fnc] is that Swear[fnc] prints out normal text, if there are no text printed out, there might be some errors. But SwearLine[fnc] prints out a space then a text, if you nothing is printed out, it will add a new line.
 
 ## Store Data with Swear[fnc]
 You can actually store data to a file by using:
 
-		Swear[fnc] data>>file
+	Swear[fnc] data>>file
 
 
 # Variables and data types
@@ -26,36 +26,36 @@ There are two data types in FreakC: integer and string.
 ## Variables
 To declare a variable as a string, you use:
 
-		PoopString[fnc] variable_name=string_value
+	PoopString[fnc] variable_name=string_value
 
 To declare a variable as an integer, you use:
 
-		PoopInt[fnc] variable_name=integer_value
+	PoopInt[fnc] variable_name=integer_value
 
 To declare a variable from user's input, you use:
 
-		PoopInput[fnc] variable_name=
+	PoopInput[fnc] variable_name=
 
 Note: If you do this, it will prints out "Enter name:" right next to the input
 
-		PoopInput[fnc] variable_name=Enter name:
+	PoopInput[fnc] variable_name=Enter name:
 
 ### Maths 
 You can do Math with FreakC like this:
 
-		PoopInt[fnc] result=1+1+2+4
+	PoopInt[fnc] result=1+1+2+4
 
 If you do this, variable "result" will be "Hel + lo"
 
-		PoopString[fnc] result=Hel + lo
+	PoopString[fnc] result=Hel + lo
 
 ### Use variables in different commands
 You can use variables in FreakC commands as %variable_name%
 
 For example, to print out a variable, you can do this:
 
-		PoopString[fnc] result=Hello World!
-		Swear[fnc] %result%
+	PoopString[fnc] result=Hello World!
+	Swear[fnc] %result%
 
 ### Notes
 There are variables that you CAN NOT USE like: %a% or %printString%
@@ -68,15 +68,15 @@ Functions helps you to jump to a state or working with parameters.
 
 To create a function/label, you use:
 
-		PoopFnc[fnc] function_name
+	PoopFnc[fnc] function_name
 
 To jump to a function, you use:
 
-		EatFnc[fnc] function_name
+	EatFnc[fnc] function_name
 
 To call a function, you use:
 
-		GrabFnc[fnc] function_name
+	GrabFnc[fnc] function_name
 
 ### Differences between EatFnc[fnc] and GrabFnc[fnc]
 EatFnc[fnc] jumps to a function and will not execute the previous code while GrabFnc[fnc] use code from the function but still execute the previous code.
@@ -85,10 +85,10 @@ Also, GrabFnc[fnc] also supports parameters, which helps you a lot of time.
 
 For examples, this code will print the sum of two parameters:
 
-		GrabFnc[fnc] plus 1 2
-		PoopFnc[fnc] plus
-		PoopInt[fnc] ans=%~1 + %~2
-		Swear[fnc] %ans%
+	GrabFnc[fnc] plus 1 2
+	PoopFnc[fnc] plus
+	PoopInt[fnc] ans=%~1 + %~2
+	Swear[fnc] %ans%
 
 Note: Parameters in FreakC are %~1, %~2,...
 

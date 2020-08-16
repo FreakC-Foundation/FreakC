@@ -132,3 +132,17 @@ Note: Parameters in FreakC are %~1, %~2,...
 <br/>
 Ex: Swear[fnc], PukeDir[fnc], EatDir[fnc], StealDiary[fnc], Forget[fnc], GotoToilet[fnc], PoopInt[fnc], PoopString[fnc], PoopInput[fnc], Trash[fnc], TrashDir[fnc], PoopFnc[fnc], EatFnc[fnc],... logics and usages are just the same as echo, md, cd, type, cls, pause, set /a, set, set /p, del, rmdir, :function, goto,... in Batch.
 <br/>
+
+# Things that you must not do
+You can not use a commands right next to a command because there will be errors. If you can understand the compiler's code, you will know what will happen.
+
+For example, if you type:
+
+	WaitForBus[fnc] 100 Swear[fnc] Hello
+
+It will compiles to
+
+	timeout /t 100 Swear[fnc] Hello /nobreak
+	echo fnc] 100 Swear[fnc] Hello
+	
+Which eventually throws out an error because the code is wrong, and "fnc] 100 Swear[fnc] Hello" will be printed out because of Swear[fnc]

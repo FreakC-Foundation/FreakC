@@ -60,6 +60,17 @@ For example, to print out a variable, you can do this:
 ### Notes
 There are variables that you CAN NOT USE like: %a% or %printString%
 
+Also, spaces in FreakC is extremely important, so if you declare a variable like this:
+
+	PoopInt[fnc] abc = 100
+
+It will declare the "abc " variable, so if you prints it out like this, it will not work
+
+	Swear[fnc] %abc%
+	
+You will have to code like this:
+
+	Swear[fnc] %abc %
 
 # Functional programming
 Function in FreakC are labels, which is different from functions from C, C++, C#, Java, Pascal,...

@@ -32,7 +32,7 @@ Example:
 <a href=https://github.com/nguyenphuminh/FreakC/blob/master/TUTORIAL.md>Click here to see tutorials</a>
 
 ## Samples
-<a href=https://github.com/nguyenphuminh/FreakC/tree/master/Examples>Click here to see samples of what FreakC can do</a>
+<a href=https://github.com/nguyenphuminh/FreakC/tree/master/Examples>Click here to see samples</a>
 
 ## Convert FreakC to .EXE files
 In "FreakC/Utilities/Scripts" there is a file called battoexe.bat which helps to convert .bat files to .exe files.

@@ -15,6 +15,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == TrashDir[fnc] echo rmdir !printString:~14!>>%a%.bat
 		if %%a == StealDiary[fnc] echo type !printString:~16!>>%a%.bat
 		if %%a == HackerMan[fnc] echo !printString:~15!>>%a%.bat
+		if %%a == WaitForBus[fnc] echo timeout /t !printString:~16! /nobreak>>%a%.bat
 		if %%a == OddOrEven[fnc] (
 			set /a num=!printString:~15! %% 2>>%a%.bat
 			if !num! == 0 set result=Is even>>%a%.bat

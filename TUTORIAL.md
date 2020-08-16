@@ -10,7 +10,7 @@ or you can prints text using:
 
 	SwearLine[fnc] string
 
-The differences between Swear[fnc] and SwearLine[fnc] is that Swear[fnc] prints out normal text, if there are no text printed out, there might be some errors. But SwearLine[fnc] prints out a space then a text, if you nothing is printed out, it will add a new line.
+The differences between Swear[fnc] and SwearLine[fnc] is that Swear[fnc] prints out normal text, if there are no text printed out, there might be some errors. But SwearLine[fnc] prints out a space then a text, if nothing is printed out, it will add a new line.
 
 ## Store Data with Swear[fnc]
 You can actually store data to a file by using:

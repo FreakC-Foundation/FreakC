@@ -37,6 +37,9 @@ You can actually find plenty of other tools online that helps you to converts Ba
 <li>A FreakC compiler</li>
 <li>A FreakC terminal</li>
 <li>Some optional utilities</li>
+
+## Samples
+<a href=https://github.com/nguyenphuminh/FreakC/tree/master/Examples>Click here to see samples of what FreakC can do</a>
     
 ## 2.x Releases
 All the 2.x releases have the compiler rebuilt completely different from all the 0.x versions or 1.x versions. It is now fast and versatile, with much more power and ability to make some standard programs.

@@ -10,6 +10,11 @@
 ## What is FreakC ?
 FreakC is an esoteric programming language that... has nothing to do with the C programming language. This programming language's syntax is dirty and funny, but it can actually make many decent programs.
 
+## What is in the devkit ?
+<li>A FreakC compiler</li>
+<li>A FreakC terminal</li>
+<li>Some optional utilities</li>
+
 ## Compiler's usage
 In ./FreakC (or ./FreakC/Source) open cmd and type this command:
 
@@ -22,11 +27,6 @@ Example:
  Then, run the Batch file that has been generated to run the compiled code.
 
 <b>The compiler only works on Windows, and can only be compiled to Batch.</b>
-
-## What is in the devkit ?
-<li>A FreakC compiler</li>
-<li>A FreakC terminal</li>
-<li>Some optional utilities</li>
 
 ## Tutorials 
 <a href=https://github.com/nguyenphuminh/FreakC/blob/master/TUTORIAL.md>Click here to see tutorials</a>

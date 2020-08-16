@@ -71,6 +71,8 @@ It will declare the "abc " variable, so if you prints it out like this, it will 
 You will have to code like this:
 
 	Swear[fnc] %abc %
+	
+Then, it will prints out " 100"
 
 # Functional programming
 Function in FreakC are labels, which is different from functions from C, C++, C#, Java, Pascal,...

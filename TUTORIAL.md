@@ -108,15 +108,16 @@ Note: Parameters in FreakC are %~1, %~2,...
 <li>ChangeName[fnc] - Change the title of the program</li>
 <li>ChangeSize[fnc] - Change the size of program's console</li>
 <li>RenameFile[fnc] - Rename a file</li>
+<li>WaitForBus[fnc] - Timeout for a specific time</li>
 
 
-# Troll and Useless commands
-<li>HelloWorld[str] - Print out "Hello, World!" :)</li>
-<li>GrabMeADrink[str] - Print out "Grab me a drink" :)</li>
-<li>ILoveYou[str] - Print out "I love you!" :)</li>
-<li>EnterMatrix[fnc] - Printing out random numbers to make you feel like a hacker :)</li>
-<li>EnterMatrixHacker[fnc] - Like the previous but has green color :)</li>
-<li>Sleep[fnc] - Timeout for a random time from 0 to 9 second(s) :)</li>
+# Troll and useless commands
+<li>HelloWorld[str] - Print out "Hello, World!"</li>
+<li>GrabMeADrink[str] - Print out "Grab me a drink"</li>
+<li>ILoveYou[str] - Print out "I love you!"</li>
+<li>EnterMatrix[fnc] - Printing out random numbers to make you feel like a hacker</li>
+<li>EnterMatrixHacker[fnc] - Like the previous but has green color</li>
+<li>Sleep[fnc] - Timeout for a random time from 0 to 9 second(s)</li>
 <li>RandomNumMinimum[int] - Prints out a random number from 0 to 99</li>
 <li>RandomNumShort[int] - Prints out a random number from 0 to 999</li>
 <li>RandomNum[int] - Prints out a random number from 0 to 99999</li>

@@ -23,67 +23,8 @@ Example:
 
 <li><b>The compiler only works on Windows, and can only be compiled to Batch.</b></li>
 
-## Commands
-<b><u>All necessary commands:</u></b>
-
-<b>Troll functions:</b>
-<li>HelloWorld[str] - Print out "Hello, World!" :)</li>
-<li>GrabMeADrink[str] - Print out "Grab me a drink" :)</li>
-<li>ILoveYou[str] - Print out "I love you!" :)</li>
-<li>EnterMatrix[fnc] - Printing out random numbers to make you feel like a hacker :)</li>
-<li>EnterMatrixHacker[fnc] - Like the previous but has green color :)</li>
-<li>Sleep[fnc] - Timeout for a random time from 0 to 9 second(s) :)</li>
-<br/>
-<b>Functions about number:</b>
-<br/>
-<br/>
-<li>RandomNumMinimum[int] - Prints out a random number from 0 to 99</li>
-<li>RandomNumShort[int] - Prints out a random number from 0 to 999</li>
-<li>RandomNum[int] - Prints out a random number from 0 to 99999</li>
-<br/>
-<b>Essential functions:</b>
-<br/>
-<br/>
-<li>Loop[fnc] - Loop the program endlessly</li>
-<li>ShutdownSystem[fnc] - Shutdown system</li>
-<li>RestartSystem[fnc] - Restart system</li>
-<li>Swear[fnc] <String> - Prints out a string (Works like echo in Batch)</li>
-<li>Swear[fnc] <String> - Prints out a space and then a string. If no string was printed, it will print a new line</li>
-<li>PukeDir[fnc] <Path> - Create a folder</li>
-<li>EatDir[fnc] <Path> - Access a folder</li>
-<li>StealDiary[fnc] <Path> - Read a file</li>
-<li>HackerMan[fnc] <Batch Command> - Execute a Batch command</li>
-<li>Forget[fnc] - Clear the screen</li>
-<li>GotoToilet[fnc] - Pause</li>
-<li>PoopInt[fnc] - Declares a variable as an integer</li>
-<li>PoopString[fnc] - Declares a variable as a string</li>
-<li>PoopInput[fnc] - Declares a variable through users' input</li>
-<li>PoopFnc[fnc] - Creates a function</li>
-<li>EatFnc[fnc] - Jump to a function</li>
-<li>GrabFnc[fnc] - Call a function, using this will allow you to use parameters for functions</li>
-<li>Trash[fnc] - Delele a file</li>
-<li>TrashDir[fnc] - Delele a folder</li>
-<li>OddOrEven[fnc] - Check if a number is odd or is even</li>
-<li>ChangeColor[fnc] - Change color, a pair of hex code is a color code</li>
-<li>ChangeName[fnc] - Change the title of the program</li>
-<li>ChangeSize[fnc] - Change the size of program's console</li>
-<li>RenameFile[fnc] - Rename a file</li>
-
-
-<br/>
-<br/>
-<b>FreakC doesn't have if statements or for loops, so you will need to use HackerMan[fnc] and a if statement or for loop in Batch. Because FreakC can interacts with Batch logics and variables, it is easy to use Batch commands in FreakC</b>
-<br/>
-<br/>
-<b>Variables in FreakC is similar to Batch, to use it please change it to %variable_name%. Parameters in functions are %~1, %~2,...</b>
-<br/>
-<b>Some variables that you can't use: %a%, %printString%,...</b>
-<br/>
-<br/>
-<b>Note: Most of the functions in the "Essential functions" category are just compiled to many Batch commands, so you can actually apply Batch logic in it.</b>
-<br/>
-Ex: Swear[fnc], PukeDir[fnc], EatDir[fnc], StealDiary[fnc], Forget[fnc], GotoToilet[fnc], PoopInt[fnc], PoopString[fnc], PoopInput[fnc], Trash[fnc], TrashDir[fnc], PoopFnc[fnc], EatFnc[fnc],... logics and usages are just the same as echo, md, cd, type, cls, pause, set /a, set, set /p, del, rmdir, :function, goto,... in Batch.
-<br/>
+## Tutorials 
+<a href=https://github.com/nguyenphuminh/FreakC/blob/master/TUTORIAL.md>Click here to see tutorials</a>
 
 ## Convert FreakC to .EXE files
 In "FreakC/Utilities/Scripts" there is a file called battoexe.bat which helps to convert .bat files to .exe files.

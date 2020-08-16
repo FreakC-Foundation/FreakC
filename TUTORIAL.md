@@ -106,6 +106,7 @@ For examples, this code will print the sum of two parameters:
 Note: Parameters in FreakC are %~1, %~2,...
 
 # Other useful commands
+<li>Die[fnc] - Exit the program</li>
 <li>ShutdownSystem[fnc] - Shutdown system</li>
 <li>RestartSystem[fnc] - Restart system</li>
 <li>PukeDir[fnc] - Create a folder</li>

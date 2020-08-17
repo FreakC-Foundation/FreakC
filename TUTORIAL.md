@@ -58,8 +58,7 @@ If you do this, variable "result" will be "Hel + lo"
 
 	PoopString[fnc] result=Hel + lo
 	
-
-<u>Math operators</u>
+<b>Math operators</b>
 <br/>
 <br/>
 <li>()                  - grouping
@@ -128,6 +127,8 @@ OpenHouse[fnc] and CloseHouse[fnc] helps create a local environment.
 <li>%path% - A variable with the value as all environment variables</li>
 <li>%highestnumanodenumber% - A variable with the value as the highest NUMA node number on this machine</li>
 
+There are a lot of special variables left, but you might not find uses for them
+
 ### Implementations on variables
 <li>%variable_name:~0,-2% - would extract all but the last 2 characters of the variable</li>
 <li>%variable_name:~-5% - would extract the last 5 characters of the variable</li>
@@ -151,6 +152,13 @@ You will have to code like this:
 	Swear[fnc] %abc %
 	
 Then, it will prints out " 100"
+
+Other thing that you should notice is that 
+
+	PoopString[fnc] text
+	
+would return any variable begins with "text"
+	
 
 # Functional programming
 Function in FreakC are labels, which is different from functions from C, C++, C#, Java, Pascal,...

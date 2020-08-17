@@ -191,15 +191,16 @@ It is because the compiled code of FreakC is in a main function "FreakCCompiled"
 	
 ### Change console's size
 
-	ChangeSize[fnc]
+	ChangeSize[fnc] size_number
+	ChangeSize[fnc] con cols=columns_or_width lines=lines_or_height
 	
 ### Rename a file
 
-	RenameFile[fnc]
+	RenameFile[fnc] file_name
 	
 ### Timeout for a specific time
 
-	WaitForBus[fnc]
+	WaitForBus[fnc] time_as_second
 
 ### Restart the program or loop the program endlessly
 

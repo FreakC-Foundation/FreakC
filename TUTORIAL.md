@@ -113,24 +113,89 @@ To restart the program, you can type:
 It is because the compiled code of FreakC is in a main function "FreakCCompiled"
 
 # Other useful commands
-<li>Die[fnc] - Exit the program</li>
-<li>ShutdownSystem[fnc] - Shutdown system</li>
-<li>RestartSystem[fnc] - Restart system</li>
-<li>PukeDir[fnc] - Create a folder</li>
-<li>EatDir[fnc] - Access a folder</li>
-<li>StealDiary[fnc] - Read a file</li>
-<li>HackerMan[fnc] - Execute a Batch command</li>
-<li>Forget[fnc] - Clear the screen</li>
-<li>GotoToilet[fnc] - Pause</li>
-<li>Trash[fnc] - Delele a file</li>
-<li>TrashDir[fnc] - Delele a folder</li>
-<li>OddOrEven[fnc] - Check if a number is odd or is even</li>
-<li>ChangeColor[fnc] - Change color, a pair of hex code is a color code</li>
-<li>ChangeName[fnc] - Change the title of the program</li>
-<li>ChangeSize[fnc] - Change the size of program's console</li>
-<li>RenameFile[fnc] - Rename a file</li>
-<li>WaitForBus[fnc] - Timeout for a specific time</li>
-<li>Loop[fnc] - Restart the program or loop the program endlessly</li>
+
+### Exit the program
+
+	Die[fnc]
+	
+### Shutdown system	
+	
+	ShutdownSystem[fnc]
+	::Add /t time and /c "comment" to set the time to shutdown and leave a comment before shutdown
+	
+### Restart system
+
+	RestartSystem[fnc]
+	::Add /t time and /c "comment" to set the time to shutdown and leave a comment before restart
+	
+### Create a folder
+
+	PukeDir[fnc] folder_name
+	
+### Access a folder
+	
+	EatDir[fnc] folder_name
+	
+### Read a file
+
+	StealDiary[fnc] file_name
+	
+### Execute a Batch command
+
+	HackerMan[fnc] batch_command
+	
+### Clear the screen
+
+	Forget[fnc]
+	
+### Pause
+
+	GotoToilet[fnc]
+
+### Delete a file
+
+	Trash[fnc] 
+	
+### Delete a folder
+	
+	TrashDir[fnc] folder_name
+
+### Check if a number is odd or is even
+
+	OddOrEven[fnc] number
+	
+### Change color, a pair of hex code is a color code
+
+	ChangeColor[fnc] hex_code
+
+0 = Black       8 = Gray
+1 = Blue        9 = Light Blue
+2 = Green       A = Light Green
+3 = Aqua        B = Light Aqua
+4 = Red         C = Light Red
+5 = Purple      D = Light Purple
+6 = Yellow      E = Light Yellow
+7 = White       F = Bright White
+	
+### Change the title of the program
+
+	ChangeName[fnc] title_name
+	
+### Change console's size
+
+	ChangeSize[fnc]
+	
+### Rename a file
+
+	RenameFile[fnc]
+	
+### Timeout for a specific time
+
+	WaitForBus[fnc]
+
+### Restart the program or loop the program endlessly
+
+	Loop[fnc]
 
 
 # Troll and useless commands

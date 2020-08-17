@@ -60,7 +60,6 @@ If you do this, variable "result" will be "Hel + lo"
 	
 <b>Math operators</b>
 <br/>
-<br/>
 <li>()                  - grouping
 <li>! ~ -               - unary operators
 <li>* / %               - arithmetic operators

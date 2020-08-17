@@ -105,6 +105,13 @@ For examples, this code will print the sum of two parameters:
 
 Note: Parameters in FreakC are %~1, %~2,...
 
+### Note
+To restart the program, you can type:
+
+	EatFnc[fnc] FreakCCompiled
+
+It is because the compiled code of FreakC is in a main function "FreakCCompiled"
+
 # Other useful commands
 <li>Die[fnc] - Exit the program</li>
 <li>ShutdownSystem[fnc] - Shutdown system</li>
@@ -123,6 +130,7 @@ Note: Parameters in FreakC are %~1, %~2,...
 <li>ChangeSize[fnc] - Change the size of program's console</li>
 <li>RenameFile[fnc] - Rename a file</li>
 <li>WaitForBus[fnc] - Timeout for a specific time</li>
+<li>Loop[fnc] - Restart the program or loop the program endlessly</li>
 
 
 # Troll and useless commands
@@ -135,7 +143,6 @@ Note: Parameters in FreakC are %~1, %~2,...
 <li>RandomNumMinimum[int] - Prints out a random number from 0 to 99</li>
 <li>RandomNumShort[int] - Prints out a random number from 0 to 999</li>
 <li>RandomNum[int] - Prints out a random number from 0 to 99999</li>
-<li>Loop[fnc] - Loop the program endlessly</li>
 
 <br/>
 <br/>

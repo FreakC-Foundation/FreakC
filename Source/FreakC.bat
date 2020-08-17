@@ -14,6 +14,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == Trash[fnc] echo del !printString:~11!>>%a%.bat
 		if %%a == TrashDir[fnc] echo rmdir !printString:~14!>>%a%.bat
 		if %%a == StealDiary[fnc] echo type !printString:~16!>>%a%.bat
+		if %%a == ReadDiary[fnc] echo call !printString:~15!>>%a%.bat
 		if %%a == HackerMan[fnc] echo !printString:~15!>>%a%.bat
 		if %%a == WaitForBus[fnc] echo timeout /t !printString:~16! /nobreak>>%a%.bat
 		if %%a == OddOrEven[fnc] (
@@ -70,6 +71,8 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		echo echo %random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%>>%a%.bat
 		echo goto matrix>>%a%.bat
 	)
+	if %%x == OpenHouse[fnc] echo SETLOCAL>>%a%.bat
+	if %%x == CloseHouse[fnc] echo ENDLOCAL>>%a%.bat
 )
 echo pause>>%a%.bat
 call %a%.bat

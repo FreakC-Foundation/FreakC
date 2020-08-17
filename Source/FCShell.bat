@@ -48,6 +48,7 @@ for %%a in (%command%) do (
 	if %%a == ChangeSize[fnc] mode !printString:~16!
 	if %%a == RenameFile[fnc] ren !printString:~16!
 	if %%a == WaitForBus[fnc] timeout /t !printString:~16! /nobreak
+	if %%a == ReadDiary[fnc] call !printString:~15!
 )
 goto c2
 

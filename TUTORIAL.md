@@ -168,21 +168,22 @@ It is because the compiled code of FreakC is in a main function "FreakCCompiled"
 
 	ChangeColor[fnc] hex_code
 
-0 = Black       8 = Gray
-
-1 = Blue        9 = Light Blue
-
-2 = Green       A = Light Green
-
-3 = Aqua        B = Light Aqua
-
-4 = Red         C = Light Red
-
-5 = Purple      D = Light Purple
-
-6 = Yellow      E = Light Yellow
-
-7 = White       F = Bright White
+<li>0 = Black</li>
+<li>1 = Blue</li>
+<li>2 = Green</li>
+<li>3 = Aqua</li>
+<li>4 = Red</li>
+<li>5 = Purple</li>
+<li>6 = Yellow</li>
+<li>7 = White</li>
+<li>8 = Gray</li>
+<li>9 = Light Blue</li>
+<li>A = Light Green</li>
+<li>B = Light Aqua</li>
+<li>C = Light Red</li>
+<li>D = Light Purple</li>
+<li>E = Light Yellow</li>
+<li>F = Bright White</li>
 	
 ### Change the title of the program
 

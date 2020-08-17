@@ -56,6 +56,17 @@ For example, to print out a variable, you can do this:
 
 	PoopString[fnc] result=Hello World!
 	Swear[fnc] %result%
+	
+### Local and global variables
+You can declare a global variable by just using all the ways mentioned recently.
+
+To declare a variable locally, you will need to:
+
+	OpenHouse[fnc] 
+	PoopInt[fnc] ans=100
+	CloseHouse[fnc]
+	
+OpenHouse[fnc] and CloseHouse[fnc] helps create a local environment.
 
 ### Notes
 There are variables that you CAN NOT USE like: %a% or %printString%
@@ -139,6 +150,10 @@ It is because the compiled code of FreakC is in a main function "FreakCCompiled"
 ### Read a file
 
 	StealDiary[fnc] file_name
+	
+### Run a Batch file
+
+	ReadDiary[fnc] file_name
 	
 ### Execute a Batch command
 

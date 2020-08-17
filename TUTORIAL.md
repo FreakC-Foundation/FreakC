@@ -21,7 +21,7 @@ You can actually store data to a file by using:
 # Variables and data types
 
 ## Data types
-There are two data types in FreakC: integer and string.
+There are three data types in FreakC: integer, string and list.
 
 ## Variables
 To declare a variable as a string, you use:
@@ -31,6 +31,15 @@ To declare a variable as a string, you use:
 To declare a variable as an integer, you use:
 
 	PoopInt[fnc] variable_name=integer_value
+	
+To declare a variable as an array, you use:
+
+	data_type arr[position]=
+	
+Ex:
+	
+	PoopString[fnc] arr[0]=Hello
+	PoopInt[fnc] arr[1]=100
 
 To declare a variable from user's input, you use:
 
@@ -48,6 +57,22 @@ You can do Math with FreakC like this:
 If you do this, variable "result" will be "Hel + lo"
 
 	PoopString[fnc] result=Hel + lo
+	
+
+<u>Math operators</u>
+<br/>
+<br/>
+<li>()                  - grouping
+<li>! ~ -               - unary operators
+<li>* / %               - arithmetic operators
+<li>+ -                 - arithmetic operators
+<li><< >>               - logical shift
+<li>&                   - bitwise and
+<li>^                   - bitwise exclusive or
+<li>|                   - bitwise or
+<li>= *= /= %= += -=    - assignment
+<li> &= ^= |= <<= >>= , - expression separator
+
 
 ### Use variables in different commands
 You can use variables in FreakC commands as %variable_name%
@@ -57,10 +82,33 @@ For example, to print out a variable, you can do this:
 	PoopString[fnc] result=Hello World!
 	Swear[fnc] %result%
 	
+But, to print out an element of an array, you use:
+
+	PoopString[fnc] a[0]=Hello
+	Swear[fnc] %a[0]%
+	
+To print out every element of an array, you will need to use Batch in FreakC:
+
+	HackerMan[fnc] setlocal ENABLEDELAYEDEXPANSION
+	PoopInt[fnc] a[0]=100
+	PoopInt[fnc] a[1]=35
+	PoopInt[fnc] a[2]=20
+	HackerMan[fnc]	for /l %%n in (0,1,2) do ( 
+   	HackerMan[fnc]		echo !a[%%n]! 
+	HackerMan[fnc]	)
+
+Actually, there is a whole another way to create an array:
+
+	PoopString[fnc] arr=1 2 3 4 5
+	HackerMan[fnc]	for %%i in (%arr%) do (
+				::Print out every elements
+	HackerMan[fnc]		echo %%i
+	HackerMan[fnc]	)
+	
 ### Local and global variables
 You can declare a global variable by just using all the ways mentioned recently.
 
-To declare a variable locally, you will need to:
+To declare a variable locally, you will need to use:
 
 	OpenHouse[fnc] 
 	PoopInt[fnc] ans=100
@@ -79,6 +127,13 @@ OpenHouse[fnc] and CloseHouse[fnc] helps create a local environment.
 <li>%cmdcmdline% - A variable with the value as the original command line that invoked the Command Processor</li>
 <li>%path% - A variable with the value as all environment variables</li>
 <li>%highestnumanodenumber% - A variable with the value as the highest NUMA node number on this machine</li>
+
+### Implementations on variables
+<li>%variable_name:~0,-2% - would extract all but the last 2 characters of the variable</li>
+<li>%variable_name:~-5% - would extract the last 5 characters of the variable</li>
+<li>%variable_name:~5% - would remove the first 5 characters of the variable</li>
+<li>%PATH:str1=str2% - would expand the PATH environment variable, substituting each occurrence of "str1" in the expanded result with "str2".  "str2" can be the empty string to effectively delete all occurrences of "str1" from the expanded output.  "str1" can begin with an asterisk, in which case it will match everything from the beginning of the expanded output to the first occurrence of the remaining portion of str1</li>
+<li>%PATH:~10,5% - would expand the PATH environment variable, and then use only the 5 characters that begin at the 11th (offset 10) character of the expanded result.  If the length is not specified, then it defaults to the remainder of the variable value.  If either number (offset or length) is negative, then the number used is the length of the environment variable value added to the offset or length specified/li>
 
 ### Notes
 There are variables that you CAN NOT USE like: %a% or %printString%

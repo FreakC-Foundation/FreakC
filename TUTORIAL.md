@@ -68,6 +68,18 @@ To declare a variable locally, you will need to:
 	
 OpenHouse[fnc] and CloseHouse[fnc] helps create a local environment.
 
+### Special variables
+<li>%random% - A variable with the value as a random number</li>
+<li>%time% - A variable with the value as the current timer</li>
+<li>%date% - A variable with the value as the current date</li>
+<li>%cd% - A variable with the value as the current directory</li>
+<li>%date% - A variable with the value as the current date</li>
+<li>%errorlevel% - A variable with the value as the current Batch errorlevel value</li>
+<li>%cmdextversion% - A variable with the value as the current Command Processor Extensions version number</li>
+<li>%cmdcmdline% - A variable with the value as the original command line that invoked the Command Processor</li>
+<li>%path% - A variable with the value as all environment variables</li>
+<li>%highestnumanodenumber% - A variable with the value as the highest NUMA node number on this machine</li>
+
 ### Notes
 There are variables that you CAN NOT USE like: %a% or %printString%
 

@@ -318,7 +318,7 @@ Ex: Swear[fnc], PukeDir[fnc], EatDir[fnc], StealDiary[fnc], Forget[fnc], GotoToi
 <br/>
 
 # Things that you must not do
-You can not use a commands right next to a command because there will be errors. If you can understand the compiler's code, you will know what will happen.
+You can not use a command right next to a command because there will be errors. If you can understand the compiler's code, you will know what will happen.
 
 For example, if you type:
 

@@ -190,12 +190,17 @@ For examples, this code will print the sum of two parameters:
 
 Note: Parameters in FreakC are %~1, %~2,...
 
-### Note
+### Notes
 To restart the program, you can type:
 
 	EatFnc[fnc] FreakCCompiled
 
 It is because the compiled code of FreakC is in a main function "FreakCCompiled"
+
+Unlike many programming languages, you can name your function with special character. So this code would still work
+
+	PoopFnc[fnc] dsasd$ 123213 323
+	EatFnc[fnc] dsasd$ 123213 323
 
 # Other useful commands
 

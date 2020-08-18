@@ -70,6 +70,23 @@ If you do this, variable "result" will be "Hel + lo"
 <li>|                   - bitwise or
 <li>= *= /= %= += -=    - assignment
 <li> &= ^= |= <<= >>= , - expression separator
+	
+### Merge strings
+To merge strings, do this:
+
+	PoopString[fnc] str1=Hello
+	PoopString[fnc] str2=World
+	PoopString[fnc] str=%str1% %str2%
+
+So the value of %str% is "Hello World"
+
+Don't merge string like this:
+
+	PoopString[fnc] str1=Hello
+	PoopString[fnc] str2=World
+	PoopString[fnc] str=%str1% + %str2%
+	
+This time, the value will be "Hello + World"
 
 
 ### Use variables in different commands

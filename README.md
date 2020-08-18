@@ -47,7 +47,7 @@ You can actually find plenty of other tools online that helps you to converts Ba
 All the 2.x releases have the compiler rebuilt completely different from all the 0.x versions or 1.x versions. It is now fast and versatile, with much more power and ability to make some standard programs.
 
 ## Developers
-<li>Lead Developer: Nguyen Phu Minh</li>
+<li>Owner/Developer: Nguyen Phu Minh</li>
 
 ## Copyrights and License
 Copyright © 2020 Nguyen Phu Minh

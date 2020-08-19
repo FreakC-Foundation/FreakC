@@ -54,6 +54,8 @@ for %%a in (%command%) do (
 	if %%a == ReadDiary[fnc] call !printString:~15!
 	if %%a == MoveFile[fnc] echo !printString:~14!
 	if %%a == CopyFile[fnc] echo !printString:~14!
+	if %%a == EatDrive[fnc] !printString:~14!:
+	if %%a == PlayFile[fnc] start !printString:~14!
 )
 goto c2
 

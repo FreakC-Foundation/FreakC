@@ -15,6 +15,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == EatDir[fnc] echo cd !printString:~12!>>%a%.bat
 		if %%a == Trash[fnc] echo del !printString:~11!>>%a%.bat
 		if %%a == TrashDir[fnc] echo rmdir !printString:~14!>>%a%.bat
+		if %%a == EatDrive[fnc] echo !printString:~14!:>>%a%.bat
 		if %%a == StealDiary[fnc] echo type !printString:~16!>>%a%.bat
 		if %%a == ReadDiary[fnc] echo call !printString:~15!>>%a%.bat
 		if %%a == HackerMan[fnc] echo !printString:~15!>>%a%.bat
@@ -37,6 +38,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == RenameFile[fnc] echo ren !printString:~16!>>%a%.bat
 		if %%a == MoveFile[fnc] echo move !printString:~14!>>%a%.bat
 		if %%a == CopyFile[fnc] echo copy !printString:~14!>>%a%.bat
+		if %%a == PlayFile[fnc] echo start !printString:~14!>>%a%.bat
 	)
 	if %%x == Die[fnc] echo exit>>%a%.bat
 	if %%x == HelloWorld[str] echo echo Hello, World!>>%a%.bat

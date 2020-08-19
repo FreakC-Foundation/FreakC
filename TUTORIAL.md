@@ -243,6 +243,10 @@ Unlike many programming languages, you can name your function with special chara
 	
 	EatDir[fnc] folder_name
 	
+### Access a drive
+	
+	EatDrive[fnc] drive_name
+	
 ### Read a file
 
 	StealDiary[fnc] file_name
@@ -316,6 +320,10 @@ Unlike many programming languages, you can name your function with special chara
 ### Copy a file to the new path
 
 	CopyFile[fnc] file_name new_path
+	
+### Open a file or a website url (would open cmd if nothing is opened)
+
+	PlayFile[fnc] file
 	
 ### Timeout for a specific time
 

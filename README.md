@@ -18,15 +18,15 @@ FreakC is an esoteric programming language that... has nothing to do with the C 
 ## Compiler's usage
 In ./FreakC (or ./FreakC/Source) open cmd and type this command to compile and run the code:
 
-    freakc "file path(don't include .fclang)"
+    freakc "file.fclang"
     
 Example:
     
-    freakc "Examples/HelloWorld"
+    freakc "Examples/HelloWorld.fclang"
  
 If you want to compile the code only, type:
 
-    freakc "file path(don't include .fclang)" --compile
+    freakc "file.fclang" --compile
 
 <b>The compiler only works on Windows, and can only be compiled to Batch.</b>
 

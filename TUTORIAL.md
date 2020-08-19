@@ -309,6 +309,14 @@ Unlike many programming languages, you can name your function with special chara
 
 	RenameFile[fnc] file_name
 	
+### Move a file to the new path
+
+	MoveFile[fnc] file_name new_path
+	
+### Copy a file to the new path
+
+	CopyFile[fnc] file_name new_path
+	
 ### Timeout for a specific time
 
 	WaitForBus[fnc] time_as_second
@@ -316,6 +324,18 @@ Unlike many programming languages, you can name your function with special chara
 ### Restart the program or loop the program endlessly
 
 	Loop[fnc]
+	
+### Shows date
+
+	SeeDate[fnc]
+	
+### Shows time
+
+	SeeTime[fnc]
+	
+### Shows all files in the current directory
+
+	MyMemory[fnc]
 
 
 # Troll and useless commands

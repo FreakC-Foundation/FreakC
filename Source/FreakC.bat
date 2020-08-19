@@ -34,6 +34,8 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == ChangeName[fnc] echo title !printString:~16!>>%a%.bat
 		if %%a == ChangeSize[fnc] echo mode !printString:~16!>>%a%.bat
 		if %%a == RenameFile[fnc] echo ren !printString:~16!>>%a%.bat
+		if %%a == MoveFile[fnc] echo move !printString:~14!>>%a%.bat
+		if %%a == CopyFile[fnc] echo copy !printString:~14!>>%a%.bat
 	)
 	if %%x == Die[fnc] echo exit>>%a%.bat
 	if %%x == HelloWorld[str] echo echo Hello, World!>>%a%.bat
@@ -74,6 +76,9 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 	)
 	if %%x == OpenHouse[fnc] echo SETLOCAL>>%a%.bat
 	if %%x == CloseHouse[fnc] echo ENDLOCAL>>%a%.bat
+	if %%x == SeeTime[fnc] echo date /t>>%a%.bat
+	if %%x == SeeDate[fnc] echo time /t>>%a%.bat
+	if %%x == MyMemory[fnc] echo dir>>%a%.bat
 )
 echo pause>>%a%.bat
 if not "%fccompile%" == "true" call %a%.bat

@@ -24,6 +24,9 @@ if "%command%" == "EnterMatrix[fnc]" goto EnterMatrix
 if "%command%" == "EnterMatrixHacker[fnc]" goto EnterMatrixHacker
 if "%command%" == "ILoveYou[str]" goto ILoveYou
 if "%command%" == "Die[fnc]" exit
+if "%command%" == "MyMemory[fnc]" dir
+if "%command%" == "SeeTime[fnc]" time /t
+if "%command%" == "SeeDate[fnc]" date /t
 for %%a in (%command%) do (
 	set printString=%command%
 	if %%a == Swear[fnc] echo !printString:~11!
@@ -49,6 +52,8 @@ for %%a in (%command%) do (
 	if %%a == RenameFile[fnc] ren !printString:~16!
 	if %%a == WaitForBus[fnc] timeout /t !printString:~16! /nobreak
 	if %%a == ReadDiary[fnc] call !printString:~15!
+	if %%a == MoveFile[fnc] echo !printString:~14!
+	if %%a == CopyFile[fnc] echo !printString:~14!
 )
 goto c2
 

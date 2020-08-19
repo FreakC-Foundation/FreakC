@@ -16,7 +16,7 @@ FreakC is an esoteric programming language that... has nothing to do with the C 
 <li>Some optional utilities</li>
 
 ## Compiler's usage
-In ./FreakC (or ./FreakC/Source) open cmd and type this command to compile and run the code:
+In the "FreakC" folder, open cmd and type this command to compile and run the code:
 
     freakc "file.fclang"
     

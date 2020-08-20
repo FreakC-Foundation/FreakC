@@ -3,7 +3,7 @@ setlocal enabledelayedexpansion
 if "%1" == "" fcshell
 if "%2" == "--compile" set fccompile=true
 set fccompilename=%1
-set a=%fccompilename:~0,-7%
+set a=%fccompilename:.fclang=%
 echo @echo off>%a%.bat
 echo :FreakCCompiled>>%a%.bat
 for /f "tokens=* delims= " %%x in (%a%.fclang) do (

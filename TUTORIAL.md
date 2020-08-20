@@ -218,6 +218,65 @@ Unlike many programming languages, you can name your function with special chara
 
 	PoopFnc[fnc] dsasd$ 123213 323
 	EatFnc[fnc] dsasd$ 123213 323
+	
+# If statements
+To use if statement, type:
+
+	DoIf[fnc] condition command_to_execute
+	
+Example:
+
+	PoopInt[fnc] abc=100
+	DoIf[fnc] %abc% == 100 Swear[fnc] abc is equal to 100
+	
+You can actually use a Batch command in DoIf[fnc]. Example:
+
+	PoopInt[fnc] abc=20
+	DoIf[fnc] %abc% == 20 echo abc is equal to 100
+	
+## All the compare operators:
+<li>"==" - Equal</li>
+<li>"EQU" - Equal</li>
+<li>"NEQ" - Not equal</li>
+<li>"LSS" - Less than</li>
+<li>"LEQ" - Less than or equal</li>
+<li>"LSS" - Greater than</li>
+<li>"LEQ" - Greater than or equal</li>
+
+## Other kinds or if statements:
+
+### Execute if a file exists
+
+	DoIf[fnc] exist file_name command_to_execute
+	
+### Execute if a variable is defined
+
+	DoIf[fnc] defined variable_name command_to_execute
+	
+# Loops
+There are no For loops or While loops in FreakC, but you can combine the Functional programming and If statements to make a somewhat workable while loop like this:
+
+	PoopInt[fnc] i=start_number
+	PoopFnc[fnc] loop
+	command
+	DoIf[fnc] %i% == end_number goto nextcode
+	set /a i+=1
+	EatFnc[fnc] loop
+	
+	PoopFnc[fnc] nextcode
+	command
+	
+For example, this program will print all the number from 0 to 10 then print out "Done!":
+
+	PoopInt[fnc] i=0
+	PoopFnc[fnc] loop
+	Swear[fnc] %i%
+	DoIf[fnc] %i% == 10 goto nextcode
+	set /a i+=1
+	EatFnc[fnc] loop
+	
+	PoopFnc[fnc] nextcode
+	Swear[fnc] Done!
 
 # Other useful commands
 
@@ -253,7 +312,7 @@ Unlike many programming languages, you can name your function with special chara
 	
 ### Run a Batch file
 
-	ReadDiary[fnc] file_name
+	GrabFnc[fnc] file_name
 	
 ### Execute a Batch command
 
@@ -347,10 +406,6 @@ Unlike many programming languages, you can name your function with special chara
 
 
 # Notes
-
-<br/>
-<br/>
-<b>FreakC doesn't have if statements or for loops, so you will need to use HackerMan[fnc] and a if statement or for loop in Batch. Because FreakC can interacts with Batch logics and variables, it is easy to use Batch commands in FreakC</b>
 <br/>
 <br/>
 <b>Most of the commands are just modified Batch commands, so you can actually apply Batch logic in it.</b>

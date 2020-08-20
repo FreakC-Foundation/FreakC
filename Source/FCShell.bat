@@ -9,7 +9,6 @@ echo.
 echo.
 :c2
 set /p command=~
-if "%command%" == "Loop[fnc]" goto Loop
 if "%command%" == "Shutdown[fnc]" goto Shutdown
 if "%command%" == "Forget[fnc]" goto Forget
 if "%command%" == "GotoToilet[fnc]" goto GotoToilet
@@ -56,10 +55,6 @@ goto c2
 
 :Restart
 shutdown -r -t 0
-goto c2
-
-:Loop
-echo Sorry but Loop[fnc] doesn't work on FCShell
 goto c2
 
 :Forget

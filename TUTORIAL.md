@@ -346,37 +346,15 @@ Unlike many programming languages, you can name your function with special chara
 	MyMemory[fnc]
 
 
-# Troll and useless commands
-<li>HelloWorld[str] - Print out "Hello, World!"</li>
-<li>GrabMeADrink[str] - Print out "Grab me a drink"</li>
-<li>ILoveYou[str] - Print out "I love you!"</li>
-<li>EnterMatrix[fnc] - Printing out random numbers to make you feel like a hacker</li>
-<li>EnterMatrixHacker[fnc] - Like the previous but has green color</li>
-<li>Sleep[fnc] - Timeout for a random time from 0 to 9 second(s)</li>
-<li>RandomNumMinimum[int] - Prints out a random number from 0 to 99</li>
-<li>RandomNumShort[int] - Prints out a random number from 0 to 999</li>
-<li>RandomNum[int] - Prints out a random number from 0 to 99999</li>
+# Notes
 
 <br/>
 <br/>
 <b>FreakC doesn't have if statements or for loops, so you will need to use HackerMan[fnc] and a if statement or for loop in Batch. Because FreakC can interacts with Batch logics and variables, it is easy to use Batch commands in FreakC</b>
 <br/>
 <br/>
-<b>Note: Most of the commands are just modified Batch commands, so you can actually apply Batch logic in it.</b>
+<b>Most of the commands are just modified Batch commands, so you can actually apply Batch logic in it.</b>
 <br/>
 Ex: Swear[fnc], PukeDir[fnc], EatDir[fnc], StealDiary[fnc], Forget[fnc], GotoToilet[fnc], PoopInt[fnc], PoopString[fnc], PoopInput[fnc], Trash[fnc], TrashDir[fnc], PoopFnc[fnc], EatFnc[fnc],... logics and usages are just the same as echo, md, cd, type, cls, pause, set /a, set, set /p, del, rmdir, :function, goto,... in Batch.
 <br/>
 
-# Things that you must not do
-You can not use a command right next to a command because there will be errors. If you can understand the compiler's code, you will know what will happen.
-
-For example, if you type:
-
-	WaitForBus[fnc] 100 Swear[fnc] Hello
-
-It will compiles to
-
-	timeout /t 100 Swear[fnc] Hello /nobreak
-	echo fnc] 100 Swear[fnc] Hello
-	
-Which eventually throws out an error because the code is wrong, and "fnc] 100 Swear[fnc] Hello" will be printed out because of Swear[fnc]

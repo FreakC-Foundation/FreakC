@@ -15,8 +15,6 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			if !num! == 0 echo echo Is even>>%a%.bat
 			if not !num! == 0 echo echo Is odd>>%a%.bat
 		)
-		if %%a == WaitForBus[fnc] set printString=!printString:WaitForBus[fnc]=timeout /t! /nobreak
-		if %%a == PoopFnc[fnc] set printString=:!printString:PoopFnc[fnc] =!
 	)
 	set printString=!printString:Swear[fnc]=echo!
 	set printString=!printString:SwearLine[fnc]=echo.!
@@ -25,7 +23,6 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 	set printString=!printString:Trash[fnc]=del!
 	set printString=!printString:TrashDir[fnc]=rmdir!
 	set printString=!printString:StealDiary[fnc]=type!
-	set printString=!printString:HackerMan[fnc] =!
 	set printString=!printString:PoopInt[fnc]=set /a!
 	set printString=!printString:PoopString[fnc]=set!
 	set printString=!printString:PoopInput[fnc]=set /p!
@@ -50,7 +47,9 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 	set printString=!printString:SeeDate[fnc]=time /t!
 	set printString=!printString:MyMemory[fnc]=dir!
 	set printString=!printString:DoIf[fnc]=if!
-	echo !printString!>>%a%.bat
+	set printString=!printString:PoopFnc[fnc] =:!
+	set printString=!printString:WaitForBus[fnc]=timeout /nobreak /t!
+	if not "!printString!" == "" echo. !printString!>>%a%.bat
 )
 echo pause>>%a%.bat
 if not "%fccompile%" == "true" call %a%.bat

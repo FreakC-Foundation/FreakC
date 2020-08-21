@@ -284,6 +284,15 @@ Unlike all the previous release, now FreakC support writing Batch without any ot
 ### Is adding Batch to FreakC will kill the usages of FreakC ?
 Well, I would say it will and won't at the same time. What I mean is that if there is Batch in FreakC, you would definitely write Batch rather than FreakC, but actually, FreakC codes are just compiled to Batch anyway. The only key feature of FreakC is being an esolang with funny and dirty syntax, that's why people would want to use it. FreakC doesn't improve Batch, it's just a funny version of it.
 
+# Nul in FreakC
+It's just like nul in Batch, so if you want to make your console not print out any process, you can do it like this:
+
+	Command >nul
+	
+To hide errors, you can do this:
+
+	Command >nul 2>nul
+
 # Other useful commands
 
 ### Exit the program

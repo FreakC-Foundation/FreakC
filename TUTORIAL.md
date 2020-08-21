@@ -277,6 +277,12 @@ For example, this program will print all the number from 0 to 10 then print out 
 	
 	PoopFnc[fnc] nextcode
 	Swear[fnc] Done!
+	
+# Use Batch in FreakC
+Unlike all the previous release, now FreakC support writing Batch without any other commands. So you can actually learn Batch and write Batch codes in FreakC.
+
+### Is adding Batch to FreakC will kill the usages of FreakC ?
+Well, I would say it will and won't at the same time. What I mean is that if there is Batch in FreakC, you would definitely write Batch rather than FreakC, but actually, FreakC codes are just compiled to Batch anyway. The only key feature of FreakC is being an esolang with funny and dirty syntax, that's why people would want to use it. FreakC doesn't improve Batch, it's just a funny version of it.
 
 # Other useful commands
 
@@ -313,10 +319,6 @@ For example, this program will print all the number from 0 to 10 then print out 
 ### Run a Batch file
 
 	GrabFnc[fnc] file_name
-	
-### Execute a Batch command
-
-	HackerMan[fnc] batch_command
 	
 ### Clear the screen
 

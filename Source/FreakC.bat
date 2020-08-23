@@ -47,6 +47,9 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 	set printString=!printString:SeeDate[fnc]=time /t!
 	set printString=!printString:MyMemory[fnc]=dir!
 	set printString=!printString:DoIf[fnc]=if!
+	set printString=!printString:DoIfFalse[fnc]=if not!
+	set printString=!printString:DoIfDefined[fnc]=if defined!
+	set printString=!printString:DoIfExist[fnc]=if defined!
 	set printString=!printString:PoopFnc[fnc] =:!
 	set printString=!printString:WaitForBus[fnc]=timeout /nobreak /t!
 	if not "!printString!" == "" echo. !printString!>>%a%.bat

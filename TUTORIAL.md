@@ -247,11 +247,15 @@ You can actually use a Batch command in DoIf[fnc]. Example:
 
 ### Execute if a file exists
 
-	DoIf[fnc] exist file_name command_to_execute
+	DoIfExist[fnc] file_name command_to_execute
 	
 ### Execute if a variable is defined
 
-	DoIf[fnc] defined variable_name command_to_execute
+	DoIfDefined[fnc] variable_name command_to_execute
+	
+### Execute if a condition is false
+
+	DoIfFalse[fnc] condtition command_to_execute
 	
 # Loops
 There are no For loops or While loops in FreakC, but you can combine the Functional programming and If statements to make a somewhat workable while loop like this:

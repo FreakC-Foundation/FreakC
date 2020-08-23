@@ -159,7 +159,7 @@ There are a lot of special variables left, but you might not find uses for them
 <li>%variable_name:~0,-2% - would extract all but the last 2 characters of the variable</li>
 <li>%variable_name:~-5% - would extract the last 5 characters of the variable</li>
 <li>%variable_name:~5% - would remove the first 5 characters of the variable</li>
-<li>%PATH:str1=str2% - would expand the PATH environment variable, substituting each occurrence of "str1" in the expanded result with "str2".  "str2" can be the empty string to effectively delete all occurrences of "str1" from the expanded output.  "str1" can begin with an asterisk, in which case it will match everything from the beginning of the expanded output to the first occurrence of the remaining portion of str1</li>
+<li>%variable_name:str1=str2% - would replace str1 with str2</li>
 <li>%PATH:~10,5% - would expand the PATH environment variable, and then use only the 5 characters that begin at the 11th (offset 10) character of the expanded result.  If the length is not specified, then it defaults to the remainder of the variable value.  If either number (offset or length) is negative, then the number used is the length of the environment variable value added to the offset or length specified/li>
 
 ### Notes

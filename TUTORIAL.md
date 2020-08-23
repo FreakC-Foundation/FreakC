@@ -34,7 +34,7 @@ To declare a variable as an integer, you use:
 	
 To declare a variable as an array, you use:
 
-	data_type arr[position]=
+	data_type arr[array_index]=
 	
 Ex:
 	
@@ -48,6 +48,8 @@ To declare a variable from user's input, you use:
 Note: If you do this, it will prints out "Enter name:" right next to the input
 
 	PoopInput[fnc] variable_name=Enter name:
+	
+Also, array index starts at 0 
 
 ### Maths 
 You can do Math with FreakC like this:

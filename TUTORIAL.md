@@ -104,7 +104,7 @@ But, to print out an element of an array, you use:
 	
 To print out every element of an array, you will need to use Batch in FreakC:
 
-	HackerMan[fnc] setlocal ENABLEDELAYEDEXPANSION
+	OpenHouse[fnc] ENABLEDELAYEDEXPANSION
 	PoopInt[fnc] a[0]=100
 	PoopInt[fnc] a[1]=35
 	PoopInt[fnc] a[2]=20
@@ -130,6 +130,16 @@ To declare a variable locally, you will need to use:
 	CloseHouse[fnc]
 	
 OpenHouse[fnc] and CloseHouse[fnc] helps create a local environment.
+
+In Batch, to use variable in for loops, or enables command prosessor's extensions, you would need:
+
+	setlocal ENABLEDELAYEDEXPANSION
+	setlocal ENABLEEXTENSIONS
+	
+You can also do that with OpenHouse[fnc]
+
+	OpenHouse[fnc] ENABLEDELAYEDEXPANSION
+	OpenHouse[fnc] ENABLEEXTENSIONS
 
 ### Special variables
 <li>%random% - A variable with the value as a random number</li>

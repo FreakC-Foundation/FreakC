@@ -50,7 +50,7 @@ In "FreakC/Utilities/Scripts" there is a file called "FreakC.sublime-build" whic
 There are many frameworks in the utilities folder that you can use, I will definitely update the usage of them soon.
 
 ## 3.x Releases
-All the 3.x releases have the compiler rebuilt completely different from the 0.x, 1.x versions. It is now fast and versatile, with much more power and ability to make some standard programs. Compare to the 2.x releases, there are not much differences, but the 3.x releases removes all the troll commands. Why is that? Well, it's simply because we can't find any use for them, and they also slow the compiler down, and make the compiler 2 times heavier, so removing them is 100% required.
+All the 3.x releases have the compiler rebuilt completely different from the 0.x, 1.x versions. It is now fast and versatile, with much more power and ability to make some standard programs. Compare to the 2.x releases, there are not much differences, but the 3.x releases removes all the troll commands. Why is that? Well, it's simply because we can't find any use for them, and they also slow the compiler down, and make the compiler 2 times heavier, so removing them is 100% required. Also, the 3.x releases added if statements, and the ability to write Batch codes in FreakC, so HackerMan[fnc] is removed as well.
 
 ## Developers
 <li>Owner/Developer: Nguyen Phu Minh</li>

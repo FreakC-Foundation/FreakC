@@ -300,6 +300,22 @@ Unlike all the previous release, now FreakC support writing Batch without any ot
 ### Is adding Batch to FreakC will kill the usages of FreakC ?
 Well, I would say it will and won't at the same time. What I mean is that if there is Batch in FreakC, you would definitely write Batch rather than FreakC, but actually, FreakC codes are just compiled to Batch anyway. The only key feature of FreakC is being an esolang with funny and dirty syntax, that's why people would want to use it. FreakC doesn't improve Batch, it's just a funny version of it.
 
+# Encoding scheme
+Well there is an encoding scheme built into FreakC, it would have the structure of <b>-fc</b> with a encoding code, for example:
+
+	-fc0c1
+	::This is the letter "a"
+
+You can work with it in many cases like:
+
+	Swear[fnc] -fc0c1
+	
+If you are asking, why? Just, why? Well, I added this just for fun :)
+
+Letters from a - z are -fc0c1,...,-fc1c1,...-fc2c8.
+
+Letters from A - Z are -fc0a1,...,-fc1a1,...-fc2a8.
+
 # Nul in FreakC
 It's just like nul in Batch, so if you want to make your console not print out any process, you can do it like this:
 

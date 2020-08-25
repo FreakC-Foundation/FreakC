@@ -447,8 +447,19 @@ To hide errors, you can do this:
 
 	DisableCoolStuff[fnc]
 	
-<b>Note: The default is Hide command prompt content</b>
+<b>Note: All the command prompt content is hiden by default</b>
 
+### Prompt for date to change date
+
+	BuyCalender[fnc]
+	
+<b>Note: Administrator is required to run the command</b>
+	
+### Prompt for time to change time
+
+	BuyClock[fnc]
+
+<b>Note: Administrator is required to run the command</b>
 
 # Notes
 Most of the commands are just modified Batch commands, so you can actually apply Batch logic in it.

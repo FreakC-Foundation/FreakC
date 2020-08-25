@@ -440,6 +440,8 @@ To hide errors, you can do this:
 ### Show command prompt content
 
 	EnableCoolStuff[fnc]
+
+<b>This would be useful for debugging.</b>
 	
 ### Hide command prompt content
 

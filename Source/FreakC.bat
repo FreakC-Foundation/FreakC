@@ -45,6 +45,8 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 	set printString=!printString:CloseHouse[fnc]=ENDLOCAL!
 	set printString=!printString:SeeTime[fnc]=date /t!
 	set printString=!printString:SeeDate[fnc]=time /t!
+	set printString=!printString:BuyCalender[fnc]=date!
+	set printString=!printString:BuyClock[fnc]=time!
 	set printString=!printString:MyMemory[fnc]=dir!
 	set printString=!printString:DoIf[fnc]=if!
 	set printString=!printString:DoIfFalse[fnc]=if not!

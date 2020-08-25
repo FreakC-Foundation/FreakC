@@ -17,6 +17,8 @@ if "%command%" == "Die[fnc]" exit
 if "%command%" == "MyMemory[fnc]" dir
 if "%command%" == "SeeTime[fnc]" time /t
 if "%command%" == "SeeDate[fnc]" date /t
+if "%command%" == "BuyClock[fnc]" time
+if "%command%" == "BuyCalender[fnc]" date
 for %%a in (%command%) do (
 	set printString=%command%
 	if %%a == Swear[fnc] echo !printString:~11!

@@ -111,16 +111,16 @@ To print out every element of an array, you will need to use Batch in FreakC:
 	PoopInt[fnc] a[0]=100
 	PoopInt[fnc] a[1]=35
 	PoopInt[fnc] a[2]=20
-	for /l %%n in (0,1,2) do ( 
-   		echo !a[%%n]! 
+	LoopStuffs[fnc] %%n in (0,1,2) do ( 
+   		Swear[fnc] !a[%%n]! 
 	)
 
 Actually, there is a whole another way to create an array:
 
 	PoopString[fnc] arr=1 2 3 4 5
-	for %%i in (%arr%) do (
+	ScanLetters[fnc] %%i in (%arr%) do (
 		::Print out every elements
-		echo %%i
+		Swear[fnc] %%i
 	)
 	
 ### Local and global variables

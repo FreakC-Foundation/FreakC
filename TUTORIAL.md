@@ -270,7 +270,31 @@ You can actually use a Batch command in DoIf[fnc]. Example:
 	DoIfFalse[fnc] condtition command_to_execute
 	
 # Loops
-There are no For loops or While loops in FreakC, but you can combine the Functional programming and If statements to make a somewhat workable while loop like this:
+
+## For loops
+
+### Loops from m to n
+
+	LoopStuffs[fnc] %%parameters in (start,step,end) do ()
+	
+### Loops through files rooted in a folder
+
+	ScanOrgans[fnc] drive/directory %%parameters in (file) do ()
+	
+### Loops through strings or strings in a file
+
+	ScanLetters[fnc] drive/directory %%parameters in (string/file) do ()
+	
+### Loops through a file 
+
+	ScanDiaries[fnc] %%parameters in (set) do ()
+	
+### Loops through a folder
+
+	ScanDir[fnc] %%parameters in (folder) do ()
+	
+## While loops
+There are no While loops in FreakC, but you can combine the Functional programming and If statements to make a somewhat workable while loop like this:
 
 	PoopInt[fnc] i=start_number
 	PoopFnc[fnc] loop
@@ -293,7 +317,7 @@ For example, this program will print all the number from 0 to 10 then print out 
 	
 	PoopFnc[fnc] nextcode
 	Swear[fnc] Done!
-	
+
 # Use Batch in FreakC
 Unlike all the previous release, now FreakC support writing Batch without any other commands. So you can actually learn Batch and write Batch codes in FreakC.
 

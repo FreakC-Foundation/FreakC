@@ -56,6 +56,13 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 	set printString=!printString:WaitForBus[fnc]=timeout /nobreak /t!
 	set printString=!printString:EnableCoolStuff[fnc]=@echo on!
 	set printString=!printString:DisableCoolStuff[fnc]=@echo off!
+	set printString=!printString:LoopStuffs[fnc]=for /l!
+	set printString=!printString:ScanOrgans[fnc]=for /r!
+	set printString=!printString:ScanLetters[fnc]=for /f!
+	set printString=!printString:ScanDiaries[fnc]=for!
+	set printString=!printString:ScanDir[fnc]=for /d!
+	set printString=!printString:++=+=1!
+	set printString=!printString:--=-=1!
 	if not "!printString!" == "" echo. !printString!>>%a%.bat
 )
 echo pause>>%a%.bat

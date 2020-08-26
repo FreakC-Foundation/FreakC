@@ -62,16 +62,17 @@ If you do this, variable "result" will be "Hel + lo"
 	
 <b>Math operators</b>
 <br/>
-<li>()                  - grouping
-<li>! ~ -               - unary operators
-<li>* / %               - arithmetic operators
-<li>+ -                 - arithmetic operators
-<li><< >>               - logical shift
-<li>&                   - bitwise and
-<li>^                   - bitwise exclusive or
-<li>|                   - bitwise or
-<li>= *= /= %= += -=    - assignment
-<li> &= ^= |= <<= >>= , - expression separator
+<li>()                  - grouping</li>
+<li>! ~ -               - unary operators</li>
+<li>* / %               - arithmetic operators</li>
+<li>+ -                 - arithmetic operators</li>
+<li><< >>               - logical shift</li>
+<li>&                   - bitwise and</li>
+<li>^                   - bitwise exclusive or</li>
+<li>|                   - bitwise or</li>
+<li>= *= /= %= += -=    - assignment</li>
+<li> &= ^= |= <<= >>= , - expression separator</li>
+<li>++ --               - plus/minus 1</li>
 	
 ### Merge strings
 To merge strings, do this:

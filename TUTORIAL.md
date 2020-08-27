@@ -145,11 +145,14 @@ You can also do that with OpenHouse[fnc]
 	OpenHouse[fnc] ENABLEEXTENSIONS
 
 ### Special variables
-<li>%random% - A variable with the value as a random number</li>
+<li>%numpiss% - A variable with the value as random numbers from 1 to 9</li>
+<li>%numpuke% - A variable with the value as random numbers from 1 to 99</li>
+<li>%numpoop% - A variable with the value as random numbers from 1 to 999</li>
+<li>%numdiarrhea% - A variable with the value as random numbers from 1 to 9999</li>
+<li>%numbutt% - A variable with the value as random numbers from 1 to 99999</li>
 <li>%time% - A variable with the value as the current timer</li>
 <li>%date% - A variable with the value as the current date</li>
 <li>%cd% - A variable with the value as the current directory</li>
-<li>%date% - A variable with the value as the current date</li>
 <li>%errorlevel% - A variable with the value as the current Batch errorlevel value</li>
 <li>%cmdextversion% - A variable with the value as the current Command Processor Extensions version number</li>
 <li>%cmdcmdline% - A variable with the value as the original command line that invoked the Command Processor</li>

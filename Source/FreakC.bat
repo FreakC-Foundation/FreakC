@@ -6,6 +6,11 @@ set fccompilename=%1
 set a=%fccompilename:.fclang=%
 echo @echo off>%a%.bat
 echo :FreakCCompiled>>%a%.bat
+echo set /a numpuke=%%random%% %%%% 99 + 1 >>%a%.bat
+echo set /a numpoop=%%random%% %%%% 999 + 1 >>%a%.bat
+echo set /a numpiss=%%random%% %%%% 9 + 1 >>%a%.bat
+echo set /a numdiarrhea=%%random%% %%%% 9999 + 1 >>%a%.bat
+echo set /a numbutt=%%random%% %%%% 99999 + 1 >>%a%.bat
 for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 	set printString=%%x
 	for %%a in (%%x) do (
@@ -63,7 +68,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 	set printString=!printString:ScanDir[fnc]=for /d!
 	set printString=!printString:++=+=1!
 	set printString=!printString:--=-=1!
-	if not "!printString!" == "" echo. !printString!>>%a%.bat
+	echo. !printString!>>%a%.bat
 )
 echo pause>>%a%.bat
 if not "%fccompile%" == "true" call %a%.bat

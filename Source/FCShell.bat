@@ -8,11 +8,11 @@ echo FreakC Command Prompt
 echo.
 echo.
 :c2
-set /a numpuke=%%random%% %%%% 99 + 1
-set /a numpoop=%%random%% %%%% 999 + 1
-set /a numpiss=%%random%% %%%% 9 + 1
-set /a numdiarrhea=%%random%% %%%% 9999 + 1
-set /a numbutt=%%random%% %%%% 99999 + 1
+set /a numpuke=%random% %% 99 + 1
+set /a numpoop=%random% %% 999 + 1
+set /a numpiss=%random% %% 9 + 1
+set /a numdiarrhea=%random% %% 9999 + 1
+set /a numbutt=%random% %% 99999 + 1
 set /p command=~
 if "%command%" == "Shutdown[fnc]" goto Shutdown
 if "%command%" == "Forget[fnc]" goto Forget

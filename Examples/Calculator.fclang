@@ -20,7 +20,7 @@ SwearLine[fnc]
 SwearLine[fnc]     Enter your Math problem:
 
 PoopInput[fnc] prob=
-PoopInt[fnc] ans=%prob%
+PoopInt[fnc] ans=%prob% 2>nul
 
 Swear[fnc] Answer: %ans%
 

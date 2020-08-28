@@ -1,0 +1,32 @@
+ChangeName[fnc] 99 Bottles Of Beer
+
+PoopInt[fnc] count=99
+PoopFnc[fnc] loop
+
+DoIfFalse[fnc] %count% GTR 0 EatFnc[fnc] end
+DoIf[fnc] %count% LEQ 1 (
+	PoopString[fnc] word=bottle
+) else (
+	PoopString[fnc] word=bottles
+)
+
+Swear[fnc] %count% %word% of beer on the wall
+Swear[fnc] %count% %word% of beer,
+Swear[fnc] Take one down, pass it around,
+PoopInt[fnc] count--
+
+DoIf[fnc] %count% LEQ 1 (
+	PoopString[fnc] word=bottle
+) else (
+	PoopString[fnc] word=bottles
+)
+
+DoIf[fnc] %count% GTR 0 (
+	Swear[fnc] %count% %word% of beer on the wall.
+) else (
+	Swear[fnc] No more %word% of beer on the wall.
+)
+
+EatFnc[fnc] loop
+
+PoopFnc[fnc] end

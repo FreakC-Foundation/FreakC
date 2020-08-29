@@ -282,7 +282,25 @@ You can actually use a Batch command in DoIf[fnc]. Example:
 	DoIfFalse[fnc] condtition (
 		command_to_execute
 	)
-	
+
+### Else
+
+	DoIf[fnc] condition (
+		command_to_execute
+	) OrNot[fnc] (
+		command_to_execute
+	)
+
+## Notes
+To use if not for DoIfDefined[fnc] or DoIfExist[fnc], you can do this:
+
+	DoIfFalse[fnc] exist file (
+		command_to_execute
+	)
+	DoIfFalse[fnc] defined file (
+		command_to_execute
+	)
+
 # Loops
 
 ## For loops

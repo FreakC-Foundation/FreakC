@@ -243,12 +243,16 @@ To use if statement, type:
 Example:
 
 	PoopInt[fnc] abc=100
-	DoIf[fnc] %abc% == 100 Swear[fnc] abc is equal to 100
+	DoIf[fnc] %abc% == 100 (
+		Swear[fnc] abc is equal to 100
+	)
 	
 You can actually use a Batch command in DoIf[fnc]. Example:
 
 	PoopInt[fnc] abc=20
-	DoIf[fnc] %abc% == 20 echo abc is equal to 100
+	DoIf[fnc] %abc% == 20 (
+		echo abc is equal to 100
+	)
 	
 ## All the compare operators:
 <li>"==" - Equal</li>
@@ -263,15 +267,21 @@ You can actually use a Batch command in DoIf[fnc]. Example:
 
 ### Execute if a file exists
 
-	DoIfExist[fnc] file_name command_to_execute
+	DoIfExist[fnc] file_name (
+		command_to_execute
+	)
 	
 ### Execute if a variable is defined
 
-	DoIfDefined[fnc] variable_name command_to_execute
+	DoIfDefined[fnc] variable_name (
+		command_to_execute
+	)
 	
 ### Execute if a condition is false
 
-	DoIfFalse[fnc] condtition command_to_execute
+	DoIfFalse[fnc] condtition (
+		command_to_execute
+	)
 	
 # Loops
 
@@ -279,23 +289,28 @@ You can actually use a Batch command in DoIf[fnc]. Example:
 
 ### Loops from m to n
 
-	LoopStuffs[fnc] %%parameters in (start,step,end) do ()
+	LoopStuffs[fnc] %%parameters in (start,step,end) do (
+	)
 	
 ### Loops through files rooted in a folder
 
-	ScanOrgans[fnc] drive/directory %%parameters in (file) do ()
+	ScanOrgans[fnc] drive/directory %%parameters in (file) do (
+	)
 	
 ### Loops through strings or strings in a file
 
-	ScanLetters[fnc] drive/directory %%parameters in (string/file) do ()
+	ScanLetters[fnc] drive/directory %%parameters in (string/file) do (
+	)
 	
 ### Loops through a file 
 
-	ScanDiaries[fnc] %%parameters in (set) do ()
+	ScanDiaries[fnc] %%parameters in (set) do (
+	)
 	
 ### Loops through a folder
 
-	ScanDir[fnc] %%parameters in (folder) do ()
+	ScanDir[fnc] %%parameters in (folder) do (
+	)
 	
 ## While loops
 There are no While loops in FreakC, but you can combine the Functional programming and If statements to make a somewhat workable while loop like this:
@@ -490,6 +505,8 @@ To hide errors, you can do this:
 <b>Note: Administrator is required to run the command</b>
 
 # Notes
+<b>Please do not use two commands in online or else it will produces errors.</b> 
+
 Most of the commands are just modified Batch commands, so you can actually apply Batch logic in it.
 <br/>
 Ex: Swear[fnc], PukeDir[fnc], EatDir[fnc], StealDiary[fnc], Forget[fnc], GotoToilet[fnc], PoopInt[fnc], PoopString[fnc], PoopInput[fnc], Trash[fnc], TrashDir[fnc], PoopFnc[fnc], EatFnc[fnc],... logics and usages are just the same as echo, md, cd, type, cls, pause, set /a, set, set /p, del, rmdir, :function, goto,... in Batch.

@@ -56,7 +56,8 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 	set printString=!printString:DoIf[fnc]=if!
 	set printString=!printString:DoIfFalse[fnc]=if not!
 	set printString=!printString:DoIfDefined[fnc]=if defined!
-	set printString=!printString:DoIfExist[fnc]=if defined!
+	set printString=!printString:DoIfExist[fnc]=if exist!
+	set printString=!printString:OrNot[fnc]=else!
 	set printString=!printString:PoopFnc[fnc] =:!
 	set printString=!printString:WaitForBus[fnc]=timeout /nobreak /t!
 	set printString=!printString:EnableCoolStuff[fnc]=@echo on!

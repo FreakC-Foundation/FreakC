@@ -1,0 +1,29 @@
+ChangeName[fnc] Is Divisable Checker
+ChangeColor[fnc] 0a
+
+PoopFnc[fnc] menu
+Forget[fnc]
+
+Swear[fnc] Dividend:
+PoopInput[fnc] Dividend=
+
+SwearLine[fnc]
+
+Swear[fnc] Divisor:
+PoopInput[fnc] Divisor=
+
+PoopInt[fnc] Remainder=%Dividend% %% %Divisor%
+
+SwearLine[fnc]
+SwearLine[fnc]
+SwearLine[fnc]
+
+DoIf[fnc] %Remainder% == 0 (
+	Swear[fnc] It is divisable!
+) OrNot[fnc] (
+	Swear[fnc] It is not divisable!
+)
+
+GotoToilet[fnc] >nul
+
+EatFnc[fnc] menu

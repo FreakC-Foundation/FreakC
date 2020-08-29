@@ -1,0 +1,17 @@
+ChangeName[fnc] Odd or Even checker
+
+Forget[fnc]
+
+PoopInput[fnc] input=
+
+PoopInt[fnc] ans=%input% %% 2
+
+DoIf[fnc] %ans% == 0 (
+	Swear[fnc] Is even
+) OrNot[fnc] (
+	Swear[fnc] Is odd
+)
+
+GotoToilet[fnc]
+
+Loop[fnc]

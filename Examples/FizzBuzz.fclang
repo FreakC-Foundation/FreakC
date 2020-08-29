@@ -1,0 +1,29 @@
+ChangeName[fnc] FizzBuzz
+
+PoopInt[fnc] count=1
+PoopFnc[fnc] loop
+
+DoIfFalse[fnc] %count% LSS 101 (
+	EatFnc[fnc] end
+) 
+
+PoopInt[fnc] fizzbuzz=%count% %% 15
+PoopInt[fnc] fizz=%count% %% 3
+PoopInt[fnc] buzz=%count% %% 5
+
+
+DoIf[fnc] %fizzbuzz% == 0 (
+	echo FizzBuzz
+) OrNot[fnc] DoIf[fnc] %fizz% == 0 (
+	echo Fizz
+) OrNot[fnc] DoIF[fnc] %buzz% == 0 (
+	echo Buzz
+) OrNot[fnc] (
+	echo %count%
+)
+
+PoopInt[fnc] count++
+
+EatFnc[fnc] loop
+
+PoopFnc[fnc] end

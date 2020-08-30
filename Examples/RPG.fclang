@@ -1,0 +1,52 @@
+ChangeName[fnc] RPG DEMO
+ChangeColor[fnc] 2f
+ChangeSize[fnc] con cols=70 lines=20
+
+PoopInt[fnc] ehp=100
+PoopInt[fnc] hp=100
+
+PoopFnc[fnc] Battle
+Forget[fnc]
+
+DoIf[fnc] %ehp% LEQ 0 EatFnc[fnc] win
+DoIf[fnc] %hp% LEQ 0 EatFnc[fnc] lose
+
+SwearLine[fnc]
+SwearLine[fnc]
+SwearLine[fnc]
+SwearLine[fnc]                            Goblin: %ehp% HP
+SwearLine[fnc]                            You: %hp% HP
+SwearLine[fnc]
+SwearLine[fnc]
+SwearLine[fnc]
+SwearLine[fnc]
+SwearLine[fnc]                              Moves:
+SwearLine[fnc]
+SwearLine[fnc]                 1. Punch               2. Flee
+SwearLine[fnc]
+
+TapSomeSht[fnc] 12
+
+DoIfTap[fnc] 2 EatFnc[fnc] Flee
+DoIfTap[fnc] 1 EatFnc[fnc] Punch
+
+PoopFnc[fnc] Punch
+PoopInt[fnc] ehp-=20
+PoopInt[fnc] hp-=10
+EatFnc[fnc] Battle
+
+PoopFnc[fnc] Flee
+Forget[fnc]
+SwearLine[fnc]                        You fleed from battle!
+GotoToilet[fnc] >nul
+Die[fnc]
+
+PoopFnc[fnc] win
+SwearLine[fnc]                               You win!
+GotoToilet[fnc] >nul
+Die[fnc]
+
+PoopFnc[fnc] lose
+SwearLine[fnc]                   By somehow you lose, but okay...
+GotoToilet[fnc] >nul
+Die[fnc]

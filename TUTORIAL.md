@@ -523,7 +523,11 @@ To hide errors, you can do this:
 <b>Note: Administrator is required to run the command</b>
 
 # Notes
-<b>Please do not use two commands in online or else it will produces errors.</b> 
+<b>Please do not use two or more commands with these commands:</b> 
+<br/>
+<li>TapSomeSht[fnc]</li>
+<li>EatDrive[fnc]</li>
+<li>OddOrEven[fnc]</li>
 
 Most of the commands are just modified Batch commands, so you can actually apply Batch logic in it.
 <br/>

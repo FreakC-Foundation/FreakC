@@ -36,6 +36,7 @@ Well, FreakC is just an esoteric programming language, so you shouldn't expect F
 <li>Dirty and Funny syntax</li>
 <li>Additional variables like numpoop, numpuke, etc</li>
 <li>Additional functions like OddOrEven[fnc]</li>
+<li>Additional operators like "++" or "--"</li>
 
 ## Tutorials 
 <a href=https://github.com/nguyenphuminh/FreakC/blob/master/TUTORIAL.md>Click here to see tutorials</a>

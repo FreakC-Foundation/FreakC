@@ -12,14 +12,17 @@ echo set /a numpiss=%%random%% %%%% 9 + 1 >>%a%.bat
 echo set /a numdiarrhea=%%random%% %%%% 9999 + 1 >>%a%.bat
 echo set /a numbutt=%%random%% %%%% 99999 + 1 >>%a%.bat
 for /f "tokens=* delims= " %%x in (%a%.fclang) do (
+	set deniedToken=false
 	set printString=%%x
 	for %%a in (%%x) do (
 		if %%a == EatDrive[fnc] set printString=!printString:EatDrive[fnc] =!:
 		if %%a == OddOrEven[fnc] (
-			set /a num=!printString:~14! %% 2
-			if !num! == 0 set printString=echo Is even!
-			if not !num! == 0 set printString=echo Is odd!
+			set /a num=!printString:~14! %% 2			
+			echo if !num! == 0 echo Is even! >>%a%.bat
+			echo if not !num! == 0 echo Is odd! >>%a%.bat
+			set deniedToken=true
 		)
+		if %%a == TapSomeSht[fnc] set printString=!printString:TapSomeSht[fnc] =CHOICE /C:! /N
 	)
 	set printString=!printString:Swear[fnc]=echo!
 	set printString=!printString:SwearLine[fnc]=echo.!
@@ -54,9 +57,13 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 	set printString=!printString:BuyClock[fnc]=time!
 	set printString=!printString:MyMemory[fnc]=dir!
 	set printString=!printString:DoIf[fnc]=if!
+	set printString=!printString:DoIfTap[fnc]=if errorlevel!
+	set printString=!printString:DoIfNotTap[fnc]=if not errorlevel!
 	set printString=!printString:DoIfFalse[fnc]=if not!
 	set printString=!printString:DoIfDefined[fnc]=if defined!
 	set printString=!printString:DoIfExist[fnc]=if exist!
+	set printString=!printString:DoIfNotExist[fnc]=if not exist!
+	set printString=!printString:DoIfNotDefined[fnc]=if not defined!
 	set printString=!printString:OrNot[fnc]=else!
 	set printString=!printString:PoopFnc[fnc] =:!
 	set printString=!printString:WaitForBus[fnc]=timeout /nobreak /t!
@@ -69,7 +76,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 	set printString=!printString:ScanDir[fnc]=for /d!
 	set printString=!printString:++=+=1!
 	set printString=!printString:--=-=1!
-	echo. !printString!>>%a%.bat
+	if not "!deniedToken!" == "true" echo. !printString!>>%a%.bat
 )
 echo pause>>%a%.bat
 if not "%fccompile%" == "true" call %a%.bat

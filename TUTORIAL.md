@@ -207,7 +207,7 @@ To jump to a function, you use:
 
 To call a function, you use:
 
-	GrabFnc[fnc] function_name
+	GrabFnc[fnc] :function_name
 
 ### Differences between EatFnc[fnc] and GrabFnc[fnc]
 EatFnc[fnc] jumps to a function and will not execute the previous code while GrabFnc[fnc] use code from the function but still execute the previous code.
@@ -216,7 +216,7 @@ Also, GrabFnc[fnc] also supports parameters, which helps you a lot of time.
 
 For examples, this code will print the sum of two parameters:
 
-	GrabFnc[fnc] plus 1 2
+	GrabFnc[fnc] :plus 1 2
 	PoopFnc[fnc] plus
 	PoopInt[fnc] ans=%~1 + %~2
 	Swear[fnc] %ans%
@@ -294,12 +294,48 @@ You can actually use a Batch command in DoIf[fnc]. Example:
 ## Notes
 To use if not for DoIfDefined[fnc] or DoIfExist[fnc], you can do this:
 
-	DoIfFalse[fnc] exist file (
+	DoIfNotExist[fnc] file (
 		command_to_execute
 	)
-	DoIfFalse[fnc] defined file (
+	DoIfNotDefined[fnc] defined file (
 		command_to_execute
 	)
+	
+## Pressing keys with respond
+To receive keys pressed, add:
+
+	TapSomeSht[fnc] key
+	
+For examples, if you want the users to press one in "wsad", type:
+
+	TapSomeSht[fnc] wsad
+
+To perform any actions, you will need to use a special if statement:
+
+	DoIfTap[fnc] position_of_key_in_TapSomeSht[fnc]
+
+Example:
+
+	TapSomeSht[fnc] wsad
+	DoIfTap[fnc] 4 (
+		Swear[fnc] You pressed "W"
+	)
+	DoIfTap[fnc] 3 (
+		Swear[fnc] You pressed "W"
+	)
+	DoIfTap[fnc] 2 (
+		Swear[fnc] You pressed "W"
+	)
+	DoIfTap[fnc] 1 (
+		Swear[fnc] You pressed "W"
+	) 
+
+### If not for tapping
+You can use:
+
+	DoIfNotTap[fnc]
+	
+to use if not.
 
 # Loops
 

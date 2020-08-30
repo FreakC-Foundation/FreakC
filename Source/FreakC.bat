@@ -23,59 +23,61 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			set deniedToken=true
 		)
 		if %%a == TapSomeSht[fnc] set printString=!printString:TapSomeSht[fnc] =CHOICE /C:! /N
+		if %%a == Swear[fnc] set printString=!printString:Swear[fnc]=echo!
+		if %%a == SwearLine[fnc] set printString=!printString:SwearLine[fnc]=echo.!
+		if %%a == PukeDir[fnc] set printString=!printString:PukeDir[fnc]=md!
+		if %%a == EatDir[fnc] set printString=!printString:EatDir[fnc]=cd!
+		if %%a == Trash[fnc] set printString=!printString:Trash[fnc]=del!
+		if %%a == TrashDir[fnc] set printString=!printString:TrashDir[fnc]=rmdir!
+		if %%a == StealDiary[fnc] set printString=!printString:StealDiary[fnc]=type!
+		if %%a == PoopInt[fnc] (
+			set printString=!printString:PoopInt[fnc]=set /a!
+			set printString=!printString:++=+=1!
+			set printString=!printString:--=-=1!
+		)
+		if %%a == PoopString[fnc] set printString=!printString:PoopString[fnc]=set!
+		if %%a == PoopInput[fnc] set printString=!printString:PoopInput[fnc]=set /p!
+		if %%a == EatFnc[fnc] set printString=!printString:EatFnc[fnc]=goto!
+		if %%a == GrabFnc[fnc] set printString=!printString:GrabFnc[fnc]=call!
+		if %%a == ChangeColor[fnc] set printString=!printString:ChangeColor[fnc]=color!
+		if %%a == ChangeSize[fnc] set printString=!printString:ChangeSize[fnc]=mode!
+		if %%a == ChangeName[fnc] set printString=!printString:ChangeName[fnc]=title!
+		if %%a == RenameFile[fnc] set printString=!printString:RenameFile[fnc]=ren!
+		if %%a == MoveFile[fnc] set printString=!printString:MoveFile[fnc]=move!
+		if %%a == CopyFile[fnc] set printString=!printString:CopyFile[fnc]=copy!
+		if %%a == PlayFile[fnc] set printString=!printString:PlayFile[fnc]=start!
+		if %%a == Die[fnc] set printString=!printString:Die[fnc]=exit!
+		if %%a == Loop[fnc] set printString=!printString:Loop[fnc]=goto FreakCCompiled!
+		if %%a == ShutdownSystem[fnc] set printString=!printString:ShutdownSystem[fnc]=shutdown -s -t 0!
+		if %%a == RestartSystem[fnc] set printString=!printString:RestartSystem[fnc]=shutdown -r -t 0!
+		if %%a == Forget[fnc] set printString=!printString:Forget[fnc]=cls!
+		if %%a == GotoToilet[fnc] set printString=!printString:GotoToilet[fnc]=pause!
+		if %%a == OpenHouse[fnc] set printString=!printString:OpenHouse[fnc]=SETLOCAL!
+		if %%a == CloseHouse[fnc] set printString=!printString:CloseHouse[fnc]=ENDLOCAL!
+		if %%a == SeeTime[fnc] set printString=!printString:SeeTime[fnc]=date /t!
+		if %%a == SeeDate[fnc] set printString=!printString:SeeDate[fnc]=time /t!
+		if %%a == BuyCalender[fnc] set printString=!printString:BuyCalender[fnc]=date!
+		if %%a == BuyClock[fnc] set printString=!printString:BuyClock[fnc]=time!
+		if %%a == MyMemory[fnc] set printString=!printString:MyMemory[fnc]=dir!
+		if %%a == DoIf[fnc] set printString=!printString:DoIf[fnc]=if!
+		if %%a == DoIfTap[fnc] set printString=!printString:DoIfTap[fnc]=if errorlevel!
+		if %%a == DoIfNotTap[fnc] set printString=!printString:DoIfNotTap[fnc]=if not errorlevel!
+		if %%a == DoIfFalse[fnc] set printString=!printString:DoIfFalse[fnc]=if not!
+		if %%a == DoIfDefined[fnc] set printString=!printString:DoIfDefined[fnc]=if defined!
+		if %%a == DoIfExist[fnc] set printString=!printString:DoIfExist[fnc]=if exist!
+		if %%a == DoIfNotExist[fnc] set printString=!printString:DoIfNotExist[fnc]=if not exist!
+		if %%a == DoIfNotDefined[fnc] set printString=!printString:DoIfNotDefined[fnc]=if not defined!
+		if %%a == OrNot[fnc] set printString=!printString:OrNot[fnc]=else!
+		if %%a == PoopFnc[fnc]  set printString=!printString:PoopFnc[fnc] =:!
+		if %%a == WaitForBus[fnc] set printString=!printString:WaitForBus[fnc]=timeout /nobreak /t!
+		if %%a == EnableCoolStuff[fnc] set printString=!printString:EnableCoolStuff[fnc]=@echo on!
+		if %%a == DisableCoolStuff[fnc] set printString=!printString:DisableCoolStuff[fnc]=@echo off!
+		if %%a == LoopStuffs[fnc] set printString=!printString:LoopStuffs[fnc]=for /l!
+		if %%a == ScanOrgans[fnc] set printString=!printString:ScanOrgans[fnc]=for /r!
+		if %%a == ScanLetters[fnc] set printString=!printString:ScanLetters[fnc]=for /f!
+		if %%a == ScanDiaries[fnc] set printString=!printString:ScanDiaries[fnc]=for!
+		if %%a == ScanDir[fnc] set printString=!printString:ScanDir[fnc]=for /d!
 	)
-	set printString=!printString:Swear[fnc]=echo!
-	set printString=!printString:SwearLine[fnc]=echo.!
-	set printString=!printString:PukeDir[fnc]=md!
-	set printString=!printString:EatDir[fnc]=cd!
-	set printString=!printString:Trash[fnc]=del!
-	set printString=!printString:TrashDir[fnc]=rmdir!
-	set printString=!printString:StealDiary[fnc]=type!
-	set printString=!printString:PoopInt[fnc]=set /a!
-	set printString=!printString:PoopString[fnc]=set!
-	set printString=!printString:PoopInput[fnc]=set /p!
-	set printString=!printString:EatFnc[fnc]=goto!
-	set printString=!printString:GrabFnc[fnc]=call!
-	set printString=!printString:ChangeColor[fnc]=color!
-	set printString=!printString:ChangeSize[fnc]=mode!
-	set printString=!printString:ChangeName[fnc]=title!
-	set printString=!printString:RenameFile[fnc]=ren!
-	set printString=!printString:MoveFile[fnc]=move!
-	set printString=!printString:CopyFile[fnc]=copy!
-	set printString=!printString:PlayFile[fnc]=start!
-	set printString=!printString:Die[fnc]=exit!
-	set printString=!printString:Loop[fnc]=goto FreakCCompiled!
-	set printString=!printString:ShutdownSystem[fnc]=shutdown -s -t 0!
-	set printString=!printString:RestartSystem[fnc]=shutdown -r -t 0!
-	set printString=!printString:Forget[fnc]=cls!
-	set printString=!printString:GotoToilet[fnc]=pause!
-	set printString=!printString:OpenHouse[fnc]=SETLOCAL!
-	set printString=!printString:CloseHouse[fnc]=ENDLOCAL!
-	set printString=!printString:SeeTime[fnc]=date /t!
-	set printString=!printString:SeeDate[fnc]=time /t!
-	set printString=!printString:BuyCalender[fnc]=date!
-	set printString=!printString:BuyClock[fnc]=time!
-	set printString=!printString:MyMemory[fnc]=dir!
-	set printString=!printString:DoIf[fnc]=if!
-	set printString=!printString:DoIfTap[fnc]=if errorlevel!
-	set printString=!printString:DoIfNotTap[fnc]=if not errorlevel!
-	set printString=!printString:DoIfFalse[fnc]=if not!
-	set printString=!printString:DoIfDefined[fnc]=if defined!
-	set printString=!printString:DoIfExist[fnc]=if exist!
-	set printString=!printString:DoIfNotExist[fnc]=if not exist!
-	set printString=!printString:DoIfNotDefined[fnc]=if not defined!
-	set printString=!printString:OrNot[fnc]=else!
-	set printString=!printString:PoopFnc[fnc] =:!
-	set printString=!printString:WaitForBus[fnc]=timeout /nobreak /t!
-	set printString=!printString:EnableCoolStuff[fnc]=@echo on!
-	set printString=!printString:DisableCoolStuff[fnc]=@echo off!
-	set printString=!printString:LoopStuffs[fnc]=for /l!
-	set printString=!printString:ScanOrgans[fnc]=for /r!
-	set printString=!printString:ScanLetters[fnc]=for /f!
-	set printString=!printString:ScanDiaries[fnc]=for!
-	set printString=!printString:ScanDir[fnc]=for /d!
-	set printString=!printString:++=+=1!
-	set printString=!printString:--=-=1!
 	if not "!deniedToken!" == "true" echo. !printString!>>%a%.bat
 )
 echo pause>>%a%.bat

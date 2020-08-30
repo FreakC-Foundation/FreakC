@@ -16,7 +16,7 @@ DoIf[fnc] %fizzbuzz% == 0 (
 	echo FizzBuzz
 ) OrNot[fnc] DoIf[fnc] %fizz% == 0 (
 	echo Fizz
-) OrNot[fnc] DoIF[fnc] %buzz% == 0 (
+) OrNot[fnc] DoIf[fnc] %buzz% == 0 (
 	echo Buzz
 ) OrNot[fnc] (
 	echo %count%

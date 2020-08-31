@@ -565,6 +565,10 @@ To hide errors, you can do this:
 <li>EatDrive[fnc]</li>
 <li>OddOrEven[fnc]</li>
 
+<br/>
+<b>Also, FreakC is case-sensitive, so you need to be strict with your code.</b>
+
+<br/>
 Most of the commands are just modified Batch commands, so you can actually apply Batch logic in it.
 <br/>
 Ex: Swear[fnc], PukeDir[fnc], EatDir[fnc], StealDiary[fnc], Forget[fnc], GotoToilet[fnc], PoopInt[fnc], PoopString[fnc], PoopInput[fnc], Trash[fnc], TrashDir[fnc], PoopFnc[fnc], EatFnc[fnc],... logics and usages are just the same as echo, md, cd, type, cls, pause, set /a, set, set /p, del, rmdir, :function, goto,... in Batch.

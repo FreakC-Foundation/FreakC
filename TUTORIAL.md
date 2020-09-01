@@ -17,6 +17,24 @@ You can actually store data to a file by using:
 
 	Swear[fnc] data>>file
 
+# Special characters
+You can type special characters by simply using "^", for example:
+
+	Swear[fnc] ^ư
+	::This would print "ư"
+	
+<b>Unlike any characters, "!" requires "^", for example:</b>
+
+	::This would causes no errors
+	Swear[fnc] @#/
+	
+	::This would cause error ("!" will not be shown)
+	Swear[fnc] !
+	
+	::Correct codes:
+	Swear[fnc] ^!
+	
+The reason for this is that FreakC has: SETLOCAL ENABLEDELAYEDEXPANSION which causes ! to not be used properly.
 
 # Variables and data types
 
@@ -143,6 +161,8 @@ You can also do that with OpenHouse[fnc]
 
 	OpenHouse[fnc] ENABLEDELAYEDEXPANSION
 	OpenHouse[fnc] ENABLEEXTENSIONS
+	
+<b>Note: DELAYEDEXPANSION is already enabled in FreakC. So you wouldn't need to enable it actually.</b>
 
 ### Special variables
 <li>%numpiss% - A variable with the value as random numbers from 1 to 9</li>
@@ -396,12 +416,6 @@ Unlike all the previous release, now FreakC support writing Batch without any ot
 
 ### Is adding Batch to FreakC will kill the usages of FreakC ?
 Well, I would say it will and won't at the same time. What I mean is that if there is Batch in FreakC, you would definitely write Batch rather than FreakC, but actually, FreakC codes are just compiled to Batch anyway. The only key feature of FreakC is being an esolang with funny and dirty syntax, that's why people would want to use it. FreakC doesn't improve Batch, it's just a funny version of it.
-
-# Special characters
-You can type special characters by simply using "^", for example:
-
-	Swear[fnc] ^ư
-	::This would print "ư"
 
 # Nul in FreakC
 It's just like nul in Batch, so if you want to make your console not print out any process, you can do it like this:

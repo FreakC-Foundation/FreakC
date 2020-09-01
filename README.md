@@ -8,7 +8,7 @@
 </div>
 
 ## What is FreakC ?
-FreakC is an transpiled esoteric programming language that... has nothing to do with the C programming language. This programming language's syntax is dirty and funny, but it can actually make many decent programs.
+FreakC is a transpiled esoteric scripting programming language that... has nothing to do with the C programming language. This programming language's syntax is dirty and funny, but it can actually make many decent programs. The language is very similar to Batch, and it is also transpiled to Batch.
 
 ## What is in the devkit ?
 <li>A FreakC compiler</li>

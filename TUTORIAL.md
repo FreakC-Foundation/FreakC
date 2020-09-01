@@ -274,7 +274,7 @@ You can actually use a Batch command in DoIf[fnc]. Example:
 		echo abc is equal to 100
 	)
 	
-## All the compare operators:
+## All the comparison operators:
 <li>"==" - Equal</li>
 <li>"EQU" - Equal</li>
 <li>"NEQ" - Not equal</li>

@@ -31,7 +31,7 @@ If you want to compile the code only, type:
 <b>The compiler only works on Windows, and can only be compiled to Batch.</b>
 
 ## In what part does FreakC upgrade from Batch ?
-Well, FreakC is just an esoteric programming language, so you shouldn't expect FreakC to be better than Batch, but here are some of them:
+Well, FreakC is just an esoteric programming language, so you shouldn't expect FreakC to be upgraded from Batch, but here are some of them:
 
 <li>Dirty and Funny syntax</li>
 <li>Additional variables like numpoop, numpuke, etc</li>

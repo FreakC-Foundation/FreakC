@@ -34,7 +34,7 @@ You can type special characters by simply using "^", for example:
 	::Correct codes:
 	Swear[fnc] ^!
 	
-The reason for this is that FreakC has: SETLOCAL ENABLEDELAYEDEXPANSION which causes ! to not be used properly.
+The reason for this is that FreakC has: SETLOCAL ENABLEDELAYEDEXPANSION which causes "!" to not be used properly.
 
 # Variables and data types
 

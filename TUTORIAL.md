@@ -357,6 +357,17 @@ You can use:
 	
 to use if not.
 
+## Instant condition checking
+You can type this to check if the condition is true or false instantly:
+
+	TryMeBtch[fnc] condition
+	
+Then, it will prints out "Yes" if true, "No" if false.
+
+For example, this will prints out "Yes"
+
+	TryMeBtch[fnc] "hello" == "hello"
+
 # Loops
 
 ## For loops

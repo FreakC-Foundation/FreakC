@@ -403,8 +403,8 @@ There are no While loops in FreakC, but you can combine the Functional programmi
 	PoopInt[fnc] i=start_number
 	PoopFnc[fnc] loop
 	command
-	DoIf[fnc] %i% == end_number goto nextcode
-	set /a i+=1
+	DoIf[fnc] %i% == end_number EatFnc[fnc] nextcode
+	PoopInt[fnc] i++
 	EatFnc[fnc] loop
 	
 	PoopFnc[fnc] nextcode
@@ -415,8 +415,8 @@ For example, this program will print all the number from 0 to 10 then print out 
 	PoopInt[fnc] i=0
 	PoopFnc[fnc] loop
 	Swear[fnc] %i%
-	DoIf[fnc] %i% == 10 goto nextcode
-	set /a i+=1
+	DoIf[fnc] %i% == 10 EatFnc[fnc] nextcode
+	PoopInt[fnc] i++
 	EatFnc[fnc] loop
 	
 	PoopFnc[fnc] nextcode
@@ -587,6 +587,7 @@ To hide errors, you can do this:
 <b>Please do not use two or more commands with these commands:</b> 
 <br/>
 <li>TapSomeSht[fnc]</li>
+<li>TryMeBtch[fnc]</li>
 <li>EatDrive[fnc]</li>
 <li>OddOrEven[fnc]</li>
 

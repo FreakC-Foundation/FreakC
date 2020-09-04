@@ -1,7 +1,11 @@
 @echo off
 setlocal enabledelayedexpansion
 if "%1" == "" fcshell
-if "%2" == "--compile" set fccompile=true
+if "%2" == "--compile" (
+	set fccompile=true
+) else if "%2" == "--candr" (
+	set fcread=true
+)
 set fccompilename=%1
 set a=%fccompilename:.fclang=%
 echo @echo off>%a%.bat
@@ -16,6 +20,13 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 	set printString=%%x
 	for %%a in (%%x) do (
 		if %%a == EatDrive[fnc] set printString=!printString:EatDrive[fnc] =!:
+
+		if %%a == TryMeBtch[fnc] (
+			set tmb=!printString:TryMeBtch[fnc] =!
+			echo if !tmb! echo Yes>>%a%.bat
+			echo if not !tmb! echo No>>%a%.bat
+			set deniedToken=true
+		)
 		if %%a == OddOrEven[fnc] (
 			set /a num=!printString:~14! %% 2			
 			echo if !num! == 0 echo Is even! >>%a%.bat
@@ -77,9 +88,14 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == ScanLetters[fnc] set printString=!printString:ScanLetters[fnc]=for /f!
 		if %%a == ScanDiaries[fnc] set printString=!printString:ScanDiaries[fnc]=for!
 		if %%a == ScanDir[fnc] set printString=!printString:ScanDir[fnc]=for /d!
+		if %%a == HackTheNet[fnc] set printString=!printString:HackTheNet[fnc]=ping!
+		if %%a == MyDirtyInfo[fnc] set printString=!printString:MyDirtyInfo[fnc]=systeminfo!
+		if %%a == HackMyIP[fnc] set printString=!printString:HackMyIP[fnc]=ipconfig /all!
 	)
-	if not "!deniedToken!" == "true" echo. !printString!>>%a%.bat
+	if not "!deniedToken!" == "true" echo. !printString! >>%a%.bat
 )
 echo pause>>%a%.bat
-if not "%fccompile%" == "true" call %a%.bat
+setlocal disabledelayedexpansion
+if "%fcread%" == "true" type %a%.bat
+if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
 @echo on

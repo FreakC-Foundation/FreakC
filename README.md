@@ -27,6 +27,10 @@ Example:
 If you want to compile the code only, type:
 
     freakc "file.fclang" --compile
+    
+If you want to compile the code and show the compiled code, type:
+
+    freakc "file.fclang" --candr
 
 <b>The compiler only works on Windows, and can only be compiled to Batch.</b>
 

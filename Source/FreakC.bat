@@ -1,6 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
 if "%1" == "" fcshell
+if "%1" == "--version" goto fcversion
 if "%2" == "--compile" (
 	set fccompile=true
 ) else if "%2" == "--candr" (
@@ -20,11 +21,16 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 	set printString=%%x
 	for %%a in (%%x) do (
 		if %%a == EatDrive[fnc] set printString=!printString:EatDrive[fnc] =!:
-
 		if %%a == TryMeBtch[fnc] (
 			set tmb=!printString:TryMeBtch[fnc] =!
 			echo if !tmb! echo Yes>>%a%.bat
 			echo if not !tmb! echo No>>%a%.bat
+			set deniedToken=true
+		)
+		if %%a == CoolHackerMan[fnc] (
+			echo :CoolHackerMan>>%a%.bat
+			echo echo %%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%>>%a%.bat
+			echo goto CoolHackerMan>>%a%.bat
 			set deniedToken=true
 		)
 		if %%a == OddOrEven[fnc] (
@@ -98,4 +104,8 @@ echo pause>>%a%.bat
 setlocal disabledelayedexpansion
 if "%fcread%" == "true" type %a%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
+exit /b
+@echo on
+:fcversion
+echo FreakC DevKit Version 3.10.1
 @echo on

@@ -31,6 +31,10 @@ If you want to compile the code only, type:
 If you want to compile the code and show the compiled code, type:
 
     freakc "file.fclang" --candr
+    
+To show the current version of the devkit, type:
+
+    freakc --version
 
 <b>The compiler only works on Windows, and can only be compiled to Batch.</b>
 

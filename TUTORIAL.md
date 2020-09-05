@@ -91,6 +91,16 @@ If you do this, variable "result" will be "Hel + lo"
 <li>= *= /= %= += -=    - assignment</li>
 <li> &= ^= |= <<= >>= , - expression separator</li>
 <li>++ --               - plus/minus 1</li>
+
+## Some Math commands
+
+### Make a number squared
+
+	SquareMyBois[fnc] variable_without_%%
+	
+### Make a number cubed
+
+	CubeMyBois[fnc] variable_without_%%
 	
 ### Merge strings
 To merge strings, do this:

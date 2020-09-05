@@ -34,9 +34,19 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			set deniedToken=true
 		)
 		if %%a == OddOrEven[fnc] (
-			set /a num=!printString:~14! %% 2			
+			set /a num=!printString:~14! %% 2
 			echo if !num! == 0 echo Is even! >>%a%.bat
 			echo if not !num! == 0 echo Is odd! >>%a%.bat
+			set deniedToken=true
+		)
+		if %%a == SquareMyBois[fnc] (
+			set sqmb=!printString:SquareMyBois[fnc] =!
+			echo set /a !sqmb!=%%!sqmb!%% * %%!sqmb!%%>>%a%.bat
+			set deniedToken=true
+		)
+		if %%a == CubeMyBois[fnc] (
+			set sqmb=!printString:SquareMyBois[fnc] =!
+			echo set /a !sqmb!=%%!sqmb!%% * %%!sqmb!%% * %%!sqmb!%%>>%a%.bat
 			set deniedToken=true
 		)
 		if %%a == TapSomeSht[fnc] set printString=!printString:TapSomeSht[fnc] =CHOICE /C:! /N

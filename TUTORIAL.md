@@ -583,6 +583,12 @@ To hide errors, you can do this:
 
 <b>Note: Administrator is required to run the command</b>
 
+# Just-for-fun commands
+
+### Prints out random numbers continously (like in the Matrix)
+
+	CoolHackerMan[fnc]
+
 # Notes
 <b>Please do not use two or more commands with these commands:</b> 
 <br/>

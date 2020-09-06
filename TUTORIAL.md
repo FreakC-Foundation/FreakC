@@ -68,8 +68,6 @@ To declare a variable from user's input, you use:
 Note: If you do this, it will prints out "Enter name:" right next to the input
 
 	PoopInput[fnc] variable_name=Enter name:
-	
-Also, array index starts at 0 
 
 ### Maths 
 You can do Math with FreakC like this:
@@ -201,7 +199,7 @@ There are a lot of special variables left, but you might not find uses for them
 <li>%PATH:~10,5% - would expand the PATH environment variable, and then use only the 5 characters that begin at the 11th (offset 10) character of the expanded result.  If the length is not specified, then it defaults to the remainder of the variable value.  If either number (offset or length) is negative, then the number used is the length of the environment variable value added to the offset or length specified/li>
 
 ### Notes
-There are variables that you CAN NOT USE like: %a%, %printString%, %fccompile%, %fccompilename%
+There are variables that you CAN NOT USE like: %a%, %printString%, %fccompile%, %fccompilename%, %fcread%.
 
 Also, spaces in FreakC is extremely important, so if you declare a variable like this:
 

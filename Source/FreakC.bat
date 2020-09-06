@@ -110,12 +110,11 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 	)
 	if not "!deniedToken!" == "true" echo. !printString! >>%a%.bat
 )
-echo pause>>%a%.bat
+echo pause ^>nul>>%a%.bat
 setlocal disabledelayedexpansion
 if "%fcread%" == "true" type %a%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
 exit /b
-@echo on
 :fcversion
-echo FreakC DevKit Version 3.10.1
-@echo on
+echo FreakC DevKit Version 3.11.0
+exit /b

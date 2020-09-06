@@ -39,7 +39,7 @@ The reason for this is that FreakC has: SETLOCAL ENABLEDELAYEDEXPANSION which ca
 # Variables and data types
 
 ## Data types
-There are three data types in FreakC: integer, string and list.
+There are three data types in FreakC: integer, string.
 
 ## Variables
 To declare a variable as a string, you use:
@@ -58,6 +58,8 @@ Ex:
 	
 	PoopString[fnc] arr[0]=Hello
 	PoopInt[fnc] arr[1]=100
+	
+<b>Note: There is no real Array in FreakC, the reason for naming arr[index] is to run for loops easier for all those "fake elements of a fake Array".</b>
 
 To declare a variable from user's input, you use:
 

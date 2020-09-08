@@ -1,6 +1,21 @@
 @echo off
 setlocal enabledelayedexpansion
-if "%1" == "" fcshell
+if "%1" == "" (
+	echo.
+	echo.
+	echo. Usage: freakc {option/file} {option}
+	echo.
+	echo.
+	echo. Options:
+	echo.
+	echo.  --version  :Should be the first parameter, shows the current version of the DevKit.
+	echo.  --compile  :Should be the second parameter, compile the file only.
+	echo.  --candr    :Should be the second parameter, compile and shows compiled code.
+	echo.
+	echo.  [Don't use any options above to compile and run the file at the same time]
+	pause >nul
+	exit /b
+)
 if "%1" == "--version" goto fcversion
 if "%2" == "--compile" (
 	set fccompile=true

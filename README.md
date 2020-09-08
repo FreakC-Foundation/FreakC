@@ -12,7 +12,6 @@ FreakC is a transpiled esoteric scripting programming language that... has nothi
 
 ## What is in the devkit ?
 <li>A FreakC compiler</li>
-<li>A FreakC terminal</li>
 <li>Some optional utilities</li>
 
 ## Compiler's usage
@@ -70,6 +69,9 @@ There are many frameworks in the utilities folder that you can use, I will defin
 <li>Useful variables</li>
 <li>Useful functionalities like if statements, for loops, plus/minus by 1 operators and more</li>
 <li>The compiler in much more well-built than all the previous releases</li>
+
+## The removal of FCShell
+FCShell had always been a great tool for devs, but being so busy and stressed right now, I can't not make any updates for it. You can say that I'm lazy, yeah I'm actually pretty lazy. If I have time, I would bring back FCShell. I am still having fun making FreakC, but I don't have times for it.
 
 ## Developers
 <li>Owner/Developer: Nguyen Phu Minh</li>

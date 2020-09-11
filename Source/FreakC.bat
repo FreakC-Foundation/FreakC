@@ -123,9 +123,8 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == MyDirtyInfo[fnc] set printString=!printString:MyDirtyInfo[fnc]=systeminfo!
 		if %%a == HackMyIP[fnc] set printString=!printString:HackMyIP[fnc]=ipconfig /all!
 	)
-	if not "!deniedToken!" == "true" echo. !printString! >>%a%.bat
+	if not "!deniedToken!" == "true" echo. !printString!>>%a%.bat
 )
-echo pause ^>nul>>%a%.bat
 setlocal disabledelayedexpansion
 if "%fcread%" == "true" type %a%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat

@@ -265,6 +265,23 @@ Unlike many programming languages, you can name your function with special chara
 	PoopFnc[fnc] dsasd$ 123213 323
 	EatFnc[fnc] dsasd$ 123213 323
 	
+# Object Oriented Programming
+There is no such thing as "OOP on FreakC", but you can fake one, like this:
+
+	::Call the function "Car" with parameters to declares elements
+	GrabFnc[fnc] :Car "supercar" "20" "special"
+	
+	::Would print out the element "gas" of "supercar"
+	Swear[fnc] %supercar.gas%
+
+	::Would create a function called "Car", then pass all the parameters to the new variables.
+	PoopFnc[fnc] Car 
+	DoIfFalse[fnc] "%~1" == "" DoIfFalse[fnc] "%~2" == "" DoIfFalse[fnc] "%~3" == "" ( 
+		PoopString[fnc] %~1.gas=%~2
+		PoopString[fnc] %~1.model=%~3
+	)
+	Die[fnc] /b 0
+	
 # If statements
 To use if statement, type:
 

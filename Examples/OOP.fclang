@@ -1,0 +1,9 @@
+GrabFnc[fnc] :Car "toyota" "19" "special"
+Swear[fnc] %toyota.gas%
+Swear[fnc] %toyota.model%
+PoopFnc[fnc] Car 
+DoIfFalse[fnc] "%~1" == "" DoIfFalse[fnc] "%~2" == "" DoIfFalse[fnc] "%~3" == "" ( 
+	PoopString[fnc] %~1.gas=%~2
+	PoopString[fnc] %~1.model=%~3
+)
+Die[fnc] /b 0

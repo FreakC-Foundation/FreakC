@@ -36,6 +36,13 @@ You can type special characters by simply using "^", for example:
 	
 The reason for this is that FreakC has: SETLOCAL ENABLEDELAYEDEXPANSION which causes "!" to not be used properly.
 
+# First note
+To pause in FreakC, please type in:
+	
+	GotoToilet[fnc]
+
+You will see this command underneath, but you should you this command to pause your program.
+
 # Variables and data types
 
 ## Data types

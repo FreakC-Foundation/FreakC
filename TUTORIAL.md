@@ -18,12 +18,7 @@ You can actually store data to a file by using:
 	Swear[fnc] data>>file
 
 # Special characters
-You can type special characters by simply using "^", for example:
-
-	Swear[fnc] ^ư
-	::This would print "ư"
-	
-<b>Unlike any characters, "!" requires "^", for example:</b>
+Unlike any characters, "!" requires "^", for example:
 
 	::This would causes no errors
 	Swear[fnc] @#/

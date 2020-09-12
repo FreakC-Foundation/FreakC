@@ -1,3 +1,5 @@
+ChangeName[fnc] OOP in FreakC
+
 GrabFnc[fnc] :Car "toyota" "19" "special"
 Swear[fnc] %toyota.gas%
 Swear[fnc] %toyota.model%
@@ -7,3 +9,4 @@ DoIfFalse[fnc] "%~1" == "" DoIfFalse[fnc] "%~2" == "" DoIfFalse[fnc] "%~3" == ""
 	PoopString[fnc] %~1.model=%~3
 )
 Die[fnc] /b 0
+GotoToilet[fnc] >nul

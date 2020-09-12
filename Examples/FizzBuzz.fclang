@@ -27,3 +27,4 @@ PoopInt[fnc] count++
 EatFnc[fnc] loop
 
 PoopFnc[fnc] end
+GotoToilet[fnc] >nul

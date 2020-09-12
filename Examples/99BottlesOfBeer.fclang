@@ -30,3 +30,4 @@ DoIf[fnc] %count% GTR 0 (
 EatFnc[fnc] loop
 
 PoopFnc[fnc] end
+GotoToilet[fnc] >nul

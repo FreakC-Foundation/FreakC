@@ -13,13 +13,13 @@ PoopInt[fnc] buzz=%count% %% 5
 
 
 DoIf[fnc] %fizzbuzz% == 0 (
-	echo FizzBuzz
+	Swear[fnc] FizzBuzz
 ) OrNot[fnc] DoIf[fnc] %fizz% == 0 (
-	echo Fizz
+	Swear[fnc] Fizz
 ) OrNot[fnc] DoIf[fnc] %buzz% == 0 (
-	echo Buzz
+	Swear[fnc] Buzz
 ) OrNot[fnc] (
-	echo %count%
+	Swear[fnc] %count%
 )
 
 PoopInt[fnc] count++

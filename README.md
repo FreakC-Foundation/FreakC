@@ -41,8 +41,8 @@ To show the current version of the devkit, type:
 Well, FreakC is just an esoteric programming language, so you shouldn't expect FreakC to be upgraded from Batch, but here are some of them:
 
 <li>Dirty and Funny syntax</li>
-<li>Additional variables like numpoop, numpuke, etc</li>
-<li>Additional functions like OddOrEven[fnc]</li>
+<li>Additional variables like 'numpoop', 'numpuke', etc</li>
+<li>Additional functions like 'OddOrEven[fnc]', 'CoolHackerMan[fnc]',...</li>
 <li>Additional operators like "++" or "--"</li>
 
 ## Tutorials 
@@ -63,6 +63,8 @@ In "FreakC/Utilities/Scripts" there is a file called "FreakC.sublime-build" whic
 
 ## Frameworks
 There are many frameworks in the utilities folder that you can use, I will definitely update the usage of them soon.
+
+<b>Note: I don't own all of those framework.</b>
 
 ## 3.x Releases
 3.x releases are the finest releases of FreakC, they removes all the unnecessary commands/functions, as well as adding many new useful features like:

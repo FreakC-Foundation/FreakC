@@ -427,7 +427,26 @@ For example, this will prints out "Yes"
 	)
 	
 ## While loops
-There are no While loops in FreakC, but you can combine the Functional programming and If statements to make a somewhat workable while loop like this:
+While loops can be created using:
+
+	WhileSuck[fnc] condition
+	::code
+	EndSuck[fnc]
+
+Of course, the loops will run when the condition is false.
+
+### Notes when using while loops
+<b>YOU CAN NOT USE NESTED WHILE LOOPS</b>
+<br/>
+This will be wrong:
+
+	WhileSuck[fnc] condition
+	WhileSuck[fnc] condition
+	EndSuck[fnc]
+	EndSuck[fnc]
+
+## The better way for while loops
+You can combine the Functional programming and If statements to make a somewhat workable while loop like this:
 
 	PoopInt[fnc] i=start_number
 	PoopFnc[fnc] loop
@@ -450,6 +469,7 @@ For example, this program will print all the number from 0 to 10 then print out 
 	
 	PoopFnc[fnc] nextcode
 	Swear[fnc] Done!
+
 
 # Use Batch in FreakC
 Unlike all the previous release, now FreakC support writing Batch without any other commands. So you can actually learn Batch and write Batch codes in FreakC.

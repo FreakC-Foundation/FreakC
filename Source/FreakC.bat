@@ -24,6 +24,7 @@ if "%2" == "--compile" (
 )
 set fccompilename=%1
 set a=%fccompilename:.fclang=%
+set wloopnum=0
 echo @echo off>%a%.bat
 echo :FreakCCompiled>>%a%.bat
 echo set /a numpuke=%%random%% %%%% 99 + 1 >>%a%.bat
@@ -57,6 +58,18 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == SquareMyBois[fnc] (
 			set sqmb=!printString:SquareMyBois[fnc] =!
 			echo set /a !sqmb!=%%!sqmb!%% * %%!sqmb!%%>>%a%.bat
+			set deniedToken=true
+		)
+		if %%a == WhileSuck[fnc] (
+			set fccondition=!printString:WhileSuck[fnc] =!
+			echo :WhileLoop!wloopnum!>>%a%.bat
+			echo if !fccondition! goto EndLoop!wloopnum!>>%a%.bat
+			set deniedToken=true
+		)
+		if %%a == EndSuck[fnc] (
+			echo goto WhileLoop!wloopnum!>>%a%.bat
+			echo :EndLoop!wloopnum!>>%a%.bat
+			set /a wloopnum=!wloopnum!+1
 			set deniedToken=true
 		)
 		if %%a == CubeMyBois[fnc] (

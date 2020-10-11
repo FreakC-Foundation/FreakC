@@ -63,7 +63,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == WhileSuck[fnc] (
 			set fccondition=!printString:WhileSuck[fnc] =!
 			echo :WhileLoop!wloopnum!>>%a%.bat
-			echo if !fccondition! goto EndLoop!wloopnum!>>%a%.bat
+			echo if not !fccondition! goto EndLoop!wloopnum!>>%a%.bat
 			set deniedToken=true
 		)
 		if %%a == EndSuck[fnc] (

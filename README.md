@@ -41,6 +41,7 @@ To show the current version of the devkit, type:
 Well, FreakC is just an esoteric programming language, so you shouldn't expect FreakC to be upgraded from Batch, but here are some of them:
 
 <li>Dirty and Funny syntax</li>
+<li>Real while loops</li>
 <li>Additional variables like 'numpoop', 'numpuke', etc</li>
 <li>Additional functions like 'OddOrEven[fnc]', 'CoolHackerMan[fnc]',...</li>
 <li>Additional operators like "++" or "--"</li>

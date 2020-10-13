@@ -367,13 +367,13 @@ Example:
 
 	TapSomeSht[fnc] wsad
 	DoIfTap[fnc] 4 (
-		Swear[fnc] You pressed "W"
+		Swear[fnc] You pressed "D"
 	)
 	DoIfTap[fnc] 3 (
-		Swear[fnc] You pressed "W"
+		Swear[fnc] You pressed "A"
 	)
 	DoIfTap[fnc] 2 (
-		Swear[fnc] You pressed "W"
+		Swear[fnc] You pressed "S"
 	)
 	DoIfTap[fnc] 1 (
 		Swear[fnc] You pressed "W"

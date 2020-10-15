@@ -83,6 +83,10 @@ FCShell had always been a great tool for devs, but being so busy and stressed ri
 ## Developers
 <li>Owner/Developer: Nguyen Phu Minh</li>
 
+## Social medias
+<li><a href="https://youtu.be/0Pbah29aI4s">FreakC's official announcement on youtube!</a></li>
+<li><a href="https://npmgames.itch.io/freakc">FreakC on itch.io!</a></li>
+
 ## Copyrights and License
 Copyright © 2020 Nguyen Phu Minh
 

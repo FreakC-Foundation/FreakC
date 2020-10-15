@@ -21,9 +21,17 @@ if "%2" == "--compile" (
 	set fccompile=true
 ) else if "%2" == "--candr" (
 	set fcread=true
+) else if "%2" == "--create" (
+	set fccreate=true
 )
 set fccompilename=%1
 set a=%fccompilename:.fclang=%
+if "%fccreate%" == "true" (
+	md %a%
+	cd %a%
+	echo.>>%a%.fclang
+	exit /b
+)
 set wloopnum=0
 echo @echo off>%a%.bat
 echo :FreakCCompiled>>%a%.bat
@@ -143,5 +151,5 @@ if "%fcread%" == "true" type %a%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 3.13.0
+echo FreakC DevKit Version 3.13.1
 exit /b

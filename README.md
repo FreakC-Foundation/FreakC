@@ -35,7 +35,7 @@ To show the current version of the devkit, type:
 
     freakc --version
 
-To create a new FreakC project quick, you can type:
+To create a new FreakC project quickly, you can type:
 
     freakc project_name --create
 

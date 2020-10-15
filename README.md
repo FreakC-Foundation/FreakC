@@ -17,7 +17,7 @@ FreakC is a transpiled esoteric scripting programming language that... has nothi
 ## Compiler's usage
 In the "FreakC" folder, open cmd and type this command to compile and run the code:
 
-    freakc "file.fclang"
+    freakc file_name
     
 Example:
     
@@ -25,15 +25,19 @@ Example:
  
 If you want to compile the code only, type:
 
-    freakc "file.fclang" --compile
+    freakc file_name --compile
     
 If you want to compile the code and show the compiled code, type:
 
-    freakc "file.fclang" --candr
+    freakc file_name --candr
     
 To show the current version of the devkit, type:
 
     freakc --version
+
+To create a new FreakC project quick, you can type:
+
+    freakc project_name --create
 
 <b>The compiler only works on Windows, and can only be compiled to Batch.</b>
 

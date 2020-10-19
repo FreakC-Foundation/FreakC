@@ -433,7 +433,16 @@ While loops can be created using:
 	::code
 	EndSuck[fnc]
 
-Of course, the loops will run when the condition is false.
+Of course, the loops will run when the condition is still true, stop when false.
+
+### Do-While loop
+
+	RepeatSuck[fnc]
+	::code
+	UntilStale[fnc] condition
+
+### Differences between While and Do-While
+While loop is executed only when given condition is true. Whereas, do-while loop is executed for first time irrespective of the condition. After executing while loop for first time, then condition is checked.
 
 ### Notes when using while loops
 <b>YOU CAN NOT USE NESTED WHILE LOOPS</b>
@@ -444,6 +453,8 @@ This will be wrong:
 	WhileSuck[fnc] condition
 	EndSuck[fnc]
 	EndSuck[fnc]
+
+<b>(Same with Do-While)</b>
 
 ## The better way for while loops
 You can combine the Functional programming and If statements to make a somewhat workable while loop like this:

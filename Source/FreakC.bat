@@ -33,6 +33,7 @@ if "%fccreate%" == "true" (
 	exit /b
 )
 set wloopnum=0
+set wloopnum2=0
 echo @echo off>%a%.bat
 echo :FreakCCompiled>>%a%.bat
 echo set /a numpuke=%%random%% %%%% 99 + 1 >>%a%.bat
@@ -78,6 +79,18 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			echo goto WhileLoop!wloopnum!>>%a%.bat
 			echo :EndLoop!wloopnum!>>%a%.bat
 			set /a wloopnum=!wloopnum!+1
+			set deniedToken=true
+		)
+		if %%a == RepeatSuck[fnc] (
+			echo :RepeatSuck!wloopnum!>>%a%.bat
+			set deniedToken=true
+		)
+		if %%a == UntilStale[fnc] (
+			set fccondition2=!printString:UntilStale[fnc] =!
+			echo if not !fccondition2! goto RealStale!wloopnum2!>>%a%.bat
+			echo goto RepeatSuck!wloopnum2!>>%a%.bat
+			echo :RealStale!wloopnum2!>>%a%.bat
+			set /a wloopnum2=!wloopnum2!+1
 			set deniedToken=true
 		)
 		if %%a == CubeMyBois[fnc] (

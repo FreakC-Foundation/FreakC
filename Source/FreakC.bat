@@ -156,6 +156,19 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == HackTheNet[fnc] set printString=!printString:HackTheNet[fnc]=ping!
 		if %%a == MyDirtyInfo[fnc] set printString=!printString:MyDirtyInfo[fnc]=systeminfo!
 		if %%a == HackMyIP[fnc] set printString=!printString:HackMyIP[fnc]=ipconfig /all!
+		if %%a == HelloWorld[str] set printString=!printString:HelloWorld[str]=echo Hello, World!
+		if %%a == GrabMeADrink[str] set printString=!printString:GrabMeADrink[str]=echo Grab me a drink, mate!
+		if %%a == ILoveYou[str] set printString=!printString:ILoveYou[str]=echo I Love You!
+		if %%a == AreYaWinningSon[str] set printString=!printString:AreYaWinningSon[str]=echo Are ya winning son ?!
+		if %%a == Patrick[meme] (
+			if "!printString:Patrick[meme] =!" == "1" (
+				set printString=echo Is mayonnaise an instrument ?
+			) else if "!printString:Patrick[meme] =!" == "2" (
+				set printString=echo Roses are blue, violets are red, I have to go to the bathroom.
+			) else if "!printString:Patrick[meme] =!" == "3" (
+				set printString=echo I can't see my forehead.
+			)
+		)
 	)
 	if not "!deniedToken!" == "true" echo. !printString!>>%a%.bat
 )

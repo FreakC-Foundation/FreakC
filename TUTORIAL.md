@@ -643,7 +643,32 @@ To hide errors, you can do this:
 
 <b>Note: Administrator is required to run the command</b>
 
-# Just-for-fun commands
+# Meme and J4F commands
+## Patrick function
+You can prints out a quote of patrick from the huge collection of... 3 quotes that FreakC comes with :))
+
+	::Is mayonnaise an instrument ?
+	Patrick[meme] 1
+	::Roses are blue, violets are red, I have to go to the bathroom.
+	Patrick[meme] 2
+	::I can't see my forehead.
+	Patrick[meme] 3
+
+And yes, no more [fnc], there is [meme] now =D
+
+## Others
+### Collections of stupid quotes
+
+	::Prints out Hello, World
+	HelloWorld[str]
+	::Prints out Grab me a drink, mate
+	GrabMeADrink[str]
+	::Prints out I Love You
+	ILoveYou[str]
+	::Prints out Are ya winning son ?
+	AreYaWinningSon[str]
+
+And again, yes, there is also [str] just for varieties =D
 
 ### Prints out random numbers continously (like in the Matrix)
 

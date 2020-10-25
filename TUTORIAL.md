@@ -653,6 +653,14 @@ You can prints out a quote of patrick from the huge collection of... 3 quotes th
 	Patrick[meme] 2
 	::I can't see my forehead.
 	Patrick[meme] 3
+	::The inner machinations of my mind are an enigma.
+	Patrick[meme] 4
+	::Once upon a time there was an ugly barnacle. He was so ugly that everyone died. The end!
+	Patrick[meme] 5
+	::I wumbo, you wumbo, he she we wumbo.
+	Patrick[meme] 6
+	::Two words, SpongeBob. Na. Chos.
+	Patrick[meme] 7
 
 And yes, no more [fnc], there is [meme] now =D
 
@@ -667,8 +675,18 @@ And yes, no more [fnc], there is [meme] now =D
 	ILoveYou[str]
 	::Prints out Are ya winning son ?
 	AreYaWinningSon[str]
+	::Prints out Hi mate
+	HiM8[str]
 
 And again, yes, there is also [str] just for varieties =D
+
+# Java and JSON supports :))
+Just for surprising elements, just try it on your own =D
+
+`	Java[fnc]
+	Java[str]
+	Java[meme]
+	Json[str]
 
 ### Prints out random numbers continously (like in the Matrix)
 

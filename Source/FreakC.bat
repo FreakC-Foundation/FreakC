@@ -160,6 +160,11 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == GrabMeADrink[str] set printString=!printString:GrabMeADrink[str]=echo Grab me a drink, mate!
 		if %%a == ILoveYou[str] set printString=!printString:ILoveYou[str]=echo I Love You!
 		if %%a == AreYaWinningSon[str] set printString=!printString:AreYaWinningSon[str]=echo Are ya winning son ?!
+		if %%a == Java[str] set printString=!printString:Java[str]=echo Cringe!
+		if %%a == Java[fnc] set printString=!printString:Java[fnc]=echo This is FreakC, mate!
+		if %%a == Java[meme] set printString=!printString:Java[meme]=echo Write once, bugs everywhere!
+		if %%a == JSON[str] set printString=!printString:JSON[str]=echo {"{}":{"{}":{}}}!
+		if %%a == HiM8[str] set printString=!printString:HiM8[str]=echo Hi mate!
 		if %%a == Patrick[meme] (
 			if "!printString:Patrick[meme] =!" == "1" (
 				set printString=echo Is mayonnaise an instrument ?
@@ -167,6 +172,14 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 				set printString=echo Roses are blue, violets are red, I have to go to the bathroom.
 			) else if "!printString:Patrick[meme] =!" == "3" (
 				set printString=echo I can't see my forehead.
+			) else if "!printString:Patrick[meme] =!" == "4" (
+				set printString=echo The inner machinations of my mind are an enigma.
+			) else if "!printString:Patrick[meme] =!" == "5" (
+				set printString=echo Once upon a time there was an ugly barnacle. He was so ugly that everyone died. The end!
+			) else if "!printString:Patrick[meme] =!" == "6" (
+				set printString=echo I wumbo, you wumbo, he she we wumbo.
+			) else if "!printString:Patrick[meme] =!" == "7" (
+				set printString=echo Two words, SpongeBob. Na. Chos.
 			)
 		)
 	)

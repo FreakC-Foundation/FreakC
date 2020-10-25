@@ -687,7 +687,7 @@ And again, yes, there is also [str] just for varieties =D
 # Java and JSON supports :))
 Just for surprising elements, just try it on your own =D
 
-`	Java[fnc]
+	Java[fnc]
 	Java[str]
 	Java[meme]
 	Json[str]

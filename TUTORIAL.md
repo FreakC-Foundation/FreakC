@@ -680,6 +680,10 @@ And yes, no more [fnc], there is [meme] now =D
 
 And again, yes, there is also [str] just for varieties =D
 
+### Prints out random numbers continously (like in the Matrix)
+
+	CoolHackerMan[fnc]
+
 # Java and JSON supports :))
 Just for surprising elements, just try it on your own =D
 
@@ -687,10 +691,6 @@ Just for surprising elements, just try it on your own =D
 	Java[str]
 	Java[meme]
 	Json[str]
-
-### Prints out random numbers continously (like in the Matrix)
-
-	CoolHackerMan[fnc]
 
 # Notes
 <b>Please do not use two or more commands with these commands:</b> 

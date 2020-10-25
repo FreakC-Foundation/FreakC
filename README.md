@@ -48,6 +48,7 @@ Well, FreakC is just an esoteric programming language, so you shouldn't expect F
 <li>Additional variables like 'numpoop', 'numpuke', etc</li>
 <li>Additional functions like 'OddOrEven[fnc]', 'CoolHackerMan[fnc]',...</li>
 <li>Additional operators like "++" or "--"</li>
+<li><b><i>mEMe</i></b></li>
 
 ## Tutorials 
 <a href=https://github.com/nguyenphuminh/FreakC/blob/master/TUTORIAL.md>Click here to see tutorials</a>
@@ -75,7 +76,7 @@ There are many frameworks in the utilities folder that you can use, I will defin
 <li>Useful variables</li>
 <li>Useful functionalities like if statements, for loops, while loop, do-while loop, "++" and "--" operators and more</li>
 <li>The compiler is much more well-built than all the previous releases</li>
-<li><b><u>mEMe</u></b></li>
+<li><b><i>mEMe</i></b></li>
 
 ## The removal of FCShell
 FCShell had always been a great tool for devs, but being so busy and stressed right now, I can't not make any updates for it. You can say that I'm lazy, yeah I'm actually pretty lazy. If I have time, I would bring back FCShell. I am still having fun making FreakC, but I don't have times for it.

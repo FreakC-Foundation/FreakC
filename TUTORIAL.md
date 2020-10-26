@@ -309,8 +309,8 @@ You can actually use a Batch command in DoIf[fnc]. Example:
 <li>"NEQ" - Not equal</li>
 <li>"LSS" - Less than</li>
 <li>"LEQ" - Less than or equal</li>
-<li>"LSS" - Greater than</li>
-<li>"LEQ" - Greater than or equal</li>
+<li>"GTE" - Greater than</li>
+<li>"GEQ" - Greater than or equal</li>
 
 ## Other kinds or if statements:
 

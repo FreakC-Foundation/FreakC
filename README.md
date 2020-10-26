@@ -69,7 +69,7 @@ In "FreakC/Utilities/Scripts" there is a file called "FreakC.sublime-build" whic
 ## Frameworks
 There are many frameworks in the utilities folder that you can use, I will definitely update the usage of them soon.
 
-<b>Note: I don't own all of those framework.</b>
+<b>Note: I don't own those frameworks.</b>
 
 ## 3.x Releases
 3.x releases are the finest releases of FreakC, they removes all the unnecessary commands/functions, as well as adding many new useful features like:

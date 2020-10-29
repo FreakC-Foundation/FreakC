@@ -3,7 +3,7 @@ setlocal enabledelayedexpansion
 if "%1" == "" (
 	echo.
 	echo.
-	echo. Usage: freakc {option/file} {option}
+	echo. Usage: freakc {option/file.fclang} {option}
 	echo.
 	echo.
 	echo. Options:
@@ -12,7 +12,9 @@ if "%1" == "" (
 	echo.  --compile  :Should be the second parameter, compile the file only.
 	echo.  --candr    :Should be the second parameter, compile and shows compiled code.
 	echo.
-	echo.  [Don't use any options above to compile and run the file at the same time]
+	echo. [Leave the second {option} blank if you want to compile and run the file]
+	echo.
+	echo.
 	pause >nul
 	exit /b
 )

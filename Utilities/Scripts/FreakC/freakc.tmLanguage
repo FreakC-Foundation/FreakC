@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>fileTypes</key>
+  <array>
+    <string>fclang</string>
+  </array>
+  <key>name</key>
+  <string>FreakC</string>
+  <key>patterns</key>
+  <array>
+    <dict>
+      <key>match</key>
+      <string>SwearLine|Swear|DoIfTap|DoIfNotTap|DoIfFalse|DoIfDefined|DoIfExist|DoIfNotExist|DoIfNotDefined|DoIf|OrNot|EQU|LEQ|LSS|GEQ|GTR|NEQ|OddOrEven|TryMeBtch|SquareMyBois|WhileSuck|EndSuck|RepeatSuck|UntilStale|CubeMyBois|\:|\=\=|\+\+|\-\-|</string>
+      <key>name</key>
+      <string>keyword.control</string>
+    </dict>
+    <dict>
+      <key>match</key>
+      <string>PoopInt|PoopString|PoopInput|PoopFnc|EatFnc|GrabFnc</string>
+      <key>name</key>
+      <string>support.constant</string>
+    </dict>
+    <dict>
+      <key>match</key>
+      <string>fnc|meme|str|DisableCoolStuff\[fnc\]|EnableCoolStuff\[fnc\]|CloseHouse\[fnc\]|OpenHouse\[fnc\]|</string>
+      <key>name</key>
+      <string>variable.parameter</string>
+    </dict>
+    <dict>
+      <key>match</key>
+      <string>TapSomeSht|Forget|ChangeSize|ChangeColor|ChangeName|GotoToilet|Patrick|HiM8|AreYaWinningSon|ILoveYou|GrabMeADrink|HelloWorld|HackMyIP|MyDirtyInfo|HackTheNet|ScanDir|ScanDiaries|ScanLetters|ScanOrgans|LoopStuffs|WaitForBus|MyMemory|BuyClock|BuyCalender|SeeDate|SeeTime|RestartSystem|ShutdownSystem|Loop|Die|PlayFile|CopyFile|MoveFile|RenameFile|StealDiary|TrashDir|Trash|EatDir|PukeDir|EatDrive|</string>
+      <key>name</key>
+      <string>entity.name.function</string>
+    </dict>
+    <dict>
+      <key>match</key>
+      <string>Java|JSON|CoolHackerMan</string>
+      <key>name</key>
+      <string>storage.type</string>
+    </dict>
+    <dict>
+      <key>match</key>
+      <string>\s[0-9]+|\%|</string>
+      <key>name</key>
+      <string>constant.numeric</string>
+    </dict>
+  </array>
+  <key>scopeName</key>
+  <string>source.arnoldc</string>
+  <key>uuid</key>
+  <string>6f5f460e-5ab0-4ce2-8cb7-0cafea6c46c9</string>
+</dict>
+</plist>

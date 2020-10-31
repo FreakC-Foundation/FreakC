@@ -63,8 +63,10 @@ So to convert FreakC to .EXE files, you need to compile FreakC codes to Batch, a
 
 You can actually find plenty of other tools online that helps you to converts Batch files to EXE files.
 
-## Compile in Sublime:
-In "FreakC/Utilities/Scripts" there is a file called "FreakC.sublime-build" which is the Sublime Text's build system for FreakC. To use it, please paste it in the "C:\Users\admin\AppData\Roaming\Sublime Text 3\Packages\User" or wherever your Packages folder is. Then, make sure that you have setted the environment variable for FreakC. After that, you will be able to compiles FreakC codes in Sublime Text.
+## Sublime Text
+In "FreakC/Utilities/Scripts" there is a file called "FreakC.sublime-build" which is the Sublime Text's build system for FreakC. To use it, please paste it in the "C:\Users\admin\AppData\Roaming\Sublime Text 3\Packages\User" or wherever your Packages folder is. Then, make sure that you have set the environment variable for FreakC. After that, you will be able to compiles FreakC codes in Sublime Text.
+
+For syntax highlighting, copy the "FreakC" folder in the same folder, then paste it in "%APPDATA%\Sublime Text v\Packages\ArnoldC".
 
 ## Frameworks
 There are many frameworks in the utilities folder that you can use, I will definitely update the usage of them soon.

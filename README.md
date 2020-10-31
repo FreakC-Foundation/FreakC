@@ -68,6 +68,8 @@ In "FreakC/Utilities/Scripts" there is a file called "FreakC.sublime-build" whic
 
 For syntax highlighting, copy the "FreakC" folder in the same folder, then paste it in "%APPDATA%\Sublime Text v\Packages\ArnoldC".
 
+Sublime Text is highly supported for FreakC, so you definitely should use Sublime Text if you want to start FreakC development.
+
 ## Frameworks
 There are many frameworks in the utilities folder that you can use, I will definitely update the usage of them soon.
 

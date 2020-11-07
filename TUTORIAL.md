@@ -200,6 +200,12 @@ There are a lot of special variables left, but you might not find uses for them
 <li>%variable_name:str1=str2% - would replace str1 with str2</li>
 <li>%PATH:~10,5% - would expand the PATH environment variable, and then use only the 5 characters that begin at the 11th (offset 10) character of the expanded result.  If the length is not specified, then it defaults to the remainder of the variable value.  If either number (offset or length) is negative, then the number used is the length of the environment variable value added to the offset or length specified/li>
 
+### Another way to declare variables
+<li>Shit[typ] - Declare a variable as a string</li>
+<li>Puke[typ] - Declare a variable as an integer</li>
+<li>Cum[typ] - Create a function/label</li>
+<li>Piss[typ] - Declare a variable from user's input</li>
+
 ### Notes
 There are variables that you CAN NOT USE like: %a%, %printString%, %fccompile%, %fccompilename%, %fcread%.
 

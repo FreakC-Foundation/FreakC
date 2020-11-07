@@ -113,8 +113,15 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			set printString=!printString:++=+=1!
 			set printString=!printString:--=-=1!
 		)
+		if %%a == Puke[typ] (
+			set printString=!printString:Puke[typ]=set /a!
+			set printString=!printString:++=+=1!
+			set printString=!printString:--=-=1!
+		)
 		if %%a == PoopString[fnc] set printString=!printString:PoopString[fnc]=set!
+		if %%a == Shit[typ] set printString=!printString:Shit[typ]=set!
 		if %%a == PoopInput[fnc] set printString=!printString:PoopInput[fnc]=set /p!
+		if %%a == Piss[typ] set printString=!printString:Piss[typ]=set /p!
 		if %%a == EatFnc[fnc] set printString=!printString:EatFnc[fnc]=goto!
 		if %%a == GrabFnc[fnc] set printString=!printString:GrabFnc[fnc]=call!
 		if %%a == ChangeColor[fnc] set printString=!printString:ChangeColor[fnc]=color!
@@ -147,6 +154,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == DoIfNotDefined[fnc] set printString=!printString:DoIfNotDefined[fnc]=if not defined!
 		if %%a == OrNot[fnc] set printString=!printString:OrNot[fnc]=else!
 		if %%a == PoopFnc[fnc]  set printString=!printString:PoopFnc[fnc] =:!
+		if %%a == Cum[typ]  set printString=!printString:Cum[typ] =:!
 		if %%a == WaitForBus[fnc] set printString=!printString:WaitForBus[fnc]=timeout /nobreak /t!
 		if %%a == EnableCoolStuff[fnc] set printString=!printString:EnableCoolStuff[fnc]=@echo on!
 		if %%a == DisableCoolStuff[fnc] set printString=!printString:DisableCoolStuff[fnc]=@echo off!

@@ -18,13 +18,13 @@
     </dict>
     <dict>
       <key>match</key>
-      <string>PoopInt|PoopString|PoopInput|PoopFnc|EatFnc|GrabFnc</string>
+      <string>PoopInt|PoopString|PoopInput|PoopFnc|EatFnc|GrabFnc|Shit|Puke|Cum|Piss</string>
       <key>name</key>
       <string>support.constant</string>
     </dict>
     <dict>
       <key>match</key>
-      <string>fnc|meme|str|DisableCoolStuff\[fnc\]|EnableCoolStuff\[fnc\]|CloseHouse\[fnc\]|OpenHouse\[fnc\]|</string>
+      <string>fnc|meme|str|typ|DisableCoolStuff\[fnc\]|EnableCoolStuff\[fnc\]|CloseHouse\[fnc\]|OpenHouse\[fnc\]|</string>
       <key>name</key>
       <string>variable.parameter</string>
     </dict>

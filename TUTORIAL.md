@@ -228,7 +228,17 @@ Other thing that you should notice is that
 	PoopString[fnc] text
 	
 would return any variable begins with "text"
-	
+
+# Comments
+Single-line comment:
+
+	:: Comment
+
+Multi-line comment:
+
+	[cmt] comment
+	[ecmt]
+
 
 # Functional programming
 Function in FreakC are labels, which is different from functions from C, C++, C#, Java, Pascal,...

@@ -34,6 +34,7 @@ if "%fccreate%" == "true" (
 	echo.>>%a%.fclang
 	exit /b
 )
+set fccomment=false
 set wloopnum=0
 set wloopnum2=0
 echo @echo off>%a%.bat
@@ -47,6 +48,14 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 	set deniedToken=false
 	set printString=%%x
 	for %%a in (%%x) do (
+		if "%%a" == "[cmt]" (
+			set fccomment=true
+			set printString=!printString:[cmt]=!
+		)
+		if "%%a" == "[ecmt]" (
+			set fccomment=false
+			set printString=!printString:[ecmt]=!
+		)
 		if %%a == EatDrive[fnc] set printString=!printString:EatDrive[fnc] =!:
 		if %%a == TryMeBtch[fnc] (
 			set tmb=!printString:TryMeBtch[fnc] =!
@@ -193,7 +202,11 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			)
 		)
 	)
-	if not "!deniedToken!" == "true" echo. !printString!>>%a%.bat
+	if "!fccomment!" == "false" (
+		if not "!deniedToken!" == "true" echo. !printString!>>%a%.bat
+	) else (
+		echo. ::!printString!>>%a%.bat
+	)
 )
 setlocal disabledelayedexpansion
 if "%fcread%" == "true" type %a%.bat

@@ -12,7 +12,7 @@ We would prefer English as the main language for contributing, but you can use V
 
 - Name your pull request nicely.
 
-- Don't use any NSFW or weird content in a pull request
+- Don't use any NSFW or weird contents in a pull request.
 
 
 That's all, thanks for your time with FreakC!

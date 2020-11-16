@@ -213,5 +213,5 @@ if "%fcread%" == "true" type %a%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 3.16.2
+echo FreakC DevKit Version 3.16.3
 exit /b

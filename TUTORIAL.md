@@ -660,7 +660,7 @@ To hide errors, you can do this:
 <b>Note: Administrator is required to run the command</b>
 
 # Meme and J4F commands
-## Patrick function
+## Patrick functions
 You can prints out a quote of patrick from the huge collection of... 3 quotes that FreakC comes with :))
 
 	::Is mayonnaise an instrument ?
@@ -679,6 +679,22 @@ You can prints out a quote of patrick from the huge collection of... 3 quotes th
 	Patrick[meme] 7
 
 And yes, no more [fnc], there is [meme] now =D
+
+## Dani functions
+You can prints out a quote of patrick from the huge collection of... 3 quotes that FreakC comes with :))
+
+	::Not as thicc as your mom.
+	Dani[meme] mom
+	::Prints "Wow that was really cool." endlessly
+	Dani[meme] cool
+	::Freak you billy.
+	Dani[meme] billy
+	
+## SpongeBob functions
+You can prints out a quote of patrick from the huge collection of... 3 quotes that FreakC comes with :))
+
+	::echo Ravioli, ravioli, give me formuoli.
+	SpongeBob[meme] 1
 
 ## Others
 ### Collections of stupid quotes

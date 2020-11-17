@@ -199,6 +199,29 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 				set printString=echo I wumbo, you wumbo, he she we wumbo.
 			) else if "!printString:Patrick[meme] =!" == "7" (
 				set printString=echo Two words, SpongeBob. Na. Chos.
+			) else (
+				set printString=echo No meme here :(
+			)
+		)
+		if %%a == Dani[meme] (
+			if "!printString:Dani[meme] =!" == "mom" (
+				set printString=echo Not as thicc as your mom hehe.
+			) else if "!printString:Dani[meme] =!" == "cool" (
+				echo :Dani>>%a%.bat
+				echo echo Wow that's was really cool.>>%a%.bat
+				echo goto Dani>>%a%.bat
+				set deniedToken=true
+			) else if "!printString:Dani[meme] =!" == "billy" (
+				set printString=echo Freak you billy.
+			) else (
+				set printString=echo No meme here :(
+			)
+		)
+		if %%a == SpongeBob[meme] (
+			if "!printString:SpongeBob[meme] =!" == "1" (
+				set printString=echo Ravioli, ravioli, give me formuoli. 
+			) else (
+				set printString=echo No meme here :(
 			)
 		)
 	)
@@ -213,5 +236,5 @@ if "%fcread%" == "true" type %a%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 3.16.3
+echo FreakC DevKit Version 3.16.4
 exit /b

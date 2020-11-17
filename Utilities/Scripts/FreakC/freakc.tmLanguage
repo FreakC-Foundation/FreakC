@@ -30,7 +30,7 @@
     </dict>
     <dict>
       <key>match</key>
-      <string>TapSomeSht|Forget|ChangeSize|ChangeColor|ChangeName|GotoToilet|Patrick|HiM8|AreYaWinningSon|ILoveYou|GrabMeADrink|HelloWorld|HackMyIP|MyDirtyInfo|HackTheNet|ScanDir|ScanDiaries|ScanLetters|ScanOrgans|LoopStuffs|WaitForBus|MyMemory|BuyClock|BuyCalender|SeeDate|SeeTime|RestartSystem|ShutdownSystem|Loop|Die|PlayFile|CopyFile|MoveFile|RenameFile|StealDiary|TrashDir|Trash|EatDir|PukeDir|EatDrive|</string>
+      <string>TapSomeSht|Forget|ChangeSize|ChangeColor|ChangeName|GotoToilet|Patrick|Dani|SpongeBob|HiM8|AreYaWinningSon|ILoveYou|GrabMeADrink|HelloWorld|HackMyIP|MyDirtyInfo|HackTheNet|ScanDir|ScanDiaries|ScanLetters|ScanOrgans|LoopStuffs|WaitForBus|MyMemory|BuyClock|BuyCalender|SeeDate|SeeTime|RestartSystem|ShutdownSystem|Loop|Die|PlayFile|CopyFile|MoveFile|RenameFile|StealDiary|TrashDir|Trash|EatDir|PukeDir|EatDrive|</string>
       <key>name</key>
       <string>entity.name.function</string>
     </dict>
@@ -48,7 +48,7 @@
     </dict>
   </array>
   <key>scopeName</key>
-  <string>source.arnoldc</string>
+  <string>source.fclang</string>
   <key>uuid</key>
   <string>6f5f460e-5ab0-4ce2-8cb7-0cafea6c46c9</string>
 </dict>

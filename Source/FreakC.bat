@@ -8,11 +8,12 @@ if "%1" == "" (
 	echo.
 	echo. Options:
 	echo.
-	echo.  --version  :Should be the first parameter, shows the current version of the DevKit.
-	echo.  --compile  :Should be the second parameter, compile the file only.
-	echo.  --candr    :Should be the second parameter, compile and shows compiled code.
+	echo.  --version  :Have to be the first parameter, shows the current version of the DevKit.
+	echo.  --compile  :Have to be the second parameter, compile the file only.
+	echo.  --candr    :Have to be the second parameter, compile and shows compiled code.
+	echo.  --create   :Have to be the second parameter, create a new FreakC project.
 	echo.
-	echo. [Leave the second {option} blank if you want to compile and run the file]
+	echo. [Leave the second {option} blank if you want to both compile and run the file]
 	echo.
 	echo.
 	pause >nul

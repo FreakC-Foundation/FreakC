@@ -710,6 +710,7 @@ You can prints out a quote of patrick from the huge collection of... 3 quotes th
 	::Prints out Hi mate
 	HiM8[str]
 	::Prints out Damn boi... Damn boi... Damn boi he thicc boia, that's a thicc ass boi.
+	Thicc[meme]
 
 And again, yes, there is also [str] just for varieties =D
 

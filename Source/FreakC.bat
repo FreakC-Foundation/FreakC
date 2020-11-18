@@ -213,6 +213,11 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 				set deniedToken=true
 			) else if "!printString:Dani[meme] =!" == "billy" (
 				set printString=echo Freak you billy.
+			) else if "!printString:Dani[meme] =!" == "unity" (
+				echo :DaniUnity>>%a%.bat
+				echo echo Unity's Particle System>>%a%.bat
+				echo goto DaniUnity>>%a%.bat
+				set deniedToken=true
 			) else (
 				set printString=echo No meme here :(
 			)
@@ -224,6 +229,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 				set printString=echo No meme here :(
 			)
 		)
+		if %%a == Thicc[meme] set printString=echo Damn boi... Damn boi... Damn boi he thicc boia, that's a thicc ass boi
 	)
 	if "!fccomment!" == "false" (
 		if not "!deniedToken!" == "true" echo. !printString!>>%a%.bat
@@ -236,5 +242,5 @@ if "%fcread%" == "true" type %a%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 3.16.4
+echo FreakC DevKit Version 3.16.5
 exit /b

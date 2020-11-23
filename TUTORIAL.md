@@ -548,6 +548,10 @@ To hide errors, you can do this:
 ### Run a Batch file
 
 	GrabFnc[fnc] file_name
+
+### Insert a Batch file into compiled codes
+
+	InsertShits[fnc] file_name
 	
 ### Clear the screen
 

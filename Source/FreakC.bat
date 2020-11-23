@@ -57,6 +57,10 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			set fccomment=false
 			set printString=!printString:[ecmt]=!
 		)
+		if %%a == InsertShits[fnc] (
+			type !printString:InsertShits[fnc] =!>>%a%.bat
+			set deniedToken=true
+		)
 		if %%a == EatDrive[fnc] set printString=!printString:EatDrive[fnc] =!:
 		if %%a == TryMeBtch[fnc] (
 			set tmb=!printString:TryMeBtch[fnc] =!
@@ -243,5 +247,5 @@ if "%fcread%" == "true" type %a%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 3.16.5
+echo FreakC DevKit Version 3.17.0
 exit /b

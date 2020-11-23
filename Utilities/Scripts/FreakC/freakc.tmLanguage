@@ -30,7 +30,7 @@
     </dict>
     <dict>
       <key>match</key>
-      <string>TapSomeSht|Forget|ChangeSize|ChangeColor|ChangeName|GotoToilet|Patrick|Dani|Thicc|SpongeBob|HiM8|AreYaWinningSon|ILoveYou|GrabMeADrink|HelloWorld|HackMyIP|MyDirtyInfo|HackTheNet|ScanDir|ScanDiaries|ScanLetters|ScanOrgans|LoopStuffs|WaitForBus|MyMemory|BuyClock|BuyCalender|SeeDate|SeeTime|RestartSystem|ShutdownSystem|Loop|Die|PlayFile|CopyFile|MoveFile|RenameFile|StealDiary|TrashDir|Trash|EatDir|PukeDir|EatDrive|</string>
+      <string>TapSomeSht|Forget|ChangeSize|ChangeColor|InsertShits|ChangeName|GotoToilet|Patrick|Dani|Thicc|SpongeBob|HiM8|AreYaWinningSon|ILoveYou|GrabMeADrink|HelloWorld|HackMyIP|MyDirtyInfo|HackTheNet|ScanDir|ScanDiaries|ScanLetters|ScanOrgans|LoopStuffs|WaitForBus|MyMemory|BuyClock|BuyCalender|SeeDate|SeeTime|RestartSystem|ShutdownSystem|Loop|Die|PlayFile|CopyFile|MoveFile|RenameFile|StealDiary|TrashDir|Trash|EatDir|PukeDir|EatDrive|</string>
       <key>name</key>
       <string>entity.name.function</string>
     </dict>

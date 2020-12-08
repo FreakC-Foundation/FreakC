@@ -104,6 +104,14 @@ If you do this, variable "result" will be "Hel + lo"
 
 	CubeMyBois[fnc] variable_without_%%
 	
+### Print out an equation:
+
+	FuckUp[fnc] equation
+
+### Assign the result of an equation to %fhsolved%
+
+	FuckUpLess[fnc] equation
+	
 ### Merge strings
 To merge strings, do this:
 
@@ -412,6 +420,12 @@ Then, it will prints out "Yes" if true, "No" if false.
 For example, this will prints out "Yes"
 
 	TryMeBtch[fnc] "hello" == "hello"
+	
+You can also do this:
+
+	TryMeHoe[fnc] condition
+
+It will assign 'Yes' or 'No' to %tmhres%.
 
 # Loops
 

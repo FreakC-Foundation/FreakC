@@ -68,6 +68,23 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			echo if not !tmb! echo No>>%a%.bat
 			set deniedToken=true
 		)
+		if %%a == TryMeHoe[fnc] (
+			set tmb=!printString:TryMeHoe[fnc] =!
+			echo if !tmb! set tmhres=Yes>>%a%.bat
+			echo if not !tmb! set tmhres=No>>%a%.bat
+			set deniedToken=true
+		)
+		if %%a == FuckUp[fnc] (
+			set prob=!printString:FuckUp[fnc] =!
+			echo set /a fusolved=!prob!>>%a%.bat
+			echo echo %%fusolved%%>>%a%.bat
+			set deniedToken=true
+		)
+		if %%a == FuckUpLess[fnc] (
+			set prob=!printString:FuckUpLess[fnc] =!
+			echo set /a fusolved=!prob!>>%a%.bat
+			set deniedToken=true
+		)
 		if %%a == CoolHackerMan[fnc] (
 			echo :CoolHackerMan>>%a%.bat
 			echo echo %%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%>>%a%.bat
@@ -247,5 +264,5 @@ if "%fcread%" == "true" type %a%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 3.17.0
+echo FreakC DevKit Version 3.18.0
 exit /b

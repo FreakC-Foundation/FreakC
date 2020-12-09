@@ -135,7 +135,7 @@ You can use variables in FreakC commands as %variable_name%
 
 For example, to print out a variable, you can do this:
 
-	PoopString[fnc] result=Hello World!
+	PoopString[fnc] result=Hello World^!
 	Swear[fnc] %result%
 	
 But, to print out an element of an array, you use:
@@ -143,14 +143,14 @@ But, to print out an element of an array, you use:
 	PoopString[fnc] a[0]=Hello
 	Swear[fnc] %a[0]%
 	
-To print out every element of an array, you will need to use Batch in FreakC:
+To print out every element of an array, you can write something like this:
 
 	OpenHouse[fnc] ENABLEDELAYEDEXPANSION
 	PoopInt[fnc] a[0]=100
 	PoopInt[fnc] a[1]=35
 	PoopInt[fnc] a[2]=20
 	LoopStuffs[fnc] %%n in (0,1,2) do ( 
-   		Swear[fnc] !a[%%n]! 
+   		Swear[fnc] ^!a[%%n]^! 
 	)
 
 Actually, there is a whole another way to create an array:
@@ -486,8 +486,8 @@ This will be wrong:
 
 <b>(Same with Do-While)</b>
 
-## The better way for while loops
-You can combine the Functional programming and If statements to make a somewhat workable while loop like this:
+## The better way for loops
+You can use somewhat "recursion" like this:
 
 	PoopInt[fnc] i=start_number
 	PoopFnc[fnc] loop
@@ -509,7 +509,7 @@ For example, this program will print all the number from 0 to 10 then print out 
 	EatFnc[fnc] loop
 	
 	PoopFnc[fnc] nextcode
-	Swear[fnc] Done!
+	Swear[fnc] Done^!
 
 
 # Use Batch in FreakC

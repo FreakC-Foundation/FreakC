@@ -370,7 +370,7 @@ To use if not for DoIfDefined[fnc] or DoIfExist[fnc], you can do this:
 	DoIfNotExist[fnc] file (
 		command_to_execute
 	)
-	DoIfNotDefined[fnc] defined file (
+	DoIfNotDefined[fnc] file (
 		command_to_execute
 	)
 	
@@ -563,9 +563,11 @@ To hide errors, you can do this:
 
 	GrabFnc[fnc] file_name
 
-### Insert a Batch file into compiled codes
+### Merge .fclang file into one compiled codes
 
 	InsertShits[fnc] file_name
+
+If you are a C++ dev, this would be an equivalent to "#include"
 	
 ### Clear the screen
 
@@ -743,6 +745,64 @@ Just for surprising elements, just try it on your own =D
 	Java[str]
 	Java[meme]
 	Json[str]
+
+# Equivalent with Batch
+
+<li>Swear[fnc] - echo</li>
+<li>SwearLine[fnc] - echo.</li>
+<li>PoopInt[fnc] - set /a</li>
+<li>PoopString[fnc] - set</li>
+<li>PoopInput[fnc] - set /p</li>
+<li>PoopFnc[fnc] - :label</li>
+<li>GrabFnc[fnc] - goto</li>
+<li>Shit[typ] - set</li>
+<li>Puke[typ] - set /a</li>
+<li>Cum[typ] - :label</li>
+<li>Piss[typ] - set /p</li>
+<li>LoopStuffs[fnc] - for /l</li>
+<li>ScanOrgans[fnc] - for /r</li>
+<li>ScanLetters[fnc] - for /f</li>
+<li>ScanDiaries[fnc] - for</li>
+<li>ScanDir[fnc] - for /d</li>
+<li>DoIf[fnc] - if</li>
+<li>DoIfExist[fnc] - if exist</li>
+<li>DoIfDefined[fnc] - if defined</li>
+<li>DoIfFalse[fnc] - if not</li>
+<li>DoIfNotExist[fnc] - if not exist</li>
+<li>DoIfNotDefined[fnc] - if not defined</li>
+<li>DoIfTap[fnc] - if errorlevel</li>
+<li>DoIfNotTap[fnc] - if not errorlevel</li>
+<li>TapSomeSht[fnc] - choice /c: /n</li>
+<li>OrNot[fnc] - else</li>
+<li>GotoToilet[fnc] - pause</li>
+<li>Die[fnc] - exit</li>
+<li>ShutdownSystem[fnc] - shutdown -s</li>
+<li>RestartSystem[fnc] - shutdown -r</li>
+<li>PukeDir[fnc] - md</li>
+<li>EatDir[fnc] </li>
+<li>EatDrive[fnc] - drive:</li>
+<li>StealDiary[fnc] - type</li>
+<li>GrabFnc[fnc] - call</li>
+<li>Forget[fnc] - cls</li>
+<li>Trash[fnc] -  del</li>
+<li>TrashDir[fnc] - rmdir</li>
+<li>ChangeColor[fnc] - color</li>
+<li>ChangeName[fnc] - title</li>
+<li>ChangeSize[fnc] - mode</li>
+<li>RenameFile[fnc] - ren</li>
+<li>MoveFile[fnc] - print</li>
+<li>CopyFile[fnc] - copy</li>
+<li>PlayFile[fnc] - start</li>
+<li>WaitForBus[fnc] - timeout</li>
+<li>SeeDate[fnc] - date /t</li>
+<li>SeeTime[fnc] - time /t</li>
+<li>MyMemory[fnc] - dir</li>
+<li>EnableCoolStuff[fnc] - @echo off</li>
+<li>DisableCoolStuff[fnc] - @echo on</li>
+<li>BuyCalender[fnc] - date</li>
+<li>BuyClock[fnc] - time</li>
+<li>OpenHouse[fnc] - setlocal</li>
+<li>CloseHouse[fnc] - endlocal</li>
 
 # Notes
 <b>Please do not use two or more commands with these commands:</b> 

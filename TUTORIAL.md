@@ -1,3 +1,14 @@
+<div align="center">
+  <img src="Resources/Branding/logo.png" />
+  <br/>
+  <b>A programming language for drunk coders</b>
+  <br/>
+  <br/>
+  <a href="https://github.com/nguyenphuminh/FreakC/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg"/></a>
+  <a href="https://github.com/nguyenphuminh/FreakC/search?l=batchfile"><img alt="language" src="https://img.shields.io/badge/language-Batchfile-purple.svg"></a>
+  <a href="https://github.com/nguyenphuminh/FreakC/blob/master/.github/CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"></a>
+</div>
+
 # Disclaimer
 This tutorial is not for beginners at programming because it is very difficult to understand.
 
@@ -527,6 +538,41 @@ To hide errors, you can do this:
 
 	Command >nul 2>nul
 
+# Creating and Inserting modules
+You can create a module file using:
+
+	Cancer[fnc]
+
+Note: The "Cancer[fnc]" command needs to stay at the top of the file.
+
+Then, include it in the main file using:
+
+	InsertShits[fnc] module_name.bat
+	::Note: You have to replace .fclang with .bat
+
+Then, compile the module file first, then compile the main file at the end.
+
+### Example:
+Create a file called "module.fclang" with:
+
+	Cancer[fnc]
+	Swear[fnc] World
+
+Create a file called "program.fclang" with:
+
+	Swear[fnc] Hello
+	InsertShits[fnc] module.bat
+
+In the command window, type:
+
+	freakc module --compile
+	freakc program
+
+It will prints out:
+
+	Hello
+	World
+
 # Other useful commands
 
 ### Exit the program
@@ -562,10 +608,6 @@ To hide errors, you can do this:
 ### Run a Batch file
 
 	GrabFnc[fnc] file_name
-
-### Merge .fclang file into one compiled codes
-
-	InsertShits[fnc] file_name
 
 If you are a C++ dev, this would be an equivalent to "#include"
 	

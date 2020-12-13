@@ -24,7 +24,7 @@
     </dict>
     <dict>
       <key>match</key>
-      <string>fnc|meme|str|typ|DisableCoolStuff\[fnc\]|EnableCoolStuff\[fnc\]|CloseHouse\[fnc\]|OpenHouse\[fnc\]|Cancer\[fnc\]</string>
+      <string>fnc|meme|str|typ|DisableCoolStuff\[fnc\]|EnableCoolStuff\[fnc\]|CloseHouse\[fnc\]|OpenHouse\[fnc\]|Cancer\[fnc\]|\[ecmt\]|\[cmt\]</string>
       <key>name</key>
       <string>variable.parameter</string>
     </dict>

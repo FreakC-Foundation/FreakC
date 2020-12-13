@@ -258,6 +258,9 @@ Multi-line comment:
 	[cmt] comment
 	[ecmt]
 
+To write a comment that won't show up in the compiled codes, use:
+
+	[hcmt] comment
 
 # Functional programming
 Function in FreakC are labels, which is different from functions from C, C++, C#, Java, Pascal,...

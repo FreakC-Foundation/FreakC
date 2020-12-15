@@ -6,6 +6,7 @@
   <br/>
   <a href="https://github.com/nguyenphuminh/FreakC/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg"/></a>
   <a href="https://github.com/nguyenphuminh/FreakC/search?l=batchfile"><img alt="language" src="https://img.shields.io/badge/language-Batchfile-purple.svg"></a>
+  <a href="#"><img src="https://img.shields.io/github/downloads/nguyenphuminh/freakc/total.svg"/></a>
   <a href="https://github.com/nguyenphuminh/FreakC/blob/master/.github/CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"></a>
 </div>
 

@@ -279,6 +279,14 @@ To call a function, you use:
 
 	GrabFnc[fnc] :function_name
 
+Or:
+
+	LickFnc[fnc] function_name
+
+GrabFnc[fnc] can also targets file, while LickFnc[fnc] can only targets label/function. For example, you can load files like this:
+
+	GrabFnc[fnc] file_name
+
 ### Differences between EatFnc[fnc] and GrabFnc[fnc]
 EatFnc[fnc] jumps to a function and will not execute the previous code while GrabFnc[fnc] use code from the function but still execute the previous code.
 
@@ -576,6 +584,8 @@ It will prints out:
 	Hello
 	World
 
+If you are a C++ dev, this would be an equivalent to "#include".
+
 # Other useful commands
 
 ### Exit the program
@@ -607,12 +617,6 @@ It will prints out:
 ### Read a file
 
 	StealDiary[fnc] file_name
-	
-### Run a Batch file
-
-	GrabFnc[fnc] file_name
-
-If you are a C++ dev, this would be an equivalent to "#include"
 	
 ### Clear the screen
 

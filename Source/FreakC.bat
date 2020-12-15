@@ -163,6 +163,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == Piss[typ] set printString=!printString:Piss[typ]=set /p!
 		if %%a == EatFnc[fnc] set printString=!printString:EatFnc[fnc]=goto!
 		if %%a == GrabFnc[fnc] set printString=!printString:GrabFnc[fnc]=call!
+		if %%a == LickFnc[fnc] set printString=!printString:LickFnc[fnc] =call :!
 		if %%a == ChangeColor[fnc] set printString=!printString:ChangeColor[fnc]=color!
 		if %%a == ChangeSize[fnc] set printString=!printString:ChangeSize[fnc]=mode!
 		if %%a == ChangeName[fnc] set printString=!printString:ChangeName[fnc]=title!
@@ -272,5 +273,5 @@ if "%fcread%" == "true" type %a%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 3.20.0
+echo FreakC DevKit Version 3.21.0
 exit /b

@@ -839,7 +839,7 @@ Just for surprising elements, just try it on your own =D
 <li>ChangeName[fnc] - title</li>
 <li>ChangeSize[fnc] - mode</li>
 <li>RenameFile[fnc] - ren</li>
-<li>MoveFile[fnc] - print</li>
+<li>MoveFile[fnc] - move</li>
 <li>CopyFile[fnc] - copy</li>
 <li>PlayFile[fnc] - start</li>
 <li>WaitForBus[fnc] - timeout</li>

@@ -3,7 +3,7 @@ setlocal enabledelayedexpansion
 if "%1" == "" (
 	echo.
 	echo.
-	echo. Usage: freakc {option/file.fclang} {option}
+	echo. Usage: freakc {option/name} {option}
 	echo.
 	echo.
 	echo. Options:
@@ -260,6 +260,8 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 				set printString=echo No meme here :(
 			)
 		)
+		if %%a == FindTrash[fnc] set printString=!printString:FindTrash[fnc]=findstr!
+		if %%a == FindShits[fnc] set printString=!printString:FindShits[fnc]=find!
 		if %%a == Thicc[meme] set printString=echo Damn boi... Damn boi... Damn boi he thicc boia, that's a thicc ass boi
 	)
 	if "!fccomment!" == "false" (
@@ -273,5 +275,5 @@ if "%fcread%" == "true" type %a%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 3.21.0
+echo FreakC DevKit Version 3.22.0
 exit /b

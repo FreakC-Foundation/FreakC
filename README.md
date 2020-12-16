@@ -69,7 +69,7 @@ You can actually find plenty of other tools online that helps you to converts Ba
 ## Sublime Text
 In "FreakC/Utilities/Scripts" there is a file called "FreakC.sublime-build" which is the Sublime Text's build system for FreakC. To use it, please paste it in the "C:\Users\admin\AppData\Roaming\Sublime Text 3\Packages\User" or wherever your Packages folder is. Then, make sure that you have set the environment variable for FreakC. After that, you will be able to compiles FreakC codes in Sublime Text.
 
-For syntax highlighting, copy the "FreakC" folder in the same folder, then paste it in "%APPDATA%\Sublime Text v\Packages\ArnoldC".
+For syntax highlighting, copy the "FreakC" folder in the same folder, then paste it in "%APPDATA%\Sublime Text v\Packages\".
 
 Sublime Text is highly supported for FreakC, so you definitely should use Sublime Text if you want to start FreakC development.
 

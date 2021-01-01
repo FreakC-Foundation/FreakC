@@ -813,7 +813,7 @@ You can prints out a quote of patrick from the huge collection of... 3 quotes th
 And yes, no more [fnc], there is [meme] now =D
 
 ## Dani functions
-You can prints out a quote of patrick from the huge collection of... 3 quotes that FreakC comes with :))
+You can prints out Dani's quotes :))
 
 	::Not as thicc as your mom.
 	Dani[meme] mom
@@ -823,7 +823,7 @@ You can prints out a quote of patrick from the huge collection of... 3 quotes th
 	Dani[meme] billy
 	
 ## SpongeBob functions
-You can prints out a quote of patrick from the huge collection of... 3 quotes that FreakC comes with :))
+You can also do SpongeBob stuffs
 
 	::echo Ravioli, ravioli, give me formuoli.
 	SpongeBob[meme] 1

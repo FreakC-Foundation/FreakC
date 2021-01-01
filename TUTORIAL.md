@@ -263,28 +263,26 @@ To write a comment that won't show up in the compiled codes, use:
 
 	[hcmt] comment
 
-# Functional programming
-Function in FreakC are labels, which is different from functions from C, C++, C#, Java, Pascal,...
+# Labels and Goto statement
+Labels helps you to jump to a state or pass parameters to execute tasks (somewhat procedural programming).
 
-Functions helps you to jump to a state or working with parameters.
+To create a label/procedure, you use:
 
-To create a function/label, you use:
+	PoopFnc[fnc] label_name
 
-	PoopFnc[fnc] function_name
+To jump to a label, you use:
 
-To jump to a function, you use:
+	EatFnc[fnc] label_name
 
-	EatFnc[fnc] function_name
+To call a label/procedure, you use:
 
-To call a function, you use:
-
-	GrabFnc[fnc] :function_name
+	GrabFnc[fnc] :label_name
 
 Or:
 
-	LickFnc[fnc] function_name
+	LickFnc[fnc] label_name
 
-GrabFnc[fnc] can also targets file, while LickFnc[fnc] can only targets label/function. For example, you can load files like this:
+GrabFnc[fnc] can also targets file, while LickFnc[fnc] can only targets label/function. For example, you can execute files like this:
 
 	GrabFnc[fnc] file_name
 
@@ -307,9 +305,9 @@ To restart the program, you can type:
 
 	EatFnc[fnc] FreakCCompiled
 
-It is because the compiled code of FreakC is in a main function "FreakCCompiled"
+It is because the compiled code of FreakC is in a main label/procedure "FreakCCompiled"
 
-Unlike many programming languages, you can name your function with special character. So this code would still work
+This code would still work eventhough it contains special character
 
 	PoopFnc[fnc] dsasd$ 123213 323
 	EatFnc[fnc] dsasd$ 123213 323

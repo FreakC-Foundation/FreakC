@@ -135,7 +135,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			set deniedToken=true
 		)
 		if %%a == CubeMyBois[fnc] (
-			set sqmb=!printString:SquareMyBois[fnc] =!
+			set sqmb=!printString:CubeMyBois[fnc] =!
 			echo set /a !sqmb!=%%!sqmb!%% * %%!sqmb!%% * %%!sqmb!%%>>%a%.bat
 			set deniedToken=true
 		)

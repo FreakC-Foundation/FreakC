@@ -43,6 +43,16 @@ Unlike any characters, "!" requires "^", for example:
 	
 The reason for this is that FreakC has: SETLOCAL ENABLEDELAYEDEXPANSION which causes "!" to not be used properly.
 
+# Prints out command's text
+If you type:
+
+	Swear[fnc] Swear[fnc]
+
+It won't print out "Swear[fnc]", but it will print out "echo", because FreakC will compiles any statement/command without caring if it's a used data or not. So to actually print out "Swear[fnc]", you will need to add "^" in any place of the command. Example:
+
+	Swear[fnc] S^wear[fnc]
+	:: This will print out "Swear[fnc]"
+
 # First note
 To pause in FreakC, please type in:
 	
@@ -253,6 +263,10 @@ would return any variable begins with "text"
 Single-line comment:
 
 	:: Comment
+
+Another way:
+
+	rem comment
 
 Multi-line comment:
 

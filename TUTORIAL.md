@@ -43,6 +43,17 @@ Unlike any characters, "!" requires "^", for example:
 	
 The reason for this is that FreakC has: SETLOCAL ENABLEDELAYEDEXPANSION which causes "!" to not be used properly.
 
+# Unicode characters
+To start using Unicode character, type:
+
+	FuckUnicode[fnc] >nul
+
+So now you can use Unicode characters:
+
+	FuckUnicode[fnc] >nul
+	Swear[fnc] ă ê ©
+	:: Would print out "ă ê ©"
+
 # Prints out command's text
 If you type:
 

@@ -215,6 +215,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == Java[meme] set printString=!printString:Java[meme]=echo Write once, bugs everywhere!
 		if %%a == JSON[str] set printString=!printString:JSON[str]=echo {"{}":{"{}":{}}}!
 		if %%a == HiM8[str] set printString=!printString:HiM8[str]=echo Hi mate!
+		if %%a == FuckUnicode[fnc] set printString=!printString:FuckUnicode[fnc]=chcp 65001!
 		if %%a == Patrick[meme] (
 			if "!printString:Patrick[meme] =!" == "1" (
 				set printString=echo Is mayonnaise an instrument ?

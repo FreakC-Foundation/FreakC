@@ -814,6 +814,12 @@ FindTrash[fnc]:
 
 <b>Note: Administrator is required to run the command</b>
 
+# Disable prebuilt variables
+You can disable numpoop, numpiss, numpuke,... by putting this block of code on top of your program:
+
+	Cancer[fnc]
+	EnableCoolStuff[fnc]
+
 # Meme and J4F commands
 ## Patrick functions
 You can prints out a quote of patrick from the huge collection of... 3 quotes that FreakC comes with :))

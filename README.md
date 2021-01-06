@@ -98,6 +98,9 @@ FCShell had always been a great tool for devs, but being so busy and stressed ri
 <li><a href="https://npmgames.itch.io/freakc">FreakC on itch.io!</a></li>
 <li><a href="https://www.facebook.com/FreakC-Programming-Language-111425377421861">FreakC offical page on Facebook!</a></li>
 
+## Languages based on FreakC
+<li><a href="https://github.com/nguyenphuminh/VNC">VNC</a></li>
+
 ## Copyrights and License
 Copyright © 2020 Nguyen Phu Minh
 

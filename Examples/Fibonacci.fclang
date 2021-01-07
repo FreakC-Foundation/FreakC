@@ -1,0 +1,11 @@
+PoopInt[fnc] num1=1
+PoopInt[fnc] num2=1
+PoopInt[fnc] num3=0
+WhileSuck[fnc] %num3% LSS 30000
+	PoopInt[fnc] num3=%num1% + %num2%
+	Swear[fnc] %num3%
+	PoopInt[fnc] num1=%num2%
+	PoopInt[fnc] num2=%num3%
+EndSuck[fnc]
+
+GotoToilet[fnc]

@@ -24,13 +24,13 @@
     </dict>
     <dict>
       <key>match</key>
-      <string>fnc|meme|str|typ|DisableCoolStuff\[fnc\]|EnableCoolStuff\[fnc\]|CloseHouse\[fnc\]|OpenHouse\[fnc\]|Cancer\[fnc\]|\[ecmt\]|\[cmt\]</string>
+      <string>fnc|meme|str|typ|DisableCoolStuff\[fnc\]|EnableCoolStuff\[fnc\]|CloseHouse\[fnc\]|OpenHouse\[fnc\]|Cancer\[fnc\]|\[ecmt\]|\[cmt\]|FuckUnicode\[fnc\]</string>
       <key>name</key>
       <string>variable.parameter</string>
     </dict>
     <dict>
       <key>match</key>
-      <string>TapSomeSht|Forget|ChangeSize|ChangeColor|InsertShits|ChangeName|GotoToilet|Patrick|Dani|Thicc|SpongeBob|HiM8|AreYaWinningSon|ILoveYou|GrabMeADrink|HelloWorld|HackMyIP|MyDirtyInfo|HackTheNet|ScanDir|ScanDiaries|ScanLetters|ScanOrgans|LoopStuffs|WaitForBus|MyMemory|BuyClock|BuyCalender|SeeDate|SeeTime|RestartSystem|ShutdownSystem|Loop|Die|PlayFile|CopyFile|MoveFile|FindTrash|FindShits|RenameFile|StealDiary|TrashDir|Trash|EatDir|PukeDir|EatDrive|</string>
+      <string>DumbCousin|TapSomeSht|Forget|ChangeSize|ChangeColor|InsertShits|ChangeName|GotoToilet|Patrick|Dani|Thicc|SpongeBob|HiM8|AreYaWinningSon|ILoveYou|GrabMeADrink|HelloWorld|HackMyIP|MyDirtyInfo|HackTheNet|ScanDir|ScanDiaries|ScanLetters|ScanOrgans|LoopStuffs|WaitForBus|MyMemory|BuyClock|BuyCalender|SeeDate|SeeTime|RestartSystem|ShutdownSystem|Loop|Die|PlayFile|CopyFile|MoveFile|FindTrash|FindShits|RenameFile|StealDiary|TrashDir|Trash|EatDir|PukeDir|EatDrive|</string>
       <key>name</key>
       <string>entity.name.function</string>
     </dict>
@@ -46,6 +46,12 @@
       <key>name</key>
       <string>constant.numeric</string>
     </dict>
+    <dict>
+		<key>match</key>
+		<string>".*"</string>
+		<key>name</key>
+		<string>string.quoted.double</string>
+	</dict>
   </array>
   <key>scopeName</key>
   <string>source.fclang</string>

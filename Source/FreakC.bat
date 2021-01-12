@@ -2,9 +2,23 @@
 setlocal enabledelayedexpansion
 if "%1" == "" (
 	echo.
+	echo.    **************                              ******          **********
+	echo.   ****************                             **** **        ************
+	echo.  ****   ****                                   *** ***       ****      ***
+	echo.  ***    ****                                   *** ***      ***        ***
+	echo.  ***    ****                                   *******     ***         **
+	echo.  **  ************ **   **     **       ***     ********   ***
+	echo.     ************* ** *****  ******    *****    *********  ***
+	echo.      ************ ********* *******  ********  ********** ***
+	echo.        *****      ********* ***  ** *********  ********** ***
+	echo.         ****      ********* ***  ** ****  **** **********  ***  
+	echo.  **     ****      ***** *** ******* ****  **** **********   ***          **
+	echo.  ***    ****      ****   ** ******* ********** **********    ****       **
+	echo.  **********       ****      ******* ********** ****   ***      **********
+	echo.    ******         ***         ****** ****  *** ***    ***       ********
+	echo.
 	echo.
 	echo. Usage: freakc {option/name} {option}
-	echo.
 	echo.
 	echo. Options:
 	echo.
@@ -14,8 +28,6 @@ if "%1" == "" (
 	echo.  --create   :Have to be the second parameter, create a new FreakC project.
 	echo.
 	echo. [Leave the second {option} blank if you want to both compile and run the file]
-	echo.
-	echo.
 	pause >nul
 	exit /b
 )
@@ -264,6 +276,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == FindTrash[fnc] set printString=!printString:FindTrash[fnc]=findstr!
 		if %%a == FindShits[fnc] set printString=!printString:FindShits[fnc]=find!
 		if %%a == Thicc[meme] set printString=echo Damn boi... Damn boi... Damn boi he thicc boia, that's a thicc ass boi
+		if %%â == DumbCousin[fnc] set printString=!printString:DumbCousin[fnc]=powershell!
 	)
 	if "!fccomment!" == "false" (
 		if not "!deniedToken!" == "true" echo. !printString!>>%a%.bat

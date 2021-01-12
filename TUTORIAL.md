@@ -811,6 +811,10 @@ FindTrash[fnc]:
 ### Prompt for time to change time
 
 	BuyClock[fnc]
+	
+### Open powershell
+
+	DumbCousin[fnc]
 
 <b>Note: Administrator is required to run the command</b>
 

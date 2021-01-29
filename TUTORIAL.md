@@ -77,11 +77,11 @@ You will see this command underneath, but you should you this command to pause y
 There are three data types in FreakC: integer, string.
 
 ## Variables
-To declare a variable as a string, you use:
+To declare a variable, you use:
 
 	PoopString[fnc] variable_name=string_value
 
-To declare a variable as an integer, you use:
+To do math equations, you use:
 
 	PoopInt[fnc] variable_name=integer_value
 	
@@ -105,7 +105,7 @@ Note: If you do this, it will prints out "Enter name:" right next to the input
 	PoopInput[fnc] variable_name=Enter name:
 
 ### Maths 
-You can do Math with FreakC like this:
+You can do Math equations with FreakC like this:
 
 	PoopInt[fnc] result=1+1+2+4
 

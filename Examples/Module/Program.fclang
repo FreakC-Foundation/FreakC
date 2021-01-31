@@ -1,0 +1,4 @@
+GrabFnc[fnc] Dog.bat "Mary" "3" "4kg"
+Swear[fnc] Age: %Mary.age%
+Swear[fnc] Weight: %Mary.weight%
+GotoToilet[fnc] >nul

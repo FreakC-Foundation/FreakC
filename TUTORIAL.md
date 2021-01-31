@@ -610,6 +610,17 @@ It will prints out:
 
 If you are a C++ dev, this would be an equivalent to "#include".
 
+### Better way
+If you don't want to merge all the codes into one file (as FreakC uses a lot of labels), you can simply:
+
+<ol>
+	<li>Create a module file with Cancer[fnc] on top of all the codes and add Die[fnc] /b in the bottom.</li>
+	<li>Create a main file, but rather than using InsertShits[fnc], you can use normal GrabFnc[fnc] to access a file as a procedure.</li>
+	<li>Compile the module file first, then compile and run the main file.</li>
+</ol>
+
+A demo can be found <a href="https://github.com/nguyenphuminh/FreakC/tree/master/Examples/Module">here.</a>
+
 # Find strings in a file 
 FindShits[fnc]:
 

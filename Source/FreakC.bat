@@ -73,6 +73,19 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			echo.>>%a%.bat
 			set deniedToken=true
 		)
+		if %%a == HackLikeABoss[fnc] (
+			set tar=!printString:HackLikeABoss[fnc] =!
+			echo echo Hacking !tar! 20%%%%>>!a!.bat
+			echo timeout /t 1 /nobreak ^>nul>>%a%.bat
+			echo echo Hacking !tar! 40%%%%>>!a!.bat
+			echo timeout /t 1 /nobreak ^>nul>>%a%.bat
+			echo echo Hacking !tar! 60%%%%>>!a!.bat
+			echo timeout /t 1 /nobreak ^>nul>>!a!.bat
+			echo echo Hacking !tar! 80%%%%>>!a!.bat
+			echo timeout /t 1 /nobreak ^>nul>>!a!.bat
+			echo echo Hacking !tar! 100%%%%>>!a!.bat
+			set deniedToken=true
+		)
 		if %%a == InsertShits[fnc] (
 			type !printString:InsertShits[fnc] =!>>%a%.bat
 			set deniedToken=true

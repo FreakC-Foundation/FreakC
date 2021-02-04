@@ -36,7 +36,7 @@
     </dict>
     <dict>
       <key>match</key>
-      <string>Java|JSON|CoolHackerMan</string>
+      <string>Java|JSON|CoolHackerMan|HackLikeABoss</string>
       <key>name</key>
       <string>storage.type</string>
     </dict>

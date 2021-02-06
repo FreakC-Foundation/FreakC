@@ -26,10 +26,18 @@ if "%1" == "" (
 	echo.  --compile  :Have to be the second parameter, compile the file only.
 	echo.  --candr    :Have to be the second parameter, compile and shows compiled code.
 	echo.  --create   :Have to be the second parameter, create a new FreakC project.
-	echo.
+	.
 	echo. [Leave the second {option} blank if you want to both compile and run the file]
 	pause >nul
 	exit /b
+)
+if "%1" == "--help" (
+        echo. Options:
+	echo.
+	echo.  --version  :Have to be the first parameter, shows the current version of the DevKit.
+	echo.  --compile  :Have to be the second parameter, compile the file only.
+	echo.  --candr    :Have to be the second parameter, compile and shows compiled code.
+	echo
 )
 if "%1" == "--version" goto fcversion
 if "%2" == "--compile" (

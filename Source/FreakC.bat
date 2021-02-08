@@ -22,22 +22,25 @@ if "%1" == "" (
 	echo.
 	echo. Options:
 	echo.
+	echo.  --help     :Have to be the first parameter, shows all options
 	echo.  --version  :Have to be the first parameter, shows the current version of the DevKit.
 	echo.  --compile  :Have to be the second parameter, compile the file only.
 	echo.  --candr    :Have to be the second parameter, compile and shows compiled code.
 	echo.  --create   :Have to be the second parameter, create a new FreakC project.
-	.
+	echo.
 	echo. [Leave the second {option} blank if you want to both compile and run the file]
 	pause >nul
 	exit /b
 )
 if "%1" == "--help" (
-        echo. Options:
+	echo. Options:
 	echo.
 	echo.  --version  :Have to be the first parameter, shows the current version of the DevKit.
 	echo.  --compile  :Have to be the second parameter, compile the file only.
 	echo.  --candr    :Have to be the second parameter, compile and shows compiled code.
-	echo
+	echo.
+	echo. [Leave the second {option} blank if you want to both compile and run the file]
+	exit /b
 )
 if "%1" == "--version" goto fcversion
 if "%2" == "--compile" (
@@ -310,5 +313,5 @@ if "%fcread%" == "true" type %a%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 3.25.0
+echo FreakC DevKit Version 3.25.1
 exit /b

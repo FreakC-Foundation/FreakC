@@ -23,11 +23,11 @@ if "%1" == "" (
 	echo. Options:
 	echo.
 	echo.  --help     :Have to be the first parameter, shows all options
+	echo.  --shell    :Have to be the first parameter, open shell.
 	echo.  --version  :Have to be the first parameter, shows the current version of the DevKit.
 	echo.  --compile  :Have to be the second parameter, compile the file only.
 	echo.  --candr    :Have to be the second parameter, compile and shows compiled code.
 	echo.  --create   :Have to be the second parameter, create a new FreakC project.
-	echo.  --exec     :Have to be the second parameter, execute a single command.
 	echo.
 	echo. [Leave the second {option} blank if you want to both compile and run the file]
 	pause >nul
@@ -36,9 +36,12 @@ if "%1" == "" (
 if "%1" == "--help" (
 	echo. Options:
 	echo.
+	echo.  --help     :Have to be the first parameter, shows all options
+	echo.  --shell    :Have to be the first parameter, open shell.
 	echo.  --version  :Have to be the first parameter, shows the current version of the DevKit.
 	echo.  --compile  :Have to be the second parameter, compile the file only.
 	echo.  --candr    :Have to be the second parameter, compile and shows compiled code.
+	echo.  --create   :Have to be the second parameter, create a new FreakC project.
 	echo.
 	echo. [Leave the second {option} blank if you want to both compile and run the file]
 	exit /b

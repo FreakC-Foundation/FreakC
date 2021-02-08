@@ -27,6 +27,7 @@ if "%1" == "" (
 	echo.  --compile  :Have to be the second parameter, compile the file only.
 	echo.  --candr    :Have to be the second parameter, compile and shows compiled code.
 	echo.  --create   :Have to be the second parameter, create a new FreakC project.
+	echo.  --exec     :Have to be the second parameter, execute a single command.
 	echo.
 	echo. [Leave the second {option} blank if you want to both compile and run the file]
 	pause >nul
@@ -49,6 +50,8 @@ if "%2" == "--compile" (
 	set fcread=true
 ) else if "%2" == "--create" (
 	set fccreate=true
+) else if "%1" == "--shell" (
+	FCShell
 )
 set fccompilename=%1
 set a=%fccompilename:.fclang=%

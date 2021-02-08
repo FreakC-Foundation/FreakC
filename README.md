@@ -52,6 +52,19 @@ To show all options and usage, type:
 To show all options and usage (with a dumb ascii art), type:
 
     freakc
+    
+### Interactive shell
+To open interactive shell, type:
+
+    freakc --shell
+    ::Or fcshell
+    
+You can type in whatever you want, it will be stored in "tar.fclang". You can type in any of these commands to execute tasks:
+
+<li>StartFuckin[cli] - Runs all the codes written</li>
+<li>StopFuckin[cli] - Delete tar.fclang and exit</li>
+<li>WipeAss[cli] - Resets codes</li>
+<li>Shit[cli] - Clear console</li>
 
 <b>The compiler only works on Windows, and can only be compiled to Batch.</b>
 

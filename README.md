@@ -44,6 +44,14 @@ To show the current version of the devkit, type:
 To create a new FreakC project quickly, you can type:
 
     freakc project_name --create
+    
+To show all options and usage, type:
+
+    freakc --help
+    
+To show all options and usage (with a dumb ascii art), type:
+
+    freakc
 
 <b>The compiler only works on Windows, and can only be compiled to Batch.</b>
 

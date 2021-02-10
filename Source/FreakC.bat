@@ -55,6 +55,7 @@ if "%2" == "--compile" (
 	set fccreate=true
 ) else if "%1" == "--shell" (
 	FCShell
+	exit /b
 )
 set fccompilename=%1
 set a=%fccompilename:.fclang=%

@@ -872,6 +872,11 @@ You can also do SpongeBob stuffs
 	::echo Ravioli, ravioli, give me formuoli.
 	SpongeBob[meme] 1
 
+## Rick Ashley the legend
+
+	:: Pops a window that rickrolls you :D
+	SummonLegend[fnc]
+
 ## Others
 ### Collections of stupid quotes
 

@@ -304,6 +304,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 				set printString=echo No meme here :(
 			)
 		)
+		if %%a == SummonLegend[fnc] set printString=!printString:SummonLegend[fnc]=start https://www.youtube.com/watch?v=dQw4w9WgXcQ!
 		if %%a == FindTrash[fnc] set printString=!printString:FindTrash[fnc]=findstr!
 		if %%a == FindShits[fnc] set printString=!printString:FindShits[fnc]=find!
 		if %%a == Thicc[meme] set printString=echo Damn boi... Damn boi... Damn boi he thicc boia, that's a thicc ass boi
@@ -320,5 +321,5 @@ if "%fcread%" == "true" type %a%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 3.26.0
+echo FreakC DevKit Version 3.27.0
 exit /b

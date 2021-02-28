@@ -20,7 +20,8 @@ SwearLine[fnc]
 SwearLine[fnc]     Enter your Math problem:
 
 PoopInput[fnc] prob=
-PoopInt[fnc] ans=%prob% 2>nul
+:: If you want to get the number fixed, you can replace the line below with PoopInt[fnc] ans=%prob%
+ScanLetters[fnc] %%i in (' DumbCousin[fnc] %prob% ') DO Shit[typ] ans=%%i
 
 Swear[fnc] Answer: %ans%
 

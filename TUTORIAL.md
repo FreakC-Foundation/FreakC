@@ -83,7 +83,7 @@ To declare a variable, you use:
 	
 Or:
 
-	PoopString[fnc] "variable_name = string_value"
+	PoopString[fnc] "variable_name=string_value"
 
 To do math equations, you use:
 
@@ -275,11 +275,6 @@ In FreakC, if you do this, you would get errors
 You should type:
 
 	PoopString[fnc] stuff= Swear[fnc] Hello
-	%stuff%
-
-Or (recommended):
-
-	PoopString[fnc] "stuff = Swear[fnc] Hello"
 	%stuff%
 
 ### Notes

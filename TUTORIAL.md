@@ -80,6 +80,10 @@ There are three data types in FreakC: integer, string.
 To declare a variable, you use:
 
 	PoopString[fnc] variable_name=string_value
+	
+Or:
+
+	PoopString[fnc] "variable_name = string_value"
 
 To do math equations, you use:
 
@@ -246,6 +250,37 @@ There are a lot of special variables left, but you might not find uses for them
 <li>Puke[typ] - Declare a variable as an integer</li>
 <li>Cum[typ] - Create a function/label</li>
 <li>Piss[typ] - Declare a variable from user's input</li>
+
+### Floats
+FreakC doesn't have floating-point numbers supports, so you would need this block to evaluate a Math equation that would return a float:
+
+	PoopString[fnc] prob=10.5-2.4
+	ScanLetters[fnc] %%i in (' DumbCousin[fnc] %prob% ') DO (
+	    PoopString[fnc] ans=%%i
+	)
+
+It will assign the result of "10.5-2.4" to variable "ans"
+
+### Embed FreakC commands to variables
+In Batch, you can do this to print out Hello:
+
+	set stuff=echo Hello
+	%stuff%
+
+In FreakC, if you do this, you would get errors
+
+	PoopString[fnc] stuff=Swear[fnc] Hello
+	%stuff%
+
+You should type:
+
+	PoopString[fnc] stuff= Swear[fnc] Hello
+	%stuff%
+
+Or (recommended):
+
+	PoopString[fnc] "stuff = Swear[fnc] Hello"
+	%stuff%
 
 ### Notes
 There are variables that you CAN NOT USE like: %a%, %printString%, %fccompile%, %fccompilename%, %fcread%.
@@ -968,12 +1003,24 @@ Just for surprising elements, just try it on your own =D
 <li>FindShits[fnc] - find</li>
 
 # Notes
-<b>Please do not use two or more commands with these commands:</b> 
+<b>Please do not put these commands in the same line as the others:</b> 
 <br/>
 <li>TapSomeSht[fnc]</li>
 <li>TryMeBtch[fnc]</li>
 <li>EatDrive[fnc]</li>
 <li>OddOrEven[fnc]</li>
+
+For example, this would cause error:
+
+	DoIf[fnc] %b% == %c% OddOrEven[fnc] 1
+	
+You should have it like this:
+
+	DoIf[fnc] %b% == %c% (
+		OddOrEven[fnc] 1
+	)
+
+But with normal commands like Swear[fnc], you can use it however you want.
 
 <br/>
 <b>Also, FreakC is case-sensitive, so you need to be strict with your code.</b>

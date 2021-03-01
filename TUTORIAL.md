@@ -87,7 +87,13 @@ Or:
 
 To do math equations, you use:
 
-	PoopInt[fnc] variable_name=integer_value
+	PoopInt[fnc] variable_name=equation
+	
+Note that PoopInt[fnc] will always round up number, to do equation or to declare a variable as a float, do:
+
+	:: Import float
+	Fuck[fnc] float
+	PoopFloat[fnc] "variable_name" "equation"
 	
 To declare a variable as an array, you use:
 
@@ -250,16 +256,9 @@ There are a lot of special variables left, but you might not find uses for them
 <li>Puke[typ] - Declare a variable as an integer</li>
 <li>Cum[typ] - Create a function/label</li>
 <li>Piss[typ] - Declare a variable from user's input</li>
+<li>Jelly[typ] - Declare a variable as a float</li>
 
-### Floats
-FreakC doesn't have floating-point numbers supports, so you would need this block to evaluate a Math equation that would return a float:
-
-	PoopString[fnc] prob=10.5-2.4
-	ScanLetters[fnc] %%i in (' DumbCousin[fnc] %prob% ') DO (
-	    PoopString[fnc] ans=%%i
-	)
-
-It will assign the result of "10.5-2.4" to variable "ans"
+And if you're asking yourself why add more dumb commands like this, well, because FreakC's bs.
 
 ### Embed FreakC commands to variables
 In Batch, you can do this to print out Hello:
@@ -587,6 +586,14 @@ For example, this program will print all the number from 0 to 10 then print out 
 	PoopFnc[fnc] nextcode
 	Swear[fnc] Done^!
 
+
+# Import pre-built libraries
+To import a pre-built library, use:
+
+	Fuck[fnc] lib_name
+	
+All libraries:
+<li>float - Used to declare variables as float. Usage: PoopFloat[fnc] "variable_name" "value"</li>
 
 # Use Batch in FreakC
 Unlike all the previous release, now FreakC support writing Batch without any other commands. So you can actually learn Batch and write Batch codes in FreakC.

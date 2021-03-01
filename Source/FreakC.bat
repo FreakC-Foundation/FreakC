@@ -91,6 +91,13 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			echo.>>%a%.bat
 			set deniedToken=true
 		)
+		if %%a == Fuck[fnc] (
+			if "!printString:Fuck[fnc] =!" == "float" (
+				echo for /f %%%%i in ('powershell %%~2'^) DO set %%~1=%%%%i>fclib_float.bat
+				set deniedToken=true
+				set floatimp=true
+			)
+		)
 		if %%a == HackLikeABoss[fnc] (
 			set tar=!printString:HackLikeABoss[fnc] =!
 			echo echo Hacking !tar! 20%%%%>>!a!.bat
@@ -200,6 +207,8 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			set printString=!printString:++=+=1!
 			set printString=!printString:--=-=1!
 		)
+		if %%a == PoopFloat[fnc] set printString=!printString:PoopFloat[fnc]=call fclib_float.bat!
+		if %%a == Jelly[typ] set printString=!printString:Jelly[typ]=call fclib_float.bat!
 		if %%a == PoopString[fnc] set printString=!printString:PoopString[fnc]=set!
 		if %%a == Shit[typ] set printString=!printString:Shit[typ]=set!
 		if %%a == PoopInput[fnc] set printString=!printString:PoopInput[fnc]=set /p!
@@ -321,5 +330,5 @@ if "%fcread%" == "true" type %a%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 3.27.0
+echo FreakC DevKit Version 4.0.0 Beta
 exit /b

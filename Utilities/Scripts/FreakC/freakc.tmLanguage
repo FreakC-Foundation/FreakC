@@ -18,7 +18,7 @@
     </dict>
     <dict>
       <key>match</key>
-      <string>PoopInt|PoopString|PoopInput|PoopFnc|EatFnc|GrabFnc|LickFnc|Shit|Puke|Cum|Piss</string>
+      <string>Fuck|PoopInt|PoopString|PoopInput|PoopFnc|PoopFloat|Jelly|EatFnc|GrabFnc|LickFnc|Shit|Puke|Cum|Piss</string>
       <key>name</key>
       <string>support.constant</string>
     </dict>

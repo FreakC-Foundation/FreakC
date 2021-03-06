@@ -1,4 +1,4 @@
-PoopInt[fnc] num1=1
+PoopInt[fnc] num1=0
 PoopInt[fnc] num2=1
 PoopInt[fnc] num3=0
 WhileSuck[fnc] %num3% LSS 30000

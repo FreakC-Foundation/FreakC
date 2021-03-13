@@ -62,7 +62,11 @@ set a=%fccompilename:.fclang=%
 if "%fccreate%" == "true" (
 	md %a%
 	cd %a%
-	echo.>>%a%.fclang
+	if "%3" == "--empty" (
+		echo.>%a%.fclang
+	) else (
+		echo Swear[fnc] Hello World, Hello FreakC>%a%.fclang
+	)
 	exit /b
 )
 set fccomment=false

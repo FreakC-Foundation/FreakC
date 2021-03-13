@@ -13,6 +13,65 @@
 # Disclaimer
 This tutorial is not for beginners at programming because it is very difficult to understand.
 
+# Installation
+There are many ways to install FreakC, you can:
+
+1. Clone FreakC from Github using:
+
+	git clone https://github.com/nguyenphuminh/FreakC.git
+
+2. Install <a href="https://github.com/nguyenphuminh/FreakC/releases">here</a>.
+
+# Cli's usage
+In the "FreakC" folder, open cmd and type this command to compile and run the code:
+
+    freakc file_name
+    
+Example:
+    
+    freakc "Examples/HelloWorld.fclang"
+ 
+If you want to compile the code only, type:
+
+    freakc file_name --compile
+    
+If you want to compile the code and show the compiled code, type:
+
+    freakc file_name --candr
+    
+To show the current version of the devkit, type:
+
+    freakc --version
+
+To create a new FreakC project quickly, you can type:
+
+    freakc project_name --create
+
+Notice that it will generate a file with a Hello World example in it, if you just want to create an empty file, type:
+
+    freakc project_name --create --empty 
+    
+To show all options and usage, type:
+
+    freakc --help
+    
+To show all options and usage (with a dumb ascii art), type:
+
+    freakc
+    
+### Interactive shell
+To open interactive shell, type:
+
+    freakc --shell
+    ::Or fcshell
+    
+You can type in whatever you want, it will be stored in "tar.fclang". You can type in any of these commands to execute tasks:
+
+<li>StartFuckin[cli] - Runs all the codes written</li>
+<li>StopFuckin[cli] - Delete tar.fclang and exit</li>
+<li>WipeAss[cli] - Resets codes</li>
+<li>Shit[cli] - Clear console</li>
+
 # Print text with Swear[fnc]
 To print out a string or text, you use:
 

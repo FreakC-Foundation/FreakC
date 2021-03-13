@@ -46,6 +46,10 @@ To show the current version of the devkit, type:
 To create a new FreakC project quickly, you can type:
 
     freakc project_name --create
+
+Notice that it will generate a file with a Hello World example in it, if you just want to create an empty file, type:
+
+    freakc project_name --create --empty 
     
 To show all options and usage, type:
 

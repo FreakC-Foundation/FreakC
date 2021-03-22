@@ -34,6 +34,8 @@ if "%1" == "" (
 	exit /b
 )
 if "%1" == "--help" (
+	echo. Usage: freakc {option/name} {option}
+	echo.
 	echo. Options:
 	echo.
 	echo.  --help     :Have to be the first parameter, shows all options
@@ -334,5 +336,5 @@ if "%fcread%" == "true" type %a%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 4.1.0 Beta
+echo FreakC DevKit Version 4.1.1 Beta
 exit /b

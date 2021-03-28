@@ -98,23 +98,66 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			set deniedToken=true
 		)
 		if %%a == Fuck[fnc] (
-			if "!printString:Fuck[fnc] =!" == "float" (
+			set lib=!printString:Fuck[fnc] =!
+			if "!lib!" == "float" (
 				echo for /f %%%%i in ('powershell %%~2'^) DO set %%~1=%%%%i>fclib_float.bat
 				set deniedToken=true
 				set floatimp=true
+			) else if "!lib!" == "arrayfunc" (
+				(
+				echo set max=1
+				echo for %%%%i in ^(%%~2^) DO (
+				echo 	set max=%%%%i
+				echo 	goto fcmaxend
+				echo ^)
+				echo :fcmaxend
+				echo for %%%%i in (%%~2^) DO (
+				echo 	if %%%%i GTR %%max%% (
+				echo 		set max=%%%%i
+				echo 	^)
+				echo ^)
+				echo set %%~1=%%max%%
+				)>fclib_arrayfunc_max.bat
+				(
+				echo set min=1
+				echo for %%%%i in ^(%%~2^) DO (
+				echo 	set min=%%%%i
+				echo 	goto fcminend
+				echo ^)
+				echo :fcminend
+				echo for %%%%i in (%%~2^) DO (
+				echo 	if %%%%i LSS %%min%% (
+				echo 		set min=%%%%i
+				echo 	^)
+				echo ^)
+				echo set %%~1=%%min%%
+				)>fclib_arrayfunc_min.bat
+				(
+				echo set sum=0
+				echo for %%%%i in ^(%%~2^) DO set /a sum+=%%%%i
+				echo set %%~1=%%sum%%
+				)>fclib_arrayfunc_sum.bat
+				set deniedToken=true
+			) else (
+				set deniedToken=true
 			)
 		)
+		if %%a == Bitchiest[fnc] set printString=!printString:Bitchiest[fnc]=call fclib_arrayfunc_max.bat!
+		if %%a == Horniest[fnc] set printString=!printString:Horniest[fnc]=call fclib_arrayfunc_min.bat!
+		if %%a == CountBitches[fnc] set printString=!printString:CountBitches[fnc]= call fclib_arrayfunc_sum.bat!
 		if %%a == HackLikeABoss[fnc] (
 			set tar=!printString:HackLikeABoss[fnc] =!
-			echo echo Hacking !tar! 20%%%%>>!a!.bat
-			echo timeout /t 1 /nobreak ^>nul>>%a%.bat
-			echo echo Hacking !tar! 40%%%%>>!a!.bat
-			echo timeout /t 1 /nobreak ^>nul>>%a%.bat
-			echo echo Hacking !tar! 60%%%%>>!a!.bat
-			echo timeout /t 1 /nobreak ^>nul>>!a!.bat
-			echo echo Hacking !tar! 80%%%%>>!a!.bat
-			echo timeout /t 1 /nobreak ^>nul>>!a!.bat
-			echo echo Hacking !tar! 100%%%%>>!a!.bat
+			(
+			echo echo Hacking !tar! 20%%%%
+			echo timeout /t 1 /nobreak ^>nul
+			echo echo Hacking !tar! 40%%%%
+			echo timeout /t 1 /nobreak ^>nul
+			echo echo Hacking !tar! 60%%%%
+			echo timeout /t 1 /nobreak ^>nul
+			echo echo Hacking !tar! 80%%%%
+			echo timeout /t 1 /nobreak ^>nul
+			echo echo Hacking !tar! 100%%%%
+			)>>!a!.bat
 			set deniedToken=true
 		)
 		if %%a == InsertShits[fnc] (
@@ -275,35 +318,37 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == HiM8[str] set printString=!printString:HiM8[str]=echo Hi mate!
 		if %%a == FuckUnicode[fnc] set printString=!printString:FuckUnicode[fnc]=chcp 65001!
 		if %%a == Patrick[meme] (
-			if "!printString:Patrick[meme] =!" == "1" (
+			set patarg=!printString:Patrick[meme] =!
+			if "!patarg!" == "1" (
 				set printString=echo Is mayonnaise an instrument ?
-			) else if "!printString:Patrick[meme] =!" == "2" (
+			) else if "!patarg!" == "2" (
 				set printString=echo Roses are blue, violets are red, I have to go to the bathroom.
-			) else if "!printString:Patrick[meme] =!" == "3" (
+			) else if "!patarg!" == "3" (
 				set printString=echo I can't see my forehead.
-			) else if "!printString:Patrick[meme] =!" == "4" (
+			) else if "!patarg!" == "4" (
 				set printString=echo The inner machinations of my mind are an enigma.
-			) else if "!printString:Patrick[meme] =!" == "5" (
+			) else if "!patarg!" == "5" (
 				set printString=echo Once upon a time there was an ugly barnacle. He was so ugly that everyone died. The end!
-			) else if "!printString:Patrick[meme] =!" == "6" (
+			) else if "!patarg!" == "6" (
 				set printString=echo I wumbo, you wumbo, he she we wumbo.
-			) else if "!printString:Patrick[meme] =!" == "7" (
+			) else if "!patarg!" == "7" (
 				set printString=echo Two words, SpongeBob. Na. Chos.
 			) else (
 				set printString=echo No meme here :(
 			)
 		)
 		if %%a == Dani[meme] (
-			if "!printString:Dani[meme] =!" == "mom" (
+			set daniarg=!printString:Dani[meme] =!
+			if "!daniarg!" == "mom" (
 				set printString=echo Not as thicc as your mom hehe.
-			) else if "!printString:Dani[meme] =!" == "cool" (
+			) else if "!daniarg!" == "cool" (
 				echo :Dani>>%a%.bat
 				echo echo Wow that's was really cool.>>%a%.bat
 				echo goto Dani>>%a%.bat
 				set deniedToken=true
-			) else if "!printString:Dani[meme] =!" == "billy" (
+			) else if "!daniarg!" == "billy" (
 				set printString=echo Freak you billy.
-			) else if "!printString:Dani[meme] =!" == "unity" (
+			) else if "!daniarg!" == "unity" (
 				echo :DaniUnity>>%a%.bat
 				echo echo Unity's Particle System>>%a%.bat
 				echo goto DaniUnity>>%a%.bat
@@ -336,5 +381,5 @@ if "%fcread%" == "true" type %a%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 4.1.1 Beta
+echo FreakC DevKit Version 4.2.0
 exit /b

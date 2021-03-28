@@ -655,7 +655,29 @@ To import a pre-built library, use:
 	Fuck[fnc] lib_name
 	
 All libraries:
-<li>float - Used to declare variables as float. Usage: PoopFloat[fnc] "variable_name" "value"</li>
+<li>float - Used to declare variables as float. Usage: PoopFloat[fnc] "variable_name" "value".</li>
+<li>arrayfunc - Includes functions to work with list.</li>
+
+## Using arrayfunc
+
+	Fuck[fnc] arrayfunc
+	
+	:: Find sum of list
+	CountBitches[fnc] "variable_name" "list"
+	
+	:: Find maximum of list
+	Bitchiest[fnc] "variable_name" "list"
+	
+	:: Find minimum of list
+	Horniest[fnc] "variable_name" "list"
+	
+	:: Example:
+	Bitchiest[fnc] "max_num" "2 3 1 8 5"
+	:: This will prints out "8"
+	Swear[fnc] %max_num%
+	
+### Note
+All the functions above only works with list with all integers. String or floats will cause errors.
 
 # Use Batch in FreakC
 Unlike all the previous release, now FreakC support writing Batch without any other commands. So you can actually learn Batch and write Batch codes in FreakC.

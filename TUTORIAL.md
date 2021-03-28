@@ -102,6 +102,9 @@ Unlike any characters, "!" requires "^", for example:
 	
 The reason for this is that FreakC has: SETLOCAL ENABLEDELAYEDEXPANSION which causes "!" to not be used properly.
 
+# A brief note
+If you're asking yourself, what are the reasons for the holy existence of "[fnc]". Well, it's completely useless, but I added it just to make coders waste some time :)
+
 # Unicode characters
 To start using Unicode character, type:
 

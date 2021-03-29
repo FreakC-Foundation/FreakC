@@ -199,9 +199,9 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			set deniedToken=true
 		)
 		if %%a == OddOrEven[fnc] (
-			set /a num=!printString:~14! %% 2
-			echo if !num! == 0 echo Is even! >>%a%.bat
-			echo if not !num! == 0 echo Is odd! >>%a%.bat
+			echo set /a fcooeres=!printString:OddOrEven[fnc] =! %%%% ^2>>%a%.bat
+			echo if %%fcooeres%% == 0 echo Is even! >>%a%.bat
+			echo if not %%fcooeres%% == 0 echo Is odd! >>%a%.bat
 			set deniedToken=true
 		)
 		if %%a == SquareMyBois[fnc] (
@@ -381,5 +381,5 @@ if "%fcread%" == "true" type %a%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 4.2.0
+echo FreakC DevKit Version 4.2.1
 exit /b

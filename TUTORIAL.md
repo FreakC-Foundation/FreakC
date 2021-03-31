@@ -4,10 +4,11 @@
   <b>A programming language for drunk coders</b>
   <br/>
   <br/>
-  <a href="https://github.com/nguyenphuminh/FreakC/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg"/></a>
-  <a href="https://github.com/nguyenphuminh/FreakC/search?l=batchfile"><img alt="language" src="https://img.shields.io/badge/language-Batchfile-purple.svg"></a>
-  <a href="#"><img src="https://img.shields.io/github/downloads/nguyenphuminh/freakc/total.svg"/></a>
-  <a href="https://github.com/nguyenphuminh/FreakC/blob/master/.github/CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"></a>
+  <a href="https://github.com/FreakC-Foundation/FreakC/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg"/></a>
+  <a href="https://github.com/FreakC-Foundation/FreakC/search?l=batchfile"><img alt="language" src="https://img.shields.io/badge/language-Batchfile-purple.svg"></a>
+  <a href="#"><img src="https://img.shields.io/github/downloads/FreakC-Foundation/FreakC/total.svg"/></a>
+  <a href="https://github.com/FreakC-Foundation/FreakC/blob/master/.github/CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"></a>
+  <a href="https://discord.gg/KK4SbRSYMd"><img src="https://img.shields.io/discord/810892591180546068.svg"/></a>
 </div>
 
 # Disclaimer
@@ -18,9 +19,9 @@ There are many ways to install FreakC, you can:
 
 1. Clone FreakC from Github using:
 
-	git clone https://github.com/nguyenphuminh/FreakC.git
+	git clone https://github.com/FreakC-Foundation/FreakC.git
 
-2. Install <a href="https://github.com/nguyenphuminh/FreakC/releases">here</a>.
+2. Install <a href="https://github.com/FreakC-Foundation/FreakC/releases">here</a>.
 
 # Cli's usage
 In the "FreakC" folder, open cmd and type this command to compile and run the code:
@@ -740,7 +741,7 @@ If you don't want to merge all the codes into one file (as FreakC uses a lot of 
 	<li>Compile the module file first, then compile and run the main file.</li>
 </ol>
 
-A demo can be found <a href="https://github.com/nguyenphuminh/FreakC/tree/master/Examples/Module">here.</a>
+A demo can be found <a href="https://github.com/FreakC-Foundation/FreakC/tree/master/Examples/Module">here.</a>
 
 # Find strings in a file 
 FindShits[fnc]:

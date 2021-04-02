@@ -138,10 +138,44 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 				echo set %%~1=%%sum%%
 				)>fclib_arrayfunc_sum.bat
 				set deniedToken=true
+			) else if "!lib!" == "math" (
+				(
+				echo set tar=%%~2
+				echo set %%~1=%%tar:-=%%
+				)>fclib_math_abs.bat
+				(
+				echo set /a res=%%~2 %%%% 2
+				echo if %%res%% == 0 (
+				echo 	set %%~1=true
+				echo ^) else (
+				echo 	set %%~1=false
+				echo ^)
+				)>fclib_math_even.bat
+				(
+				echo set /a res=%%~2 %%%% 2
+				echo if %%res%% == 0 (
+				echo 	set %%~1=false
+				echo ^) else (
+				echo 	set %%~1=true
+				echo ^)
+				)>fclib_math_odd.bat
+				(
+				echo set res=%%~2
+				echo set /a t=%%~3 - 1
+				echo for /l %%%%i in (1,1,%%t%%^) do (
+				echo 	set /a res*=%%res%%
+				echo ^)
+				echo set %%~1=%%res%%
+				)>fclib_math_pow.bat
+				set deniedToken=true
 			) else (
 				set deniedToken=true
 			)
 		)
+		if %%a == CheckIfUrDumb[fnc] set printString=!printString:CheckIfUrDumb[fnc]=call fclib_math_odd.bat!
+		if %%a == CheckIfUrStupid[fnc] set printString=!printString:CheckIfUrStupid[fnc]=call fclib_math_even.bat!
+		if %%a == Masturbate[fnc] set printString=!printString:Masturbate[fnc]=call fclib_math_pow.bat!
+		if %%a == AdmitUrDumb[fnc] set printString=!printString:AdmitUrDumb[fnc]=call fclib_math_abs.bat!
 		if %%a == Bitchiest[fnc] set printString=!printString:Bitchiest[fnc]=call fclib_arrayfunc_max.bat!
 		if %%a == Horniest[fnc] set printString=!printString:Horniest[fnc]=call fclib_arrayfunc_min.bat!
 		if %%a == CountBitches[fnc] set printString=!printString:CountBitches[fnc]= call fclib_arrayfunc_sum.bat!
@@ -381,5 +415,5 @@ if "%fcread%" == "true" type %a%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 4.2.1
+echo FreakC DevKit Version 4.3.0
 exit /b

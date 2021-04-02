@@ -677,6 +677,22 @@ All libraries:
 	:: This will prints out "8"
 	Swear[fnc] %max_num%
 	
+## Using math
+
+	Fuck[fnc] math
+
+	:: Absolute
+	AdmitUrDumb[fnc] "variable_name" "number"
+	
+	:: Check if a number is odd
+	CheckIfUrDumb[fnc] "variable_name" "number"
+
+	:: Check if a number is even
+	CheckIfUrStupid[fnc] "variable_name" "number
+
+	:: Power
+	CheckIfUrStupid[fnc] "variable_name" "number" "power_num"
+	
 ### Note
 All the functions above only works with list with all integers. String or floats will cause errors.
 

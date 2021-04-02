@@ -18,9 +18,15 @@ FreakC is a transpiled esoteric scripting language that... has nothing to do wit
 ## Why FreakC ?
 If you are drunk or freaking crazy, FreakC is like Gordon Ramsay's Beef Wellington to homeless people. (Yes)
 
-## What is in the devkit ?
-<li>A FreakC compiler</li>
-<li>Some optional utilities</li>
+## What comes with the devkit ?
+<li>A compiler</li>
+<li>An interactive shell</li>
+<li>A full-blown cli</li>
+<li>Some utilities</li>
+<li>Some xamples</li>
+
+<br/>
+<b>Yet, this is an esolang.</b>
 
 ## Compiler's usage
 In the "FreakC" folder, open cmd and type this command to compile and run the code:
@@ -75,13 +81,11 @@ You can type in whatever you want, it will be stored in "tar.fclang". You can ty
 <b>The compiler only works on Windows, and can only be compiled to Batch.</b>
 
 ## In what part does FreakC upgrade from Batch ?
-Well, FreakC is just an esoteric programming language, so you shouldn't expect FreakC to be upgraded from Batch, but here are some of them:
+If you are asking yourself, "what does FreakC have that Batch don't have", then here they are (though it's an esolang):
+<li>Libraries like "float", "arrayfunc".</li>
+<li>While loops and other additional commands.</li>
+<li>Modules and stuffs.</li>
 
-<li>Real while, do-while loops</li>
-<li>Additional variables like 'numpoop', 'numpuke', etc</li>
-<li>Additional functions like 'OddOrEven[fnc]', 'CoolHackerMan[fnc]',...</li>
-<li>Additional operators like "++" or "--"</li>
-<li><b><i>mEMe</i></b></li>
 
 ## Tutorials 
 <a href=https://github.com/nguyenphuminh/FreakC/blob/master/TUTORIAL.md>Click here to see tutorials</a>
@@ -103,13 +107,6 @@ You can actually find plenty of other tools online that helps you to converts Ba
 There are many frameworks in the utilities folder that you can use, I will definitely update the usage of them soon.
 
 <b>Note: I don't own those frameworks.</b>
-
-## 3.x Releases
-3.x releases are the finest releases of FreakC, they removes all the unnecessary commands/functions, as well as adding many new useful features like:
-<li>Useful variables</li>
-<li>Useful functionalities like if statements, for loops, while loop, do-while loop, "++" and "--" operators and more</li>
-<li>The compiler is much more well-built than all the previous releases</li>
-<li><b><i>mEMe</i></b></li>
 
 ## Developers
 <li>Owner/Developer: Nguyen Phu Minh</li>

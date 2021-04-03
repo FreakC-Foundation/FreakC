@@ -23,7 +23,7 @@ If you are drunk or freaking crazy, FreakC is like Gordon Ramsay's Beef Wellingt
 <li>An interactive shell</li>
 <li>A full-blown cli</li>
 <li>Some utilities</li>
-<li>Some xamples</li>
+<li>Some examples</li>
 
 <br/>
 <b>Yet, this is an esolang.</b>

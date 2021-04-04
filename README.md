@@ -114,11 +114,13 @@ There are many frameworks in the utilities folder that you can use, I will defin
 ## [Setup FreakC's development environment](https://youtu.be/l_3sFSArQWg)
 
 ## Social medias
-<li><a href="https://youtu.be/0Pbah29aI4s">FreakC's official announcement on youtube!</a></li>
-<li><a href="https://npmgames.itch.io/freakc">FreakC on itch.io!</a></li>
-<li><a href="https://www.facebook.com/FreakC-Programming-Language-111425377421861">FreakC offical page on Facebook!</a></li>
-<li><a href="https://esolangs.org/wiki/FreakC">FreakC on esolangs.org</a></li>
-<li><a href="https://dev.to/freakcdev297/freakc-the-esolang-that-can-do-stuffs-3f9c">FreakC on dev.to</a></li>
+<li><a href="https://youtu.be/0Pbah29aI4s">Youtube</a></li>
+<li><a href="https://npmgames.itch.io/freakc">Itch.io</a></li>
+<li><a href="https://www.facebook.com/FreakC-Programming-Language-111425377421861">Facebook</a></li>
+<li><a href="https://discord.com/invite/KK4SbRSYMd">Discord</a></li>
+<li><a href="https://esolangs.org/wiki/FreakC">Esolangs.org</a></li>
+<li><a href="https://dev.to/freakcdev297/freakc-the-esolang-that-can-do-stuffs-3f9c">Dev.to</a></li>
+<li><a href="http://freakc.herokuapp.com/">Offical Website</a></li>
 
 ## Languages based on FreakC
 <li><a href="https://github.com/nguyenphuminh/VNC">VNC</a></li>

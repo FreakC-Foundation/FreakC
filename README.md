@@ -118,6 +118,7 @@ There are many frameworks in the utilities folder that you can use, I will defin
 <li><a href="https://npmgames.itch.io/freakc">FreakC on itch.io!</a></li>
 <li><a href="https://www.facebook.com/FreakC-Programming-Language-111425377421861">FreakC offical page on Facebook!</a></li>
 <li><a href="https://esolangs.org/wiki/FreakC">FreakC on esolangs.org</a></li>
+<li><a href="https://dev.to/freakcdev297/freakc-the-esolang-that-can-do-stuffs-3f9c">FreakC on dev.to</a></li>
 
 ## Languages based on FreakC
 <li><a href="https://github.com/nguyenphuminh/VNC">VNC</a></li>

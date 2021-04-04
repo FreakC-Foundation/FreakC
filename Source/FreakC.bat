@@ -167,11 +167,41 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 				echo ^)
 				echo set %%~1=%%res%%
 				)>fclib_math_pow.bat
+				(
+				echo set /a num1=0
+				echo set /a num2=1
+				echo set /a num3=0
+				echo set str=1
+				echo :loop
+				echo if not %%num3%% LSS %%~2 goto end
+ 				echo set /a num3=%%num1%% + %%num2%%
+ 				echo set str=%%str%% %%num3%%
+ 				echo set /a num1=%%num2%%
+ 				echo set /a num2=%%num3%%
+				echo goto loop
+				echo :end
+				echo set %%~1=%%str%%
+				)>fclib_math_fibseq.bat
+				(
+				echo set /a num1=0
+				echo set /a num2=1
+				echo set /a num3=0
+				echo :loop
+				echo if not %%num3%% LSS %%~2 goto end
+ 				echo set /a num3=%%num1%% + %%num2%%
+ 				echo set /a num1=%%num2%%
+ 				echo set /a num2=%%num3%%
+				echo goto loop
+				echo :end
+				echo set %%~1=%%num3%%
+				)>fclib_math_fib.bat
 				set deniedToken=true
 			) else (
 				set deniedToken=true
 			)
 		)
+		if %%a == HugeCum[fnc] set printString=!printString:HugeCum[fnc]=call fclib_math_fibseq.bat!
+		if %%a == NotThatHugeCum[fnc] set printString=!printString:NotThatHugeCum[fnc]=call fclib_math_fib.bat!
 		if %%a == CheckIfUrDumb[fnc] set printString=!printString:CheckIfUrDumb[fnc]=call fclib_math_odd.bat!
 		if %%a == CheckIfUrStupid[fnc] set printString=!printString:CheckIfUrStupid[fnc]=call fclib_math_even.bat!
 		if %%a == Masturbate[fnc] set printString=!printString:Masturbate[fnc]=call fclib_math_pow.bat!
@@ -415,5 +445,5 @@ if "%fcread%" == "true" type %a%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 4.3.0
+echo FreakC DevKit Version 4.4.0
 exit /b

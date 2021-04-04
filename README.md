@@ -1,7 +1,7 @@
 <div align="center">
   <img src="Resources/Branding/logo.png" />
   <br/>
-  <b>A programming language for drunk coders</b>
+  <b>A somewhat usable programming language for drunk coders</b>
   <br/>
   <br/>
   <a href="https://github.com/FreakC-Foundation/FreakC/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg"/></a>

@@ -123,7 +123,7 @@ There are many frameworks in the utilities folder that you can use, I will defin
 <li><a href="https://www.reddit.com/r/FreakC/">Reddit</a></li>
 <li><a href="https://esolangs.org/wiki/FreakC">Esolangs.org</a></li>
 <li><a href="https://dev.to/freakcdev297/freakc-the-esolang-that-can-do-stuffs-3f9c">Dev.to</a></li>
-<li><a href="http://freakc.herokuapp.com/">Offical Website</a></li>
+<li><a href="https://freakc-foundation.github.io/">Offical Website</a></li>
 
 ## Languages based on FreakC
 <li><a href="https://github.com/nguyenphuminh/VNC">VNC</a></li>

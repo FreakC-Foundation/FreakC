@@ -693,7 +693,21 @@ All libraries:
 	CheckIfUrStupid[fnc] "variable_name" "number
 
 	:: Power
-	CheckIfUrStupid[fnc] "variable_name" "number" "power_num"
+	Masturbate[fnc] "variable_name" "number" "power_num"
+	
+## Using string
+
+	Fuck[fnc] string
+	
+	:: Length of string
+	MeasurePenisSize[fnc] "variable_name" "string"
+	
+	:: To uppercase
+	BeingHorny[fnc] "variable_name" "number"
+	
+	:: To lowercase
+	WipePenis[fnc] "variable_name" "number"
+	
 	
 ### Note
 All the functions above only works with list with all integers. String or floats will cause errors.

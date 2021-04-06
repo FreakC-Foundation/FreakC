@@ -196,10 +196,83 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 				echo set %%~1=%%num3%%
 				)>fclib_math_fib.bat
 				set deniedToken=true
+			) else if "!lib!" == "string" (
+				(
+				echo set lower=%%~2
+				echo set lower=%%lower:A=a%%
+				echo set lower=%%lower:B=b%%
+				echo set lower=%%lower:C=c%%
+				echo set lower=%%lower:D=d%%
+				echo set lower=%%lower:E=e%%
+				echo set lower=%%lower:F=f%%
+				echo set lower=%%lower:G=g%%
+				echo set lower=%%lower:H=h%%
+				echo set lower=%%lower:I=i%%
+				echo set lower=%%lower:J=j%%
+				echo set lower=%%lower:K=k%%
+				echo set lower=%%lower:L=l%%
+				echo set lower=%%lower:M=m%%
+				echo set lower=%%lower:N=n%%
+				echo set lower=%%lower:O=o%%
+				echo set lower=%%lower:P=p%%
+				echo set lower=%%lower:Q=q%%
+				echo set lower=%%lower:R=r%%
+				echo set lower=%%lower:S=s%%
+				echo set lower=%%lower:T=t%%
+				echo set lower=%%lower:U=u%%
+				echo set lower=%%lower:V=v%%
+				echo set lower=%%lower:W=w%%
+				echo set lower=%%lower:X=x%%
+				echo set lower=%%lower:Y=y%%
+				echo set lower=%%lower:Z=z%%
+				echo set %%~1=%%lower%%
+				)>fclib_string_lower.bat
+				(
+				echo set upper=%%~2
+				echo set upper=%%upper:a=A%%
+				echo set upper=%%upper:b=B%%
+				echo set upper=%%upper:c=C%%
+				echo set upper=%%upper:d=D%%
+				echo set upper=%%upper:e=E%%
+				echo set upper=%%upper:f=F%%
+				echo set upper=%%upper:g=G%%
+				echo set upper=%%upper:h=H%%
+				echo set upper=%%upper:i=I%%
+				echo set upper=%%upper:j=J%%
+				echo set upper=%%upper:k=K%%
+				echo set upper=%%upper:l=L%%
+				echo set upper=%%upper:m=M%%
+				echo set upper=%%upper:n=N%%
+				echo set upper=%%upper:o=O%%
+				echo set upper=%%upper:p=P%%
+				echo set upper=%%upper:q=Q%%
+				echo set upper=%%upper:r=R%%
+				echo set upper=%%upper:s=S%%
+				echo set upper=%%upper:t=T%%
+				echo set upper=%%upper:u=U%%
+				echo set upper=%%upper:v=V%%
+				echo set upper=%%upper:w=W%%
+				echo set upper=%%upper:x=X%%
+				echo set upper=%%upper:y=Y%%
+				echo set upper=%%upper:z=Z%%
+				echo set %%~1=%%upper%%
+				)>fclib_string_upper.bat
+				(
+				echo setlocal enabledelayedexpansion
+				echo set len=0
+				echo set str=%%~2
+				echo :loop
+				echo if not "^!str:^~%%len%%^!" == "" set /a len+=1 ^& goto loop
+				echo (endlocal ^& set %%~1=%%len%%^)
+				)>fclib_string_length.bat
+				set deniedToken=true
 			) else (
 				set deniedToken=true
 			)
 		)
+		if %%a == MeasurePenisSize[fnc] set printString=!printString:MeasurePenisSize[fnc]=call fclib_string_length.bat!
+		if %%a == BeingHorny[fnc] set printString=!printString:BeingHorny[fnc]=call fclib_string_upper.bat!
+		if %%a == WipePenis[fnc] set printString=!printString:WipePenis[fnc]=call fclib_string_lower.bat!
 		if %%a == HugeCum[fnc] set printString=!printString:HugeCum[fnc]=call fclib_math_fibseq.bat!
 		if %%a == NotThatHugeCum[fnc] set printString=!printString:NotThatHugeCum[fnc]=call fclib_math_fib.bat!
 		if %%a == CheckIfUrDumb[fnc] set printString=!printString:CheckIfUrDumb[fnc]=call fclib_math_odd.bat!
@@ -445,5 +518,5 @@ if "%fcread%" == "true" type %a%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 4.4.0
+echo FreakC DevKit Version 4.5.0
 exit /b

@@ -695,6 +695,9 @@ All libraries:
 	:: Power
 	Masturbate[fnc] "variable_name" "number" "power_num"
 	
+	:: Factorial
+	BigPenis[fnc] "variable_name" "number"
+	
 ## Using string
 
 	Fuck[fnc] string
@@ -707,6 +710,9 @@ All libraries:
 	
 	:: To lowercase
 	WipePenis[fnc] "variable_name" "number"
+	
+	:: Reverse
+	DoDoggyStyle[fnc] "variable_name" "string"
 	
 ## Loading lib entirely with GrabFnc[fnc]
 Example:

@@ -21,7 +21,7 @@ There are many ways to install FreakC, you can:
 
 1. Clone FreakC from Github using:
 
-	git clone https://github.com/FreakC-Foundation/FreakC.git
+ 		git clone https://github.com/FreakC-Foundation/FreakC.git
 
 2. Install <a href="https://github.com/FreakC-Foundation/FreakC/releases">here</a>.
 

@@ -196,6 +196,11 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 				echo set %%~1=%%num3%%
 				)>fclib_math_fib.bat
 				set deniedToken=true
+				(
+				echo set mul=1
+				echo for /l %%%%i in (1,1,%%~2^) do set /a mul*=%%%%i
+				echo set %%~1=%%mul%%
+				)>fclib_math_fact.bat
 			) else if "!lib!" == "string" (
 				(
 				echo set lower=%%~2
@@ -265,11 +270,24 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 				echo if not "^!str:^~%%len%%^!" == "" set /a len+=1 ^& goto loop
 				echo (endlocal ^& set %%~1=%%len%%^)
 				)>fclib_string_length.bat
+				(
+				echo setlocal enabledelayedexpansion
+				echo set len=0
+				echo set str=%%~2
+				echo set newstr=
+				echo :loop
+				echo if not "^!str:^~%%len%%^!" == "" set /a len+=1 ^& goto loop
+				echo set /a strlen=%%len%%-1
+				echo for /l %%%%i in (%%strlen%%,-1,0^) do set newstr=^^!newstr^^!^^!str:^~%%%%i,1^^!
+				echo (endlocal ^& set %%~1=%%newstr%%^)
+				)>fclib_string_reverse.bat
 				set deniedToken=true
 			) else (
 				set deniedToken=true
 			)
 		)
+		if %%a == DoDoggyStyle[fnc] set printString=!printString:DoDoggyStyle[fnc]=call fclib_string_reverse.bat!
+		if %%a == BigPenis[fnc] set printString=!printString:BigPenis[fnc]=call fclib_math_fact.bat!
 		if %%a == MeasurePenisSize[fnc] set printString=!printString:MeasurePenisSize[fnc]=call fclib_string_length.bat!
 		if %%a == BeingHorny[fnc] set printString=!printString:BeingHorny[fnc]=call fclib_string_upper.bat!
 		if %%a == WipePenis[fnc] set printString=!printString:WipePenis[fnc]=call fclib_string_lower.bat!
@@ -518,5 +536,5 @@ if "%fcread%" == "true" type %a%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 4.5.0
+echo FreakC DevKit Version 4.6.0
 exit /b

@@ -708,6 +708,12 @@ All libraries:
 	:: To lowercase
 	WipePenis[fnc] "variable_name" "number"
 	
+## Loading lib entirely with GrabFnc[fnc]
+Example:
+
+	:: Check if a number is odd
+	GrabFnc[fnc] fclib_math_odd.bat "variable_name" "number"
+	
 	
 ### Note
 All the functions above only works with list with all integers. String or floats will cause errors.

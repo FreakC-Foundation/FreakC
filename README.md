@@ -132,3 +132,5 @@ There are many frameworks in the utilities folder that you can use, I will defin
 Copyright © 2020 Nguyen Phu Minh
 
 This language is licensed under the MIT License
+
+**Under any circumstances, please properly credit and mention the original creator if you are using this project's code**

@@ -133,4 +133,4 @@ Copyright © 2020 Nguyen Phu Minh
 
 This language is licensed under the MIT License
 
-**Under any circumstances, please properly credit and mention the original creator if you are using this project's code**
+**Under any circumstances, please properly credit and mention the original creator if you are using this project's code or anything related to it (syntax, documentations, utilities,...).**

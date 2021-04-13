@@ -79,7 +79,7 @@ You can type in whatever you want, it will be stored in "tar.fclang". You can ty
 <li>StopFuckin[cli] - Delete tar.fclang and exit</li>
 <li>WipeAss[cli] - Resets codes</li>
 <li>Shit[cli] - Clear console</li>
-
+<br/>
 <b>The compiler only works on Windows, and can only be compiled to Batch.</b>
 
 ## In what part does FreakC upgrade from Batch ?
@@ -87,7 +87,6 @@ If you are asking yourself, "what does FreakC have that Batch don't have", then 
 <li>Libraries like "float", "arrayfunc".</li>
 <li>While loops and other additional commands.</li>
 <li>Modules and stuffs.</li>
-
 
 ## Tutorials 
 <a href=https://github.com/nguyenphuminh/FreakC/blob/master/TUTORIAL.md>Click here to see tutorials</a>

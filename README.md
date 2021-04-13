@@ -106,9 +106,15 @@ You can actually find plenty of other tools online that helps you to converts Ba
 <a href="IDE.md">Click here to proceed...</a>
 
 ## Frameworks
-There are many frameworks in the utilities folder that you can use, I will definitely update the usage of them soon.
+Note that all Batch frameworks can integrate well with FreakC, so you can use them just like in Batch smoothly. There are some in the **Utilities** folder (which I don't own).
 
-<b>Note: I don't own those frameworks.</b>
+### Game frameworks
+There are many existing game engines for Batch/FreakC:
+
+* <a href="https://github.com/Berry2460/cmd-berryengine">Berry</a>
+* <a href="https://github.com/nguyenphuminh/Corpse">Corpse</a>
+* <a href="https://github.com/Berry2460/shade_engine">Shade</a>
+* <a href="https://github.com/Honguito98/Seta-Engine-for-Batch-games">Seta</a>
 
 ## Developers
 <li>Owner/Developer: Nguyen Phu Minh</li>

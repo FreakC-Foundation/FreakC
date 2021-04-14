@@ -20,15 +20,22 @@ FreakC is a transpiled multi-paradigm esoteric scripting language that... has no
 ## Why FreakC ?
 If you are drunk or freaking crazy, FreakC is like Gordon Ramsay's Beef Wellington to homeless people. (Yes)
 
-## What comes with the devkit ?
-<li>A compiler</li>
-<li>An interactive shell</li>
-<li>A full-blown cli</li>
-<li>Some utilities</li>
-<li>Some examples</li>
+But to take it seriously, even though it's an esolang, it provides:
 
-<br/>
-<b>Yet, this is an esolang.</b>
+* Multi-paradigm (procedural, functional, even OOP).
+* Many prebuilt standard libraries to make scripting easier.
+* A full-blown cli
+* Compatibility with Batch (You can embed Batch codes in FreakC)
+
+## What comes with the devkit ?
+* A compiler.
+* An interactive shell.
+* A full-blown cli.
+* Some utilities.
+* Some examples.
+
+
+**Yet, this is an esolang.**
 
 ## Compiler's usage
 In the "FreakC" folder, open cmd and type this command to compile and run the code:
@@ -75,18 +82,19 @@ To open interactive shell, type:
     
 You can type in whatever you want, it will be stored in "tar.fclang". You can type in any of these commands to execute tasks:
 
-<li>StartFuckin[cli] - Runs all the codes written</li>
-<li>StopFuckin[cli] - Delete tar.fclang and exit</li>
-<li>WipeAss[cli] - Resets codes</li>
-<li>Shit[cli] - Clear console</li>
-<br/>
-<b>The compiler only works on Windows, and can only be compiled to Batch.</b>
+* `StartFuckin[cli]` - Runs all the codes written
+* `StopFuckin[cli]` - Delete tar.fclang and exit
+* `WipeAss[cli]` - Resets codes
+* `Shit[cli]` - Clear console
+
+
+**The compiler only works on Windows, and can only be compiled to Batch.**
 
 ## In what part does FreakC upgrade from Batch ?
 If you are asking yourself, "what does FreakC have that Batch don't have", then here they are (though it's an esolang):
-<li>Libraries like "float", "arrayfunc".</li>
-<li>While loops and other additional commands.</li>
-<li>Modules and stuffs.</li>
+* Libraries like "float", "arrayfunc".
+* While loops and other additional commands.
+* Modules and stuffs.
 
 ## Tutorials 
 <a href=https://github.com/nguyenphuminh/FreakC/blob/master/TUTORIAL.md>Click here to see tutorials</a>
@@ -121,17 +129,17 @@ There are many existing game engines for Batch/FreakC:
 ## [Setup FreakC's development environment](https://youtu.be/l_3sFSArQWg)
 
 ## Social medias
-<li><a href="https://youtu.be/0Pbah29aI4s">Youtube</a></li>
-<li><a href="https://npmgames.itch.io/freakc">Itch.io</a></li>
-<li><a href="https://www.facebook.com/FreakC-Programming-Language-111425377421861">Facebook</a></li>
-<li><a href="https://discord.com/invite/KK4SbRSYMd">Discord</a></li>
-<li><a href="https://www.reddit.com/r/FreakC/">Reddit</a></li>
-<li><a href="https://esolangs.org/wiki/FreakC">Esolangs.org</a></li>
-<li><a href="https://dev.to/freakcdev297/freakc-the-esolang-that-can-do-stuffs-3f9c">Dev.to</a></li>
-<li><a href="https://freakc-foundation.github.io/">Offical Website</a></li>
+* <a href="https://youtu.be/0Pbah29aI4s">Youtube</a>
+* <a href="https://npmgames.itch.io/freakc">Itch.io</a>
+* <a href="https://www.facebook.com/FreakC-Programming-Language-111425377421861">Facebook</a>
+* <a href="https://discord.com/invite/KK4SbRSYMd">Discord</a>
+* <a href="https://www.reddit.com/r/FreakC/">Reddit</a>
+* <a href="https://esolangs.org/wiki/FreakC">Esolangs.org</a>
+* <a href="https://dev.to/freakcdev297/freakc-the-esolang-that-can-do-stuffs-3f9c">Dev.to</a>
+* <a href="https://freakc-foundation.github.io/">Offical Website</a>
 
 ## Languages based on FreakC
-<li><a href="https://github.com/nguyenphuminh/VNC">VNC</a></li>
+* <a href="https://github.com/nguyenphuminh/VNC">VNC</a>
 
 ## Copyrights and License
 Copyright © 2020 Nguyen Phu Minh

@@ -431,23 +431,40 @@ This code would still work eventhough it contains special character
 	PoopFnc[fnc] dsasd$ 123213 323
 	EatFnc[fnc] dsasd$ 123213 323
 	
+# Procedural programming
+
+	ProduceTrash[fnc] Procedure_name
+		:: Code goes here
+	EndTrash[fnc]
+
+Example:
+
+	ProduceTrash[fnc] SayHello
+		Swear[fnc] Hello
+	EndTrash[fnc]
+	:: Prints "Hello"
+	GrabFnc[fnc] SayHello
+	
 # Object Oriented Programming
-There is no such thing as "OOP on FreakC", but you can fake one, like this:
+You can implement OOP like this:
 
-	::Call the function "Car" with parameters to declares elements
-	GrabFnc[fnc] :Car "supercar" "20" "special"
-	
-	::Would print out the element "gas" of "supercar"
-	Swear[fnc] %supercar.gas%
+	:: Create a procedure called "Dog"
+	ProduceTrash[fnc] Dog
+		::Set properties
+		PoopString[fnc] %~1.age=%~2
+		PoopString[fnc] %~1.weight=%~3
+		(
+			Swear[fnc] Swear[fnc] *Being cute*
+		)>%~1.BeingCute.bat
+	EndTrash[fnc]
 
-	::Would create a function called "Car", then pass all the parameters to the new variables.
-	PoopFnc[fnc] Car 
-	DoIfFalse[fnc] "%~1" == "" DoIfFalse[fnc] "%~2" == "" DoIfFalse[fnc] "%~3" == "" ( 
-		PoopString[fnc] %~1.gas=%~2
-		PoopString[fnc] %~1.model=%~3
-	)
-	Die[fnc] /b 0
-	
+	:: Create an object
+	GrabFnc[fnc] Dog "Mary" "3" "4kg"
+	:: Prints out "age" property of "Mary", which is "3"
+	Swear[fnc] Age: %Mary.age%
+	:: Call "Mary.BeingCute", which prints out "*Being cute*"
+	GrabFnc[fnc] Mary.BeingCute
+
 # If statements
 To use if statement, type:
 

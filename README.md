@@ -1,7 +1,7 @@
 <div align="center">
   <img src="Resources/Branding/logo.png" />
   <br/>
-  <b>A somewhat usable programming language for drunk coders</b>
+  <b>A revolutionary esoteric programming language</b>
   <br/>
   <br/>
   <a href="https://github.com/FreakC-Foundation/FreakC/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg"/></a>
@@ -14,7 +14,7 @@
 </div>
 
 ## What is FreakC ?
-FreakC is a transpiled esoteric scripting language that... has nothing to do with the C programming language. This language's syntax is dirty and funny (or even offensive), but technically, it functions just like a normal language and is able to create usable programs. It is very similar to Batch, and it is also transpiled to Batch.
+FreakC is a transpiled multi-paradigm esoteric scripting language that... has nothing to do with the C programming language. This language's syntax is dirty and funny (or even offensive), but technically, it functions just like a normal language and is able to create usable programs. It is very similar to Batch, and it is also transpiled to Batch.
 <a href="https://discord.gg/KK4SbRSYMd">Proceed to Discord...</a>
 
 ## Why FreakC ?

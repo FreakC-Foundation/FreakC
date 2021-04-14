@@ -24,8 +24,18 @@ But to take it seriously, even though it's an esolang, it provides:
 
 * Multi-paradigm (procedural, functional, even OOP).
 * Many prebuilt standard libraries to make scripting easier.
-* A full-blown cli
-* Compatibility with Batch (You can embed Batch codes in FreakC)
+* A full-blown cli.
+* Compatibility with Batch (You can embed Batch codes in FreakC).
+
+### Language preview
+Hello World:
+
+    Swear[fnc] Hello, World!
+
+Function definition
+
+    
+To check out more samples, click <a href=https://github.com/FreakC-Foundation/FreakC/tree/master/Examples>here.</a>
 
 ## What comes with the devkit ?
 * A compiler.
@@ -33,7 +43,6 @@ But to take it seriously, even though it's an esolang, it provides:
 * A full-blown cli.
 * Some utilities.
 * Some examples.
-
 
 **Yet, this is an esolang.**
 
@@ -97,10 +106,10 @@ If you are asking yourself, "what does FreakC have that Batch don't have", then 
 * Modules and stuffs.
 
 ## Tutorials 
-<a href=https://github.com/nguyenphuminh/FreakC/blob/master/TUTORIAL.md>Click here to see tutorials</a>
+<a href=https://github.com/FreakC-Foundation/FreakC/blob/master/TUTORIAL.md>Click here to see tutorials</a>
 
 ## Samples
-<a href=https://github.com/nguyenphuminh/FreakC/tree/master/Examples>Click here to see samples</a>
+<a href=https://github.com/FreakC-Foundation/FreakC/tree/master/Examples>Click here to see samples</a>
 
 ## Convert FreakC to .EXE files
 In "FreakC/Utilities/Scripts" there is a file called battoexe.bat which helps to convert .bat files to .exe files.

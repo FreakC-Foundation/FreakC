@@ -124,7 +124,8 @@ There are many existing game engines for Batch/FreakC:
 * <a href="https://github.com/Honguito98/Seta-Engine-for-Batch-games">Seta</a>
 
 ## Developers
-<li>Owner/Developer: Nguyen Phu Minh</li>
+* Owner/Developer: Nguyen Phu Minh
+* VSCode contributor: anapple96
 
 ## [Setup FreakC's development environment](https://youtu.be/l_3sFSArQWg)
 

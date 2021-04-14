@@ -33,6 +33,7 @@ if "%1" == "" (
 	pause >nul
 	exit /b
 )
+set proctar=java
 if "%1" == "--help" (
 	echo. Usage: freakc {option/name} {option}
 	echo.
@@ -286,6 +287,17 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 				set deniedToken=true
 			)
 		)
+		if %%a == ProduceTrash[fnc] (
+			set procval=0
+			set procadd=true
+			set proctar=!printString:ProduceTrash[fnc] =!
+			set deniedToken=true
+		)
+		if %%a == EndTrash[fnc] (
+			set procadd=false
+			set proctar=none
+			set deniedToken=true
+		)
 		if %%a == DoDoggyStyle[fnc] set printString=!printString:DoDoggyStyle[fnc]=call fclib_string_reverse.bat!
 		if %%a == BigPenis[fnc] set printString=!printString:BigPenis[fnc]=call fclib_math_fact.bat!
 		if %%a == MeasurePenisSize[fnc] set printString=!printString:MeasurePenisSize[fnc]=call fclib_string_length.bat!
@@ -525,10 +537,18 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == Thicc[meme] set printString=echo Damn boi... Damn boi... Damn boi he thicc boia, that's a thicc ass boi
 		if %%a == DumbCousin[fnc] set printString=!printString:DumbCousin[fnc]=powershell!
 	)
+	if "!procadd!" == "true" (
+		if !procval! == 0 (
+			set procval=1
+			echo.>!proctar!.bat
+		) else (
+			echo !printString!>>!proctar!.bat
+		)
+	)
 	if "!fccomment!" == "false" (
-		if not "!deniedToken!" == "true" echo. !printString!>>%a%.bat
+		if not "!procadd!" == "true" if not "!deniedToken!" == "true" echo. !printString!>>%a%.bat
 	) else (
-		echo. ::!printString!>>%a%.bat
+		if not "!procadd!" == "true" echo. ::!printString!>>%a%.bat
 	)
 )
 setlocal disabledelayedexpansion
@@ -536,5 +556,5 @@ if "%fcread%" == "true" type %a%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 4.6.0
+echo FreakC DevKit Version 4.7.0
 exit /b

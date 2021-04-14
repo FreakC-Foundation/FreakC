@@ -34,6 +34,11 @@ Hello World:
 
 Function definition
 
+    ProduceTrash[fnc] SayHello
+        Swear[fnc] Hello
+    EndTrash[fnc]
+    :: Prints "Hello"
+    GrabFnc[fnc] SayHello
     
 To check out more samples, click <a href=https://github.com/FreakC-Foundation/FreakC/tree/master/Examples>here.</a>
 

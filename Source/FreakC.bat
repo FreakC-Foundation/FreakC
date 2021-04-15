@@ -28,6 +28,8 @@ if "%1" == "" (
 	echo.  --compile  :Have to be the second parameter, compile the file only.
 	echo.  --candr    :Have to be the second parameter, compile and shows compiled code.
 	echo.  --create   :Have to be the second parameter, create a new FreakC project.
+	echo.  --clrlib   :Have to be the first parameter, delete all standard libraries in the folder.
+	echo.  --clrbat   :Have to be the first parameter, delete all Batch files in the folder.
 	echo.
 	echo. [Leave the second {option} blank if you want to both compile and run the file]
 	pause >nul
@@ -45,6 +47,8 @@ if "%1" == "--help" (
 	echo.  --compile  :Have to be the second parameter, compile the file only.
 	echo.  --candr    :Have to be the second parameter, compile and shows compiled code.
 	echo.  --create   :Have to be the second parameter, create a new FreakC project.
+	echo.  --clrlib   :Have to be the first parameter, delete all standard libraries in the folder.
+	echo.  --clrbat   :Have to be the first parameter, delete all Batch files in the folder.
 	echo.
 	echo. [Leave the second {option} blank if you want to both compile and run the file]
 	exit /b
@@ -58,6 +62,26 @@ if "%2" == "--compile" (
 	set fccreate=true
 ) else if "%1" == "--shell" (
 	FCShell
+	exit /b
+) else if "%1" == "--clrlib" (
+	del fclib_arrayfunc_sum.bat
+	del fclib_arrayfunc_max.bat
+	del fclib_arrayfunc_min.bat
+	del fclib_math_abs.bat
+	del fclib_math_odd.bat
+	del fclib_math_even.bat
+	del fclib_math_fact.bat
+	del fclib_math_pow.bat
+	del fclib_math_fib.bat
+	del fclib_math_fibseq.bat
+	del fclib_string_upper.bat
+	del fclib_string_lower.bat
+	del fclib_string_length.bat
+	del fclib_string_reverse.bat
+	del fclib_float.bat
+	exit /b
+) else if "%1" == "--clrbat" (
+	del *.bat
 	exit /b
 )
 set fccompilename=%1
@@ -556,5 +580,5 @@ if "%fcread%" == "true" type %a%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 4.7.0
+echo FreakC DevKit Version 4.8.0
 exit /b

@@ -79,6 +79,14 @@ To create a new FreakC project quickly, you can type:
 Notice that it will generate a file with a Hello World example in it, if you just want to create an empty file, type:
 
     freakc project_name --create --empty 
+
+To delete all stdlib files generated, type:
+
+    freakc --clrlib
+
+To delete all Batch files, type:
+
+    freakc --clrbat
     
 To show all options and usage, type:
 

@@ -78,10 +78,10 @@ To open interactive shell, type:
     
 You can type in whatever you want, it will be stored in "tar.fclang". You can type in any of these commands to execute tasks:
 
-<li>StartFuckin[cli] - Runs all the codes written</li>
-<li>StopFuckin[cli] - Delete tar.fclang and exit</li>
-<li>WipeAss[cli] - Resets codes</li>
-<li>Shit[cli] - Clear console</li>
+* StartFuckin[cli] - Runs all the codes written
+* StopFuckin[cli] - Delete tar.fclang and exit
+* WipeAss[cli] - Resets codes
+* Shit[cli] - Clear console
 
 # Print text with Swear[fnc]
 To print out a string or text, you use:
@@ -301,35 +301,35 @@ You can also do that with OpenHouse[fnc]
 <b>Note: DELAYEDEXPANSION is already enabled in FreakC. So you wouldn't need to enable it actually.</b>
 
 ### Special variables
-<li>%numpiss% - A variable with the value as random numbers from 1 to 9</li>
-<li>%numpuke% - A variable with the value as random numbers from 1 to 99</li>
-<li>%numpoop% - A variable with the value as random numbers from 1 to 999</li>
-<li>%numdiarrhea% - A variable with the value as random numbers from 1 to 9999</li>
-<li>%numbutt% - A variable with the value as random numbers from 1 to 99999</li>
-<li>%time% - A variable with the value as the current timer</li>
-<li>%date% - A variable with the value as the current date</li>
-<li>%cd% - A variable with the value as the current directory</li>
-<li>%errorlevel% - A variable with the value as the current Batch errorlevel value</li>
-<li>%cmdextversion% - A variable with the value as the current Command Processor Extensions version number</li>
-<li>%cmdcmdline% - A variable with the value as the original command line that invoked the Command Processor</li>
-<li>%path% - A variable with the value as all environment variables</li>
-<li>%highestnumanodenumber% - A variable with the value as the highest NUMA node number on this machine</li>
+* %numpiss% - A variable with the value as random numbers from 1 to 9
+* %numpuke% - A variable with the value as random numbers from 1 to 99
+* %numpoop% - A variable with the value as random numbers from 1 to 999
+* %numdiarrhea% - A variable with the value as random numbers from 1 to 9999
+* %numbutt% - A variable with the value as random numbers from 1 to 99999
+* %time% - A variable with the value as the current timer
+* %date% - A variable with the value as the current date
+* %cd% - A variable with the value as the current directory
+* %errorlevel% - A variable with the value as the current Batch errorlevel value
+* %cmdextversion% - A variable with the value as the current Command Processor Extensions version number
+* %cmdcmdline% - A variable with the value as the original command line that invoked the Command Processor
+* %path% - A variable with the value of PATH environment variable
+* %highestnumanodenumber% - A variable with the value as the highest NUMA node number on this machine
 
 There are a lot of special variables left, but you might not find uses for them
 
 ### Implementations on variables
-<li>%variable_name:~0,-2% - would extract all but the last 2 characters of the variable</li>
-<li>%variable_name:~-5% - would extract the last 5 characters of the variable</li>
-<li>%variable_name:~5% - would remove the first 5 characters of the variable</li>
-<li>%variable_name:str1=str2% - would replace str1 with str2</li>
-<li>%PATH:~10,5% - would expand the PATH environment variable, and then use only the 5 characters that begin at the 11th (offset 10) character of the expanded result.  If the length is not specified, then it defaults to the remainder of the variable value.  If either number (offset or length) is negative, then the number used is the length of the environment variable value added to the offset or length specified/li>
+* %variable_name:~0,-2% - would extract all but the last 2 characters of the variable
+* %variable_name:~-5% - would extract the last 5 characters of the variable
+* %variable_name:~5% - would remove the first 5 characters of the variable
+* %variable_name:str1=str2% - would replace str1 with str2
+* %PATH:~10,5% - would expand the PATH environment variable, and then use only the 5 characters that begin at the 11th (offset 10) character of the expanded result.  If the length is not specified, then it defaults to the remainder of the variable value.  If either number (offset or length) is negative, then the number used is the length of the environment variable value added to the offset or length specified/li>
 
 ### Another way to declare variables
-<li>Shit[typ] - Declare a variable as a string</li>
-<li>Puke[typ] - Declare a variable as an integer</li>
-<li>Cum[typ] - Create a function/label</li>
-<li>Piss[typ] - Declare a variable from user's input</li>
-<li>Jelly[typ] - Declare a variable as a float</li>
+* Shit[typ] - Declare a variable as a string
+* Puke[typ] - Declare a variable as an integer
+* Cum[typ] - Create a function/label
+* Piss[typ] - Declare a variable from user's input
+* Jelly[typ] - Declare a variable as a float
 
 And if you're asking yourself why add more dumb commands like this, well, because FreakC's bs.
 
@@ -493,13 +493,13 @@ You can actually use a Batch command in DoIf[fnc]. Example:
 	)
 	
 ## All the comparison operators:
-<li>"==" - Equal</li>
-<li>"EQU" - Equal</li>
-<li>"NEQ" - Not equal</li>
-<li>"LSS" - Less than</li>
-<li>"LEQ" - Less than or equal</li>
-<li>"GTE" - Greater than</li>
-<li>"GEQ" - Greater than or equal</li>
+* "==" - Equal
+* "EQU" - Equal
+* "NEQ" - Not equal
+* "LSS" - Less than
+* "LEQ" - Less than or equal
+* "GTE" - Greater than
+* "GEQ" - Greater than or equal
 
 ## Other kinds or if statements:
 
@@ -683,8 +683,8 @@ To import a pre-built library, use:
 	Fuck[fnc] lib_name
 	
 All libraries:
-<li>float - Used to declare variables as float. Usage: PoopFloat[fnc] "variable_name" "value".</li>
-<li>arrayfunc - Includes functions to work with list.</li>
+* float - Used to declare variables as float. Usage: PoopFloat[fnc] "variable_name" "value".
+* arrayfunc - Includes functions to work with list.
 
 ## Using arrayfunc
 
@@ -930,22 +930,22 @@ FindTrash[fnc]:
 
 	ChangeColor[fnc] hex_code
 
-<li>0 = Black</li>
-<li>1 = Blue</li>
-<li>2 = Green</li>
-<li>3 = Aqua</li>
-<li>4 = Red</li>
-<li>5 = Purple</li>
-<li>6 = Yellow</li>
-<li>7 = White</li>
-<li>8 = Gray</li>
-<li>9 = Light Blue</li>
-<li>A = Light Green</li>
-<li>B = Light Aqua</li>
-<li>C = Light Red</li>
-<li>D = Light Purple</li>
-<li>E = Light Yellow</li>
-<li>F = Bright White</li>
+* 0 = Black
+* 1 = Blue
+* 2 = Green
+* 3 = Aqua
+* 4 = Red
+* 5 = Purple
+* 6 = Yellow
+* 7 = White
+* 8 = Gray
+* 9 = Light Blue
+* A = Light Green
+* B = Light Aqua
+* C = Light Red
+* D = Light Purple
+* E = Light Yellow
+* F = Bright White
 	
 ### Change the title of the program
 
@@ -1100,71 +1100,71 @@ Just for surprising elements, just try it on your own =D
 
 # Equivalent with Batch
 
-<li>Swear[fnc] - echo</li>
-<li>SwearLine[fnc] - echo.</li>
-<li>PoopInt[fnc] - set /a</li>
-<li>PoopString[fnc] - set</li>
-<li>PoopInput[fnc] - set /p</li>
-<li>PoopFnc[fnc] - :label</li>
-<li>GrabFnc[fnc] - goto</li>
-<li>Shit[typ] - set</li>
-<li>Puke[typ] - set /a</li>
-<li>Cum[typ] - :label</li>
-<li>Piss[typ] - set /p</li>
-<li>LoopStuffs[fnc] - for /l</li>
-<li>ScanOrgans[fnc] - for /r</li>
-<li>ScanLetters[fnc] - for /f</li>
-<li>ScanDiaries[fnc] - for</li>
-<li>ScanDir[fnc] - for /d</li>
-<li>DoIf[fnc] - if</li>
-<li>DoIfExist[fnc] - if exist</li>
-<li>DoIfDefined[fnc] - if defined</li>
-<li>DoIfFalse[fnc] - if not</li>
-<li>DoIfNotExist[fnc] - if not exist</li>
-<li>DoIfNotDefined[fnc] - if not defined</li>
-<li>DoIfTap[fnc] - if errorlevel</li>
-<li>DoIfNotTap[fnc] - if not errorlevel</li>
-<li>TapSomeSht[fnc] - choice /c: /n</li>
-<li>OrNot[fnc] - else</li>
-<li>GotoToilet[fnc] - pause</li>
-<li>Die[fnc] - exit</li>
-<li>ShutdownSystem[fnc] - shutdown -s</li>
-<li>RestartSystem[fnc] - shutdown -r</li>
-<li>PukeDir[fnc] - md</li>
-<li>EatDir[fnc] </li>
-<li>EatDrive[fnc] - drive:</li>
-<li>StealDiary[fnc] - type</li>
-<li>GrabFnc[fnc] - call</li>
-<li>Forget[fnc] - cls</li>
-<li>Trash[fnc] -  del</li>
-<li>TrashDir[fnc] - rmdir</li>
-<li>ChangeColor[fnc] - color</li>
-<li>ChangeName[fnc] - title</li>
-<li>ChangeSize[fnc] - mode</li>
-<li>RenameFile[fnc] - ren</li>
-<li>MoveFile[fnc] - move</li>
-<li>CopyFile[fnc] - copy</li>
-<li>PlayFile[fnc] - start</li>
-<li>WaitForBus[fnc] - timeout</li>
-<li>SeeDate[fnc] - date /t</li>
-<li>SeeTime[fnc] - time /t</li>
-<li>MyMemory[fnc] - dir</li>
-<li>EnableCoolStuff[fnc] - @echo off</li>
-<li>DisableCoolStuff[fnc] - @echo on</li>
-<li>BuyCalender[fnc] - date</li>
-<li>BuyClock[fnc] - time</li>
-<li>OpenHouse[fnc] - setlocal</li>
-<li>CloseHouse[fnc] - endlocal</li>
-<li>FindTrash[fnc] - findstr</li>
-<li>FindShits[fnc] - find</li>
+* Swear[fnc] - echo
+* SwearLine[fnc] - echo.
+* PoopInt[fnc] - set /a
+* PoopString[fnc] - set
+* PoopInput[fnc] - set /p
+* PoopFnc[fnc] - :label
+* GrabFnc[fnc] - goto
+* Shit[typ] - set
+* Puke[typ] - set /a
+* Cum[typ] - :label
+* Piss[typ] - set /p
+* LoopStuffs[fnc] - for /l
+* ScanOrgans[fnc] - for /r
+* ScanLetters[fnc] - for /f
+* ScanDiaries[fnc] - for
+* ScanDir[fnc] - for /d
+* DoIf[fnc] - if
+* DoIfExist[fnc] - if exist
+* DoIfDefined[fnc] - if defined
+* DoIfFalse[fnc] - if not
+* DoIfNotExist[fnc] - if not exist
+* DoIfNotDefined[fnc] - if not defined
+* DoIfTap[fnc] - if errorlevel
+* DoIfNotTap[fnc] - if not errorlevel
+* TapSomeSht[fnc] - choice /c: /n
+* OrNot[fnc] - else
+* GotoToilet[fnc] - pause
+* Die[fnc] - exit
+* ShutdownSystem[fnc] - shutdown -s
+* RestartSystem[fnc] - shutdown -r
+* PukeDir[fnc] - md
+* EatDir[fnc] 
+* EatDrive[fnc] - drive:
+* StealDiary[fnc] - type
+* GrabFnc[fnc] - call
+* Forget[fnc] - cls
+* Trash[fnc] -  del
+* TrashDir[fnc] - rmdir
+* ChangeColor[fnc] - color
+* ChangeName[fnc] - title
+* ChangeSize[fnc] - mode
+* RenameFile[fnc] - ren
+* MoveFile[fnc] - move
+* CopyFile[fnc] - copy
+* PlayFile[fnc] - start
+* WaitForBus[fnc] - timeout
+* SeeDate[fnc] - date /t
+* SeeTime[fnc] - time /t
+* MyMemory[fnc] - dir
+* EnableCoolStuff[fnc] - @echo off
+* DisableCoolStuff[fnc] - @echo on
+* BuyCalender[fnc] - date
+* BuyClock[fnc] - time
+* OpenHouse[fnc] - setlocal
+* CloseHouse[fnc] - endlocal
+* FindTrash[fnc] - findstr
+* FindShits[fnc] - find
 
 # Notes
 <b>Please do not put these commands in the same line as the others:</b> 
 <br/>
-<li>TapSomeSht[fnc]</li>
-<li>TryMeBtch[fnc]</li>
-<li>EatDrive[fnc]</li>
-<li>OddOrEven[fnc]</li>
+* TapSomeSht[fnc]
+* TryMeBtch[fnc]
+* EatDrive[fnc]
+* OddOrEven[fnc]
 
 For example, this would cause error:
 

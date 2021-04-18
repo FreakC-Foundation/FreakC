@@ -198,17 +198,17 @@ If you do this, variable "result" will be "Hel + lo"
 	
 <b>Math operators</b>
 <br/>
-* ()                  - grouping
-* ! ~ -               - unary operators
-* * / %               - arithmetic operators
-* + -                 - arithmetic operators
-* << >>               - logical shift
-* &                   - bitwise and
-* ^                   - bitwise exclusive or
-* |                   - bitwise or
-* = *= /= %= += -=    - assignment
-* &= ^= |= <<= >>= , - expression separator
-* ++ --               - plus/minus 1
+* `()                  - grouping`
+* `! ~ -               - unary operators`
+* `* / %               - arithmetic operators`
+* `+ -                 - arithmetic operators`
+* `<< >>               - logical shift`
+* `&                   - bitwise and`
+* `^                   - bitwise exclusive or`
+* `|                   - bitwise or`
+* `= *= /= %= += -=    - assignment`
+* `&= ^= |= <<= >>= , - expression separator`
+* `++ --               - plus/minus 1`
 
 ## Some Math commands
 

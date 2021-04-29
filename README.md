@@ -149,6 +149,8 @@ There are many existing game engines for Batch/FreakC:
 * Owner/Developer: Nguyen Phu Minh
 * VSCode contributor: anapple96
 
+In association with the <a href="https://github.com/joliorg">Jolio</a> dev team.
+
 ## [Setup FreakC's development environment](https://youtu.be/l_3sFSArQWg)
 
 ## Social medias

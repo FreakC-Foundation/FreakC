@@ -454,6 +454,7 @@ Example:
 	GrabFnc[fnc] SayHello
 
 ## Warning
+### Not working commands for now
 The procedure functionality is fairly early, so some commands might not work inside a procedure, so if you encounter some unexpected problem, try:
 
 1. Creating a new file which acts like a procedure like this:
@@ -465,6 +466,23 @@ The procedure functionality is fairly early, so some commands might not work ins
 
 		:: Don't add any file extension. For example, don't add ".bat" or ".fclang" in
 		GrabFnc[fnc] file_name
+
+### Indent and empty lines
+When using a procedure, please don't have any empty lines, or don't indent your code:
+
+	If ::code is empty, then it would cause errors
+	ProduceTrash[fnc]
+		::code
+	EndTrash[fnc]
+	
+However, this would work fine:
+
+	If ::code is empty, then it would not cause errors
+	ProduceTrash[fnc]
+	::code
+	EndTrash[fnc]
+
+Or it's just better to not have any empty lines 😌
 	
 # Object Oriented Programming
 You can implement OOP like this:

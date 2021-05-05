@@ -119,7 +119,11 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			set printString=!printString:[ecmt]=!
 		)
 		if "%%a" == "[hcmt]" (
-			echo.>>%a%.bat
+			if "!procadd!" == "true" (
+				echo.>>!proctar!.bat
+			) else (
+				echo.>>%a%.bat
+			)
 			set deniedToken=true
 		)
 		if %%a == Fuck[fnc] (
@@ -337,6 +341,11 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == Horniest[fnc] set printString=!printString:Horniest[fnc]=call fclib_arrayfunc_min.bat!
 		if %%a == CountBitches[fnc] set printString=!printString:CountBitches[fnc]= call fclib_arrayfunc_sum.bat!
 		if %%a == HackLikeABoss[fnc] (
+			if "!procadd!" == "true" (
+				set outtar=!proctar!.bat
+			) else (
+				set outtar=%a%.bat
+			)
 			set tar=!printString:HackLikeABoss[fnc] =!
 			(
 			echo echo Hacking !tar! 20%%%%
@@ -348,7 +357,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			echo echo Hacking !tar! 80%%%%
 			echo timeout /t 1 /nobreak ^>nul
 			echo echo Hacking !tar! 100%%%%
-			)>>!a!.bat
+			)>>!outtar!
 			set deniedToken=true
 		)
 		if %%a == InsertShits[fnc] (
@@ -361,72 +370,132 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		)
 		if %%a == EatDrive[fnc] set printString=!printString:EatDrive[fnc] =!:
 		if %%a == TryMeBtch[fnc] (
+			if "!procadd!" == "true" (
+				set outtar=!proctar!.bat
+			) else (
+				set outtar=%a%.bat
+			)
 			set tmb=!printString:TryMeBtch[fnc] =!
-			echo if !tmb! echo Yes>>%a%.bat
-			echo if not !tmb! echo No>>%a%.bat
+			echo if !tmb! echo Yes>>!outtar!
+			echo if not !tmb! echo No>>!outtar!
 			set deniedToken=true
 		)
 		if %%a == TryMeHoe[fnc] (
+			if "!procadd!" == "true" (
+				set outtar=!proctar!.bat
+			) else (
+				set outtar=%a%.bat
+			)
 			set tmb=!printString:TryMeHoe[fnc] =!
-			echo if !tmb! set tmhres=Yes>>%a%.bat
-			echo if not !tmb! set tmhres=No>>%a%.bat
+			echo if !tmb! set tmhres=Yes>>!outtar!
+			echo if not !tmb! set tmhres=No>>!outtar!
 			set deniedToken=true
 		)
 		if %%a == FuckUp[fnc] (
+			if "!procadd!" == "true" (
+				set outtar=!proctar!.bat
+			) else (
+				set outtar=%a%.bat
+			)
 			set prob=!printString:FuckUp[fnc] =!
-			echo set /a fusolved=!prob!>>%a%.bat
-			echo echo %%fusolved%%>>%a%.bat
+			echo set /a fusolved=!prob!>>!outtar!
+			echo echo %%fusolved%%>>!outtar!
 			set deniedToken=true
 		)
 		if %%a == FuckUpLess[fnc] (
+			if "!procadd!" == "true" (
+				set outtar=!proctar!.bat
+			) else (
+				set outtar=%a%.bat
+			)
 			set prob=!printString:FuckUpLess[fnc] =!
-			echo set /a fusolved=!prob!>>%a%.bat
+			echo set /a fusolved=!prob!>>!outtar!
 			set deniedToken=true
 		)
 		if %%a == CoolHackerMan[fnc] (
-			echo :CoolHackerMan>>%a%.bat
-			echo echo %%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%>>%a%.bat
-			echo goto CoolHackerMan>>%a%.bat
+			if "!procadd!" == "true" (
+				set outtar=!proctar!.bat
+			) else (
+				set outtar=%a%.bat
+			)
+			echo :CoolHackerMan>>!outtar!
+			echo echo %%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%>>!outtar!
+			echo goto CoolHackerMan>>!outtar!
 			set deniedToken=true
 		)
 		if %%a == OddOrEven[fnc] (
-			echo set /a fcooeres=!printString:OddOrEven[fnc] =! %%%% ^2>>%a%.bat
-			echo if %%fcooeres%% == 0 echo Is even! >>%a%.bat
-			echo if not %%fcooeres%% == 0 echo Is odd! >>%a%.bat
+			if "!procadd!" == "true" (
+				set outtar=!proctar!.bat
+			) else (
+				set outtar=%a%.bat
+			)
+			echo set /a fcooeres=!printString:OddOrEven[fnc] =! %%%% ^2>>!outtar!
+			echo if %%fcooeres%% == 0 echo Is even^^! >>!outtar!
+			echo if not %%fcooeres%% == 0 echo Is odd^^! >>!outtar!
 			set deniedToken=true
 		)
 		if %%a == SquareMyBois[fnc] (
+			if "!procadd!" == "true" (
+				set outtar=!proctar!.bat
+			) else (
+				set outtar=%a%.bat
+			)
 			set sqmb=!printString:SquareMyBois[fnc] =!
-			echo set /a !sqmb!=%%!sqmb!%% * %%!sqmb!%%>>%a%.bat
+			echo set /a !sqmb!=%%!sqmb!%% * %%!sqmb!%%>>!outtar!
 			set deniedToken=true
 		)
 		if %%a == WhileSuck[fnc] (
+			if "!procadd!" == "true" (
+				set outtar=!proctar!.bat
+			) else (
+				set outtar=%a%.bat
+			)
 			set fccondition=!printString:WhileSuck[fnc] =!
-			echo :WhileLoop!wloopnum!>>%a%.bat
-			echo if not !fccondition! goto EndLoop!wloopnum!>>%a%.bat
+			echo :WhileLoop!wloopnum!>>!outtar!
+			echo if not !fccondition! goto EndLoop!wloopnum!>>!outtar!
 			set deniedToken=true
 		)
 		if %%a == EndSuck[fnc] (
-			echo goto WhileLoop!wloopnum!>>%a%.bat
-			echo :EndLoop!wloopnum!>>%a%.bat
+			if "!procadd!" == "true" (
+				set outtar=!proctar!.bat
+			) else (
+				set outtar=%a%.bat
+			)
+			echo goto WhileLoop!wloopnum!>>!outtar!
+			echo :EndLoop!wloopnum!>>!outtar!
 			set /a wloopnum=!wloopnum!+1
 			set deniedToken=true
 		)
 		if %%a == RepeatSuck[fnc] (
-			echo :RepeatSuck!wloopnum!>>%a%.bat
+			if "!procadd!" == "true" (
+				set outtar=!proctar!.bat
+			) else (
+				set outtar=%a%.bat
+			)
+			echo :RepeatSuck!wloopnum!>>!outtar!
 			set deniedToken=true
 		)
 		if %%a == UntilStale[fnc] (
+			if "!procadd!" == "true" (
+				set outtar=!proctar!.bat
+			) else (
+				set outtar=%a%.bat
+			)
 			set fccondition2=!printString:UntilStale[fnc] =!
-			echo if not !fccondition2! goto RealStale!wloopnum2!>>%a%.bat
-			echo goto RepeatSuck!wloopnum2!>>%a%.bat
-			echo :RealStale!wloopnum2!>>%a%.bat
+			echo if not !fccondition2! goto RealStale!wloopnum2!>>!outtar!
+			echo goto RepeatSuck!wloopnum2!>>!outtar!
+			echo :RealStale!wloopnum2!>>!outtar!
 			set /a wloopnum2=!wloopnum2!+1
 			set deniedToken=true
 		)
 		if %%a == CubeMyBois[fnc] (
+			if "!procadd!" == "true" (
+				set outtar=!proctar!.bat
+			) else (
+				set outtar=%a%.bat
+			)
 			set sqmb=!printString:CubeMyBois[fnc] =!
-			echo set /a !sqmb!=%%!sqmb!%% * %%!sqmb!%% * %%!sqmb!%%>>%a%.bat
+			echo set /a !sqmb!=%%!sqmb!%% * %%!sqmb!%% * %%!sqmb!%%>>!outtar!
 			set deniedToken=true
 		)
 		if %%a == TapSomeSht[fnc] set printString=!printString:TapSomeSht[fnc] =CHOICE /C:! /N
@@ -566,7 +635,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			set procval=1
 			echo.>!proctar!.bat
 		) else (
-			echo !printString!>>!proctar!.bat
+			if not "!deniedToken!" == "true" echo. !printString!>>!proctar!.bat
 		)
 	)
 	if "!fccomment!" == "false" (

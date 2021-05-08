@@ -333,21 +333,16 @@ There are a lot of special variables left, but you might not find uses for them
 
 And if you're asking yourself why add more dumb commands like this, well, because FreakC's bs.
 
-### Embed FreakC commands to variables
-In Batch, you can do this to print out Hello:
+### Macro
+You can create a macro like this:
 
-	set stuff=echo Hello
-	%stuff%
+	:: A macro which prints out "Hello"
+	PoopString[fnc] hello= Swear[fnc] Hello
+	%hello%
+	
+You can join commands together like this:
 
-In FreakC, if you do this, you would get errors
-
-	PoopString[fnc] stuff=Swear[fnc] Hello
-	%stuff%
-
-You should type:
-
-	PoopString[fnc] stuff= Swear[fnc] Hello
-	%stuff%
+	PoopString[fnc] hello= Swear[fnc] Hello ^& Swear[fnc] Hell yeah!
 
 ### Notes
 There are variables that you CAN NOT USE like: %a%, %printString%, %fccompile%, %fccompilename%, %fcread%.

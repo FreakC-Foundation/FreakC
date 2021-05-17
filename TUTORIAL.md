@@ -14,7 +14,7 @@
 </div>
 
 # Disclaimer
-This tutorial is not for beginners at programming because it is very difficult to understand.
+This tutorial might be offensive, disturbing and cringey, please assure that you're 18 and above.
 
 # Installation
 There are many ways to install FreakC, you can:

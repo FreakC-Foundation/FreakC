@@ -13,8 +13,11 @@
   <img alt="Windows" src="https://img.shields.io/static/v1?label=&message=Windows&color=0078D6&logo=Windows">
 </div>
 
+## Disclaimer
+Please assure that you're 18+ before continuing any further, since the contents can be offensive.
+
 ## What is FreakC ?
-FreakC is a transpiled multi-paradigm esoteric scripting language that... has nothing to do with the C programming language. This language's syntax is dirty and highly offensive (please assure that you're 18+ when reading the documentations), but technically, it functions just like a normal language and is able to create usable programs. It is very similar to Batch, and it is also transpiled to Batch.
+FreakC is a transpiled multi-paradigm esoteric scripting language that... has nothing to do with the C programming language. This language's syntax is dirty and highly offensive, but technically, it functions just like a normal language and is able to create usable programs. It is very similar to Batch, and it is also transpiled to Batch.
 <a href="https://discord.gg/KK4SbRSYMd">Proceed to Discord...</a>
 
 ## Why FreakC ?

@@ -1,7 +1,7 @@
 <div align="center">
   <img src="Resources/Branding/logo.png" />
   <br/>
-  <b>A revolutionary esoteric programming language</b>
+  <b>A cringy esoteric programming language</b>
   <br/>
   <br/>
   <a href="https://github.com/FreakC-Foundation/FreakC/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg"/></a>

@@ -146,9 +146,6 @@ You will see this command underneath, but you should you this command to pause y
 
 # Variables and data types
 
-## Data types
-There are three data types in FreakC: integer, string.
-
 ## Variables
 To declare a variable, you use:
 

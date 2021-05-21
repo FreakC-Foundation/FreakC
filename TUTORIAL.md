@@ -672,10 +672,6 @@ For example, this program will print all the number from 0 to 10 then print out 
 To import a pre-built library, use:
 
 	Fuck[fnc] lib_name
-	
-All libraries:
-* float - Used to declare variables as float. Usage: PoopFloat[fnc] "variable_name" "value".
-* arrayfunc - Includes functions to work with list.
 
 ## Using arrayfunc
 
@@ -694,6 +690,9 @@ All libraries:
 	Bitchiest[fnc] "max_num" "2 3 1 8 5"
 	:: This will prints out "8"
 	Swear[fnc] %max_num%
+	
+### Note
+All the functions above only works with list with all integers. String or floats will cause errors.
 	
 ## Using math
 
@@ -736,9 +735,6 @@ Example:
 	:: Check if a number is odd
 	GrabFnc[fnc] fclib_math_odd.bat "variable_name" "number"
 	
-	
-### Note
-All the functions above only works with list with all integers. String or floats will cause errors.
 
 # Use Batch in FreakC
 Unlike all the previous release, now FreakC support writing Batch without any other commands. So you can actually learn Batch and write Batch codes in FreakC.

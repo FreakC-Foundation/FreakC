@@ -713,6 +713,12 @@ All the functions above only works with list with all integers. String or floats
 	:: Factorial
 	BigPenis[fnc] "variable_name" "number"
 	
+	:: Entire fibonacci sequence
+	HugeCum[fnc] "variable_name" "number"
+	
+	:: Fibonacci
+	NotThatHugeCum[fnc] "variable_name" "number"
+	
 ## Using string
 
 	Fuck[fnc] string

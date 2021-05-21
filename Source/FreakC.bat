@@ -197,29 +197,35 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 				echo set %%~1=%%res%%
 				)>fclib_math_pow.bat
 				(
-				echo set /a num1=0
-				echo set /a num2=1
-				echo set /a num3=0
+				echo set num1=0
+				echo set num2=1
+				echo set num3=0
 				echo set str=1
+				echo set i=0
+ 				echo set /a end=%%~2 - 1
 				echo :loop
-				echo if not %%num3%% LSS %%~2 goto end
+				echo if not %%i%% LSS %%end%% goto end
  				echo set /a num3=%%num1%% + %%num2%%
  				echo set str=%%str%% %%num3%%
  				echo set /a num1=%%num2%%
  				echo set /a num2=%%num3%%
+ 				echo set /a i+=1
 				echo goto loop
 				echo :end
 				echo set %%~1=%%str%%
 				)>fclib_math_fibseq.bat
 				(
-				echo set /a num1=0
-				echo set /a num2=1
-				echo set /a num3=0
+				echo set num1=0
+				echo set num2=1
+				echo set num3=0
+				echo set i=0
+ 				echo set /a end=%%~2 - 1
 				echo :loop
-				echo if not %%num3%% LSS %%~2 goto end
+				echo if not %%i%% LSS %%end%% goto end
  				echo set /a num3=%%num1%% + %%num2%%
  				echo set /a num1=%%num2%%
  				echo set /a num2=%%num3%%
+ 				echo set /a i+=1
 				echo goto loop
 				echo :end
 				echo set %%~1=%%num3%%

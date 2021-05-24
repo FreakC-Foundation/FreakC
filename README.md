@@ -140,6 +140,9 @@ You can actually find plenty of other tools online that helps you to converts Ba
 ## Frameworks
 Note that all Batch frameworks can integrate well with FreakC, so you can use them just like in Batch smoothly. There are some in the **Utilities** folder (which I don't own).
 
+### Cool frameworks/libraries
+* <a href="https://github.com/timlg07/Number.cmd">Number.cmd</a>
+
 ### Game frameworks
 There are many existing game engines for Batch/FreakC:
 

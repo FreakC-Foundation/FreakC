@@ -12,7 +12,7 @@
   <array>
     <dict>
       <key>match</key>
-      <string>SwearLine|Swear|DoIfTap|DoIfNotTap|DoIfFalse|DoIfDefined|DoIfExist|DoIfNotExist|DoIfNotDefined|DoIf|OrNot|EQU|LEQ|LSS|GEQ|GTR|NEQ|OddOrEven|TryMeHoe|TryMeBtch|SquareMyBois|WhileSuck|EndSuck|RepeatSuck|UntilStale|CubeMyBois|FuckUpLess|FuckUp|\:|\=\=|\+\+|\-\-|</string>
+      <string>ProduceTrash|EndTrash|SwearLine|Swear|DoIfTap|DoIfNotTap|DoIfFalse|DoIfDefined|DoIfExist|DoIfNotExist|DoIfNotDefined|DoIf|OrNot|EQU|LEQ|LSS|GEQ|GTR|NEQ|OddOrEven|TryMeHoe|TryMeBtch|SquareMyBois|WhileSuck|EndSuck|RepeatSuck|UntilStale|CubeMyBois|FuckUpLess|FuckUp|\:|\=\=|\+\+|\-\-|</string>
       <key>name</key>
       <string>keyword.control</string>
     </dict>

@@ -583,6 +583,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == JSON[str] set printString=!printString:JSON[str]=echo {"{}":{"{}":{}}}!
 		if %%a == HiM8[str] set printString=!printString:HiM8[str]=echo Hi mate!
 		if %%a == FuckUnicode[fnc] set printString=!printString:FuckUnicode[fnc]=chcp 65001!
+		if %%a == ShitUrl[fnc] set printString=!printString:ShitUrl[fnc]=curl!
 		if %%a == Patrick[meme] (
 			set patarg=!printString:Patrick[meme] =!
 			if "!patarg!" == "1" (

@@ -727,10 +727,10 @@ All the functions above only works with list with all integers. String or floats
 	MeasurePenisSize[fnc] "variable_name" "string"
 	
 	:: To uppercase
-	BeingHorny[fnc] "variable_name" "number"
+	BeingHorny[fnc] "variable_name" "string"
 	
 	:: To lowercase
-	WipePenis[fnc] "variable_name" "number"
+	WipePenis[fnc] "variable_name" "string"
 	
 	:: Reverse
 	DoDoggyStyle[fnc] "variable_name" "string"

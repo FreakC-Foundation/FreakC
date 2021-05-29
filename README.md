@@ -14,9 +14,6 @@
 </div>
 
 
-
-# PROJECT HAS BEEN DISCONTINUED
-
 ## Disclaimer
 Please assure that you're 18+ before continuing any further, since the contents can be offensive.
 

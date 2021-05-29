@@ -13,6 +13,8 @@
   <img alt="Windows" src="https://img.shields.io/static/v1?label=&message=Windows&color=0078D6&logo=Windows">
 </div>
 
+**PROJECT HAS BEEN DISCONTINUED**
+
 ## Disclaimer
 Please assure that you're 18+ before continuing any further, since the contents can be offensive.
 

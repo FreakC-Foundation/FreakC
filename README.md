@@ -121,7 +121,7 @@ Even though FreakC is an esolang, I can say it's an upgraded Batch, because:
 
 - It adds additional commands.
 - It has many helpful libraries that Batch should have from the start.
-- It comes with cool features like true functions, while loops, do-while loops and even macros.
+- It comes with cool features like true functions, while loops, do-while loops, floats and even macros.
 
 ## Tutorials 
 <a href=https://github.com/FreakC-Foundation/FreakC/blob/master/TUTORIAL.md>Click here to see tutorials</a>

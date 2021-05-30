@@ -522,6 +522,14 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			set printString=!printString:++=+=1!
 			set printString=!printString:--=-=1!
 		)
+		if %%a == PoopMacro[fnc] (
+			set !printString:PoopMacro[fnc]=!
+			set deniedToken=true
+		)
+		if %%a == Crap[typ] (
+			set !printString:Crap[typ]=!
+			set deniedToken=true
+		)
 		if %%a == PoopFloat[fnc] set printString=!printString:PoopFloat[fnc]=call fclib_float.bat!
 		if %%a == Jelly[typ] set printString=!printString:Jelly[typ]=call fclib_float.bat!
 		if %%a == PoopString[fnc] set printString=!printString:PoopString[fnc]=set!

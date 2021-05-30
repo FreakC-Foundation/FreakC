@@ -330,8 +330,7 @@ There are a lot of special variables left, but you might not find uses for them
 
 And if you're asking yourself why add more dumb commands like this, well, because FreakC's bs.
 
-### Macro
-You can create a macro like this:
+### Batch-style macro
 
 	:: A macro which prints out "Hello"
 	PoopString[fnc] hello= Swear[fnc] Hello
@@ -339,7 +338,14 @@ You can create a macro like this:
 	
 You can join commands together like this:
 
-	PoopString[fnc] hello= Swear[fnc] Hello ^& Swear[fnc] Hell yeah!
+	PoopString[fnc] hello= Swear[fnc] Hello ^& Swear[fnc] Hell yeah^!
+
+### True macro
+The Batch-style macro is the one being replaced in runtime. While it helps the program to run faster compared to calling functions, it's still kinda slow, so here comes the FreakC's true macro which is replaced during compile time:
+
+	:: A macro which prints out "Hello"
+	PoopMacro[fnc] hello= Swear[fnc] Hello
+	!hello!
 
 ### Notes
 There are variables that you CAN NOT USE like: %a%, %printString%, %fccompile%, %fccompilename%, %fcread%.

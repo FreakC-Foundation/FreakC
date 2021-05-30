@@ -116,11 +116,12 @@ You can type in whatever you want, it will be stored in "tar.fclang". You can ty
 
 **The compiler only works on Windows, and can only be compiled to Batch.**
 
-## In what part does FreakC upgrade from Batch ?
-If you are asking yourself, "what does FreakC have that Batch don't have", then here they are (though it's an esolang):
-* Libraries like "float", "arrayfunc".
-* While loops and other additional commands.
-* Modules and stuffs.
+## What FreakC has that Batch doesn't ?
+Even though FreakC is an esolang, I can say it's an upgraded Batch, because:
+
+- It adds additional commands.
+- It has many helpful libraries that Batch should have from the start.
+- It comes with cool features like true functions, while loops, do-while loops and even macros.
 
 ## Tutorials 
 <a href=https://github.com/FreakC-Foundation/FreakC/blob/master/TUTORIAL.md>Click here to see tutorials</a>

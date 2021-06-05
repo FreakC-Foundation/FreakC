@@ -55,67 +55,6 @@ To check out more samples, click <a href=https://github.com/FreakC-Foundation/Fr
 
 **Yet, this is an esolang.**
 
-## Compiler's usage
-In the "FreakC" folder, open cmd and type this command to compile and run the code:
-
-    freakc file_name
-    
-Example:
-    
-    freakc "Examples/HelloWorld.fclang"
- 
-If you want to compile the code only, type:
-
-    freakc file_name --compile
-    
-If you want to compile the code and show the compiled code, type:
-
-    freakc file_name --candr
-    
-To show the current version of the devkit, type:
-
-    freakc --version
-
-To create a new FreakC project quickly, you can type:
-
-    freakc project_name --create
-
-Notice that it will generate a file with a Hello World example in it, if you just want to create an empty file, type:
-
-    freakc project_name --create --empty 
-
-To delete all stdlib files generated, type:
-
-    freakc --clrlib
-
-To delete all Batch files, type:
-
-    freakc --clrbat
-    
-To show all options and usage, type:
-
-    freakc --help
-    
-To show all options and usage (with a dumb ascii art), type:
-
-    freakc
-    
-### Interactive shell
-To open interactive shell, type:
-
-    freakc --shell
-    ::Or fcshell
-    
-You can type in whatever you want, it will be stored in "tar.fclang". You can type in any of these commands to execute tasks:
-
-* `StartFuckin[cli]` - Runs all the codes written
-* `StopFuckin[cli]` - Delete tar.fclang and exit
-* `WipeAss[cli]` - Resets codes
-* `Shit[cli]` - Clear console
-
-
-**The compiler only works on Windows, and can only be compiled to Batch.**
-
 ## What FreakC has that Batch doesn't ?
 Even though FreakC is an esolang, I can say it's an upgraded Batch, because:
 
@@ -137,7 +76,7 @@ So to convert FreakC to .EXE files, you need to compile FreakC codes to Batch, a
 You can actually find plenty of other tools online that helps you to converts Batch files to EXE files.
 
 ## FreakC in many IDEs
-<a href="IDE.md">Click here to proceed...</a>
+<a href="IDE.md">IDEs for FreakC</a>
 
 ## Frameworks
 Note that all Batch frameworks can integrate well with FreakC, so you can use them just like in Batch smoothly. There are some in the **Utilities** folder (which I don't own).

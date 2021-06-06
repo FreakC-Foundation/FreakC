@@ -327,6 +327,7 @@ There are a lot of special variables left, but you might not find uses for them
 * Cum[typ] - Create a function/label
 * Piss[typ] - Declare a variable from user's input
 * Jelly[typ] - Declare a variable as a float
+* Crap[typ] - Define a macro
 
 And if you're asking yourself why add more dumb commands like this, well, because FreakC's bs.
 

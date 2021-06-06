@@ -330,7 +330,7 @@ There are a lot of special variables left, but you might not find uses for them
 
 And if you're asking yourself why add more dumb commands like this, well, because FreakC's bs.
 
-### Batch-style macro
+### Batch-style procedural macro
 
 	:: A macro which prints out "Hello"
 	PoopString[fnc] hello= Swear[fnc] Hello
@@ -340,12 +340,17 @@ You can join commands together like this:
 
 	PoopString[fnc] hello= Swear[fnc] Hello ^& Swear[fnc] Hell yeah^!
 
-### True macro
+### True procedural macro
 The Batch-style macro is the one being replaced in runtime. While it helps the program to run faster compared to calling functions, it's still kinda slow, so here comes the FreakC's true macro which is replaced during compile time:
 
 	:: A macro which prints out "Hello"
 	PoopMacro[fnc] hello= Swear[fnc] Hello
 	!hello!
+
+Remember that procedural macros "kinda" require a " " in the back, but a normal macro doesn't:
+
+	PoopMacro[fnc] key=124123
+	Swear[fnc] The key is !key!
 
 ### Notes
 There are variables that you CAN NOT USE like: %a%, %printString%, %fccompile%, %fccompilename%, %fcread%.
@@ -447,9 +452,24 @@ Example:
 
 	ProduceTrash[fnc] SayHello
 		Swear[fnc] Hello
+		:: Using the arguments
+		Swear[fnc] %~1
 	EndTrash[fnc]
 	:: Prints "Hello"
 	GrabFnc[fnc] SayHello
+
+### Wrap all codes inside a "main" function
+In C you can see the codes are in a "main" function:
+
+	int main() {
+		printf("%d", "Hello, World!");
+	}
+
+You can implement "something like that" in FreakC if you hate scripting languages :v
+
+	ProduceTrash[fnc] file_name
+		Swear[fnc] Hello, World^!
+	EndTrash[fnc]
 	
 # Object Oriented Programming
 You can implement OOP like this:

@@ -6,7 +6,7 @@ PoopFnc[fnc] loop
 DoIfFalse[fnc] %count% GTR 0 EatFnc[fnc] end
 DoIf[fnc] %count% LEQ 1 (
 	PoopString[fnc] word=bottle
-) else (
+) OrNot[fnc] (
 	PoopString[fnc] word=bottles
 )
 
@@ -17,13 +17,13 @@ PoopInt[fnc] count--
 
 DoIf[fnc] %count% LEQ 1 (
 	PoopString[fnc] word=bottle
-) else (
+) OrNot[fnc] (
 	PoopString[fnc] word=bottles
 )
 
 DoIf[fnc] %count% GTR 0 (
 	Swear[fnc] %count% %word% of beer on the wall.
-) else (
+) OrNot[fnc] (
 	Swear[fnc] No more %word% of beer on the wall.
 )
 

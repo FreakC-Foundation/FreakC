@@ -506,7 +506,8 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		)
 		if %%a == TapSomeSht[fnc] set printString=!printString:TapSomeSht[fnc] =CHOICE /C:! /N
 		if %%a == Swear[fnc] set printString=!printString:Swear[fnc]=echo!
-		if %%a == SwearLine[fnc] set printString=!printString:SwearLine[fnc]=echo.!
+		if %%a == SwearLine[fnc] set printString=!printString:SwearLine[fnc]=echo. !
+		if %%a == Yell[fnc] set printString=!printString:Yell[fnc] =echo.!
 		if %%a == PukeDir[fnc] set printString=!printString:PukeDir[fnc]=md!
 		if %%a == EatDir[fnc] set printString=!printString:EatDir[fnc]=cd!
 		if %%a == Trash[fnc] set printString=!printString:Trash[fnc]=del!

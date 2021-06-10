@@ -27,18 +27,18 @@ PoopString[fnc] cycle=0
 PoopString[fnc] moves=0
 PoopFnc[fnc] Start
 Forget[fnc]
-SwearLine[fnc]                               *******
-SwearLine[fnc]                               *%a1% %a2% %a3%*
-SwearLine[fnc]                               *%a4% %a5% %a6%*
-SwearLine[fnc]                               *%a7% %a8% %a9%*
-SwearLine[fnc]                               *******
-SwearLine[fnc]                           Enter a number:
+Yell[fnc]                                *******
+Yell[fnc]                                *%a1% %a2% %a3%*
+Yell[fnc]                                *%a4% %a5% %a6%*
+Yell[fnc]                                *%a7% %a8% %a9%*
+Yell[fnc]                                *******
+Yell[fnc]                            Enter a number:
 TapSomeSht[fnc] 123456789
 DoIfTap[fnc] 9 EatFnc[fnc] d9
 DoIfTap[fnc] 8 EatFnc[fnc] d8
 DoIfTap[fnc] 7 EatFnc[fnc] d7
 DoIfTap[fnc] 6 EatFnc[fnc] d6
-DoIfTap[fnc] 5 EatFnc[fnc] d5 
+DoIfTap[fnc] 5 EatFnc[fnc] d5
 DoIfTap[fnc] 4 EatFnc[fnc] d4
 DoIfTap[fnc] 3 EatFnc[fnc] d3
 DoIfTap[fnc] 2 EatFnc[fnc] d2
@@ -251,16 +251,16 @@ DoIf[fnc] %moves% EQU 9 EatFnc[fnc] draw
 EatFnc[fnc] Start
 PoopFnc[fnc] win
 Forget[fnc]
-SwearLine[fnc] You win!
-GotoToilet[fnc]
+Yell[fnc]  You win!
+GotoToilet[fnc] >nul
 EatFnc[fnc] tictactoe
 PoopFnc[fnc] lose
 Forget[fnc]
-SwearLine[fnc] You lose!
-GotoToilet[fnc]
+Yell[fnc]  You lose!
+GotoToilet[fnc] >nul
 EatFnc[fnc] tictactoe
 PoopFnc[fnc] draw
 Forget[fnc]
-SwearLine[fnc] Draw!
-GotoToilet[fnc]
+Yell[fnc]  Draw!
+GotoToilet[fnc] >nul
 EatFnc[fnc] tictactoe

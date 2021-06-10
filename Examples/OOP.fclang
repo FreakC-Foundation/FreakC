@@ -1,12 +1,12 @@
-ChangeName[fnc] OOP in FreakC
+ProduceTrash[fnc] Dog
+    PoopString[fnc] %~1.age=%~2
+    PoopString[fnc] %~1.weight=%~3
+    (
+        Swear[fnc] Swear[fnc] %%~1
+    )>%~1.says.bat
+EndTrash[fnc]
 
-GrabFnc[fnc] :Car "toyota" "19" "special"
-Swear[fnc] %toyota.gas%
-Swear[fnc] %toyota.model%
-PoopFnc[fnc] Car 
-DoIfFalse[fnc] "%~1" == "" DoIfFalse[fnc] "%~2" == "" DoIfFalse[fnc] "%~3" == "" ( 
-	PoopString[fnc] %~1.gas=%~2
-	PoopString[fnc] %~1.model=%~3
-)
-Die[fnc] /b 0
-GotoToilet[fnc] >nul
+GrabFnc[fnc] Dog "Mary" "3" "4kg"
+Swear[fnc] Age: %Mary.age%
+Swear[fnc] Weight: %Mary.weight%
+GrabFnc[fnc] Mary.says "Woof woof"

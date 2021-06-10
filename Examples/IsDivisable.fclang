@@ -7,16 +7,16 @@ Forget[fnc]
 Swear[fnc] Dividend:
 PoopInput[fnc] Dividend=
 
-SwearLine[fnc]
+Yell[fnc]
 
 Swear[fnc] Divisor:
 PoopInput[fnc] Divisor=
 
 PoopInt[fnc] Remainder=%Dividend% %% %Divisor%
 
-SwearLine[fnc]
-SwearLine[fnc]
-SwearLine[fnc]
+Yell[fnc]
+Yell[fnc]
+Yell[fnc]
 
 DoIf[fnc] %Remainder% == 0 (
 	Swear[fnc] It is divisable!

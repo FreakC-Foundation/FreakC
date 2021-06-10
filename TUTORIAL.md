@@ -88,28 +88,38 @@ To print out a string or text, you use:
 
 	Swear[fnc] string
 
-or you can prints text using:
+"But wait" you asked, "if I print an empty string like this, or I want to create a new line, this will not work"
 
-	SwearLine[fnc] string
+	:: Not working codes
+	Swear[fnc]
 
-The differences between Swear[fnc] and SwearLine[fnc] is that Swear[fnc] prints out normal text, if there are no text printed out, there might be some errors. But SwearLine[fnc] prints out a space then a text, if nothing is printed out, it will add a new line.
+That's where `Yell[fnc]` comes in:
 
-## Store Data with Swear[fnc]
+	:: Prints a new line
+	Yell[fnc]
+	:: You can print normal string too
+	Yell[fnc] Hello, World
+
+So why use `Swear[fnc]` at all? Actually, no, you shouldn't use `Swear[fnc]`, but if you know Batch, then `Swear[fnc]` is compiled to `echo`, `Yell[fnc]` is compiled to `echo.`, you might need to use `echo` sometimes, but really, just use `Yell[fnc]`
+
+Oh, there's also this `SwearLine[fnc]` too, but it's a faulty feature added as a mistake, what it does is the same as `Yell[fnc]`, but adds a bonus whitespace :v
+
+## Store data 
 You can actually store data to a file by using:
 
-	Swear[fnc] data>>file
+	Yell[fnc] data>>file
 
 # Special characters
 Unlike any characters, "!" requires "^", for example:
 
 	::This would causes no errors
-	Swear[fnc] @#/
+	Yell[fnc] @#/
 	
 	::This would cause error ("!" will not be shown)
-	Swear[fnc] !
+	Yell[fnc] !
 	
 	::Correct codes:
-	Swear[fnc] ^!
+	Yell[fnc] ^!
 	
 The reason for this is that FreakC has: SETLOCAL ENABLEDELAYEDEXPANSION which causes "!" to not be used properly.
 
@@ -124,18 +134,18 @@ To start using Unicode character, type:
 So now you can use Unicode characters:
 
 	FuckUnicode[fnc] >nul
-	Swear[fnc] ă ê ©
+	Yell[fnc] ă ê ©
 	:: Would print out "ă ê ©"
 
 # Prints out command's text
 If you type:
 
-	Swear[fnc] Swear[fnc]
+	Yell[fnc] Yell[fnc]
 
-It won't print out "Swear[fnc]", but it will print out "echo", because FreakC will compiles any statement/command without caring if it's a used data or not. So to actually print out "Swear[fnc]", you will need to add "^" in any place of the command. Example:
+It won't print out "Yell[fnc]", but it will print out "echo", because FreakC will compiles any statement/command without caring if it's a used data or not. So to actually print out "Yell[fnc]", you will need to add "^" in any place of the command. Example:
 
-	Swear[fnc] S^wear[fnc]
-	:: This will print out "Swear[fnc]"
+	Yell[fnc] Yell^[fnc]
+	:: This will print out "Yell[fnc]"
 
 # First note
 To pause in FreakC, please type in:
@@ -249,12 +259,12 @@ You can use variables in FreakC commands as %variable_name%
 For example, to print out a variable, you can do this:
 
 	PoopString[fnc] result=Hello World^!
-	Swear[fnc] %result%
+	Yell[fnc] %result%
 	
 But, to print out an element of an array, you use:
 
 	PoopString[fnc] a[0]=Hello
-	Swear[fnc] %a[0]%
+	Yell[fnc] %a[0]%
 	
 To print out every element of an array, you can write something like this:
 
@@ -263,7 +273,7 @@ To print out every element of an array, you can write something like this:
 	PoopInt[fnc] a[1]=35
 	PoopInt[fnc] a[2]=20
 	LoopStuffs[fnc] %%n in (0,1,2) do ( 
-   		Swear[fnc] ^!a[%%n]^! 
+   		Yell[fnc] ^!a[%%n]^! 
 	)
 
 Actually, there is a whole another way to create an array:
@@ -271,7 +281,7 @@ Actually, there is a whole another way to create an array:
 	PoopString[fnc] arr=1 2 3 4 5
 	ScanLetters[fnc] %%i in (%arr%) do (
 		::Print out every elements
-		Swear[fnc] %%i
+		Yell[fnc] %%i
 	)
 	
 ### Local and global variables
@@ -334,24 +344,24 @@ And if you're asking yourself why add more dumb commands like this, well, becaus
 ### Batch-style procedural macro
 
 	:: A macro which prints out "Hello"
-	PoopString[fnc] hello= Swear[fnc] Hello
+	PoopString[fnc] hello= Yell[fnc] Hello
 	%hello%
 	
 You can join commands together like this:
 
-	PoopString[fnc] hello= Swear[fnc] Hello ^& Swear[fnc] Hell yeah^!
+	PoopString[fnc] hello= Yell[fnc] Hello ^& Yell[fnc] Hell yeah^!
 
 ### True procedural macro
 The Batch-style macro is the one being replaced in runtime. While it helps the program to run faster compared to calling functions, it's still kinda slow, so here comes the FreakC's true macro which is replaced during compile time:
 
 	:: A macro which prints out "Hello"
-	PoopMacro[fnc] hello= Swear[fnc] Hello
+	PoopMacro[fnc] hello= Yell[fnc] Hello
 	!hello!
 
 Remember that procedural macros "kinda" require a " " in the back, but a normal macro doesn't:
 
 	PoopMacro[fnc] key=124123
-	Swear[fnc] The key is !key!
+	Yell[fnc] The key is !key!
 
 ### Notes
 There are variables that you CAN NOT USE like: %a%, %printString%, %fccompile%, %fccompilename%, %fcread%.
@@ -362,11 +372,11 @@ Also, spaces in FreakC is extremely important, so if you declare a variable like
 
 It will declare the "abc " variable, so if you prints it out like this, it will not work
 
-	Swear[fnc] %abc%
+	Yell[fnc] %abc%
 	
 You will have to code like this:
 
-	Swear[fnc] %abc %
+	Yell[fnc] %abc %
 	
 Then, it will prints out " 100"
 
@@ -427,7 +437,7 @@ For examples, this code will print the sum of two parameters:
 	GrabFnc[fnc] :plus 1 2
 	PoopFnc[fnc] plus
 	PoopInt[fnc] ans=%~1 + %~2
-	Swear[fnc] %ans%
+	Yell[fnc] %ans%
 
 Note: Parameters in FreakC are %~1, %~2,...
 
@@ -452,9 +462,9 @@ This code would still work eventhough it contains special character
 Example:
 
 	ProduceTrash[fnc] SayHello
-		Swear[fnc] Hello
+		Yell[fnc] Hello
 		:: Using the arguments
-		Swear[fnc] %~1
+		Yell[fnc] %~1
 	EndTrash[fnc]
 	:: Prints "Hello"
 	GrabFnc[fnc] SayHello
@@ -469,7 +479,7 @@ In C you can see the codes are in a "main" function:
 You can implement "something like that" in FreakC if you hate scripting languages :v
 
 	ProduceTrash[fnc] file_name
-		Swear[fnc] Hello, World^!
+		Yell[fnc] Hello, World^!
 	EndTrash[fnc]
 	
 # Object Oriented Programming
@@ -481,14 +491,14 @@ You can implement OOP like this:
 		PoopString[fnc] %~1.age=%~2
 		PoopString[fnc] %~1.weight=%~3
 		(
-			Swear[fnc] Swear[fnc] *Being cute*
+			Yell[fnc] Yell[fnc] *Being cute*
 		)>%~1.BeingCute.bat
 	EndTrash[fnc]
 
 	:: Create an object
 	GrabFnc[fnc] Dog "Mary" "3" "4kg"
 	:: Prints out "age" property of "Mary", which is "3"
-	Swear[fnc] Age: %Mary.age%
+	Yell[fnc] Age: %Mary.age%
 	:: Call "Mary.BeingCute", which prints out "*Being cute*"
 	GrabFnc[fnc] Mary.BeingCute
 
@@ -501,7 +511,7 @@ Example:
 
 	PoopInt[fnc] abc=100
 	DoIf[fnc] %abc% == 100 (
-		Swear[fnc] abc is equal to 100
+		Yell[fnc] abc is equal to 100
 	)
 	
 You can actually use a Batch command in DoIf[fnc]. Example:
@@ -575,16 +585,16 @@ Example:
 
 	TapSomeSht[fnc] wsad
 	DoIfTap[fnc] 4 (
-		Swear[fnc] You pressed "D"
+		Yell[fnc] You pressed "D"
 	)
 	DoIfTap[fnc] 3 (
-		Swear[fnc] You pressed "A"
+		Yell[fnc] You pressed "A"
 	)
 	DoIfTap[fnc] 2 (
-		Swear[fnc] You pressed "S"
+		Yell[fnc] You pressed "S"
 	)
 	DoIfTap[fnc] 1 (
-		Swear[fnc] You pressed "W"
+		Yell[fnc] You pressed "W"
 	) 
 
 ### If not for tapping
@@ -686,13 +696,13 @@ For example, this program will print all the number from 0 to 10 then print out 
 
 	PoopInt[fnc] i=0
 	PoopFnc[fnc] loop
-	Swear[fnc] %i%
+	Yell[fnc] %i%
 	DoIf[fnc] %i% == 10 EatFnc[fnc] nextcode
 	PoopInt[fnc] i++
 	EatFnc[fnc] loop
 	
 	PoopFnc[fnc] nextcode
-	Swear[fnc] Done^!
+	Yell[fnc] Done^!
 
 
 # Import pre-built libraries
@@ -716,7 +726,7 @@ To import a pre-built library, use:
 	:: Example:
 	Bitchiest[fnc] "max_num" "2 3 1 8 5"
 	:: This will prints out "8"
-	Swear[fnc] %max_num%
+	Yell[fnc] %max_num%
 	
 ### Note
 All the functions above only works with list with all integers. String or floats will cause errors.
@@ -802,11 +812,11 @@ Then, compile the module file first, then compile the main file at the end.
 Create a file called "module.fclang" with:
 
 	Cancer[fnc]
-	Swear[fnc] World
+	Yell[fnc] World
 
 Create a file called "program.fclang" with:
 
-	Swear[fnc] Hello
+	Yell[fnc] Hello
 	InsertShits[fnc] module.bat
 
 In the command window, type:
@@ -1114,7 +1124,7 @@ Since everything works fine in Batch works in FreakC, you can check this out: ht
 
 # Equivalent with Batch
 
-* Swear[fnc] - echo
+* Yell[fnc] - echo
 * SwearLine[fnc] - echo.
 * PoopInt[fnc] - set /a
 * PoopString[fnc] - set
@@ -1190,10 +1200,10 @@ You should have it like this:
 		OddOrEven[fnc] 1
 	)
 
-But with normal commands like Swear[fnc], you can use it however you want.
+But with normal commands like Yell[fnc], you can use it however you want.
 
 <br/>
-<b>Also, FreakC is case-sensitive, so you need to be strict with your code.</b>
+<b>Also, FreakC is case-sensitive only with commands with [tag], variables and other stuffs aren't.</b>
 
 <br/>
 <br/>

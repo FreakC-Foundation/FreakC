@@ -7,9 +7,9 @@ PoopInput[fnc] input=
 PoopInt[fnc] ans=%input% %% 2
 
 DoIf[fnc] %ans% == 0 (
-	Swear[fnc] Is even
+	Yell[fnc] Is even
 ) OrNot[fnc] (
-	Swear[fnc] Is odd
+	Yell[fnc] Is odd
 )
 
 GotoToilet[fnc]

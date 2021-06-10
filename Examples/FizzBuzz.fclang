@@ -13,13 +13,13 @@ PoopInt[fnc] buzz=%count% %% 5
 
 
 DoIf[fnc] %fizzbuzz% == 0 (
-	Swear[fnc] FizzBuzz
+	Yell[fnc] FizzBuzz
 ) OrNot[fnc] DoIf[fnc] %fizz% == 0 (
-	Swear[fnc] Fizz
+	Yell[fnc] Fizz
 ) OrNot[fnc] DoIf[fnc] %buzz% == 0 (
-	Swear[fnc] Buzz
+	Yell[fnc] Buzz
 ) OrNot[fnc] (
-	Swear[fnc] %count%
+	Yell[fnc] %count%
 )
 
 PoopInt[fnc] count++

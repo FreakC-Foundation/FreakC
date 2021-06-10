@@ -1,11 +1,18 @@
-PoopInt[fnc] num1=1
-PoopInt[fnc] num2=1
-PoopInt[fnc] num3=0
-WhileSuck[fnc] %num3% LSS 30000
-	PoopInt[fnc] num3=%num1% + %num2%
-	Swear[fnc] %num3%
-	PoopInt[fnc] num1=%num2%
-	PoopInt[fnc] num2=%num3%
-EndSuck[fnc]
+ProduceTrash[fnc] func
+	Shit[typ] n1=0
+	Shit[typ] n2=1
+	Shit[typ] n3=0
+	Shit[typ] i=0
+	Puke[typ] end=%~2 - 1
+	WhileSuck[fnc] %i% LSS %end%
+		Puke[typ] n3=%n1%+%n2%
+		Shit[typ] n1=%n2%
+		Shit[typ] n2=%n3%
+		Puke[typ] i++
+	EndSuck[fnc]
+	Shit[typ] %~1=%n3%
+EndTrash[fnc]
 
+GrabFnc[fnc] func "res" "5"
+Yell[fnc] %res%
 GotoToilet[fnc]

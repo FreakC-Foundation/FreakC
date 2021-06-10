@@ -3,11 +3,11 @@ ChangeName[fnc] The truth machine
 PoopInput[fnc] input=
 
 DoIf[fnc] %input% == 0 (
-	Swear[fnc] 0
+	Yell[fnc] 0
 	Die[fnc]
 ) OrNot[fnc] DoIf[fnc] %input% == 1 (
 	PoopFnc[fnc] loop
-	Swear[fnc] %input%
+	Yell[fnc] %input%
 	EatFnc[fnc] loop
 )
 

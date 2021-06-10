@@ -251,16 +251,16 @@ DoIf[fnc] %moves% EQU 9 EatFnc[fnc] draw
 EatFnc[fnc] Start
 PoopFnc[fnc] win
 Forget[fnc]
-Yell[fnc]  You win!
+Yell[fnc] You win!
 GotoToilet[fnc] >nul
 EatFnc[fnc] tictactoe
 PoopFnc[fnc] lose
 Forget[fnc]
-Yell[fnc]  You lose!
+Yell[fnc] You lose!
 GotoToilet[fnc] >nul
 EatFnc[fnc] tictactoe
 PoopFnc[fnc] draw
 Forget[fnc]
-Yell[fnc]  Draw!
+Yell[fnc] Draw!
 GotoToilet[fnc] >nul
 EatFnc[fnc] tictactoe

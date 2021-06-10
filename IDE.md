@@ -20,3 +20,6 @@ Download the "FreakC" extension from Marketplace and you are ready to go! The ex
 In "FreakC/Utilities/Scripts" there is a file called "FreakC.sublime-build" which is the Sublime Text's build system for FreakC. To use it, please paste it in the "C:\Users\admin\AppData\Roaming\Sublime Text 3\Packages\User" or wherever your Packages folder is. Then, make sure that you have set the environment variable for FreakC. After that, you will be able to compiles FreakC codes in Sublime Text.
 
 For syntax highlighting, copy the "FreakC" folder in the same folder, then paste it in "%APPDATA%\Sublime Text v\Packages\".
+
+## Note
+Support for VSCode had been discontinued for a long time. However, supports for Sublime Text is still being developed, so Sublime is probably the go-to editor for FreakC.

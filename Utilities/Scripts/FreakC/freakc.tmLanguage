@@ -12,13 +12,13 @@
   <array>
     <dict>
       <key>match</key>
-      <string>ProduceTrash|EndTrash|SwearLine|Swear|DoIfTap|DoIfNotTap|DoIfFalse|DoIfDefined|DoIfExist|DoIfNotExist|DoIfNotDefined|DoIf|OrNot|EQU|LEQ|LSS|GEQ|GTR|NEQ|OddOrEven|TryMeHoe|TryMeBtch|SquareMyBois|WhileSuck|EndSuck|RepeatSuck|UntilStale|CubeMyBois|FuckUpLess|FuckUp|\:|\=\=|\+\+|\-\-|</string>
+      <string>ProduceTrash|EndTrash|SwearLine|Swear|DoIfTap|DoIfNotTap|DoIfFalse|DoIfDefined|DoIfExist|DoIfNotExist|DoIfNotDefined|DoIf|OrNot|EQU|LEQ|LSS|GEQ|GTR|NEQ|OddOrEven|TryMeHoe|TryMeBtch|SquareMyBois|WhileSuck|EndSuck|RepeatSuck|UntilStale|CubeMyBois|FuckUpLess|FuckUp|\=\=|\+\+|\-\-|</string>
       <key>name</key>
       <string>keyword.control</string>
     </dict>
     <dict>
       <key>match</key>
-      <string>Fuck|PoopInt|PoopString|PoopInput|PoopFnc|PoopFloat|Jelly|EatFnc|GrabFnc|LickFnc|Shit|Puke|Cum|Piss</string>
+      <string>Fuck|PoopInt|PoopString|PoopInput|PoopFnc|PoopFloat|PoopMacro|Jelly|EatFnc|GrabFnc|LickFnc|Shit|Puke|Cum|Piss|Crap|</string>
       <key>name</key>
       <string>support.constant</string>
     </dict>
@@ -30,7 +30,7 @@
     </dict>
     <dict>
       <key>match</key>
-      <string>SummonLegend|DumbCousin|TapSomeSht|Forget|ChangeSize|ChangeColor|InsertShits|ChangeName|GotoToilet|Patrick|Dani|Thicc|SpongeBob|HiM8|AreYaWinningSon|ILoveYou|GrabMeADrink|HelloWorld|HackMyIP|MyDirtyInfo|HackTheNet|ScanDir|ScanDiaries|ScanLetters|ScanOrgans|LoopStuffs|WaitForBus|MyMemory|BuyClock|BuyCalender|SeeDate|SeeTime|RestartSystem|ShutdownSystem|Loop|Die|PlayFile|CopyFile|MoveFile|FindTrash|FindShits|RenameFile|StealDiary|TrashDir|Trash|EatDir|PukeDir|EatDrive|</string>
+      <string>CountBitches|Bitchiest|Horniest|AdmitUrDumb|CheckIfUrDumb|CheckIfUrStupid|Masturbate|BigPenis|HugeCum|NotThatHugeCum|MeasurePenisSize|BeingHorny|WipePenis|DoDoggyStyle|SummonLegend|DumbCousin|ShitUrl|TapSomeSht|Forget|ChangeSize|ChangeColor|InsertShits|ChangeName|GotoToilet|Patrick|Dani|Thicc|SpongeBob|HiM8|AreYaWinningSon|ILoveYou|GrabMeADrink|HelloWorld|HackMyIP|MyDirtyInfo|HackTheNet|ScanDir|ScanDiaries|ScanLetters|ScanOrgans|LoopStuffs|WaitForBus|MyMemory|BuyClock|BuyCalender|SeeDate|SeeTime|RestartSystem|ShutdownSystem|Loop|Die|PlayFile|CopyFile|MoveFile|FindTrash|FindShits|RenameFile|StealDiary|TrashDir|Trash|EatDir|PukeDir|EatDrive|</string>
       <key>name</key>
       <string>entity.name.function</string>
     </dict>

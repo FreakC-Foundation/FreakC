@@ -651,13 +651,13 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			set procval=1
 			echo.>!proctar!.bat
 		) else (
-			if not "!deniedToken!" == "true" echo. !printString!>>!proctar!.bat
+			if not "!deniedToken!" == "true" echo.!printString!>>!proctar!.bat
 		)
 	)
 	if "!fccomment!" == "false" (
-		if not "!procadd!" == "true" if not "!deniedToken!" == "true" echo. !printString!>>%a%.bat
+		if not "!procadd!" == "true" if not "!deniedToken!" == "true" echo.!printString!>>%a%.bat
 	) else (
-		if not "!procadd!" == "true" echo. ::!printString!>>%a%.bat
+		if not "!procadd!" == "true" echo.::!printString!>>%a%.bat
 	)
 )
 setlocal disabledelayedexpansion

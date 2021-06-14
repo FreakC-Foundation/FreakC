@@ -465,9 +465,13 @@ Example:
 		Yell[fnc] Hello
 		:: Using the arguments
 		Yell[fnc] %~1
+		:: Safely exit the function
+		Die[fnc] /b
 	EndTrash[fnc]
 	:: Prints "Hello"
 	GrabFnc[fnc] SayHello
+
+It actually just generates a new file, and you call that file like a function. So technically you can create a Batch output file using ProduceTrash[fnc].
 
 ### Wrap all codes inside a "main" function
 In C you can see the codes are in a "main" function:

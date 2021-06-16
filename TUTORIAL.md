@@ -183,8 +183,6 @@ Ex:
 	
 	PoopString[fnc] arr[0]=Hello
 	PoopInt[fnc] arr[1]=100
-	
-<b>Note: There is no real Array in FreakC, the reason for naming arr[index] is to run for loops easier for all those "fake elements of a fake Array".</b>
 
 To declare a variable from user's input, you use:
 
@@ -718,13 +716,13 @@ To import a pre-built library, use:
 
 	Fuck[fnc] arrayfunc
 	
-	:: Find sum of list
+	:: Find sum of list of numbers, seperated by a space character.
 	CountBitches[fnc] "variable_name" "list"
 	
-	:: Find maximum of list
+	:: Find maximum of list, seperated by a space character.
 	Bitchiest[fnc] "variable_name" "list"
 	
-	:: Find minimum of list
+	:: Find minimum of list, seperated by a space character.
 	Horniest[fnc] "variable_name" "list"
 	
 	:: Example:

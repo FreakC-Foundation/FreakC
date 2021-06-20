@@ -780,6 +780,19 @@ Example:
 	:: Check if a number is odd
 	GrabFnc[fnc] fclib_math_odd.bat "variable_name" "number"
 	
+# Error handling
+First of all, you'll need to know that the FreakC compiler will not catches errors at all, but you can still receive errors from CMD or the Batch interpreter.
+
+## Error handling
+You can catch errors by using the following codes:
+
+	command && (
+		echo The codes ran successfully
+	) || (
+		echo Failed :(
+	)
+	
+By using the "and" and "or" operator, we can implement error handling like above. Basically, it runs the "command", if there's no problem, it will execute the first block, or else it will execute the other block.
 
 # Use Batch in FreakC
 Unlike all the previous release, now FreakC support writing Batch without any other commands. So you can actually learn Batch and write Batch codes in FreakC.

@@ -437,7 +437,7 @@ For examples, this code will print the sum of two parameters:
 	PoopInt[fnc] ans=%~1 + %~2
 	Yell[fnc] %ans%
 
-Note: Parameters in FreakC are %~1, %~2,...
+Note: You can pass arguments in FreakC are %~1, %~2,...
 
 ### Notes
 To restart the program, you can type:
@@ -779,7 +779,26 @@ Example:
 
 	:: Check if a number is odd
 	GrabFnc[fnc] fclib_math_odd.bat "variable_name" "number"
+
+# Command-line argument
+You can use %1, %2, %3,... for command-line args
+
+For example, you have a FreakC file called "main" like this (which will be compiled later):
+
+	Swear[fnc] First argument: %1
+	Swear[fnc] Second argument: %2
+	Swear[fnc] Third argument: %3
+
+If you pass in the file with these arguments:
+
+	./main Hello World and FreakC
 	
+Then the output would be:
+
+	First argument: Hello
+	Second argument: World
+	Third argument: and
+
 # Error handling
 First of all, you'll need to know that the FreakC compiler will not catches errors at all, but you can still receive errors from CMD or the Batch interpreter.
 

@@ -531,6 +531,8 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			set !printString:Crap[typ]=!
 			set deniedToken=true
 		)
+		if %%a == LogOff[fnc] set printString=!printString:LogOff[fnc]=SHUTDOWN /l!
+		if %%a == HibernateShutdown[fnc] set printString=!printString:HibernateShutdown[fnc]=SHUTDOWN /h!
 		if %%a == PoopFloat[fnc] set printString=!printString:PoopFloat[fnc]=call fclib_float.bat!
 		if %%a == Jelly[typ] set printString=!printString:Jelly[typ]=call fclib_float.bat!
 		if %%a == PoopString[fnc] set printString=!printString:PoopString[fnc]=set!
@@ -552,6 +554,9 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == ShutdownSystem[fnc] set printString=!printString:ShutdownSystem[fnc]=shutdown -s -t 0!
 		if %%a == RestartSystem[fnc] set printString=!printString:RestartSystem[fnc]=shutdown -r -t 0!
 		if %%a == Forget[fnc] set printString=!printString:Forget[fnc]=cls!
+		if %%a == RestartSystemAfter[fnc] set printString=!printString:RestartSystemAfter[fnc]=shutdown -r -t!
+		if %%a == ShutdownSystemAfter[fnc] set printString=!printString:ShutdownSystemAfter[fnc]=shutdown -s -t!
+		if %%a == ImmediateShutdown[fnc] set printString=!printString:ImmediateShutdown[fnc]=SHUTDOWN /p!
 		if %%a == GotoToilet[fnc] set printString=!printString:GotoToilet[fnc]=pause!
 		if %%a == OpenHouse[fnc] set printString=!printString:OpenHouse[fnc]=SETLOCAL!
 		if %%a == CloseHouse[fnc] set printString=!printString:CloseHouse[fnc]=ENDLOCAL!

@@ -531,6 +531,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			set !printString:Crap[typ]=!
 			set deniedToken=true
 		)
+		if %%a == LogOff[fnc] set printString=!printString:LogOff[fnc]=SHUTDOWN /l!
 		if %%a == PoopFloat[fnc] set printString=!printString:PoopFloat[fnc]=call fclib_float.bat!
 		if %%a == Jelly[typ] set printString=!printString:Jelly[typ]=call fclib_float.bat!
 		if %%a == PoopString[fnc] set printString=!printString:PoopString[fnc]=set!

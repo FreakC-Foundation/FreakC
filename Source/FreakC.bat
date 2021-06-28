@@ -550,6 +550,8 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == Die[fnc] set printString=!printString:Die[fnc]=exit!
 		if %%a == Loop[fnc] set printString=!printString:Loop[fnc]=goto FreakCCompiled!
 		if %%a == ShutdownSystem[fnc] set printString=!printString:ShutdownSystem[fnc]=shutdown -s -t 0!
+		if %%a == ShutdownSystemAfter[fnc] set printString=!printString:ShutdownSystemAfter[fnc]=shutdown -s -t!
+		if %%a == ImmediateShutdown[fnc] set printString=!printString:ImmediateShutdown[fnc]=SHUTDOWN /p!
 		if %%a == RestartSystem[fnc] set printString=!printString:RestartSystem[fnc]=shutdown -r -t 0!
 		if %%a == Forget[fnc] set printString=!printString:Forget[fnc]=cls!
 		if %%a == GotoToilet[fnc] set printString=!printString:GotoToilet[fnc]=pause!

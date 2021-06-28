@@ -940,10 +940,22 @@ FindTrash[fnc]:
 	ShutdownSystem[fnc]
 	::Add /t time and /c "comment" to set the time to shutdown and leave a comment before shutdown
 	
+	:: Log off
+	LogOff[fnc]
+	:: Hibernate shutdown
+	HibernateShutdown[fnc]
+	:: Shutdown system after a specific time (in ms)
+	ShutdownSystemAfter[fnc] time
+	:: Immediate shutdown
+	ImmediateShutdown[fnc]
+	
 ### Restart system
 
 	RestartSystem[fnc]
 	::Add /t time and /c "comment" to set the time to shutdown and leave a comment before restart
+	
+	:: Restart system after a specific time (in ms)
+	RestartSystemAfter[fnc] time
 	
 ### Create a folder
 

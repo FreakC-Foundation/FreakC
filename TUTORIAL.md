@@ -157,7 +157,7 @@ You will see this command underneath, but you should you this command to pause y
 # Variables and data types
 
 ## Variables
-To declare a variable, you use:
+To declare a variable, you can use:
 
 	PoopString[fnc] variable_name=string_value
 	
@@ -165,7 +165,7 @@ Or:
 
 	PoopString[fnc] "variable_name=string_value"
 
-To do math equations, you use:
+To do math equations, do:
 
 	PoopInt[fnc] variable_name=equation
 	
@@ -175,16 +175,16 @@ Note that PoopInt[fnc] will always round up number, to do equation or to declare
 	Fuck[fnc] float
 	PoopFloat[fnc] "variable_name" "equation"
 	
-To declare a variable as an array, you use:
+To declare a variable as an array, use:
 
 	data_type arr[array_index]=
 	
 Ex:
 	
 	PoopString[fnc] arr[0]=Hello
-	PoopInt[fnc] arr[1]=100
+	PoopString[fnc] arr[1]=100
 
-To declare a variable from user's input, you use:
+To declare a variable from user's input, try:
 
 	PoopInput[fnc] variable_name=
 
@@ -254,7 +254,7 @@ This time, the value will be "Hello + World"
 ### Use variables in different commands
 You can use variables in FreakC commands as %variable_name%
 
-For example, to print out a variable, you can do this:
+For example, to print out a variable, you can do it like this:
 
 	PoopString[fnc] result=Hello World^!
 	Yell[fnc] %result%
@@ -274,7 +274,7 @@ To print out every element of an array, you can write something like this:
    		Yell[fnc] ^!a[%%n]^! 
 	)
 
-Actually, there is a whole another way to create an array:
+Actually, you can use foreach with splitted strings:
 
 	PoopString[fnc] arr=1 2 3 4 5
 	ScanLetters[fnc] %%i in (%arr%) do (
@@ -303,7 +303,41 @@ You can also do that with OpenHouse[fnc]
 	OpenHouse[fnc] ENABLEDELAYEDEXPANSION
 	OpenHouse[fnc] ENABLEEXTENSIONS
 	
-<b>Note: DELAYEDEXPANSION is already enabled in FreakC. So you wouldn't need to enable it actually.</b>
+### Delayed expansion
+You have seen some `^!` above, that's an essential feature gained from delayed expansion.
+
+If you want to prints out the element at position "i" (i is variable) of an array, you'd maybe try to do this:
+
+	Swear[fnc] %arr[%i%]%
+	
+But it doesn't work, because you'd need to use:
+
+	OpenHouse[fnc] ENABLEDELAYEDEXPANSION
+	Swear[fnc] ^!arr[%i%]^!
+
+Also, if you change a value/declare a variable in a block of code locally in a normal way, it'd often not work outside the scope, so you should use delayed expansion pretty much all the time.
+
+Notice that you're using OpenHouse[fnc], which makes all the values defined local, so remember to always add `CloseHouse[fnc]` (mostly when creating a function) to ensure everything works fine, like a `return` statement for example.
+
+An example of sorting an array:
+
+	Piss[typ] n=The amount of element:
+	LoopStuffs[fnc] %%i IN (1,1,%n%) DO Piss[typ] arr[%%i]=Element %%i:
+	
+	OpenHouse[fnc] enabledelayedexpansion
+	LoopStuffs[fnc] %%i IN (1,1,%n%) DO (
+		Puke[typ] ind=%%i+1
+		LoopStuffs[fnc] %%j IN (^!ind^!,1,%n%) DO (
+			DoIf[fnc] ^!arr[%%i]^! GTR ^!arr[%%j]^! (
+				Shit[typ] temp=^!arr[%%i]^!
+				Shit[typ] arr[%%i]=^!arr[%%j]^!
+				Shit[typ] arr[%%j]=^!temp^!
+			)
+		)
+	)
+
+	Yell[fnc] Sorted:
+	LoopStuffs[fnc] %%i IN (1,1,%n%) DO Yell[fnc] Element %%i: ^!arr[%%i]^!
 
 ### Special variables
 * %numpiss% - A variable with the value as random numbers from 1 to 9

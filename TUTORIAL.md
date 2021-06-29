@@ -16,6 +16,9 @@
 # Disclaimer
 This tutorial might be offensive, disturbing and cringey, please assure that you're 18 and above.
 
+# First note
+FreakC is a superset language which is transpiled to Batch, so pretty much all of FreakC's logic is Batch's, so it would be good if you check out the [Batch/CMD's official docs](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands) or [a simple Batch tutorial](https://www.tutorialspoint.com/batch_script/batch_script_syntax.htm)
+
 # Installation
 There are many ways to install FreakC, you can:
 

@@ -76,7 +76,6 @@ We would love to have you as a contributor! Please consider checking out [contri
 If you like FreakC, it would be great if you leave a star here ❤️.
 
 ## Social medias
-* <a href="https://youtu.be/0Pbah29aI4s">Youtube</a>
 * <a href="https://npmgames.itch.io/freakc">Itch.io</a>
 * <a href="https://www.facebook.com/FreakC-Programming-Language-111425377421861">Facebook</a>
 * <a href="https://discord.gg/8PjqmzVFer">Discord</a>

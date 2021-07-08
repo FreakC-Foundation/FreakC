@@ -103,6 +103,11 @@ If you like FreakC, it would be great if you leave a star here ❤️.
 
 In association with the <a href="https://github.com/joliorg">Jolio</a> dev team.
 
+## Repo's contributors
+<a href="https://github.com/FreakC-Foundation/FreakC/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=FreakC-Foundation/FreakC" />
+</a>
+
 ## Copyrights and License
 Copyright © 2020 Nguyen Phu Minh
 

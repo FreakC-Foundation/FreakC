@@ -1,7 +1,7 @@
 <div align="center">
   <img src="Resources/Branding/logo.png" />
   <br/>
-  <b>A programming language for drunk coders</b>
+  <b>An experimental programming language</b>
   <br/>
   <br/>
   <a href="https://github.com/FreakC-Foundation/FreakC/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-GPLv3-blue.svg"/></a>
@@ -12,9 +12,6 @@
   <a href="https://discord.gg/8PjqmzVFer"><img src="https://img.shields.io/discord/810892591180546068.svg"/></a>
   <img alt="Windows" src="https://img.shields.io/static/v1?label=&message=Windows&color=0078D6&logo=Windows">
 </div>
-
-# Disclaimer
-This tutorial might be offensive, disturbing and cringey, please assure that you're 18 and above.
 
 # First note
 FreakC is a superset language which is transpiled to Batch, so pretty much all of FreakC's logic is Batch's, so it would be good if you check out the [Batch/CMD's official docs](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands) or [a simple Batch tutorial](https://www.tutorialspoint.com/batch_script/batch_script_syntax.htm)
@@ -69,7 +66,7 @@ To show all options and usage, type:
 
     freakc --help
     
-To show all options and usage (with a dumb ascii art), type:
+To show all options and usage with pause, type:
 
     freakc
     
@@ -81,102 +78,78 @@ To open interactive shell, type:
     
 You can type in whatever you want, it will be stored in "tar.fclang". You can type in any of these commands to execute tasks:
 
-* StartFuckin[cli] - Runs all the codes written
-* StopFuckin[cli] - Delete tar.fclang and exit
-* WipeAss[cli] - Resets codes
-* Shit[cli] - Clear console
+* start[] - Runs all the codes written
+* end[] - Delete tar.fclang and exit
+* wipe[] - Resets codes
+* clr[] - Clear console
 
-# Print text with Swear[fnc]
-To print out a string or text, you use:
+# Print text=
+To print out a string or text, you can do it like this:
 
-	Swear[fnc] string
+	print[] string
 
-"But wait" you asked, "if I print an empty string like this, or I want to create a new line, this will not work"
+The command is compiled to `echo.`, if you just want to use the traditional `echo`:
 
-	:: Not working codes
-	Swear[fnc]
-
-That's where `Yell[fnc]` comes in:
-
-	:: Prints a new line
-	Yell[fnc]
-	:: You can print normal string too
-	Yell[fnc] Hello, World
-
-So why use `Swear[fnc]` at all? Actually, no, you shouldn't use `Swear[fnc]`, but if you know Batch, then `Swear[fnc]` is compiled to `echo`, `Yell[fnc]` is compiled to `echo.`, you might need to use `echo` sometimes, but really, just use `Yell[fnc]`
-
-Oh, there's also this `SwearLine[fnc]` too, but it's a faulty feature added as a mistake, what it does is the same as `Yell[fnc]`, but adds a bonus whitespace :v
+	uprint[] string
 
 ## Store data 
 You can actually store data to a file by using:
 
-	Yell[fnc] data>>file
+	print[] data>>file
 
 # Special characters
 Unlike any characters, "!" requires "^", for example:
 
 	::This would causes no errors
-	Yell[fnc] @#/
+	print[] @#/
 	
 	::This would cause error ("!" will not be shown)
-	Yell[fnc] !
+	print[] !
 	
 	::Correct codes:
-	Yell[fnc] ^!
-	
-The reason for this is that FreakC has: SETLOCAL ENABLEDELAYEDEXPANSION which causes "!" to not be used properly.
-
-# A brief note
-If you're asking yourself, what are the reasons for the holy existence of "[fnc]". Well, it's completely useless, but I added it just to make coders waste some time :)
+	print[] ^!
 
 # Unicode characters
 To start using Unicode character, type:
 
-	FuckUnicode[fnc] >nul
+	unicode[] >nul
 
 So now you can use Unicode characters:
 
-	FuckUnicode[fnc] >nul
-	Yell[fnc] ă ê ©
+	unicode[] >nul
+	print[] ă ê ©
 	:: Would print out "ă ê ©"
 
 # Prints out command's text
 If you type:
 
-	Yell[fnc] Yell[fnc]
+	print[] print[]
 
-It won't print out "Yell[fnc]", but it will print out "echo", because FreakC will compiles any statement/command without caring if it's a used data or not. So to actually print out "Yell[fnc]", you will need to add "^" in any place of the command. Example:
+It won't print out "print[]", but it will print out "echo", because FreakC will compiles any statement/command without caring if it's a used data or not. So to actually print out "print[]", you will need to add "^" in any place of the command. Example:
 
-	Yell[fnc] Yell^[fnc]
-	:: This will print out "Yell[fnc]"
+	print[] print[^]
+	:: This will print out "print[]"
 
-# First note
-To pause in FreakC, please type in:
-	
-	GotoToilet[fnc]
-
-You will see this command underneath, but you should you this command to pause your program.
-
-# Variables and data types
+# Variables
 
 ## Variables
 To declare a variable, you can use:
 
-	PoopString[fnc] variable_name=string_value
+	var[] variable_name=string_value
 	
 Or:
 
-	PoopString[fnc] "variable_name=string_value"
+	var[] "variable_name=string_value"
 
 To do math equations, do:
 
-	PoopInt[fnc] variable_name=equation
+	eq[] variable_name=equation
 	
-Note that PoopInt[fnc] will always round up number, to do equation or to declare a variable as a float, do:
+Note that eq[] will always round up number, to do equation or to declare a variable as a float, do:
 
 	:: Import float
-	Fuck[fnc] float
-	PoopFloat[fnc] "variable_name" "equation"
+	import[] float
+	float[] "variable_name" "equation"
 	
 To declare a variable as an array, use:
 
@@ -184,25 +157,25 @@ To declare a variable as an array, use:
 	
 Ex:
 	
-	PoopString[fnc] arr[0]=Hello
-	PoopString[fnc] arr[1]=100
+	var[] arr[0]=Hello
+	var[] arr[1]=100
 
 To declare a variable from user's input, try:
 
-	PoopInput[fnc] variable_name=
+	inp[] variable_name=
 
 Note: If you do this, it will prints out "Enter name:" right next to the input
 
-	PoopInput[fnc] variable_name=Enter name:
+	inp[] variable_name=Enter name:
 
 ### Maths 
 You can do Math equations with FreakC like this:
 
-	PoopInt[fnc] result=1+1+2+4
+	eq[] result=1+1+2+4
 
 If you do this, variable "result" will be "Hel + lo"
 
-	PoopString[fnc] result=Hel + lo
+	var[] result=Hel + lo
 	
 <b>Math operators</b>
 <br/>
@@ -217,39 +190,21 @@ If you do this, variable "result" will be "Hel + lo"
 * `= *= /= %= += -=    - assignment`
 * `&= ^= |= <<= >>= , - expression separator`
 * `++ --               - plus/minus 1`
-
-## Some Math commands
-
-### Make a number squared
-
-	SquareMyBois[fnc] variable_without_%%
-	
-### Make a number cubed
-
-	CubeMyBois[fnc] variable_without_%%
-	
-### Print out an equation:
-
-	FuckUp[fnc] equation
-
-### Assign the result of an equation to %fhsolved%
-
-	FuckUpLess[fnc] equation
 	
 ### Merge strings
 To merge strings, do this:
 
-	PoopString[fnc] str1=Hello
-	PoopString[fnc] str2=World
-	PoopString[fnc] str=%str1% %str2%
+	var[] str1=Hello
+	var[] str2=World
+	var[] str=%str1% %str2%
 
 So the value of %str% is "Hello World"
 
 Don't merge string like this:
 
-	PoopString[fnc] str1=Hello
-	PoopString[fnc] str2=World
-	PoopString[fnc] str=%str1% + %str2%
+	var[] str1=Hello
+	var[] str2=World
+	var[] str=%str1% + %str2%
 	
 This time, the value will be "Hello + World"
 
@@ -259,30 +214,30 @@ You can use variables in FreakC commands as %variable_name%
 
 For example, to print out a variable, you can do it like this:
 
-	PoopString[fnc] result=Hello World^!
-	Yell[fnc] %result%
+	var[] result=Hello World^!
+	print[] %result%
 	
 But, to print out an element of an array, you use:
 
-	PoopString[fnc] a[0]=Hello
-	Yell[fnc] %a[0]%
+	var[] a[0]=Hello
+	print[] %a[0]%
 	
 To print out every element of an array, you can write something like this:
 
-	OpenHouse[fnc] ENABLEDELAYEDEXPANSION
-	PoopInt[fnc] a[0]=100
-	PoopInt[fnc] a[1]=35
-	PoopInt[fnc] a[2]=20
-	LoopStuffs[fnc] %%n in (0,1,2) do ( 
-   		Yell[fnc] ^!a[%%n]^! 
+	local[] ENABLEDELAYEDEXPANSION
+	var[] a[0]=100
+	var[] a[1]=35
+	var[] a[2]=20
+	loop[] %%n in (0,1,2) do ( 
+   		print[] ^!a[%%n]^! 
 	)
 
 Actually, you can use foreach with splitted strings:
 
-	PoopString[fnc] arr=1 2 3 4 5
-	ScanLetters[fnc] %%i in (%arr%) do (
+	var[] arr=1 2 3 4 5
+	scan_strs[] %%i in (%arr%) do (
 		::Print out every elements
-		Yell[fnc] %%i
+		print[] %%i
 	)
 	
 ### Local and global variables
@@ -290,57 +245,57 @@ You can declare a global variable by just using all the ways mentioned recently.
 
 To declare a variable locally, you will need to use:
 
-	OpenHouse[fnc] 
-	PoopInt[fnc] ans=100
-	CloseHouse[fnc]
+	local[] 
+	eq[] ans=100
+	CloseHouse[]
 	
-OpenHouse[fnc] and CloseHouse[fnc] helps create a local environment.
+local[] and CloseHouse[] helps create a local environment.
 
 In Batch, to use variable in for loops, or enables command prosessor's extensions, you would need:
 
 	setlocal ENABLEDELAYEDEXPANSION
 	setlocal ENABLEEXTENSIONS
 	
-You can also do that with OpenHouse[fnc]
+You can also do that with local[]
 
-	OpenHouse[fnc] ENABLEDELAYEDEXPANSION
-	OpenHouse[fnc] ENABLEEXTENSIONS
+	local[] ENABLEDELAYEDEXPANSION
+	local[] ENABLEEXTENSIONS
 	
 ### Delayed expansion
 You have seen some `^!` above, that's an essential feature gained from delayed expansion.
 
 If you want to prints out the element at position "i" (i is variable) of an array, you'd maybe try to do this:
 
-	Swear[fnc] %arr[%i%]%
+	print[] %arr[%i%]%
 	
 But it doesn't work, because you'd need to use:
 
-	OpenHouse[fnc] ENABLEDELAYEDEXPANSION
-	Swear[fnc] ^!arr[%i%]^!
+	local[] ENABLEDELAYEDEXPANSION
+	print[] ^!arr[%i%]^!
 
 Also, if you change a value/declare a variable in a block of code locally in a normal way, it'd often not work outside the scope, so you should use delayed expansion pretty much all the time.
 
-Notice that you're using OpenHouse[fnc], which makes all the values defined local, so remember to always add `CloseHouse[fnc]` (mostly when creating a function) to ensure everything works fine, like a `return` statement for example.
+Notice that you're using local[], which makes all the values defined local, so remember to always add `CloseHouse[]` (mostly when creating a function) to ensure everything works fine, like a `return` statement for example.
 
 An example of sorting an array:
 
-	Piss[typ] n=The amount of element:
-	LoopStuffs[fnc] %%i IN (1,1,%n%) DO Piss[typ] arr[%%i]=Element %%i:
+	inp[] n=The amount of element:
+	loop[] %%i IN (1,1,%n%) DO inp[] arr[%%i]=Element %%i:
 	
-	OpenHouse[fnc] enabledelayedexpansion
-	LoopStuffs[fnc] %%i IN (1,1,%n%) DO (
-		Puke[typ] ind=%%i+1
-		LoopStuffs[fnc] %%j IN (^!ind^!,1,%n%) DO (
-			DoIf[fnc] ^!arr[%%i]^! GTR ^!arr[%%j]^! (
-				Shit[typ] temp=^!arr[%%i]^!
-				Shit[typ] arr[%%i]=^!arr[%%j]^!
-				Shit[typ] arr[%%j]=^!temp^!
+	local[] enabledelayedexpansion
+	loop[] %%i IN (1,1,%n%) DO (
+		eq[] ind=%%i+1
+		loop[] %%j IN (^!ind^!,1,%n%) DO (
+			if[] ^!arr[%%i]^! GTR ^!arr[%%j]^! (
+				var[] temp=^!arr[%%i]^!
+				var[] arr[%%i]=^!arr[%%j]^!
+				var[] arr[%%j]=^!temp^!
 			)
 		)
 	)
 
-	Yell[fnc] Sorted:
-	LoopStuffs[fnc] %%i IN (1,1,%n%) DO Yell[fnc] Element %%i: ^!arr[%%i]^!
+	print[] Sorted:
+	loop[] %%i IN (1,1,%n%) DO print[] Element %%i: ^!arr[%%i]^!
 
 ### Special variables
 * %numpiss% - A variable with the value as random numbers from 1 to 9
@@ -359,65 +314,57 @@ An example of sorting an array:
 
 There are a lot of special variables left, but you might not find uses for them
 
-### Implementations on variables
+### Some features with variables
 * %variable_name:~0,-2% - would extract all but the last 2 characters of the variable
 * %variable_name:~-5% - would extract the last 5 characters of the variable
 * %variable_name:~5% - would remove the first 5 characters of the variable
 * %variable_name:str1=str2% - would replace str1 with str2
 * %PATH:~10,5% - would expand the PATH environment variable, and then use only the 5 characters that begin at the 11th (offset 10) character of the expanded result.  If the length is not specified, then it defaults to the remainder of the variable value.  If either number (offset or length) is negative, then the number used is the length of the environment variable value added to the offset or length specified/li>
 
-### Another way to declare variables
-* Shit[typ] - Declare a variable as a string
-* Puke[typ] - Declare a variable as an integer
-* Cum[typ] - Create a function/label
-* Piss[typ] - Declare a variable from user's input
-* Jelly[typ] - Declare a variable as a float
-* Crap[typ] - Define a macro
-
 And if you're asking yourself why add more dumb commands like this, well, because FreakC's bs.
 
 ### Batch-style procedural macro
 
 	:: A macro which prints out "Hello"
-	PoopString[fnc] hello= Yell[fnc] Hello
+	var[] hello= print[] Hello
 	%hello%
 	
 You can join commands together like this:
 
-	PoopString[fnc] hello= Yell[fnc] Hello ^& Yell[fnc] Hell yeah^!
+	var[] hello= print[] Hello ^& print[] Hell yeah^!
 
 ### True procedural macro
 The Batch-style macro is the one being replaced in runtime. While it helps the program to run faster compared to calling functions, it's still kinda slow, so here comes the FreakC's true macro which is replaced during compile time:
 
 	:: A macro which prints out "Hello"
-	PoopMacro[fnc] hello= Yell[fnc] Hello
+	define[] hello= print[] Hello
 	!hello!
 
 Remember that procedural macros "kinda" require a " " in the back, but a normal macro doesn't:
 
-	PoopMacro[fnc] key=124123
-	Yell[fnc] The key is !key!
+	define[] key=124123
+	print[] The key is !key!
 
 ### Notes
 There are variables that you CAN NOT USE like: %a%, %printString%, %fccompile%, %fccompilename%, %fcread%.
 
 Also, spaces in FreakC is extremely important, so if you declare a variable like this:
 
-	PoopInt[fnc] abc = 100
+	eq[] abc = 100
 
 It will declare the "abc " variable, so if you prints it out like this, it will not work
 
-	Yell[fnc] %abc%
+	print[] %abc%
 	
 You will have to code like this:
 
-	Yell[fnc] %abc %
+	print[] %abc %
 	
 Then, it will prints out " 100"
 
 Other thing that you should notice is that 
 
-	PoopString[fnc] text
+	var[] text
 	
 would return any variable begins with "text"
 
@@ -432,131 +379,118 @@ Another way:
 
 Multi-line comment:
 
-	[cmt] comment
-	[ecmt]
+	c[] comment
+	e[]
 
 To write a comment that won't show up in the compiled codes, use:
 
-	[hcmt] comment
+	h[cmt] comment
 
 # Labels and Goto statement
 Labels helps you to jump to a state or pass parameters to execute tasks (somewhat procedural programming).
 
 To create a label/procedure, you use:
 
-	PoopFnc[fnc] label_name
+	label[] label_name
 
 To jump to a label, you use:
 
-	EatFnc[fnc] label_name
+	goto[] label_name
 
 To call a label/procedure, you use:
 
-	GrabFnc[fnc] :label_name
+	goto[] :label_name
 
 Or:
 
-	LickFnc[fnc] label_name
+	lcall[] label_name
 
-GrabFnc[fnc] can also targets file, while LickFnc[fnc] can only targets label/function. For example, you can execute files like this:
+goto[] can also targets file, while lcall[] can only targets label/function. For example, you can execute files like this:
 
-	GrabFnc[fnc] file_name
+	goto[] file_name
 
-### Differences between EatFnc[fnc] and GrabFnc[fnc]
-EatFnc[fnc] jumps to a function and will not execute the previous code while GrabFnc[fnc] use code from the function but still execute the previous code.
+### Differences between goto[] and goto[]
+goto[] jumps to a function and will not execute the previous code while goto[] use code from the function but still execute the previous code.
 
-Also, GrabFnc[fnc] also supports parameters, which helps you a lot of time.
+Also, goto[] also supports parameters, which helps you a lot of time.
 
 For examples, this code will print the sum of two parameters:
 
-	GrabFnc[fnc] :plus 1 2
-	PoopFnc[fnc] plus
-	PoopInt[fnc] ans=%~1 + %~2
-	Yell[fnc] %ans%
+	goto[] :plus 1 2
+	label[] plus
+	eq[] ans=%~1 + %~2
+	print[] %ans%
 
 Note: You can pass arguments in FreakC are %~1, %~2,...
 
 ### Notes
 To restart the program, you can type:
 
-	EatFnc[fnc] FreakCCompiled
+	goto[] FreakCCompiled
 
 It is because the compiled code of FreakC is in a main label/procedure "FreakCCompiled"
 
 This code would still work eventhough it contains special character
 
-	PoopFnc[fnc] dsasd$ 123213 323
-	EatFnc[fnc] dsasd$ 123213 323
+	label[] dsasd$ 123213 323
+	goto[] dsasd$ 123213 323
 	
 # Procedural programming
 
-	ProduceTrash[fnc] Procedure_name
+	function[] function_name
 		:: Code goes here
-	EndTrash[fnc]
+	endfunc[]
 
 Example:
 
-	ProduceTrash[fnc] SayHello
-		Yell[fnc] Hello
+	function[] SayHello
+		print[] Hello
 		:: Using the arguments
-		Yell[fnc] %~1
+		print[] %~1
 		:: Safely exit the function
-		Die[fnc] /b
-	EndTrash[fnc]
+		quit[] /b
+	endfunc[]
 	:: Prints "Hello"
-	GrabFnc[fnc] SayHello
+	goto[] SayHello
 
-It actually just generates a new file, and you call that file like a function. So technically you can create a Batch output file using ProduceTrash[fnc].
+It actually just generates a new file, and you call that file like a function. So technically you can create a Batch output file using function[].
 
-### Wrap all codes inside a "main" function
-In C you can see the codes are in a "main" function:
-
-	int main() {
-		printf("%d", "Hello, World!");
-	}
-
-You can implement "something like that" in FreakC if you hate scripting languages :v
-
-	ProduceTrash[fnc] file_name
-		Yell[fnc] Hello, World^!
-	EndTrash[fnc]
-	
 # Object Oriented Programming
 You can implement OOP like this:
 
 	:: Create a procedure called "Dog"
-	ProduceTrash[fnc] Dog
+	function[] Dog
 		::Set properties
-		PoopString[fnc] %~1.age=%~2
-		PoopString[fnc] %~1.weight=%~3
+		var[] %~1.age=%~2
+		var[] %~1.weight=%~3
 		(
-			Yell[fnc] Yell[fnc] *Being cute*
+			print[] print[] *Being cute*
 		)>%~1.BeingCute.bat
-	EndTrash[fnc]
+	endfunc[]
 
 	:: Create an object
-	GrabFnc[fnc] Dog "Mary" "3" "4kg"
+	goto[] Dog "Mary" "3" "4kg"
 	:: Prints out "age" property of "Mary", which is "3"
-	Yell[fnc] Age: %Mary.age%
+	print[] Age: %Mary.age%
 	:: Call "Mary.BeingCute", which prints out "*Being cute*"
-	GrabFnc[fnc] Mary.BeingCute
+	goto[] Mary.BeingCute
 
 # If statements
 To use if statement, type:
 
-	DoIf[fnc] condition command_to_execute
+	if[] condition command_to_execute
 	
 Example:
 
-	PoopInt[fnc] abc=100
-	DoIf[fnc] %abc% == 100 (
-		Yell[fnc] abc is equal to 100
+	var[] abc=100
+	if[] %abc% == 100 (
+		print[] abc is equal to 100
 	)
 	
-You can actually use a Batch command in DoIf[fnc]. Example:
+You can actually use a Batch command in if[]. Example:
 
-	PoopInt[fnc] abc=20
-	DoIf[fnc] %abc% == 20 (
+	var[] abc=20
+	if[] %abc% == 20 (
 		echo abc is equal to 100
 	)
 	
@@ -573,92 +507,77 @@ You can actually use a Batch command in DoIf[fnc]. Example:
 
 ### Execute if a file exists
 
-	DoIfExist[fnc] file_name (
+	if_exist[] file_name (
 		command_to_execute
 	)
 	
 ### Execute if a variable is defined
 
-	DoIfDefined[fnc] variable_name (
+	if_defined[] variable_name (
 		command_to_execute
 	)
 	
 ### Execute if a condition is false
 
-	DoIfFalse[fnc] condtition (
+	if_not[] condtition (
 		command_to_execute
 	)
 
 ### Else
 
-	DoIf[fnc] condition (
-		command_to_execute
-	) OrNot[fnc] (
-		command_to_execute
+	if[] condition (
+		command1
+	) elif[] condition2 (
+		command2
+	) el[] (
+		command3
 	)
 
 ## Notes
-To use if not for DoIfDefined[fnc] or DoIfExist[fnc], you can do this:
+To use if not for if_defined[] or if_exist[], you can do this:
 
-	DoIfNotExist[fnc] file (
+	if_not_exist[] file (
 		command_to_execute
 	)
-	DoIfNotDefined[fnc] file (
+	if_not_defined[] file (
 		command_to_execute
 	)
 	
 ## Pressing keys with respond
 To receive keys pressed, add:
 
-	TapSomeSht[fnc] key
+	key[] key
 	
 For examples, if you want the users to press one in "wsad", type:
 
-	TapSomeSht[fnc] wsad
+	key[] wsad
 
 To perform any actions, you will need to use a special if statement:
 
-	DoIfTap[fnc] position_of_key_in_TapSomeSht[fnc]
+	if_el[] position_of_key_in_key[]
 
 Example:
 
-	TapSomeSht[fnc] wsad
-	DoIfTap[fnc] 4 (
-		Yell[fnc] You pressed "D"
+	key[] wsad
+	if_el[] 4 (
+		print[] You pressed "D"
 	)
-	DoIfTap[fnc] 3 (
-		Yell[fnc] You pressed "A"
+	if_el[] 3 (
+		print[] You pressed "A"
 	)
-	DoIfTap[fnc] 2 (
-		Yell[fnc] You pressed "S"
+	if_el[] 2 (
+		print[] You pressed "S"
 	)
-	DoIfTap[fnc] 1 (
-		Yell[fnc] You pressed "W"
+	if_el[] 1 (
+		print[] You pressed "W"
 	) 
 
 ### If not for tapping
 You can use:
 
-	DoIfNotTap[fnc]
+	if_not_el[]
 	
 to use if not.
-
-## Instant condition checking
-You can type this to check if the condition is true or false instantly:
-
-	TryMeBtch[fnc] condition
-	
-Then, it will prints out "Yes" if true, "No" if false.
-
-For example, this will prints out "Yes"
-
-	TryMeBtch[fnc] "hello" == "hello"
-	
-You can also do this:
-
-	TryMeHoe[fnc] condition
-
-It will assign 'Yes' or 'No' to %tmhres%.
 
 # Loops
 
@@ -666,43 +585,43 @@ It will assign 'Yes' or 'No' to %tmhres%.
 
 ### Loops from m to n
 
-	LoopStuffs[fnc] %%parameters in (start,step,end) do (
+	loop[] %%parameters in (start,step,end) do (
 	)
 	
 ### Loops through files rooted in a folder
 
-	ScanOrgans[fnc] drive/directory %%parameters in (file) do (
+	scan_dir drive/directory %%parameters in (file) do (
 	)
 	
 ### Loops through strings or strings in a file
 
-	ScanLetters[fnc] drive/directory %%parameters in (string/file) do (
+	scan_strs[] drive/directory %%parameters in (string/file) do (
 	)
 	
 ### Loops through a file 
 
-	ScanDiaries[fnc] %%parameters in (set) do (
+	scan_file[] %%parameters in (set) do (
 	)
 	
 ### Loops through a folder
 
-	ScanDir[fnc] %%parameters in (folder) do (
+	scan_files[] %%parameters in (folder) do (
 	)
 	
 ## While loops
 While loops can be created using:
 
-	WhileSuck[fnc] condition
+	while[] condition
 	::code
-	EndSuck[fnc]
+	endwhile[]
 
 Of course, the loops will run when the condition is still true, stop when false.
 
 ### Do-While loop
 
-	RepeatSuck[fnc]
+	repeat[]
 	::code
-	UntilStale[fnc] condition
+	until[] condition
 
 ### Differences between While and Do-While
 While loop is executed only when given condition is true. Whereas, do-while loop is executed for first time irrespective of the condition. After executing while loop for first time, then condition is checked.
@@ -712,119 +631,119 @@ While loop is executed only when given condition is true. Whereas, do-while loop
 <br/>
 This will be wrong:
 
-	WhileSuck[fnc] condition
-	WhileSuck[fnc] condition
-	EndSuck[fnc]
-	EndSuck[fnc]
+	while[] condition
+	while[] condition
+	endwhile[]
+	endwhile[]
 
 <b>(Same with Do-While)</b>
 
 ## The better way for while loops
 
-	PoopInt[fnc] i=start_number
-	PoopFnc[fnc] loop
+	eq[] i=start_number
+	label[] loop
 	command
-	DoIf[fnc] %i% == end_number EatFnc[fnc] nextcode
-	PoopInt[fnc] i++
-	EatFnc[fnc] loop
+	if[] %i% == end_number goto[] nextcode
+	eq[] i++
+	goto[] loop
 	
-	PoopFnc[fnc] nextcode
+	label[] nextcode
 	command
 	
 For example, this program will print all the number from 0 to 10 then print out "Done!":
 
-	PoopInt[fnc] i=0
-	PoopFnc[fnc] loop
-	Yell[fnc] %i%
-	DoIf[fnc] %i% == 10 EatFnc[fnc] nextcode
-	PoopInt[fnc] i++
-	EatFnc[fnc] loop
+	eq[] i=0
+	label[] loop
+	print[] %i%
+	if[] %i% == 10 goto[] nextcode
+	eq[] i++
+	goto[] loop
 	
-	PoopFnc[fnc] nextcode
-	Yell[fnc] Done^!
+	label[] nextcode
+	print[] Done^!
 
 
 # Import pre-built libraries
 To import a pre-built library, use:
 
-	Fuck[fnc] lib_name
+	import[] lib_name
 
-## Using arrayfunc
+## Using list
 
-	Fuck[fnc] arrayfunc
+	import[] list
 	
 	:: Find sum of list of numbers, seperated by a space character.
-	CountBitches[fnc] "variable_name" "list"
+	sum[] "variable_name" "list"
 	
 	:: Find maximum of list, seperated by a space character.
-	Bitchiest[fnc] "variable_name" "list"
+	max[] "variable_name" "list"
 	
 	:: Find minimum of list, seperated by a space character.
-	Horniest[fnc] "variable_name" "list"
+	min[] "variable_name" "list"
 	
 	:: Example:
-	Bitchiest[fnc] "max_num" "2 3 1 8 5"
+	max[] "max_num" "2 3 1 8 5"
 	:: This will prints out "8"
-	Yell[fnc] %max_num%
+	print[] %max_num%
 	
 ### Note
 All the functions above only works with list with all integers. String or floats will cause errors.
 	
 ## Using math
 
-	Fuck[fnc] math
+	import[] math
 
 	:: Absolute
-	AdmitUrDumb[fnc] "variable_name" "number"
+	abs[] "variable_name" "number"
 	
 	:: Check if a number is odd
-	CheckIfUrDumb[fnc] "variable_name" "number"
+	odd[] "variable_name" "number"
 
 	:: Check if a number is even
-	CheckIfUrStupid[fnc] "variable_name" "number
+	even[] "variable_name" "number
 
 	:: Power
-	Masturbate[fnc] "variable_name" "number" "power_num"
+	pow[] "variable_name" "number" "power_num"
 	
 	:: Factorial
-	BigPenis[fnc] "variable_name" "number"
+	factorial[] "variable_name" "number"
 	
 	:: Entire fibonacci sequence
-	HugeCum[fnc] "variable_name" "number"
+	fib_seq[] "variable_name" "number"
 	
 	:: Fibonacci
-	NotThatHugeCum[fnc] "variable_name" "number"
+	fib[] "variable_name" "number"
 	
 ## Using string
 
-	Fuck[fnc] string
+	import[] string
 	
 	:: Length of string
-	MeasurePenisSize[fnc] "variable_name" "string"
+	string_length[] "variable_name" "string"
 	
 	:: To uppercase
-	BeingHorny[fnc] "variable_name" "string"
+	string_upper[] "variable_name" "string"
 	
 	:: To lowercase
-	WipePenis[fnc] "variable_name" "string"
+	string_lower[] "variable_name" "string"
 	
 	:: Reverse
-	DoDoggyStyle[fnc] "variable_name" "string"
+	string_reverse[] "variable_name" "string"
 	
-## Loading lib entirely with GrabFnc[fnc]
+## Loading lib entirely with goto[]
 Example:
 
 	:: Check if a number is odd
-	GrabFnc[fnc] fclib_math_odd.bat "variable_name" "number"
+	call[] fclib_math_odd.bat "variable_name" "number"
 
 # Command-line argument
 You can use %1, %2, %3,... for command-line args
 
 For example, you have a FreakC file called "main" like this (which will be compiled later):
 
-	Swear[fnc] First argument: %1
-	Swear[fnc] Second argument: %2
-	Swear[fnc] Third argument: %3
+	print[] First argument: %1
+	print[] Second argument: %2
+	print[] Third argument: %3
 
 If you pass in the file with these arguments:
 
@@ -850,12 +769,6 @@ You can catch errors by using the following codes:
 	
 By using the "and" and "or" operator, we can implement error handling like above. Basically, it runs the "command", if there's no problem, it will execute the first block, or else it will execute the other block.
 
-# Use Batch in FreakC
-Unlike all the previous release, now FreakC support writing Batch without any other commands. So you can actually learn Batch and write Batch codes in FreakC.
-
-### Is adding Batch to FreakC will kill the usages of FreakC ?
-Well, I would say it will and won't at the same time. What I mean is that if there is Batch in FreakC, you would definitely write Batch rather than FreakC, but actually, FreakC codes are just compiled to Batch anyway. The only key feature of FreakC is being an esolang with funny and dirty syntax, that's why people would want to use it. FreakC doesn't improve Batch, it's just a funny version of it.
-
 # Nul in FreakC
 It's just like nul in Batch, so if you want to make your console not print out any process, you can do it like this:
 
@@ -868,13 +781,13 @@ To hide errors, you can do this:
 # Creating and Inserting modules
 You can create a module file using:
 
-	Cancer[fnc]
+	deny[]
 
-Note: The "Cancer[fnc]" command needs to stay at the top of the file.
+Note: The "deny[]" command needs to stay at the top of the file.
 
 Then, include it in the main file using:
 
-	InsertShits[fnc] module_name.bat
+	insert[] module_name.bat
 	::Note: You have to replace .fclang with .bat
 
 Then, compile the module file first, then compile the main file at the end.
@@ -882,13 +795,13 @@ Then, compile the module file first, then compile the main file at the end.
 ### Example:
 Create a file called "module.fclang" with:
 
-	Cancer[fnc]
-	Yell[fnc] World
+	deny[]
+	print[] World
 
 Create a file called "program.fclang" with:
 
-	Yell[fnc] Hello
-	InsertShits[fnc] module.bat
+	print[] Hello
+	insert[] module.bat
 
 In the command window, type:
 
@@ -905,9 +818,9 @@ If you are a C++ dev, this would be an equivalent to "#include".
 A demo can be found <a href="https://github.com/FreakC-Foundation/FreakC/tree/master/Examples/Module">here.</a>
 
 # Find strings in a file 
-FindShits[fnc]:
+fnd[]:
 
-	FindShits[fnc] [/V] [/C] [/N] [/I] [/OFF[LINE]] "string" [[drive:][path]filename[ ...]]
+	fnd[] [/V] [/C] [/N] [/I] [/OFF[LINE]] "string" [[drive:][path]filename[ ...]]
 	
 	/V         Displays all lines NOT containing the specified string.
 	/C         Displays only the count of lines containing the string.
@@ -921,9 +834,9 @@ FindShits[fnc]:
 	If a path is not specified, FIND searches the text typed at the prompt or piped from another command.
 
 
-FindTrash[fnc]:
+fndstr[]:
 
-	FindTrash[fnc] [/B] [/E] [/L] [/R] [/S] [/I] [/X] [/V] [/N] [/M] [/O] [/P] [/F:file]
+	fndstr[] [/B] [/E] [/L] [/R] [/S] [/I] [/X] [/V] [/N] [/M] [/O] [/P] [/F:file]
         [/C:string] [/G:file] [/D:dir list] [/A:color attributes] [/OFF[LINE]]
         strings [[drive:][path]filename[ ...]]
 
@@ -970,69 +883,65 @@ FindTrash[fnc]:
 
 ### Exit the program
 
-	Die[fnc]
+	quit[]
 	
 ### Shutdown system	
 	
-	ShutdownSystem[fnc]
+	imd_shutdown[]
 	::Add /t time and /c "comment" to set the time to shutdown and leave a comment before shutdown
 	
 	:: Log off
-	LogOff[fnc]
+	logoff[]
 	:: Hibernate shutdown
-	HibernateShutdown[fnc]
+	hibernate_shutdown[]
 	:: Shutdown system after a specific time (in ms)
-	ShutdownSystemAfter[fnc] time
+	shutdown_after[] time
 	:: Immediate shutdown
-	ImmediateShutdown[fnc]
+	imd_shutdowns[]
 	
 ### Restart system
 
-	RestartSystem[fnc]
+	imd_restart[]
 	::Add /t time and /c "comment" to set the time to shutdown and leave a comment before restart
 	
 	:: Restart system after a specific time (in ms)
-	RestartSystemAfter[fnc] time
+	restart_after[] time
 	
 ### Create a folder
 
-	PukeDir[fnc] folder_name
+	create_dir[] folder_name
 	
 ### Access a folder
 	
-	EatDir[fnc] folder_name
+	change_dir[] folder_name
 	
 ### Access a drive
 	
-	EatDrive[fnc] drive_name
+	drive[] drive_name
 	
 ### Read a file
 
-	StealDiary[fnc] file_name
+	read_file[] file_name
 	
 ### Clear the screen
 
-	Forget[fnc]
+	clrscr[]
 	
 ### Pause
 
-	GotoToilet[fnc]
+	stop[]
 
 ### Delete a file
 
-	Trash[fnc] 
+	del[] 
 	
 ### Delete a folder
 	
-	TrashDir[fnc] folder_name
-
-### Check if a number is odd or is even
-
-	OddOrEven[fnc] number
+	remove_dir[] folder_name
 	
 ### Change color, a pair of hex code is a color code
 
-	ChangeColor[fnc] hex_code
+	change_color[] hex_code
 
 * 0 = Black
 * 1 = Blue
@@ -1053,217 +962,72 @@ FindTrash[fnc]:
 	
 ### Change the title of the program
 
-	ChangeName[fnc] title_name
+	change_title[] title_name
 	
 ### Change console's size
 
-	ChangeSize[fnc] size_number
-	ChangeSize[fnc] con cols=columns_or_width lines=lines_or_height
+	change_mode[] size_number
+	change_mode[] con cols=columns_or_width lines=lines_or_height
 	
 ### Rename a file
 
-	RenameFile[fnc] file_name
+	rename[] file_name
 	
 ### Move a file to the new path
 
-	MoveFile[fnc] file_name new_path
+	mov[] file_name new_path
 	
 ### Copy a file to the new path
 
-	CopyFile[fnc] file_name new_path
+	copy[] file_name new_path
 	
 ### Open a file or a website url (would open cmd if nothing is opened)
 
-	PlayFile[fnc] file
+	open[] file
 	
 ### Timeout for a specific time
 
-	WaitForBus[fnc] time_as_second
+	wait[] time_as_second
 
 ### Restart the program or loop the program endlessly
 
-	Loop[fnc]
+	inf_loop[]
 	
 ### Shows date
 
-	SeeDate[fnc]
+	see_date[]
 	
 ### Shows time
 
-	SeeTime[fnc]
+	see_time[]
 	
 ### Shows all files in the current directory
 
-	MyMemory[fnc]
-	
-### Show command prompt content
-
-	EnableCoolStuff[fnc]
-
-<b>This would be useful for debugging.</b>
-	
-### Hide command prompt content
-
-	DisableCoolStuff[fnc]
-	
-<b>Note: All the command prompt content is hiden by default</b>
+	ls[]
 
 ### Prompt for date to change date
 
-	BuyCalender[fnc]
+	change_date[]
 	
 <b>Note: Administrator is required to run the command</b>
 	
 ### Prompt for time to change time
 
-	BuyClock[fnc]
+	change_time[]
+
+<b>Note: Administrator is required to run the command</b>
 	
 ### Open powershell
 
-	DumbCousin[fnc]
+	ps[]
 
-<b>Note: Administrator is required to run the command</b>
+# Clear codes
+You can clear all compiled code using:
 
-# Disable prebuilt variables
-You can disable numpoop, numpiss, numpuke,... by putting this block of code on top of your program:
-
-	Cancer[fnc]
-	EnableCoolStuff[fnc]
-
-# Meme and J4F commands
-## Patrick functions
-You can prints out a quote of patrick from the huge collection of... 3 quotes that FreakC comes with :))
-
-	::Is mayonnaise an instrument ?
-	Patrick[meme] 1
-	::Roses are blue, violets are red, I have to go to the bathroom.
-	Patrick[meme] 2
-	::I can't see my forehead.
-	Patrick[meme] 3
-	::The inner machinations of my mind are an enigma.
-	Patrick[meme] 4
-	::Once upon a time there was an ugly barnacle. He was so ugly that everyone died. The end!
-	Patrick[meme] 5
-	::I wumbo, you wumbo, he she we wumbo.
-	Patrick[meme] 6
-	::Two words, SpongeBob. Na. Chos.
-	Patrick[meme] 7
-
-And yes, no more [fnc], there is [meme] now =D
-
-## Dani functions
-You can prints out Dani's quotes :))
-
-	::Not as thicc as your mom.
-	Dani[meme] mom
-	::Prints "Wow that was really cool." endlessly
-	Dani[meme] cool
-	::Freak you billy.
-	Dani[meme] billy
-	
-## SpongeBob functions
-You can also do SpongeBob stuffs
-
-	::echo Ravioli, ravioli, give me formuoli.
-	SpongeBob[meme] 1
-
-## Rick Ashley the legend
-
-	:: Pops a window that rickrolls you :D
-	SummonLegend[fnc]
-
-## Others
-### Collections of stupid quotes
-
-	::Prints out Hello, World
-	HelloWorld[str]
-	::Prints out Grab me a drink, mate
-	GrabMeADrink[str]
-	::Prints out I Love You
-	ILoveYou[str]
-	::Prints out Are ya winning son ?
-	AreYaWinningSon[str]
-	::Prints out Hi mate
-	HiM8[str]
-	::Prints out Damn boi... Damn boi... Damn boi he thicc boia, that's a thicc ass boi.
-	Thicc[meme]
-
-And again, yes, there is also [str] just for varieties =D
-
-### Prints out random numbers continously (like in the Matrix)
-
-	CoolHackerMan[fnc]
-
-# Java and JSON supports :))
-Just for surprising elements, just try it on your own =D
-
-	Java[fnc]
-	Java[str]
-	Java[meme]
-	Json[str]
+	deny[]
 	
 # Multiple colors
 Since everything works fine in Batch works in FreakC, you can check this out: https://gist.githubusercontent.com/mlocati/fdabcaeb8071d5c75a2d51712db24011/raw/b710612d6320df7e146508094e84b92b34c77d48/win10colors.cmd
-
-# Equivalent with Batch
-
-* Yell[fnc] - echo
-* SwearLine[fnc] - echo.
-* PoopInt[fnc] - set /a
-* PoopString[fnc] - set
-* PoopInput[fnc] - set /p
-* PoopFnc[fnc] - :label
-* GrabFnc[fnc] - goto
-* Shit[typ] - set
-* Puke[typ] - set /a
-* Cum[typ] - :label
-* Piss[typ] - set /p
-* LoopStuffs[fnc] - for /l
-* ScanOrgans[fnc] - for /r
-* ScanLetters[fnc] - for /f
-* ScanDiaries[fnc] - for
-* ScanDir[fnc] - for /d
-* DoIf[fnc] - if
-* DoIfExist[fnc] - if exist
-* DoIfDefined[fnc] - if defined
-* DoIfFalse[fnc] - if not
-* DoIfNotExist[fnc] - if not exist
-* DoIfNotDefined[fnc] - if not defined
-* DoIfTap[fnc] - if errorlevel
-* DoIfNotTap[fnc] - if not errorlevel
-* TapSomeSht[fnc] - choice /c: /n
-* OrNot[fnc] - else
-* GotoToilet[fnc] - pause
-* Die[fnc] - exit
-* ShutdownSystem[fnc] - shutdown -s
-* RestartSystem[fnc] - shutdown -r
-* PukeDir[fnc] - md
-* EatDir[fnc] 
-* EatDrive[fnc] - drive:
-* StealDiary[fnc] - type
-* GrabFnc[fnc] - call
-* Forget[fnc] - cls
-* Trash[fnc] -  del
-* TrashDir[fnc] - rmdir
-* ChangeColor[fnc] - color
-* ChangeName[fnc] - title
-* ChangeSize[fnc] - mode
-* RenameFile[fnc] - ren
-* MoveFile[fnc] - move
-* CopyFile[fnc] - copy
-* PlayFile[fnc] - start
-* WaitForBus[fnc] - timeout
-* SeeDate[fnc] - date /t
-* SeeTime[fnc] - time /t
-* MyMemory[fnc] - dir
-* EnableCoolStuff[fnc] - @echo off
-* DisableCoolStuff[fnc] - @echo on
-* BuyCalender[fnc] - date
-* BuyClock[fnc] - time
-* OpenHouse[fnc] - setlocal
-* CloseHouse[fnc] - endlocal
-* FindTrash[fnc] - findstr
-* FindShits[fnc] - find
 
 # Convert FreakC to .EXE files
 In "FreakC/Utilities/Scripts" there is a file called battoexe.bat which helps to convert .bat files to .exe files.
@@ -1273,29 +1037,6 @@ So to convert FreakC to .EXE files, you need to compile FreakC codes to Batch, a
 You can actually find plenty of other tools online that helps you to converts Batch files to EXE files.
 
 # Notes
-<b>Please do not put these commands in the same line as the others:</b> 
-<br/>
-* TapSomeSht[fnc]
-* TryMeBtch[fnc]
-* EatDrive[fnc]
-* OddOrEven[fnc]
+FreakC is case-sensitive only with commands with [], other stuffs aren't.
 
-For example, this would cause error:
-
-	DoIf[fnc] %b% == %c% OddOrEven[fnc] 1
-	
-You should have it like this:
-
-	DoIf[fnc] %b% == %c% (
-		OddOrEven[fnc] 1
-	)
-
-But with normal commands like Yell[fnc], you can use it however you want.
-
-<br/>
-<b>Also, FreakC is case-sensitive only with commands with [tag], variables and other stuffs aren't.</b>
-
-<br/>
-<br/>
-<b>Most of the commands are just modified Batch commands, so you can actually apply Batch logic in it.</b>
-<br/>
+Most of the commands are just modified Batch commands, so you can actually apply Batch logic in it.

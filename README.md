@@ -1,7 +1,7 @@
 <div align="center">
   <img src="Resources/Branding/logo.png" />
   <br/>
-  <b>A cringey esoteric programming language (18+)</b>
+  <b>An experimental programming language</b>
   <br/>
   <br/>
   <a href="https://github.com/FreakC-Foundation/FreakC/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-GPLv3-blue.svg"/></a>
@@ -14,31 +14,28 @@
 </div>
 
 ## What is FreakC ?
-FreakC is a transpiled multi-paradigm esoteric scripting language that... has nothing to do with the C programming language. This language's syntax is dirty and highly offensive, but technically, it functions just like a normal language and is able to create usable programs. It is very similar to Batch, and it is also transpiled to Batch.
+FreakC is a transpiled multi-paradigm scripting language that... has nothing to do with the C programming language. It is very similar to Batch, it is written in Batch, and it is transpiled to Batch.
 <a href="https://discord.gg/8PjqmzVFer">Proceed to Discord...</a>
 
 ## Why FreakC ?
-If you are drunk or freaking crazy, FreakC is like Gordon Ramsay's Beef Wellington to homeless people. (Yes)
+If you're familiar with Batch, you are probably having a hard day doing stuffs, but FreakC fixes some problems that Batch has, and:
 
-But to take it seriously, even though it's an esolang, it provides:
-
-* Multi-paradigm (procedural, functional, even OOP).
 * Many prebuilt standard libraries to make scripting easier.
-* A full-blown cli.
 * Compatibility with Batch (You can embed Batch codes in FreakC).
+* Easy to use
 
 ### Language preview
 Hello World:
 
-    Swear[fnc] Hello, World!
+    print[] Hello, World!
 
 Function definition
 
-    ProduceTrash[fnc] SayHello
+    function[] SayHello
         Swear[fnc] Hello
-    EndTrash[fnc]
+    endfunc[]
     :: Prints "Hello"
-    GrabFnc[fnc] SayHello
+    call[] SayHello
     
 To check out more samples, click <a href=https://github.com/FreakC-Foundation/FreakC/tree/master/Examples>here.</a>
 
@@ -49,11 +46,7 @@ To check out more samples, click <a href=https://github.com/FreakC-Foundation/Fr
 * Some utilities.
 * Some examples.
 
-**Yet, this is an esolang.**
-
 ## What FreakC has that Batch doesn't ?
-Even though FreakC is an esolang, I can say that it's an upgraded Batch, because:
-
 - It adds additional commands.
 - It has many helpful libraries that Batch should have from the start.
 - It comes with cool features like true functions, while loops, do-while loops, floats and even macros.
@@ -62,7 +55,6 @@ Even though FreakC is an esolang, I can say that it's an upgraded Batch, because
 * [Tutorials](https://github.com/FreakC-Foundation/FreakC/blob/master/TUTORIAL.md)
 * [Samples](https://github.com/FreakC-Foundation/FreakC/tree/master/Examples)
 * [IDEs](IDE.md)
-* [Getting started](https://youtu.be/l_3sFSArQWg)
 
 ## Frameworks
 Note that all Batch frameworks can integrate well with FreakC, so you can use them just like in Batch smoothly. There are some in the **Utilities** folder (which I don't own).

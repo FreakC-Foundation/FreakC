@@ -1,7 +1,7 @@
 <div align="center">
   <img src="Resources/Branding/logo.png" />
   <br/>
-  <b>A programming language for drunk coders</b>
+  <b>An experimental programming language</b>
   <br/>
   <br/>
   <a href="https://github.com/FreakC-Foundation/FreakC/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg"/></a>
@@ -13,13 +13,10 @@
   <img alt="Windows" src="https://img.shields.io/static/v1?label=&message=Windows&color=0078D6&logo=Windows">
 </div>
 
-## VSCode 
-Download the "FreakC" extension from Marketplace and you are ready to go! The extension provides syntax-highlighting as well as code auto-completion. You can find the source code of the extension <a href="https://github.com/FreakC-Foundation/FreakC-vscode">right here.</a>
-
 ## Sublime text 3
 In "FreakC/Utilities/Scripts" there is a file called "FreakC.sublime-build" which is the Sublime Text's build system for FreakC. To use it, please paste it in the "C:\Users\admin\AppData\Roaming\Sublime Text 3\Packages\User" or wherever your Packages folder is. Then, make sure that you have set the environment variable for FreakC. After that, you will be able to compiles FreakC codes in Sublime Text.
 
 For syntax highlighting, copy the "FreakC" folder in the same folder, then paste it in "%APPDATA%\Sublime Text v\Packages\".
 
 ## Note
-Support for VSCode had been discontinued for a long time. However, supports for Sublime Text is still being developed, so Sublime is probably the go-to editor for FreakC.
+Support for VSCode had been discontinued since we recreated the whole language. However, supports for Sublime Text is still being developed, so Sublime is probably the go-to editor for FreakC.

@@ -1040,3 +1040,7 @@ You can actually find plenty of other tools online that helps you to converts Ba
 FreakC is case-sensitive only with commands with [], other stuffs aren't.
 
 Most of the commands are just modified Batch commands, so you can actually apply Batch logic in it.
+
+Funny fact, you can print "Hello, World" using:
+
+	hello_world[]

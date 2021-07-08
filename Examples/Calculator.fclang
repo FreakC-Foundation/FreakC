@@ -1,30 +1,30 @@
-ChangeName[fnc] Calculator Made With FreakC
-ChangeColor[fnc] 8f
-ChangeSize[fnc] con cols=60 lines=20
+change_title[] Calculator Made With FreakC
+change_color[] 8f
+change_mode[] con cols=60 lines=20
 
-PoopFnc[fnc] menu
-Forget[fnc]
+label[] menu
+clrscr[]
 
-Yell[fnc]   ========================================================
-Yell[fnc]                       FreakC Calculator 
-Yell[fnc]  
-Yell[fnc]                           "+" Plus
-Yell[fnc]  
-Yell[fnc]                          "-" Minus
-Yell[fnc]  
-Yell[fnc]                         "*" Multiply
-Yell[fnc]  
-Yell[fnc]                          "/" Divide
-Yell[fnc]  
-Yell[fnc]  
-Yell[fnc]       Enter your Math problem:
+print[]   ========================================================
+print[]                       FreakC Calculator 
+print[]  
+print[]                           "+" Plus
+print[]  
+print[]                          "-" Minus
+print[]  
+print[]                         "*" Multiply
+print[]  
+print[]                          "/" Divide
+print[]  
+print[]  
+print[]       Enter your Math problem:
 
-PoopInput[fnc] prob=
+inp[] prob=
 :: If you want to get the number fixed, you can replace the line below with PoopInt[fnc] ans=%prob%
-ScanLetters[fnc] %%i in (' DumbCousin[fnc] %prob% ') DO Shit[typ] ans=%%i
+scan_strs[] %%i in (' ps[] %prob% ') do var[] ans=%%i
 
-Yell[fnc]   Answer: %ans%
+print[] Answer: %ans%
 
-GotoToilet[fnc]
+stop[]
 
-EatFnc[fnc] menu
+goto[] menu

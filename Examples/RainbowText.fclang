@@ -1,23 +1,23 @@
-ChangeName[fnc] Rainbow Text
+change_title[] Rainbow Text
 
-PoopFnc[fnc] rainbowtext
+label[] rainbowtext
 
-ChangeColor[fnc] 0a
-Yell[fnc] HelloWorld
+change_color[] 0a
+print[] Hello, World^!
 
-ChangeColor[fnc] 0b
-Yell[fnc] HelloWorld
+change_color[] 0b
+print[] Hello, World^!
 
-ChangeColor[fnc] 0c
-Yell[fnc] HelloWorld
+change_color[] 0c
+print[] Hello, World^!
 
-ChangeColor[fnc] 0d
-Yell[fnc] HelloWorld
+change_color[] 0d
+print[] Hello, World^!
 
-ChangeColor[fnc] 0e
-Yell[fnc] HelloWorld
+change_color[] 0e
+print[] Hello, World^!
 
-ChangeColor[fnc] 0f
-Yell[fnc] HelloWorld
+change_color[] 0f
+print[] Hello, World^!
 
-EatFnc[fnc] rainbowtext
+goto[] rainbowtext

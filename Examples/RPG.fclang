@@ -1,52 +1,52 @@
-ChangeName[fnc] RPG DEMO
-ChangeColor[fnc] 2f
-ChangeSize[fnc] con cols=70 lines=20
+change_title[] RPG DEMO
+change_color[] 2f
+change_mode[] con cols=70 lines=20
 
-PoopInt[fnc] ehp=100
-PoopInt[fnc] hp=100
+eq[] ehp=100
+eq[] hp=100
 
-PoopFnc[fnc] Battle
-Forget[fnc]
+label[] Battle
+clrscr[]
 
-DoIf[fnc] %ehp% LEQ 0 EatFnc[fnc] win
-DoIf[fnc] %hp% LEQ 0 EatFnc[fnc] lose
+if[] %ehp% LEQ 0 goto[] win
+if[] %hp% LEQ 0 goto[] lose
 
-Yell[fnc] 
-Yell[fnc] 
-Yell[fnc] 
-Yell[fnc]                             Goblin: %ehp% HP
-Yell[fnc]                             You: %hp% HP
-Yell[fnc] 
-Yell[fnc] 
-Yell[fnc] 
-Yell[fnc] 
-Yell[fnc]                               Moves:
-Yell[fnc] 
-Yell[fnc]                  1. Punch               2. Flee
-Yell[fnc] 
+print[] 
+print[] 
+print[] 
+print[]                             Goblin: %ehp% HP
+print[]                             You: %hp% HP
+print[] 
+print[] 
+print[] 
+print[] 
+print[]                               Moves:
+print[] 
+print[]                  1. Punch               2. Flee
+print[] 
 
-TapSomeSht[fnc] 12
+key[] 12
 
-DoIfTap[fnc] 2 EatFnc[fnc] Flee
-DoIfTap[fnc] 1 EatFnc[fnc] Punch
+if_el[] 2 goto[] Flee
+if_el[] 1 goto[] Punch
 
-PoopFnc[fnc] Punch
-PoopInt[fnc] ehp-=20
-PoopInt[fnc] hp-=10
-EatFnc[fnc] Battle
+label[] Punch
+eq[] ehp-=20
+eq[] hp-=10
+goto[] Battle
 
-PoopFnc[fnc] Flee
-Forget[fnc]
-Yell[fnc]                         You fleed from battle!
-GotoToilet[fnc] >nul
-Die[fnc]
+label[] Flee
+clrscr[]
+print[]                         You fleed from battle!
+stop[] >nul
+quit[]
 
-PoopFnc[fnc] win
-Yell[fnc]                                You win!
-GotoToilet[fnc] >nul
-Die[fnc]
+label[] win
+print[]                                You win!
+stop[] >nul
+quit[]
 
-PoopFnc[fnc] lose
-Yell[fnc]                    By somehow you lose, but okay...
-GotoToilet[fnc] >nul
-Die[fnc]
+label[] lose
+print[]                    By somehow you lose, but okay...
+stop[] >nul
+quit[]

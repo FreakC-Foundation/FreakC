@@ -1,18 +1,18 @@
-ProduceTrash[fnc] func
-	Shit[typ] n1=0
-	Shit[typ] n2=1
-	Shit[typ] n3=0
-	Shit[typ] i=0
-	Puke[typ] end=%~2 - 1
-	WhileSuck[fnc] %i% LSS %end%
-		Puke[typ] n3=%n1%+%n2%
-		Shit[typ] n1=%n2%
-		Shit[typ] n2=%n3%
-		Puke[typ] i++
-	EndSuck[fnc]
-	Shit[typ] %~1=%n3%
-EndTrash[fnc]
+function[] func
+	var[] n1=0
+	var[] n2=1
+	var[] n3=0
+	var[] i=0
+	eq[] end=%~2 - 1
+	while[] %i% LSS %end%
+		eq[] n3=%n1%+%n2%
+		var[] n1=%n2%
+		var[] n2=%n3%
+		eq[] i++
+	endwhile[]
+	var[] %~1=%n3%
+endfunc[]
 
-GrabFnc[fnc] func "res" "5"
-Yell[fnc] %res%
-GotoToilet[fnc]
+call[] func "res" "5"
+print[] %res%
+stop[]

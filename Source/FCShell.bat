@@ -2,22 +2,22 @@
 echo.>tar.fclang
 echo. FreakC's interactive shell
 echo. ==========================
-echo. Version 1.0.0
+echo. Version 0.1.0
 echo.
 echo.
 :loop
 set /p inp=
-if "%inp%" == "StartFuckin[cli]" (
+if "%inp%" == "start[]" (
 	start freakc tar.fclang
-) else if "%inp%" == "StopFuckin[cli]" (
+) else if "%inp%" == "end[]" (
 	del /q tar.fclang
 	if exist tar.bat (
 		del /q tar.bat
 	)
 	exit /b
-) else if "%inp%" == "WipeAss[cli]" (
+) else if "%inp%" == "wipe[]" (
 	echo.>tar.fclang
-) else if "%inp%" == "Shit[cli]" (
+) else if "%inp%" == "clr[]" (
 	cls
 ) else (
 	echo %inp%>>tar.fclang

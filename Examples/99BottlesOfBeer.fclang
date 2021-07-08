@@ -1,33 +1,33 @@
-ChangeName[fnc] 99 Bottles Of Beer
+change_title[] 99 Bottles Of Beer
 
-PoopInt[fnc] count=99
-PoopFnc[fnc] loop
+var[] count=99
+label[] loop
 
-DoIfFalse[fnc] %count% GTR 0 EatFnc[fnc] end
-DoIf[fnc] %count% LEQ 1 (
-	PoopString[fnc] word=bottle
-) OrNot[fnc] (
-	PoopString[fnc] word=bottles
+if_not[] %count% GTR 0 goto[] end
+if[] %count% LEQ 1 (
+	var[] word=bottle
+) el[] (
+	var[] word=bottles
 )
 
-Yell[fnc] %count% %word% of beer on the wall
-Yell[fnc] %count% %word% of beer,
-Yell[fnc] Take one down, pass it around,
-PoopInt[fnc] count--
+print[] %count% %word% of beer on the wall
+print[] %count% %word% of beer,
+print[] Take one down, pass it around,
+eq[] count--
 
-DoIf[fnc] %count% LEQ 1 (
-	PoopString[fnc] word=bottle
-) OrNot[fnc] (
-	PoopString[fnc] word=bottles
+if[] %count% LEQ 1 (
+	var[] word=bottle
+) el[] (
+	var[] word=bottles
 )
 
-DoIf[fnc] %count% GTR 0 (
-	Yell[fnc] %count% %word% of beer on the wall.
-) OrNot[fnc] (
-	Yell[fnc] No more %word% of beer on the wall.
+if[] %count% GTR 0 (
+	print[] %count% %word% of beer on the wall.
+) el[] (
+	print[] No more %word% of beer on the wall.
 )
 
-EatFnc[fnc] loop
+goto[] loop
 
-PoopFnc[fnc] end
-GotoToilet[fnc] >nul
+label[] end
+stop[] >nul

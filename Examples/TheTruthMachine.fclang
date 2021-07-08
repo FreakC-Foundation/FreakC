@@ -1,14 +1,13 @@
-ChangeName[fnc] The truth machine
+change_title[] The truth machine
 
-PoopInput[fnc] input=
+inp[] inp=
 
-DoIf[fnc] %input% == 0 (
-	Yell[fnc] 0
-	Die[fnc]
-) OrNot[fnc] DoIf[fnc] %input% == 1 (
-	PoopFnc[fnc] loop
-	Yell[fnc] %input%
-	EatFnc[fnc] loop
+if[] %inp% == 0 (
+	print[] 0
+) el[] if[] %inp% == 1 (
+	label[] loop
+	print[] %inp%
+	goto[] loop
 )
 
-Loop[fnc]
+inf_loop[]

@@ -1,17 +1,17 @@
-ChangeName[fnc] Odd or Even checker
+change_title[] Odd or Even checker
 
-Forget[fnc]
+clrscr[]
 
-PoopInput[fnc] input=
+inp[] inp=
 
-PoopInt[fnc] ans=%input% %% 2
+eq[] ans=%inp% %% 2
 
-DoIf[fnc] %ans% == 0 (
-	Yell[fnc] Is even
-) OrNot[fnc] (
-	Yell[fnc] Is odd
+if[] %ans% == 0 (
+	print[] Is even
+) el[] (
+	print[] Is odd
 )
 
-GotoToilet[fnc]
+stop[]
 
-Loop[fnc]
+inf_loop[]

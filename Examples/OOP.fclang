@@ -1,12 +1,12 @@
-ProduceTrash[fnc] Dog
-    PoopString[fnc] %~1.age=%~2
-    PoopString[fnc] %~1.weight=%~3
+function[] Dog
+    var[] %~1.age=%~2
+    var[] %~1.weight=%~3
     (
-        Yell[fnc] Yell[fnc] %%~1
+        print[] print[] %%~1
     )>%~1.says.bat
-EndTrash[fnc]
+endfunc[]
 
-GrabFnc[fnc] Dog "Mary" "3" "4kg"
-Yell[fnc] Age: %Mary.age%
-Yell[fnc] Weight: %Mary.weight%
-GrabFnc[fnc] Mary.says "Woof woof"
+call[] Dog "Mary" "3" "4kg"
+print[] Age: %Mary.age%
+print[] Weight: %Mary.weight%
+call[] Mary.says "Woof woof"

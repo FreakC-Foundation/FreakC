@@ -1,2 +1,1 @@
-ChangeName[fnc] StoreData
-Yell[fnc] Example>>data.txt
+print[] Example>>data.txt

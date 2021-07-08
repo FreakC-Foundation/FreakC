@@ -1,266 +1,266 @@
-ChangeName[fnc] TicTacToe
-ChangeColor[fnc] e4
-ChangeSize[fnc] con cols=70 lines=20
+change_title[] TicTacToe
+change_color[] e4
+change_mode[] con cols=70 lines=20
 
-PoopFnc[fnc] tictactoe
-Forget[fnc]
-PoopString[fnc] a1=1
-PoopString[fnc] a2=2
-PoopString[fnc] a3=3
-PoopString[fnc] a4=4
-PoopString[fnc] a5=5
-PoopString[fnc] a6=6
-PoopString[fnc] a7=7
-PoopString[fnc] a8=8
-PoopString[fnc] a9=9
-PoopString[fnc] s1=A
-PoopString[fnc] s2=A
-PoopString[fnc] s3=A
-PoopString[fnc] s4=A
-PoopString[fnc] s5=A
-PoopString[fnc] s6=A
-PoopString[fnc] s7=A
-PoopString[fnc] s8=A
-PoopString[fnc] s9=A
-PoopString[fnc] attack=0
-PoopString[fnc] cycle=0
-PoopString[fnc] moves=0
-PoopFnc[fnc] Start
-Forget[fnc]
-Yell[fnc]                                *******
-Yell[fnc]                                *%a1% %a2% %a3%*
-Yell[fnc]                                *%a4% %a5% %a6%*
-Yell[fnc]                                *%a7% %a8% %a9%*
-Yell[fnc]                                *******
-Yell[fnc]                            Enter a number:
-TapSomeSht[fnc] 123456789
-DoIfTap[fnc] 9 EatFnc[fnc] d9
-DoIfTap[fnc] 8 EatFnc[fnc] d8
-DoIfTap[fnc] 7 EatFnc[fnc] d7
-DoIfTap[fnc] 6 EatFnc[fnc] d6
-DoIfTap[fnc] 5 EatFnc[fnc] d5
-DoIfTap[fnc] 4 EatFnc[fnc] d4
-DoIfTap[fnc] 3 EatFnc[fnc] d3
-DoIfTap[fnc] 2 EatFnc[fnc] d2
-DoIfTap[fnc] 1 EatFnc[fnc] d1
-EatFnc[fnc] Start
-PoopFnc[fnc] d1
-DoIf[fnc] %s1% EQU N EatFnc[fnc] Start
-PoopString[fnc] a1=X
-PoopString[fnc] s1=N
-PoopInt[fnc] moves=%moves%+1
-EatFnc[fnc] check
-PoopFnc[fnc] d2
-DoIf[fnc] %s2% EQU N EatFnc[fnc] Start
-PoopString[fnc] a2=X
-PoopString[fnc] s2=N
-PoopInt[fnc] moves=%moves%+1
-EatFnc[fnc] check
-PoopFnc[fnc] d3
-DoIf[fnc] %s3% EQU N EatFnc[fnc] Start
-PoopString[fnc] a3=X
-PoopString[fnc] s3=N
-PoopInt[fnc] moves=%moves%+1
-EatFnc[fnc] check
-PoopFnc[fnc] d4
-DoIf[fnc] %s4% EQU N EatFnc[fnc] Start
-PoopString[fnc] a4=X
-PoopString[fnc] s4=N
-PoopInt[fnc] moves=%moves%+1
-EatFnc[fnc] check
-PoopFnc[fnc] d5
-DoIf[fnc] %s5% EQU N EatFnc[fnc] Start
-PoopString[fnc] a5=X
-PoopString[fnc] s5=N
-PoopInt[fnc] moves=%moves%+1
-EatFnc[fnc] check
-PoopFnc[fnc] d6
-DoIf[fnc] %s6% EQU N EatFnc[fnc] Start
-PoopString[fnc] a6=X
-PoopString[fnc] s6=N
-PoopInt[fnc] moves=%moves%+1
-EatFnc[fnc] check
-PoopFnc[fnc] d7
-DoIf[fnc] %s7% EQU N EatFnc[fnc] Start
-PoopString[fnc] a7=X
-PoopString[fnc] s7=N
-PoopInt[fnc] moves=%moves%+1
-EatFnc[fnc] check
-PoopFnc[fnc] d8
-DoIf[fnc] %s8% EQU N EatFnc[fnc] Start
-PoopString[fnc] a8=X
-PoopString[fnc] s8=N
-PoopInt[fnc] moves=%moves%+1
-EatFnc[fnc] check
-PoopFnc[fnc] d9
-DoIf[fnc] %s9% EQU N EatFnc[fnc] Start
-PoopString[fnc] a9=X
-PoopString[fnc] s9=N
-PoopInt[fnc] moves=%moves%+1
-EatFnc[fnc] check
-PoopFnc[fnc] check
-DoIf[fnc] %a1%+%a2%+%a3% EQU X+X+X EatFnc[fnc] win
-DoIf[fnc] %a4%+%a5%+%a6% EQU X+X+X EatFnc[fnc] win
-DoIf[fnc] %a7%+%a8%+%a9% EQU X+X+X EatFnc[fnc] win
-DoIf[fnc] %a1%+%a4%+%a7% EQU X+X+X EatFnc[fnc] win
-DoIf[fnc] %a2%+%a5%+%a8% EQU X+X+X EatFnc[fnc] win
-DoIf[fnc] %a3%+%a6%+%a9% EQU X+X+X EatFnc[fnc] win
-DoIf[fnc] %a1%+%a5%+%a9% EQU X+X+X EatFnc[fnc] win
-DoIf[fnc] %a3%+%a5%+%a7% EQU X+X+X EatFnc[fnc] win
-DoIf[fnc] %moves% EQU 9 EatFnc[fnc] draw
-EatFnc[fnc] middle
-PoopFnc[fnc] middle
-DoIf[fnc] %s5% EQU N EatFnc[fnc] mon
-PoopString[fnc] a5=O
-PoopString[fnc] s5=N
-PoopInt[fnc] moves=%moves%+1
-EatFnc[fnc] moncheck
-PoopFnc[fnc] mon
-DoIf[fnc] %moves% GEQ 1 EatFnc[fnc] Offence
-DoIf[fnc] %moves% EQU 9 EatFnc[fnc] draw
-PoopFnc[fnc] Offence
-DoIf[fnc] %a1%+%a2%+%a3% EQU O+O+3 EatFnc[fnc] a3set
-DoIf[fnc] %a1%+%a2%+%a3% EQU 1+O+O EatFnc[fnc] a1set
-DoIf[fnc] %a1%+%a2%+%a3% EQU O+2+O EatFnc[fnc] a2set
-DoIf[fnc] %a4%+%a5%+%a6% EQU O+O+6 EatFnc[fnc] a6set
-DoIf[fnc] %a4%+%a5%+%a6% EQU O+5+O EatFnc[fnc] a5set
-DoIf[fnc] %a4%+%a5%+%a6% EQU 4+O+O EatFnc[fnc] a4set
-DoIf[fnc] %a7%+%a8%+%a9% EQU O+O+9 EatFnc[fnc] a9set
-DoIf[fnc] %a7%+%a8%+%a9% EQU 7+O+O EatFnc[fnc] a7set
-DoIf[fnc] %a7%+%a8%+%a9% EQU O+8+O EatFnc[fnc] a8set
-DoIf[fnc] %a1%+%a4%+%a7% EQU 1+O+O EatFnc[fnc] a1set
-DoIf[fnc] %a1%+%a4%+%a7% EQU O+4+O EatFnc[fnc] a4set
-DoIf[fnc] %a1%+%a4%+%a7% EQU O+O+7 EatFnc[fnc] a7set
-DoIf[fnc] %a2%+%a5%+%a8% EQU 2+O+O EatFnc[fnc] a2set
-DoIf[fnc] %a2%+%a5%+%a8% EQU O+5+O EatFnc[fnc] a5set
-DoIf[fnc] %a2%+%a5%+%a8% EQU O+O+8 EatFnc[fnc] a8set
-DoIf[fnc] %a3%+%a6%+%a9% EQU O+O+9 EatFnc[fnc] a9set
-DoIf[fnc] %a3%+%a6%+%a9% EQU 3+O+O EatFnc[fnc] a3set
-DoIf[fnc] %a3%+%a6%+%a9% EQU O+6+O EatFnc[fnc] a6set
-DoIf[fnc] %a1%+%a5%+%a9% EQU O+5+O EatFnc[fnc] a5set
-DoIf[fnc] %a1%+%a5%+%a9% EQU O+O+9 EatFnc[fnc] a9set
-DoIf[fnc] %a1%+%a5%+%a9% EQU 1+O+O EatFnc[fnc] a1set
-DoIf[fnc] %a3%+%a5%+%a7% EQU O+O+7 EatFnc[fnc] a7set
-DoIf[fnc] %a3%+%a5%+%a7% EQU O+5+O EatFnc[fnc] a5set
-DoIf[fnc] %a3%+%a5%+%a7% EQU 3+O+O EatFnc[fnc] a3set
-EatFnc[fnc] Defence
-PoopFnc[fnc] Defence
-DoIf[fnc] %a1%+%a2%+%a3% EQU X+X+3 EatFnc[fnc] a3set
-DoIf[fnc] %a1%+%a2%+%a3% EQU 1+X+X EatFnc[fnc] a1set
-DoIf[fnc] %a1%+%a2%+%a3% EQU X+2+X EatFnc[fnc] a2set
-DoIf[fnc] %a4%+%a5%+%a6% EQU X+X+6 EatFnc[fnc] a6set
-DoIf[fnc] %a4%+%a5%+%a6% EQU X+5+X EatFnc[fnc] a5set
-DoIf[fnc] %a4%+%a5%+%a6% EQU 4+X+X EatFnc[fnc] a4set
-DoIf[fnc] %a7%+%a8%+%a9% EQU X+X+9 EatFnc[fnc] a9set
-DoIf[fnc] %a7%+%a8%+%a9% EQU 7+X+X EatFnc[fnc] a7set
-DoIf[fnc] %a7%+%a8%+%a9% EQU X+8+X EatFnc[fnc] a8set
-DoIf[fnc] %a1%+%a4%+%a7% EQU 1+X+X EatFnc[fnc] a1set
-DoIf[fnc] %a1%+%a4%+%a7% EQU X+4+X EatFnc[fnc] a4set
-DoIf[fnc] %a1%+%a4%+%a7% EQU X+X+7 EatFnc[fnc] a7set
-DoIf[fnc] %a2%+%a5%+%a8% EQU 2+X+X EatFnc[fnc] a2set
-DoIf[fnc] %a2%+%a5%+%a8% EQU X+5+X EatFnc[fnc] a5set
-DoIf[fnc] %a2%+%a5%+%a8% EQU X+X+8 EatFnc[fnc] a8set
-DoIf[fnc] %a3%+%a6%+%a9% EQU X+X+9 EatFnc[fnc] a9set
-DoIf[fnc] %a3%+%a6%+%a9% EQU 3+X+X EatFnc[fnc] a3set
-DoIf[fnc] %a3%+%a6%+%a9% EQU X+6+X EatFnc[fnc] a6set
-DoIf[fnc] %a1%+%a5%+%a9% EQU X+5+X EatFnc[fnc] a5set
-DoIf[fnc] %a1%+%a5%+%a9% EQU X+X+9 EatFnc[fnc] a9set
-DoIf[fnc] %a1%+%a5%+%a9% EQU 1+X+X EatFnc[fnc] a1set
-DoIf[fnc] %a3%+%a5%+%a7% EQU X+X+7 EatFnc[fnc] a7set
-DoIf[fnc] %a3%+%a5%+%a7% EQU X+5+X EatFnc[fnc] a5set
-DoIf[fnc] %a3%+%a5%+%a7% EQU 3+X+X EatFnc[fnc] a3set
-EatFnc[fnc] Random
-PoopFnc[fnc] Random
-PoopInt[fnc] attack=%Random% * 9 / 32768 +1
-PoopInt[fnc] cycle=%cycle%+1
-DoIf[fnc] %cycle% LEQ 1 EatFnc[fnc] Random
-DoIf[fnc] %attack% EQU 1 EatFnc[fnc] a1set
-DoIf[fnc] %attack% EQU 2 EatFnc[fnc] a2set
-DoIf[fnc] %attack% EQU 3 EatFnc[fnc] a3set
-DoIf[fnc] %attack% EQU 4 EatFnc[fnc] a4set
-DoIf[fnc] %attack% EQU 5 EatFnc[fnc] a5set
-DoIf[fnc] %attack% EQU 6 EatFnc[fnc] a6set
-DoIf[fnc] %attack% EQU 7 EatFnc[fnc] a7set
-DoIf[fnc] %attack% EQU 8 EatFnc[fnc] a8set
-DoIf[fnc] %attack% EQU 9 EatFnc[fnc] a9set
-EatFnc[fnc] Random
-PoopFnc[fnc] a1set
-DoIf[fnc] %s1% EQU N EatFnc[fnc] Random
-PoopString[fnc] a1=O
-PoopString[fnc] s1=N
-PoopInt[fnc] moves=%moves%+1
-EatFnc[fnc] moncheck
-PoopFnc[fnc] a2set
-DoIf[fnc] %s2% EQU N EatFnc[fnc] Random
-PoopString[fnc] a2=O
-PoopString[fnc] s2=N
-PoopInt[fnc] moves=%moves%+1
-EatFnc[fnc] moncheck
-PoopFnc[fnc] a3set
-DoIf[fnc] %s3% EQU N EatFnc[fnc] Random
-PoopString[fnc] a3=O
-PoopString[fnc] s3=N
-PoopInt[fnc] moves=%moves%+1
-EatFnc[fnc] moncheck
-PoopFnc[fnc] a4set
-DoIf[fnc] %s4% EQU N EatFnc[fnc] Random
-PoopString[fnc] a4=O
-PoopString[fnc] s4=N
-PoopInt[fnc] moves=%moves%+1
-EatFnc[fnc] moncheck
-PoopFnc[fnc] a5set
-DoIf[fnc] %s5% EQU N EatFnc[fnc] Random
-PoopString[fnc] a5=O
-PoopString[fnc] s5=N
-PoopInt[fnc] moves=%moves%+1
-EatFnc[fnc] moncheck
-PoopFnc[fnc] a6set
-DoIf[fnc] %s6% EQU N EatFnc[fnc] Random
-PoopString[fnc] a6=O
-PoopString[fnc] s6=N
-PoopInt[fnc] moves=%moves%+1
-EatFnc[fnc] moncheck
-PoopFnc[fnc] a7set
-DoIf[fnc] %s7% EQU N EatFnc[fnc] Random
-PoopString[fnc] a7=O
-PoopString[fnc] s7=N
-PoopInt[fnc] moves=%moves%+1
-EatFnc[fnc] moncheck
-PoopFnc[fnc] a8set
-DoIf[fnc] %s8% EQU N EatFnc[fnc] Random
-PoopString[fnc] a8=O
-PoopString[fnc] s8=N
-PoopInt[fnc] moves=%moves%+1
-EatFnc[fnc] moncheck
-PoopFnc[fnc] a9set
-DoIf[fnc] %s9% EQU N EatFnc[fnc] Random
-PoopString[fnc] a9=O
-PoopString[fnc] s9=N
-PoopInt[fnc] moves=%moves%+1
-EatFnc[fnc] moncheck
-PoopFnc[fnc] moncheck
-DoIf[fnc] %a1%+%a2%+%a3% EQU O+O+O EatFnc[fnc] lose
-DoIf[fnc] %a4%+%a5%+%a6% EQU O+O+O EatFnc[fnc] lose
-DoIf[fnc] %a7%+%a8%+%a9% EQU O+O+O EatFnc[fnc] lose
-DoIf[fnc] %a1%+%a4%+%a7% EQU O+O+O EatFnc[fnc] lose
-DoIf[fnc] %a2%+%a5%+%a8% EQU O+O+O EatFnc[fnc] lose
-DoIf[fnc] %a3%+%a6%+%a9% EQU O+O+O EatFnc[fnc] lose
-DoIf[fnc] %a1%+%a5%+%a9% EQU O+O+O EatFnc[fnc] lose
-DoIf[fnc] %a3%+%a5%+%a7% EQU O+O+O EatFnc[fnc] lose
-DoIf[fnc] %moves% EQU 9 EatFnc[fnc] draw
-EatFnc[fnc] Start
-PoopFnc[fnc] win
-Forget[fnc]
-Yell[fnc] You win!
-GotoToilet[fnc] >nul
-EatFnc[fnc] tictactoe
-PoopFnc[fnc] lose
-Forget[fnc]
-Yell[fnc] You lose!
-GotoToilet[fnc] >nul
-EatFnc[fnc] tictactoe
-PoopFnc[fnc] draw
-Forget[fnc]
-Yell[fnc] Draw!
-GotoToilet[fnc] >nul
-EatFnc[fnc] tictactoe
+label[] tictactoe
+clrscr[]
+var[] a1=1
+var[] a2=2
+var[] a3=3
+var[] a4=4
+var[] a5=5
+var[] a6=6
+var[] a7=7
+var[] a8=8
+var[] a9=9
+var[] s1=A
+var[] s2=A
+var[] s3=A
+var[] s4=A
+var[] s5=A
+var[] s6=A
+var[] s7=A
+var[] s8=A
+var[] s9=A
+var[] attack=0
+var[] cycle=0
+var[] moves=0
+label[] Start
+clrscr[]
+print[]                                *******
+print[]                                *%a1% %a2% %a3%*
+print[]                                *%a4% %a5% %a6%*
+print[]                                *%a7% %a8% %a9%*
+print[]                                *******
+print[]                            Enter a number:
+key[] 123456789
+if_el[] 9 goto[] d9
+if_el[] 8 goto[] d8
+if_el[] 7 goto[] d7
+if_el[] 6 goto[] d6
+if_el[] 5 goto[] d5
+if_el[] 4 goto[] d4
+if_el[] 3 goto[] d3
+if_el[] 2 goto[] d2
+if_el[] 1 goto[] d1
+goto[] Start
+label[] d1
+if[] %s1% EQU N goto[] Start
+var[] a1=X
+var[] s1=N
+eq[] moves=%moves%+1
+goto[] check
+label[] d2
+if[] %s2% EQU N goto[] Start
+var[] a2=X
+var[] s2=N
+eq[] moves=%moves%+1
+goto[] check
+label[] d3
+if[] %s3% EQU N goto[] Start
+var[] a3=X
+var[] s3=N
+eq[] moves=%moves%+1
+goto[] check
+label[] d4
+if[] %s4% EQU N goto[] Start
+var[] a4=X
+var[] s4=N
+eq[] moves=%moves%+1
+goto[] check
+label[] d5
+if[] %s5% EQU N goto[] Start
+var[] a5=X
+var[] s5=N
+eq[] moves=%moves%+1
+goto[] check
+label[] d6
+if[] %s6% EQU N goto[] Start
+var[] a6=X
+var[] s6=N
+eq[] moves=%moves%+1
+goto[] check
+label[] d7
+if[] %s7% EQU N goto[] Start
+var[] a7=X
+var[] s7=N
+eq[] moves=%moves%+1
+goto[] check
+label[] d8
+if[] %s8% EQU N goto[] Start
+var[] a8=X
+var[] s8=N
+eq[] moves=%moves%+1
+goto[] check
+label[] d9
+if[] %s9% EQU N goto[] Start
+var[] a9=X
+var[] s9=N
+eq[] moves=%moves%+1
+goto[] check
+label[] check
+if[] %a1%+%a2%+%a3% EQU X+X+X goto[] win
+if[] %a4%+%a5%+%a6% EQU X+X+X goto[] win
+if[] %a7%+%a8%+%a9% EQU X+X+X goto[] win
+if[] %a1%+%a4%+%a7% EQU X+X+X goto[] win
+if[] %a2%+%a5%+%a8% EQU X+X+X goto[] win
+if[] %a3%+%a6%+%a9% EQU X+X+X goto[] win
+if[] %a1%+%a5%+%a9% EQU X+X+X goto[] win
+if[] %a3%+%a5%+%a7% EQU X+X+X goto[] win
+if[] %moves% EQU 9 goto[] draw
+goto[] middle
+label[] middle
+if[] %s5% EQU N goto[] mon
+var[] a5=O
+var[] s5=N
+eq[] moves=%moves%+1
+goto[] moncheck
+label[] mon
+if[] %moves% GEQ 1 goto[] Offence
+if[] %moves% EQU 9 goto[] draw
+label[] Offence
+if[] %a1%+%a2%+%a3% EQU O+O+3 goto[] a3set
+if[] %a1%+%a2%+%a3% EQU 1+O+O goto[] a1set
+if[] %a1%+%a2%+%a3% EQU O+2+O goto[] a2set
+if[] %a4%+%a5%+%a6% EQU O+O+6 goto[] a6set
+if[] %a4%+%a5%+%a6% EQU O+5+O goto[] a5set
+if[] %a4%+%a5%+%a6% EQU 4+O+O goto[] a4set
+if[] %a7%+%a8%+%a9% EQU O+O+9 goto[] a9set
+if[] %a7%+%a8%+%a9% EQU 7+O+O goto[] a7set
+if[] %a7%+%a8%+%a9% EQU O+8+O goto[] a8set
+if[] %a1%+%a4%+%a7% EQU 1+O+O goto[] a1set
+if[] %a1%+%a4%+%a7% EQU O+4+O goto[] a4set
+if[] %a1%+%a4%+%a7% EQU O+O+7 goto[] a7set
+if[] %a2%+%a5%+%a8% EQU 2+O+O goto[] a2set
+if[] %a2%+%a5%+%a8% EQU O+5+O goto[] a5set
+if[] %a2%+%a5%+%a8% EQU O+O+8 goto[] a8set
+if[] %a3%+%a6%+%a9% EQU O+O+9 goto[] a9set
+if[] %a3%+%a6%+%a9% EQU 3+O+O goto[] a3set
+if[] %a3%+%a6%+%a9% EQU O+6+O goto[] a6set
+if[] %a1%+%a5%+%a9% EQU O+5+O goto[] a5set
+if[] %a1%+%a5%+%a9% EQU O+O+9 goto[] a9set
+if[] %a1%+%a5%+%a9% EQU 1+O+O goto[] a1set
+if[] %a3%+%a5%+%a7% EQU O+O+7 goto[] a7set
+if[] %a3%+%a5%+%a7% EQU O+5+O goto[] a5set
+if[] %a3%+%a5%+%a7% EQU 3+O+O goto[] a3set
+goto[] Defence
+label[] Defence
+if[] %a1%+%a2%+%a3% EQU X+X+3 goto[] a3set
+if[] %a1%+%a2%+%a3% EQU 1+X+X goto[] a1set
+if[] %a1%+%a2%+%a3% EQU X+2+X goto[] a2set
+if[] %a4%+%a5%+%a6% EQU X+X+6 goto[] a6set
+if[] %a4%+%a5%+%a6% EQU X+5+X goto[] a5set
+if[] %a4%+%a5%+%a6% EQU 4+X+X goto[] a4set
+if[] %a7%+%a8%+%a9% EQU X+X+9 goto[] a9set
+if[] %a7%+%a8%+%a9% EQU 7+X+X goto[] a7set
+if[] %a7%+%a8%+%a9% EQU X+8+X goto[] a8set
+if[] %a1%+%a4%+%a7% EQU 1+X+X goto[] a1set
+if[] %a1%+%a4%+%a7% EQU X+4+X goto[] a4set
+if[] %a1%+%a4%+%a7% EQU X+X+7 goto[] a7set
+if[] %a2%+%a5%+%a8% EQU 2+X+X goto[] a2set
+if[] %a2%+%a5%+%a8% EQU X+5+X goto[] a5set
+if[] %a2%+%a5%+%a8% EQU X+X+8 goto[] a8set
+if[] %a3%+%a6%+%a9% EQU X+X+9 goto[] a9set
+if[] %a3%+%a6%+%a9% EQU 3+X+X goto[] a3set
+if[] %a3%+%a6%+%a9% EQU X+6+X goto[] a6set
+if[] %a1%+%a5%+%a9% EQU X+5+X goto[] a5set
+if[] %a1%+%a5%+%a9% EQU X+X+9 goto[] a9set
+if[] %a1%+%a5%+%a9% EQU 1+X+X goto[] a1set
+if[] %a3%+%a5%+%a7% EQU X+X+7 goto[] a7set
+if[] %a3%+%a5%+%a7% EQU X+5+X goto[] a5set
+if[] %a3%+%a5%+%a7% EQU 3+X+X goto[] a3set
+goto[] Random
+label[] Random
+eq[] attack=%Random% * 9 / 32768 +1
+eq[] cycle=%cycle%+1
+if[] %cycle% LEQ 1 goto[] Random
+if[] %attack% EQU 1 goto[] a1set
+if[] %attack% EQU 2 goto[] a2set
+if[] %attack% EQU 3 goto[] a3set
+if[] %attack% EQU 4 goto[] a4set
+if[] %attack% EQU 5 goto[] a5set
+if[] %attack% EQU 6 goto[] a6set
+if[] %attack% EQU 7 goto[] a7set
+if[] %attack% EQU 8 goto[] a8set
+if[] %attack% EQU 9 goto[] a9set
+goto[] Random
+label[] a1set
+if[] %s1% EQU N goto[] Random
+var[] a1=O
+var[] s1=N
+eq[] moves=%moves%+1
+goto[] moncheck
+label[] a2set
+if[] %s2% EQU N goto[] Random
+var[] a2=O
+var[] s2=N
+eq[] moves=%moves%+1
+goto[] moncheck
+label[] a3set
+if[] %s3% EQU N goto[] Random
+var[] a3=O
+var[] s3=N
+eq[] moves=%moves%+1
+goto[] moncheck
+label[] a4set
+if[] %s4% EQU N goto[] Random
+var[] a4=O
+var[] s4=N
+eq[] moves=%moves%+1
+goto[] moncheck
+label[] a5set
+if[] %s5% EQU N goto[] Random
+var[] a5=O
+var[] s5=N
+eq[] moves=%moves%+1
+goto[] moncheck
+label[] a6set
+if[] %s6% EQU N goto[] Random
+var[] a6=O
+var[] s6=N
+eq[] moves=%moves%+1
+goto[] moncheck
+label[] a7set
+if[] %s7% EQU N goto[] Random
+var[] a7=O
+var[] s7=N
+eq[] moves=%moves%+1
+goto[] moncheck
+label[] a8set
+if[] %s8% EQU N goto[] Random
+var[] a8=O
+var[] s8=N
+eq[] moves=%moves%+1
+goto[] moncheck
+label[] a9set
+if[] %s9% EQU N goto[] Random
+var[] a9=O
+var[] s9=N
+eq[] moves=%moves%+1
+goto[] moncheck
+label[] moncheck
+if[] %a1%+%a2%+%a3% EQU O+O+O goto[] lose
+if[] %a4%+%a5%+%a6% EQU O+O+O goto[] lose
+if[] %a7%+%a8%+%a9% EQU O+O+O goto[] lose
+if[] %a1%+%a4%+%a7% EQU O+O+O goto[] lose
+if[] %a2%+%a5%+%a8% EQU O+O+O goto[] lose
+if[] %a3%+%a6%+%a9% EQU O+O+O goto[] lose
+if[] %a1%+%a5%+%a9% EQU O+O+O goto[] lose
+if[] %a3%+%a5%+%a7% EQU O+O+O goto[] lose
+if[] %moves% EQU 9 goto[] draw
+goto[] Start
+label[] win
+clrscr[]
+print[] You win!
+stop[] >nul
+goto[] tictactoe
+label[] lose
+clrscr[]
+print[] You lose!
+stop[] >nul
+goto[] tictactoe
+label[] draw
+clrscr[]
+print[] Draw!
+stop[] >nul
+goto[] tictactoe

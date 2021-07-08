@@ -1,22 +1,22 @@
-ChangeName[fnc] Love Tester
-ChangeColor[fnc] 0a
+change_title[] Love Tester
+change_color[] 0a
 
-PoopFnc[fnc] game
-Forget[fnc]
+label[] game
+clrscr[]
 
-Yell[fnc] Person 1:
-PoopInput[fnc] person1=
+print[] Person 1:
+inp[] person1=
 
-Yell[fnc] Person 2:
-PoopInput[fnc] person2=
+print[] Person 2:
+inp[] person2=
 
-EatFnc[fnc] test
+goto[] test
 
-PoopFnc[fnc] test
+label[] test
 
-PoopInt[fnc] test=%random% %% 100 + 0
-Yell[fnc] %test% percents of love
+eq[] test=%random% %% 100 + 0
+print[] %test% percents of love
 
-GotoToilet[fnc]
+stop[]
 
-EatFnc[fnc] game
+goto[] game

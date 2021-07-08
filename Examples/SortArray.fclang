@@ -1,0 +1,17 @@
+inp[] n=The amount of element:
+loop[] %%i in (1,1,%n%) do inp[] arr[%%i]=Element %%i:
+
+local[] enabledelayedexpansion
+loop[] %%i in (1,1,%n%) do (
+	eq[] ind=%%i+1
+	loop[] %%j in (^!ind^!,1,%n%) do (
+		if[] ^!arr[%%i]^! GTR ^!arr[%%j]^! (
+			var[] temp=^!arr[%%i]^!
+			var[] arr[%%i]=^!arr[%%j]^!
+			var[] arr[%%j]=^!temp^!
+		)
+	)
+)
+
+print[] Sorted:
+loop[] %%i IN (1,1,%n%) DO print[] Element %%i: ^!arr[%%i]^!

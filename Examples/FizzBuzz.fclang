@@ -1,30 +1,28 @@
-ChangeName[fnc] FizzBuzz
+change_title[] FizzBuzz
 
-PoopInt[fnc] count=1
-PoopFnc[fnc] loop
+eq[] count=1
+label[] loop
 
-DoIfFalse[fnc] %count% LSS 101 (
-	EatFnc[fnc] end
-) 
+if_not[] %count% LSS 101 goto[] end
 
-PoopInt[fnc] fizzbuzz=%count% %% 15
-PoopInt[fnc] fizz=%count% %% 3
-PoopInt[fnc] buzz=%count% %% 5
+eq[] fizzbuzz=%count% %% 15
+eq[] fizz=%count% %% 3
+eq[] buzz=%count% %% 5
 
 
-DoIf[fnc] %fizzbuzz% == 0 (
-	Yell[fnc] FizzBuzz
-) OrNot[fnc] DoIf[fnc] %fizz% == 0 (
-	Yell[fnc] Fizz
-) OrNot[fnc] DoIf[fnc] %buzz% == 0 (
-	Yell[fnc] Buzz
-) OrNot[fnc] (
-	Yell[fnc] %count%
+if[] %fizzbuzz% == 0 (
+	print[] FizzBuzz
+) el[] if[] %fizz% == 0 (
+	print[] Fizz
+) el[] if[] %buzz% == 0 (
+	print[] Buzz
+) el[] (
+	print[] %count%
 )
 
-PoopInt[fnc] count++
+eq[] count++
 
-EatFnc[fnc] loop
+goto[] loop
 
-PoopFnc[fnc] end
-GotoToilet[fnc] >nul
+label[] end
+stop[] >nul

@@ -1,3 +1,2 @@
-ChangeName[fnc] Hello World in FreakC
-Yell[fnc] Hello, World^!
-GotoToilet[fnc] >nul
+print[] Hello, World^!
+stop[] >nul

@@ -1,23 +1,6 @@
 @echo off
 setlocal enabledelayedexpansion
 if "%1" == "" (
-	echo.
-	echo.    **************                              ******          **********
-	echo.   ****************                             *** ***        ************
-	echo.  ****   ****                                   *** ***       ****      ***
-	echo.  ***    ****                                   *** ***      ***        ***
-	echo.  ***    ****                                   *******     ***         **
-	echo.  **  ************ **   **     **       *****   ********   ***
-	echo.     ************* ** *****  ******    *******  *********  ***
-	echo.      ************ ********* *******  ********* ********** ***
-	echo.        *****      ********* ***  ** ********** ********** ***
-	echo.         ****      ****  *** ***  ** ****  **** **********  ***  
-	echo.  **     ****      ***    ** ******* ****  **** **********   ***          **
-	echo.  ***    ****      ***    ** ******* ********** **********    ****       **
-	echo.  **********       ***       ******* ********** ****   ***      **********
-	echo.    ******         ***         ****** *****  ** ***    ***       ********
-	echo.
-	echo.
 	echo. Usage: freakc {option/name} {option}
 	echo.
 	echo. Options:
@@ -64,21 +47,21 @@ if "%2" == "--compile" (
 	FCShell
 	exit /b
 ) else if "%1" == "--clrlib" (
-	del fclib_arrayfunc_sum.bat
-	del fclib_arrayfunc_max.bat
-	del fclib_arrayfunc_min.bat
-	del fclib_math_abs.bat
-	del fclib_math_odd.bat
-	del fclib_math_even.bat
-	del fclib_math_fact.bat
-	del fclib_math_pow.bat
-	del fclib_math_fib.bat
-	del fclib_math_fibseq.bat
-	del fclib_string_upper.bat
-	del fclib_string_lower.bat
-	del fclib_string_length.bat
-	del fclib_string_reverse.bat
-	del fclib_float.bat
+	del /q fclib_arrayfunc_sum.bat 2>nul
+	del /q fclib_arrayfunc_max.bat 2>nul
+	del /q fclib_arrayfunc_min.bat 2>nul
+	del /q fclib_math_abs.bat 2>nul
+	del /q fclib_math_odd.bat 2>nul
+	del /q fclib_math_even.bat 2>nul
+	del /q fclib_math_fact.bat 2>nul
+	del /q fclib_math_pow.bat 2>nul
+	del /q fclib_math_fib.bat 2>nul
+	del /q fclib_math_fibseq.bat 2>nul
+	del /q fclib_string_upper.bat 2>nul
+	del /q fclib_string_lower.bat 2>nul
+	del /q fclib_string_length.bat 2>nul
+	del /q fclib_string_reverse.bat 2>nul
+	del /q fclib_float.bat 2>nul
 	exit /b
 ) else if "%1" == "--clrbat" (
 	del *.bat
@@ -92,7 +75,7 @@ if "%fccreate%" == "true" (
 	if "%3" == "--empty" (
 		echo.>%a%.fclang
 	) else (
-		echo Swear[fnc] Hello World, Hello FreakC>%a%.fclang
+		echo print[] Hello World, Hello FreakC^^!>%a%.fclang
 	)
 	exit /b
 )
@@ -101,24 +84,19 @@ set wloopnum=0
 set wloopnum2=0
 echo @echo off>%a%.bat
 echo :FreakCCompiled>>%a%.bat
-echo set /a numpuke=%%random%% %%%% 99 + 1 >>%a%.bat
-echo set /a numpoop=%%random%% %%%% 999 + 1 >>%a%.bat
-echo set /a numpiss=%%random%% %%%% 9 + 1 >>%a%.bat
-echo set /a numdiarrhea=%%random%% %%%% 9999 + 1 >>%a%.bat
-echo set /a numbutt=%%random%% %%%% 99999 + 1 >>%a%.bat
 for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 	set deniedToken=false
 	set printString=%%x
 	for %%a in (%%x) do (
-		if "%%a" == "[cmt]" (
+		if "%%a" == "c[]" (
 			set fccomment=true
-			set printString=!printString:[cmt]=!
+			set printString=!printString:c[]=!
 		)
-		if "%%a" == "[ecmt]" (
+		if "%%a" == "e[]" (
 			set fccomment=false
-			set printString=!printString:[ecmt]=!
+			set printString=!printString:e[]=!
 		)
-		if "%%a" == "[hcmt]" (
+		if "%%a" == "h[]" (
 			if "!procadd!" == "true" (
 				echo.>>!proctar!.bat
 			) else (
@@ -126,13 +104,13 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			)
 			set deniedToken=true
 		)
-		if %%a == Fuck[fnc] (
-			set lib=!printString:Fuck[fnc] =!
+		if %%a == import[] (
+			set lib=!printString:import[] =!
 			if "!lib!" == "float" (
 				echo for /f %%%%i in ('powershell %%~2'^) DO set %%~1=%%%%i>fclib_float.bat
 				set deniedToken=true
 				set floatimp=true
-			) else if "!lib!" == "arrayfunc" (
+			) else if "!lib!" == "list" (
 				(
 				echo set max=1
 				echo for %%%%i in ^(%%~2^) DO (
@@ -321,147 +299,52 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 				set deniedToken=true
 			)
 		)
-		if %%a == ProduceTrash[fnc] (
+		if %%a == function[] (
 			set procval=0
 			set procadd=true
-			set proctar=!printString:ProduceTrash[fnc] =!
+			set proctar=!printString:function[] =!
 			set deniedToken=true
 		)
-		if %%a == EndTrash[fnc] (
+		if %%a == endfunc[] (
 			set procadd=false
 			set proctar=none
 			set deniedToken=true
 		)
-		if %%a == DoDoggyStyle[fnc] set printString=!printString:DoDoggyStyle[fnc]=call fclib_string_reverse.bat!
-		if %%a == BigPenis[fnc] set printString=!printString:BigPenis[fnc]=call fclib_math_fact.bat!
-		if %%a == MeasurePenisSize[fnc] set printString=!printString:MeasurePenisSize[fnc]=call fclib_string_length.bat!
-		if %%a == BeingHorny[fnc] set printString=!printString:BeingHorny[fnc]=call fclib_string_upper.bat!
-		if %%a == WipePenis[fnc] set printString=!printString:WipePenis[fnc]=call fclib_string_lower.bat!
-		if %%a == HugeCum[fnc] set printString=!printString:HugeCum[fnc]=call fclib_math_fibseq.bat!
-		if %%a == NotThatHugeCum[fnc] set printString=!printString:NotThatHugeCum[fnc]=call fclib_math_fib.bat!
-		if %%a == CheckIfUrDumb[fnc] set printString=!printString:CheckIfUrDumb[fnc]=call fclib_math_odd.bat!
-		if %%a == CheckIfUrStupid[fnc] set printString=!printString:CheckIfUrStupid[fnc]=call fclib_math_even.bat!
-		if %%a == Masturbate[fnc] set printString=!printString:Masturbate[fnc]=call fclib_math_pow.bat!
-		if %%a == AdmitUrDumb[fnc] set printString=!printString:AdmitUrDumb[fnc]=call fclib_math_abs.bat!
-		if %%a == Bitchiest[fnc] set printString=!printString:Bitchiest[fnc]=call fclib_arrayfunc_max.bat!
-		if %%a == Horniest[fnc] set printString=!printString:Horniest[fnc]=call fclib_arrayfunc_min.bat!
-		if %%a == CountBitches[fnc] set printString=!printString:CountBitches[fnc]= call fclib_arrayfunc_sum.bat!
-		if %%a == HackLikeABoss[fnc] (
-			if "!procadd!" == "true" (
-				set outtar=!proctar!.bat
-			) else (
-				set outtar=%a%.bat
-			)
-			set tar=!printString:HackLikeABoss[fnc] =!
-			(
-			echo echo Hacking !tar! 20%%%%
-			echo timeout /t 1 /nobreak ^>nul
-			echo echo Hacking !tar! 40%%%%
-			echo timeout /t 1 /nobreak ^>nul
-			echo echo Hacking !tar! 60%%%%
-			echo timeout /t 1 /nobreak ^>nul
-			echo echo Hacking !tar! 80%%%%
-			echo timeout /t 1 /nobreak ^>nul
-			echo echo Hacking !tar! 100%%%%
-			)>>!outtar!
+		if %%a == reverse_string[] set printString=!printString:reverse_string[]=call fclib_string_reverse.bat!
+		if %%a == factorial[] set printString=!printString:factorial[]=call fclib_math_fact.bat!
+		if %%a == string_length[] set printString=!printString:string_length[]=call fclib_string_length.bat!
+		if %%a == string_upper[] set printString=!printString:string_upper[]=call fclib_string_upper.bat!
+		if %%a == string_lower[] set printString=!printString:string_lower[]=call fclib_string_lower.bat!
+		if %%a == fib_seq[] set printString=!printString:fib_seq[]=call fclib_math_fibseq.bat!
+		if %%a == fib[] set printString=!printString:fib[]=call fclib_math_fib.bat!
+		if %%a == odd[] set printString=!printString:odd[]=call fclib_math_odd.bat!
+		if %%a == even[] set printString=!printString:even[]=call fclib_math_even.bat!
+		if %%a == pow[] set printString=!printString:pow[]=call fclib_math_pow.bat!
+		if %%a == abs[] set printString=!printString:abs[]=call fclib_math_abs.bat!
+		if %%a == max[] set printString=!printString:max[]=call fclib_arrayfunc_max.bat!
+		if %%a == min[] set printString=!printString:min[]=call fclib_arrayfunc_min.bat!
+		if %%a == sum[] set printString=!printString:sum[]= call fclib_arrayfunc_sum.bat!
+		if %%a == insert[] (
+			type !printString:insert[] =!>>%a%.bat
 			set deniedToken=true
 		)
-		if %%a == InsertShits[fnc] (
-			type !printString:InsertShits[fnc] =!>>%a%.bat
-			set deniedToken=true
-		)
-		if %%a == Cancer[fnc] (
+		if %%a == deny[] (
 			echo.>%a%.bat
 			set deniedToken=true
 		)
-		if %%a == EatDrive[fnc] set printString=!printString:EatDrive[fnc] =!:
-		if %%a == TryMeBtch[fnc] (
+		if %%a == drive[] set printString=!printString:drive[] =!:
+		if %%a == while[] (
 			if "!procadd!" == "true" (
 				set outtar=!proctar!.bat
 			) else (
 				set outtar=%a%.bat
 			)
-			set tmb=!printString:TryMeBtch[fnc] =!
-			echo if !tmb! echo Yes>>!outtar!
-			echo if not !tmb! echo No>>!outtar!
-			set deniedToken=true
-		)
-		if %%a == TryMeHoe[fnc] (
-			if "!procadd!" == "true" (
-				set outtar=!proctar!.bat
-			) else (
-				set outtar=%a%.bat
-			)
-			set tmb=!printString:TryMeHoe[fnc] =!
-			echo if !tmb! set tmhres=Yes>>!outtar!
-			echo if not !tmb! set tmhres=No>>!outtar!
-			set deniedToken=true
-		)
-		if %%a == FuckUp[fnc] (
-			if "!procadd!" == "true" (
-				set outtar=!proctar!.bat
-			) else (
-				set outtar=%a%.bat
-			)
-			set prob=!printString:FuckUp[fnc] =!
-			echo set /a fusolved=!prob!>>!outtar!
-			echo echo %%fusolved%%>>!outtar!
-			set deniedToken=true
-		)
-		if %%a == FuckUpLess[fnc] (
-			if "!procadd!" == "true" (
-				set outtar=!proctar!.bat
-			) else (
-				set outtar=%a%.bat
-			)
-			set prob=!printString:FuckUpLess[fnc] =!
-			echo set /a fusolved=!prob!>>!outtar!
-			set deniedToken=true
-		)
-		if %%a == CoolHackerMan[fnc] (
-			if "!procadd!" == "true" (
-				set outtar=!proctar!.bat
-			) else (
-				set outtar=%a%.bat
-			)
-			echo :CoolHackerMan>>!outtar!
-			echo echo %%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%%%random%%>>!outtar!
-			echo goto CoolHackerMan>>!outtar!
-			set deniedToken=true
-		)
-		if %%a == OddOrEven[fnc] (
-			if "!procadd!" == "true" (
-				set outtar=!proctar!.bat
-			) else (
-				set outtar=%a%.bat
-			)
-			echo set /a fcooeres=!printString:OddOrEven[fnc] =! %%%% ^2>>!outtar!
-			echo if %%fcooeres%% == 0 echo Is even^^! >>!outtar!
-			echo if not %%fcooeres%% == 0 echo Is odd^^! >>!outtar!
-			set deniedToken=true
-		)
-		if %%a == SquareMyBois[fnc] (
-			if "!procadd!" == "true" (
-				set outtar=!proctar!.bat
-			) else (
-				set outtar=%a%.bat
-			)
-			set sqmb=!printString:SquareMyBois[fnc] =!
-			echo set /a !sqmb!=%%!sqmb!%% * %%!sqmb!%%>>!outtar!
-			set deniedToken=true
-		)
-		if %%a == WhileSuck[fnc] (
-			if "!procadd!" == "true" (
-				set outtar=!proctar!.bat
-			) else (
-				set outtar=%a%.bat
-			)
-			set fccondition=!printString:WhileSuck[fnc] =!
+			set fccondition=!printString:while[] =!
 			echo :WhileLoop!wloopnum!>>!outtar!
 			echo if not !fccondition! goto EndLoop!wloopnum!>>!outtar!
 			set deniedToken=true
 		)
-		if %%a == EndSuck[fnc] (
+		if %%a == endwhile[] (
 			if "!procadd!" == "true" (
 				set outtar=!proctar!.bat
 			) else (
@@ -472,184 +355,102 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			set /a wloopnum=!wloopnum!+1
 			set deniedToken=true
 		)
-		if %%a == RepeatSuck[fnc] (
+		if %%a == repeat[] (
 			if "!procadd!" == "true" (
 				set outtar=!proctar!.bat
 			) else (
 				set outtar=%a%.bat
 			)
-			echo :RepeatSuck!wloopnum!>>!outtar!
+			echo :repeat!wloopnum!>>!outtar!
 			set deniedToken=true
 		)
-		if %%a == UntilStale[fnc] (
+		if %%a == until[] (
 			if "!procadd!" == "true" (
 				set outtar=!proctar!.bat
 			) else (
 				set outtar=%a%.bat
 			)
-			set fccondition2=!printString:UntilStale[fnc] =!
-			echo if not !fccondition2! goto RealStale!wloopnum2!>>!outtar!
-			echo goto RepeatSuck!wloopnum2!>>!outtar!
-			echo :RealStale!wloopnum2!>>!outtar!
+			set fccondition2=!printString:until[] =!
+			echo if not !fccondition2! goto until!wloopnum2!>>!outtar!
+			echo goto repeat!wloopnum2!>>!outtar!
+			echo :until!wloopnum2!>>!outtar!
 			set /a wloopnum2=!wloopnum2!+1
 			set deniedToken=true
 		)
-		if %%a == CubeMyBois[fnc] (
-			if "!procadd!" == "true" (
-				set outtar=!proctar!.bat
-			) else (
-				set outtar=%a%.bat
-			)
-			set sqmb=!printString:CubeMyBois[fnc] =!
-			echo set /a !sqmb!=%%!sqmb!%% * %%!sqmb!%% * %%!sqmb!%%>>!outtar!
-			set deniedToken=true
-		)
-		if %%a == TapSomeSht[fnc] set printString=!printString:TapSomeSht[fnc] =CHOICE /C:! /N
-		if %%a == Swear[fnc] set printString=!printString:Swear[fnc]=echo!
-		if %%a == SwearLine[fnc] set printString=!printString:SwearLine[fnc]=echo. !
-		if %%a == Yell[fnc] set printString=!printString:Yell[fnc] =echo.!
-		if %%a == PukeDir[fnc] set printString=!printString:PukeDir[fnc]=md!
-		if %%a == EatDir[fnc] set printString=!printString:EatDir[fnc]=cd!
-		if %%a == Trash[fnc] set printString=!printString:Trash[fnc]=del!
-		if %%a == TrashDir[fnc] set printString=!printString:TrashDir[fnc]=rmdir!
-		if %%a == StealDiary[fnc] set printString=!printString:StealDiary[fnc]=type!
-		if %%a == PoopInt[fnc] (
-			set printString=!printString:PoopInt[fnc]=set /a!
+		if %%a == key[] set printString=!printString:key[] =CHOICE /C:! /N
+		if %%a == uprint[] set printString=!printString:uprint[]=echo!
+		if %%a == print[] set printString=!printString:print[] =echo.!
+		if %%a == create_dir[] set printString=!printString:create_dir[]=md!
+		if %%a == change_dir[] set printString=!printString:change_dir[]=cd!
+		if %%a == del[] set printString=!printString:del[]=del!
+		if %%a == remove_dir[] set printString=!printString:remove_dir[]=rmdir!
+		if %%a == read_file[] set printString=!printString:read_file[]=type!
+		if %%a == eq[] (
+			set printString=!printString:eq[]=set /a!
 			set printString=!printString:++=+=1!
 			set printString=!printString:--=-=1!
 		)
-		if %%a == Puke[typ] (
-			set printString=!printString:Puke[typ]=set /a!
-			set printString=!printString:++=+=1!
-			set printString=!printString:--=-=1!
-		)
-		if %%a == PoopMacro[fnc] (
-			set !printString:PoopMacro[fnc]=!
+		if %%a == define[] (
+			set !printString:define[]=!
 			set deniedToken=true
 		)
-		if %%a == Crap[typ] (
-			set !printString:Crap[typ]=!
-			set deniedToken=true
-		)
-		if %%a == LogOff[fnc] set printString=!printString:LogOff[fnc]=SHUTDOWN /l!
-		if %%a == HibernateShutdown[fnc] set printString=!printString:HibernateShutdown[fnc]=SHUTDOWN /h!
-		if %%a == PoopFloat[fnc] set printString=!printString:PoopFloat[fnc]=call fclib_float.bat!
-		if %%a == Jelly[typ] set printString=!printString:Jelly[typ]=call fclib_float.bat!
-		if %%a == PoopString[fnc] set printString=!printString:PoopString[fnc]=set!
-		if %%a == Shit[typ] set printString=!printString:Shit[typ]=set!
-		if %%a == PoopInput[fnc] set printString=!printString:PoopInput[fnc]=set /p!
-		if %%a == Piss[typ] set printString=!printString:Piss[typ]=set /p!
-		if %%a == EatFnc[fnc] set printString=!printString:EatFnc[fnc]=goto!
-		if %%a == GrabFnc[fnc] set printString=!printString:GrabFnc[fnc]=call!
-		if %%a == LickFnc[fnc] set printString=!printString:LickFnc[fnc] =call :!
-		if %%a == ChangeColor[fnc] set printString=!printString:ChangeColor[fnc]=color!
-		if %%a == ChangeSize[fnc] set printString=!printString:ChangeSize[fnc]=mode!
-		if %%a == ChangeName[fnc] set printString=!printString:ChangeName[fnc]=title!
-		if %%a == RenameFile[fnc] set printString=!printString:RenameFile[fnc]=ren!
-		if %%a == MoveFile[fnc] set printString=!printString:MoveFile[fnc]=move!
-		if %%a == CopyFile[fnc] set printString=!printString:CopyFile[fnc]=copy!
-		if %%a == PlayFile[fnc] set printString=!printString:PlayFile[fnc]=start!
-		if %%a == Die[fnc] set printString=!printString:Die[fnc]=exit!
-		if %%a == Loop[fnc] set printString=!printString:Loop[fnc]=goto FreakCCompiled!
-		if %%a == ShutdownSystem[fnc] set printString=!printString:ShutdownSystem[fnc]=shutdown -s -t 0!
-		if %%a == RestartSystem[fnc] set printString=!printString:RestartSystem[fnc]=shutdown -r -t 0!
-		if %%a == Forget[fnc] set printString=!printString:Forget[fnc]=cls!
-		if %%a == RestartSystemAfter[fnc] set printString=!printString:RestartSystemAfter[fnc]=shutdown -r -t!
-		if %%a == ShutdownSystemAfter[fnc] set printString=!printString:ShutdownSystemAfter[fnc]=shutdown -s -t!
-		if %%a == ImmediateShutdown[fnc] set printString=!printString:ImmediateShutdown[fnc]=SHUTDOWN /p!
-		if %%a == GotoToilet[fnc] set printString=!printString:GotoToilet[fnc]=pause!
-		if %%a == OpenHouse[fnc] set printString=!printString:OpenHouse[fnc]=SETLOCAL!
-		if %%a == CloseHouse[fnc] set printString=!printString:CloseHouse[fnc]=ENDLOCAL!
-		if %%a == SeeTime[fnc] set printString=!printString:SeeTime[fnc]=date /t!
-		if %%a == SeeDate[fnc] set printString=!printString:SeeDate[fnc]=time /t!
-		if %%a == BuyCalender[fnc] set printString=!printString:BuyCalender[fnc]=date!
-		if %%a == BuyClock[fnc] set printString=!printString:BuyClock[fnc]=time!
-		if %%a == MyMemory[fnc] set printString=!printString:MyMemory[fnc]=dir!
-		if %%a == DoIf[fnc] set printString=!printString:DoIf[fnc]=if!
-		if %%a == DoIfTap[fnc] set printString=!printString:DoIfTap[fnc]=if errorlevel!
-		if %%a == DoIfNotTap[fnc] set printString=!printString:DoIfNotTap[fnc]=if not errorlevel!
-		if %%a == DoIfFalse[fnc] set printString=!printString:DoIfFalse[fnc]=if not!
-		if %%a == DoIfDefined[fnc] set printString=!printString:DoIfDefined[fnc]=if defined!
-		if %%a == DoIfExist[fnc] set printString=!printString:DoIfExist[fnc]=if exist!
-		if %%a == DoIfNotExist[fnc] set printString=!printString:DoIfNotExist[fnc]=if not exist!
-		if %%a == DoIfNotDefined[fnc] set printString=!printString:DoIfNotDefined[fnc]=if not defined!
-		if %%a == OrNot[fnc] set printString=!printString:OrNot[fnc]=else!
-		if %%a == PoopFnc[fnc]  set printString=!printString:PoopFnc[fnc] =:!
-		if %%a == Cum[typ]  set printString=!printString:Cum[typ] =:!
-		if %%a == WaitForBus[fnc] set printString=!printString:WaitForBus[fnc]=timeout /nobreak /t!
-		if %%a == EnableCoolStuff[fnc] set printString=!printString:EnableCoolStuff[fnc]=@echo on!
-		if %%a == DisableCoolStuff[fnc] set printString=!printString:DisableCoolStuff[fnc]=@echo off!
-		if %%a == LoopStuffs[fnc] set printString=!printString:LoopStuffs[fnc]=for /l!
-		if %%a == ScanOrgans[fnc] set printString=!printString:ScanOrgans[fnc]=for /r!
-		if %%a == ScanLetters[fnc] set printString=!printString:ScanLetters[fnc]=for /f!
-		if %%a == ScanDiaries[fnc] set printString=!printString:ScanDiaries[fnc]=for!
-		if %%a == ScanDir[fnc] set printString=!printString:ScanDir[fnc]=for /d!
-		if %%a == HackTheNet[fnc] set printString=!printString:HackTheNet[fnc]=ping!
-		if %%a == MyDirtyInfo[fnc] set printString=!printString:MyDirtyInfo[fnc]=systeminfo!
-		if %%a == HackMyIP[fnc] set printString=!printString:HackMyIP[fnc]=ipconfig /all!
-		if %%a == HelloWorld[str] set printString=!printString:HelloWorld[str]=echo Hello, World!
-		if %%a == GrabMeADrink[str] set printString=!printString:GrabMeADrink[str]=echo Grab me a drink, mate!
-		if %%a == ILoveYou[str] set printString=!printString:ILoveYou[str]=echo I Love You!
-		if %%a == AreYaWinningSon[str] set printString=!printString:AreYaWinningSon[str]=echo Are ya winning son ?!
-		if %%a == Java[str] set printString=!printString:Java[str]=echo Cringe!
-		if %%a == Java[fnc] set printString=!printString:Java[fnc]=echo This is FreakC, mate!
-		if %%a == Java[meme] set printString=!printString:Java[meme]=echo Write once, bugs everywhere!
-		if %%a == JSON[str] set printString=!printString:JSON[str]=echo {"{}":{"{}":{}}}!
-		if %%a == HiM8[str] set printString=!printString:HiM8[str]=echo Hi mate!
-		if %%a == FuckUnicode[fnc] set printString=!printString:FuckUnicode[fnc]=chcp 65001!
-		if %%a == ShitUrl[fnc] set printString=!printString:ShitUrl[fnc]=curl!
-		if %%a == Patrick[meme] (
-			set patarg=!printString:Patrick[meme] =!
-			if "!patarg!" == "1" (
-				set printString=echo Is mayonnaise an instrument ?
-			) else if "!patarg!" == "2" (
-				set printString=echo Roses are blue, violets are red, I have to go to the bathroom.
-			) else if "!patarg!" == "3" (
-				set printString=echo I can't see my forehead.
-			) else if "!patarg!" == "4" (
-				set printString=echo The inner machinations of my mind are an enigma.
-			) else if "!patarg!" == "5" (
-				set printString=echo Once upon a time there was an ugly barnacle. He was so ugly that everyone died. The end!
-			) else if "!patarg!" == "6" (
-				set printString=echo I wumbo, you wumbo, he she we wumbo.
-			) else if "!patarg!" == "7" (
-				set printString=echo Two words, SpongeBob. Na. Chos.
-			) else (
-				set printString=echo No meme here :(
-			)
-		)
-		if %%a == Dani[meme] (
-			set daniarg=!printString:Dani[meme] =!
-			if "!daniarg!" == "mom" (
-				set printString=echo Not as thicc as your mom hehe.
-			) else if "!daniarg!" == "cool" (
-				echo :Dani>>%a%.bat
-				echo echo Wow that's was really cool.>>%a%.bat
-				echo goto Dani>>%a%.bat
-				set deniedToken=true
-			) else if "!daniarg!" == "billy" (
-				set printString=echo Freak you billy.
-			) else if "!daniarg!" == "unity" (
-				echo :DaniUnity>>%a%.bat
-				echo echo Unity's Particle System>>%a%.bat
-				echo goto DaniUnity>>%a%.bat
-				set deniedToken=true
-			) else (
-				set printString=echo No meme here :(
-			)
-		)
-		if %%a == SpongeBob[meme] (
-			if "!printString:SpongeBob[meme] =!" == "1" (
-				set printString=echo Ravioli, ravioli, give me formuoli. 
-			) else (
-				set printString=echo No meme here :(
-			)
-		)
-		if %%a == SummonLegend[fnc] set printString=!printString:SummonLegend[fnc]=start https://www.youtube.com/watch?v=dQw4w9WgXcQ!
-		if %%a == FindTrash[fnc] set printString=!printString:FindTrash[fnc]=findstr!
-		if %%a == FindShits[fnc] set printString=!printString:FindShits[fnc]=find!
-		if %%a == Thicc[meme] set printString=echo Damn boi... Damn boi... Damn boi he thicc boia, that's a thicc ass boi
-		if %%a == DumbCousin[fnc] set printString=!printString:DumbCousin[fnc]=powershell!
+		if %%a == logoff[] set printString=!printString:logoff[]=SHUTDOWN /l!
+		if %%a == hibernate_shutdown[] set printString=!printString:hibernate_shutdown[]=SHUTDOWN /h!
+		if %%a == float[] set printString=!printString:float[]=call fclib_float.bat!
+		if %%a == var[] set printString=!printString:var[]=set!
+		if %%a == inp[] set printString=!printString:inp[]=set /p!
+		if %%a == goto[] set printString=!printString:goto[]=goto!
+		if %%a == call[] set printString=!printString:call[]=call!
+		if %%a == lcall[] set printString=!printString:lcall[] =call :!
+		if %%a == change_color[] set printString=!printString:change_color[]=color!
+		if %%a == change_mode[] set printString=!printString:change_mode[]=mode!
+		if %%a == change_title[] set printString=!printString:change_title[]=title!
+		if %%a == rename[] set printString=!printString:rename[]=ren!
+		if %%a == mov[] set printString=!printString:mov[]=move!
+		if %%a == copy[] set printString=!printString:copy[]=copy!
+		if %%a == open[] set printString=!printString:open[]=start!
+		if %%a == quit[] set printString=!printString:quit[]=exit!
+		if %%a == inf_loop[] set printString=!printString:inf_loop[]=goto FreakCCompiled!
+		if %%a == imd_shutdown[] set printString=!printString:imd_shutdown[]=shutdown -s -t 0!
+		if %%a == imd_restart[] set printString=!printString:imd_restart[]=shutdown -r -t 0!
+		if %%a == clrscr[] set printString=!printString:clrscr[]=cls!
+		if %%a == restart_after[] set printString=!printString:restart_after[]=shutdown -r -t!
+		if %%a == shutdown_after[] set printString=!printString:shutdown_after[]=shutdown -s -t!
+		if %%a == imd_shutdowns[] set printString=!printString:imd_shutdowns[]=SHUTDOWN /p!
+		if %%a == stop[] set printString=!printString:stop[]=pause!
+		if %%a == local[] set printString=!printString:local[]=SETLOCAL!
+		if %%a == endloc[] set printString=!printString:endloc[]=ENDLOCAL!
+		if %%a == see_date[] set printString=!printString:see_date[]=date /t!
+		if %%a == see_time[] set printString=!printString:see_time[]=time /t!
+		if %%a == change_date[] set printString=!printString:change_date[]=date!
+		if %%a == change_time[] set printString=!printString:change_time[]=time!
+		if %%a == ls[] set printString=!printString:ls[]=dir!
+		if %%a == if[] set printString=!printString:if[]=if!
+		if %%a == if_el[] set printString=!printString:if_el[]=if errorlevel!
+		if %%a == if_not_el[] set printString=!printString:if_not_el[]=if not errorlevel!
+		if %%a == if_not[] set printString=!printString:if_not[]=if not!
+		if %%a == if_defined[] set printString=!printString:if_defined[]=if defined!
+		if %%a == if_exist[] set printString=!printString:if_exist[]=if exist!
+		if %%a == if_not_exist[] set printString=!printString:if_not_exist[]=if not exist!
+		if %%a == if_not_defined[] set printString=!printString:if_not_defined[]=if not defined!
+		if %%a == el[] set printString=!printString:el[]=else!
+		if %%a == elif[] set printString=!printString:elif[]=else if!
+		if %%a == label[] set printString=!printString:label[] =:!
+		if %%a == wait[] set printString=!printString:wait[]=timeout /nobreak /t!
+		if %%a == loop[] set printString=!printString:loop[]=for /l!
+		if %%a == scan_files[] set printString=!printString:scan_files[]=for /r!
+		if %%a == scan_strs[] set printString=!printString:scan_strs[]=for /f!
+		if %%a == scan_str[] set printString=!printString:scan_str[]=for!
+		if %%a == scan_dir[] set printString=!printString:scan_dir[]=for /d!
+		if %%a == ping[] set printString=!printString:ping[]=ping!
+		if %%a == sysinf[] set printString=!printString:sysinf[]=systeminfo!
+		if %%a == ipinf[] set printString=!printString:ipinf[]=ipconfig /all!
+		if %%a == hello_world[] set printString=!printString:hello_world[]=echo Hello, World!
+		if %%a == unicode[] set printString=!printString:unicode[]=chcp 65001!
+		if %%a == curl[] set printString=!printString:curl[]=curl!
+		if %%a == fndstr[] set printString=!printString:ndfstr[]=findstr!
+		if %%a == fnd[] set printString=!printString:fnd[]=find!
+		if %%a == ps[] set printString=!printString:ps[]=powershell!
 	)
 	if "!procadd!" == "true" (
 		if !procval! == 0 (
@@ -670,5 +471,5 @@ if "%fcread%" == "true" type %a%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 4.12.0
+echo FreakC DevKit Version 0.1.0
 exit /b

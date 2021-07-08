@@ -15,7 +15,7 @@
 
 ## What is FreakC ?
 FreakC is a transpiled multi-paradigm esoteric scripting language that... has nothing to do with the C programming language. This language's syntax is dirty and highly offensive, but technically, it functions just like a normal language and is able to create usable programs. It is very similar to Batch, and it is also transpiled to Batch.
-<a href="https://discord.gg/KK4SbRSYMd">Proceed to Discord...</a>
+<a href="https://discord.gg/8PjqmzVFer">Proceed to Discord...</a>
 
 ## Why FreakC ?
 If you are drunk or freaking crazy, FreakC is like Gordon Ramsay's Beef Wellington to homeless people. (Yes)

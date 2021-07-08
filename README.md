@@ -6,7 +6,6 @@
   <br/>
   <a href="https://github.com/FreakC-Foundation/FreakC/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-GPLv3-blue.svg"/></a>
   <a href="https://github.com/FreakC-Foundation/FreakC/search?l=batchfile"><img alt="language" src="https://img.shields.io/badge/language-Batchfile-purple.svg"></a>
-  <a href="#"><img src="https://img.shields.io/github/downloads/FreakC-Foundation/FreakC/total.svg"/></a>
   <a href="https://github.com/FreakC-Foundation/FreakC/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/FreakC-Foundation/FreakC?color=gold"></a>
   <a href="https://github.com/FreakC-Foundation/FreakC/blob/master/.github/CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"></a>
   <a href="https://discord.gg/8PjqmzVFer"><img src="https://img.shields.io/discord/845855288245878784.svg"/></a>

@@ -79,7 +79,7 @@ There are many existing game engines for Batch/FreakC:
 * <a href="https://github.com/Honguito98/Seta-Engine-for-Batch-games">Seta</a>
 
 ## Contribute
-We would love to have you as a contributor! Please consider checking out [contribution guidelines](https://github.com/FreakC-Foundation/FreakC) first!
+We would love to have you as a contributor! Please consider checking out [contribution guidelines](https://github.com/FreakC-Foundation/FreakC/blob/master/.github/CONTRIBUTING.md) first!
 
 ## Social medias
 * <a href="https://youtu.be/0Pbah29aI4s">Youtube</a>

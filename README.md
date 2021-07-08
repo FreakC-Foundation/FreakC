@@ -81,6 +81,9 @@ There are many existing game engines for Batch/FreakC:
 ## Contribute
 We would love to have you as a contributor! Please consider checking out [contribution guidelines](https://github.com/FreakC-Foundation/FreakC/blob/master/.github/CONTRIBUTING.md) first!
 
+## Support the project!
+If you like FreakC, it would be great if you leave a star here ❤️.
+
 ## Social medias
 * <a href="https://youtu.be/0Pbah29aI4s">Youtube</a>
 * <a href="https://npmgames.itch.io/freakc">Itch.io</a>

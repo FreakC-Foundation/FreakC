@@ -80,8 +80,6 @@ If you like FreakC, it would be great if you leave a star here ❤️.
 * <a href="https://npmgames.itch.io/freakc">Itch.io</a>
 * <a href="https://www.facebook.com/FreakC-Programming-Language-111425377421861">Facebook</a>
 * <a href="https://discord.gg/8PjqmzVFer">Discord</a>
-* <a href="https://www.reddit.com/r/FreakC/">Reddit</a>
-* <a href="https://esolangs.org/wiki/FreakC">Esolangs.org</a>
 * <a href="https://dev.to/freakcdev297/freakc-the-esolang-that-can-do-stuffs-3f9c">Dev.to</a>
 * <a href="https://freakc-foundation.github.io/">Offical Website</a>
 

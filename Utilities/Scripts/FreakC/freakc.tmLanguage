@@ -12,7 +12,7 @@
   <array>
     <dict>
       <key>match</key>
-      <string>function|endfunc|uprint|print|if_el|if_not_el|if_not|if_defined|if_exist|if_not_exist|if_not_defined|if|el|elif|EQU|LEQ|LSS|GEQ|GTR|NEQ|while|endwhile|repeat|until|\=\=|\+\+|\-\-|</string>
+      <string>function|endfunc|uprint|print|if_not_el|if_not_defined|if_not_exist|if_not|if_defined|if_exist|if_el|if|el|elif|EQU|LEQ|LSS|GEQ|GTR|NEQ|while|endwhile|repeat|until|\=\=|\+\+|\-\-|</string>
       <key>name</key>
       <string>keyword.control</string>
     </dict>

@@ -142,6 +142,10 @@ Or:
 
 To do math equations, do:
 
+	eq[] equation
+
+To store in a variable(which you should use and it's highly recommended):
+
 	eq[] variable_name=equation
 	
 Note that eq[] will always round up number, to do equation or to declare a variable as a float, do:
@@ -753,6 +757,9 @@ Then the output would be:
 	First argument: Hello
 	Second argument: World
 	Third argument: and
+
+# Statement
+It's important to say that pretty much everything is a statement, not an expression. Every commands are executed, and no values are returned at all.
 
 # Error handling
 First of all, you'll need to know that the FreakC compiler will not catches errors at all, but you can still receive errors from CMD or the Batch interpreter.

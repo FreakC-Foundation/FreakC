@@ -31,7 +31,7 @@ Hello World:
 Function definition
 
     function[] SayHello
-        Swear[fnc] Hello
+        print[] Hello
     endfunc[]
     :: Prints "Hello"
     call[] SayHello

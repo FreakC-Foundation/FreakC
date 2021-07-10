@@ -34,7 +34,7 @@ Function definition
         print[] Hello
     endfunc[]
     :: Prints "Hello"
-    call[] SayHello
+    SayHello[..]
     
 To check out more samples, click <a href=https://github.com/FreakC-Foundation/FreakC/tree/master/Examples>here.</a>
 

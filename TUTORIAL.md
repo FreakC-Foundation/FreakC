@@ -402,18 +402,18 @@ To jump to a label, you use:
 
 To call a label/procedure, you use:
 
-	goto[] :label_name
+	call[] :label_name
 
 Or:
 
 	lcall[] label_name
 
-goto[] can also targets file, while lcall[] can only targets label/function. For example, you can execute files like this:
+call[] can also targets file, while lcall[] can only targets label/function. For example, you can execute files like this:
 
-	goto[] file_name
+	call[] file_name
 
-### Differences between goto[] and goto[]
-goto[] jumps to a function and will not execute the previous code while goto[] use code from the function but still execute the previous code.
+### Differences between goto[] and call[]
+goto[] jumps to a function and will not execute the previous code while call[] use code from the function but still execute the previous code.
 
 Also, goto[] also supports parameters, which helps you a lot of time.
 
@@ -437,6 +437,21 @@ This code would still work eventhough it contains special character
 
 	label[] dsasd$ 123213 323
 	goto[] dsasd$ 123213 323
+
+## Better call statement
+You can replace
+
+	call[] function_name "arg1" "arg2"
+
+with
+
+	function_name[..] "arg1" "arg2"
+	
+There's also one for calling labels:
+
+	label_name[::] "arg1" "arg2"
+	
+The feature's still in Beta, if stuffs don't work, or there's a duplicated "[..]" in your code's content that supposed to work, just change it to "[.^.]" and problems fixed :)
 	
 # Procedural programming
 
@@ -454,7 +469,7 @@ Example:
 		quit[] /b
 	endfunc[]
 	:: Prints "Hello"
-	goto[] SayHello
+	call[] SayHello
 
 It actually just generates a new file, and you call that file like a function. So technically you can create a Batch output file using function[].
 

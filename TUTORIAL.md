@@ -487,11 +487,11 @@ You can implement OOP like this:
 	endfunc[]
 
 	:: Create an object
-	goto[] Dog "Mary" "3" "4kg"
+	Dog[..] "Mary" "3" "4kg"
 	:: Prints out "age" property of "Mary", which is "3"
 	print[] Age: %Mary.age%
 	:: Call "Mary.BeingCute", which prints out "*Being cute*"
-	goto[] Mary.BeingCute
+	Mary.BeingCute[..]
 
 # If statements
 To use if statement, type:

@@ -88,6 +88,9 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 	set deniedToken=false
 	set printString=%%x
 	for %%a in (%%x) do (
+		set ch=%%a
+		if "!ch:~-4!" == "[..]" set printString=call !printString:[..]=!
+		if "!ch:~-4!" == "[::]" set printString=call :!printString:[::]=!
 		if "%%a" == "c[]" (
 			set fccomment=true
 			set printString=!printString:c[]=!

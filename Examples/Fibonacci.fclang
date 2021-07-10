@@ -13,6 +13,6 @@ function[] func
 	var[] %~1=%n3%
 endfunc[]
 
-call[] func "res" "5"
+func[..] "res" "5"
 print[] %res%
 stop[]

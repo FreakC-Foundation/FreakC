@@ -590,7 +590,7 @@ Example:
 		print[] You pressed "W"
 	) 
 
-### If not for tapping
+### If not errorlevel
 You can use:
 
 	if_not_el[]
@@ -647,7 +647,7 @@ While loop is executed only when given condition is true. Whereas, do-while loop
 ### Notes when using while loops
 <b>YOU CAN NOT USE NESTED WHILE LOOPS</b>
 <br/>
-This will be wrong:
+This will not work:
 
 	while[] condition
 	while[] condition

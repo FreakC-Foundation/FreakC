@@ -156,12 +156,14 @@ Note that eq[] will always round up number, to do equation or to declare a varia
 	
 To declare a variable as an array, use:
 
-	data_type arr[array_index]=
+	var[] arr[array_index]=
 	
 Ex:
 	
 	var[] arr[0]=Hello
 	var[] arr[1]=100
+
+You should only make array start at 1, or else it might not work with prebuilt libraries.
 
 To declare a variable from user's input, try:
 
@@ -263,6 +265,10 @@ You can also do that with local[]
 
 	local[] ENABLEDELAYEDEXPANSION
 	local[] ENABLEEXTENSIONS
+
+You can shorten `local[] ENABLEDELAYEDEXPANSION` with:
+
+	enb_delay[]
 	
 ### Delayed expansion
 You have seen some `^!` above, that's an essential feature gained from delayed expansion.
@@ -703,7 +709,28 @@ To import a pre-built library, use:
 	max[] "max_num" "2 3 1 8 5"
 	:: This will prints out "8"
 	print[] %max_num%
+
+## Using array
+
+	import[] array
 	
+	:: Find sum of every elements in an array
+	arr_sum[] "variable_name" "array" "length"
+	
+	:: Find largest element in an array
+	arr_max[] "variable_name" "array" "length"
+	
+	:: Find smallest element in an array
+	arr_min[] "variable_name" "array" "length"
+	
+	:: Example:
+	var[] arr[0]=1
+	var[] arr[1]=0
+	var[] arr[2]=10
+	arr_max[] "max_num" "arr" "3"
+	:: This will prints out "10"
+	print[] %max_num%
+
 ### Note
 All the functions above only works with list with all integers. String or floats will cause errors.
 	
@@ -726,12 +753,6 @@ All the functions above only works with list with all integers. String or floats
 	:: Factorial
 	factorial[] "variable_name" "number"
 	
-	:: Entire fibonacci sequence
-	fib_seq[] "variable_name" "number"
-	
-	:: Fibonacci
-	fib[] "variable_name" "number"
-	
 ## Using string
 
 	import[] string
@@ -748,11 +769,11 @@ All the functions above only works with list with all integers. String or floats
 	:: Reverse
 	string_reverse[] "variable_name" "string"
 	
-## Loading lib entirely with goto[]
+## Loading lib entirely with file
 Example:
 
 	:: Check if a number is odd
-	call[] fclib_math_odd.bat "variable_name" "number"
+	fclib_math_odd.bat[..] "variable_name" "number"
 
 # Command-line argument
 You can use %1, %2, %3,... for command-line args

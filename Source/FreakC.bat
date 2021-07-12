@@ -47,9 +47,9 @@ if "%2" == "--compile" (
 	FCShell
 	exit /b
 ) else if "%1" == "--clrlib" (
-	del /q fclib_arrayfunc_sum.bat 2>nul
-	del /q fclib_arrayfunc_max.bat 2>nul
-	del /q fclib_arrayfunc_min.bat 2>nul
+	del /q fclib_list_sum.bat 2>nul
+	del /q fclib_list_max.bat 2>nul
+	del /q fclib_list_min.bat 2>nul
 	del /q fclib_math_abs.bat 2>nul
 	del /q fclib_math_odd.bat 2>nul
 	del /q fclib_math_even.bat 2>nul
@@ -113,40 +113,38 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 				echo for /f %%%%i in ('powershell %%~2'^) DO set %%~1=%%%%i>fclib_float.bat
 				set deniedToken=true
 				set floatimp=true
-			) else if "!lib!" == "list" (
+			) else if "!lib!" == "array" (
 				(
-				echo set max=1
-				echo for %%%%i in ^(%%~2^) DO (
-				echo 	set max=%%%%i
-				echo 	goto fcmaxend
-				echo ^)
-				echo :fcmaxend
-				echo for %%%%i in (%%~2^) DO (
-				echo 	if %%%%i GTR %%max%% (
-				echo 		set max=%%%%i
-				echo 	^)
-				echo ^)
-				echo set %%~1=%%max%%
-				)>fclib_arrayfunc_max.bat
+				echo set /a len=%%~3-1
+				echo setlocal enabledelayedexpansion
+				echo set max=^^!%%~2[0]^^!
+				echo for %%%%i in (0,1,%%len%%^) do if ^^!%%~2[%%%%i]^^! GTR %%max%% set max=^^!%%~2[%%%%i]^^!
+				echo (endlocal ^& set %%~1=%%max%%^)
+				)>fclib_array_max.bat
 				(
-				echo set min=1
-				echo for %%%%i in ^(%%~2^) DO (
-				echo 	set min=%%%%i
-				echo 	goto fcminend
-				echo ^)
-				echo :fcminend
-				echo for %%%%i in (%%~2^) DO (
-				echo 	if %%%%i LSS %%min%% (
-				echo 		set min=%%%%i
-				echo 	^)
-				echo ^)
-				echo set %%~1=%%min%%
-				)>fclib_arrayfunc_min.bat
+				echo set /a len=%%~3-1
+				echo setlocal enabledelayedexpansion
+				echo set min=^^!%%~2[0]^^!
+				echo for %%%%i in (0,1,%%len%%^) do if ^^!%%~2[%%%%i]^^! LSS %%max%% set min=^^!%%~2[%%%%i]^^!
+				echo (endlocal ^& set %%~1=%%min%%^)
+				)>fclib_array_min.bat
 				(
+				echo set /a len=%%~3-1
 				echo set sum=0
-				echo for %%%%i in ^(%%~2^) DO set /a sum+=%%%%i
-				echo set %%~1=%%sum%%
-				)>fclib_arrayfunc_sum.bat
+				echo setlocal enabledelayedexpansion
+				echo for %%%%i in (0,1,%%len%%^) do set /a sum+=^^!%%~2[%%%%i]^^!
+				echo (endlocal ^& set %%~1=%%sum%%^)
+				)>fclib_array_sum.bat
+				(
+				echo set res_len=0
+				echo :loop
+				echo if not defined %%~2[%%res_len%%] (
+				echo	set %%~1=%%res_len%%
+				echo	exit /b
+				echo ^)
+				echo set /a res_len+=1
+				echo goto :loop
+				)>fclib_array_len.bat
 				set deniedToken=true
 			) else if "!lib!" == "math" (
 				(
@@ -178,45 +176,11 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 				echo set %%~1=%%res%%
 				)>fclib_math_pow.bat
 				(
-				echo set num1=0
-				echo set num2=1
-				echo set num3=0
-				echo set str=1
-				echo set i=0
- 				echo set /a end=%%~2 - 1
-				echo :loop
-				echo if not %%i%% LSS %%end%% goto end
- 				echo set /a num3=%%num1%% + %%num2%%
- 				echo set str=%%str%% %%num3%%
- 				echo set /a num1=%%num2%%
- 				echo set /a num2=%%num3%%
- 				echo set /a i+=1
-				echo goto loop
-				echo :end
-				echo set %%~1=%%str%%
-				)>fclib_math_fibseq.bat
-				(
-				echo set num1=0
-				echo set num2=1
-				echo set num3=0
-				echo set i=0
- 				echo set /a end=%%~2 - 1
-				echo :loop
-				echo if not %%i%% LSS %%end%% goto end
- 				echo set /a num3=%%num1%% + %%num2%%
- 				echo set /a num1=%%num2%%
- 				echo set /a num2=%%num3%%
- 				echo set /a i+=1
-				echo goto loop
-				echo :end
-				echo set %%~1=%%num3%%
-				)>fclib_math_fib.bat
-				set deniedToken=true
-				(
 				echo set mul=1
 				echo for /l %%%%i in (1,1,%%~2^) do set /a mul*=%%%%i
 				echo set %%~1=%%mul%%
 				)>fclib_math_fact.bat
+				set deniedToken=true
 			) else if "!lib!" == "string" (
 				(
 				echo set lower=%%~2
@@ -298,6 +262,41 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 				echo (endlocal ^& set %%~1=%%newstr%%^)
 				)>fclib_string_reverse.bat
 				set deniedToken=true
+			) else if "!lib!" == "list" (
+				(
+				echo set max=1
+				echo for %%%%i in ^(%%~2^) DO (
+				echo 	set max=%%%%i
+				echo 	goto fcmaxend
+				echo ^)
+				echo :fcmaxend
+				echo for %%%%i in (%%~2^) DO (
+				echo 	if %%%%i GTR %%max%% (
+				echo 		set max=%%%%i
+				echo 	^)
+				echo ^)
+				echo set %%~1=%%max%%
+				)>fclib_list_max.bat
+				(
+				echo set min=1
+				echo for %%%%i in ^(%%~2^) DO (
+				echo 	set min=%%%%i
+				echo 	goto fcminend
+				echo ^)
+				echo :fcminend
+				echo for %%%%i in (%%~2^) DO (
+				echo 	if %%%%i LSS %%min%% (
+				echo 		set min=%%%%i
+				echo 	^)
+				echo ^)
+				echo set %%~1=%%min%%
+				)>fclib_list_min.bat
+				(
+				echo set sum=0
+				echo for %%%%i in ^(%%~2^) DO set /a sum+=%%%%i
+				echo set %%~1=%%sum%%
+				)>fclib_list_sum.bat
+				set deniedToken=true
 			) else (
 				set deniedToken=true
 			)
@@ -318,15 +317,17 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == string_length[] set printString=!printString:string_length[]=call fclib_string_length.bat!
 		if %%a == string_upper[] set printString=!printString:string_upper[]=call fclib_string_upper.bat!
 		if %%a == string_lower[] set printString=!printString:string_lower[]=call fclib_string_lower.bat!
-		if %%a == fib_seq[] set printString=!printString:fib_seq[]=call fclib_math_fibseq.bat!
-		if %%a == fib[] set printString=!printString:fib[]=call fclib_math_fib.bat!
 		if %%a == odd[] set printString=!printString:odd[]=call fclib_math_odd.bat!
 		if %%a == even[] set printString=!printString:even[]=call fclib_math_even.bat!
 		if %%a == pow[] set printString=!printString:pow[]=call fclib_math_pow.bat!
 		if %%a == abs[] set printString=!printString:abs[]=call fclib_math_abs.bat!
-		if %%a == max[] set printString=!printString:max[]=call fclib_arrayfunc_max.bat!
-		if %%a == min[] set printString=!printString:min[]=call fclib_arrayfunc_min.bat!
-		if %%a == sum[] set printString=!printString:sum[]= call fclib_arrayfunc_sum.bat!
+		if %%a == max[] set printString=!printString:max[]=call fclib_list_max.bat!
+		if %%a == min[] set printString=!printString:min[]=call fclib_list_min.bat!
+		if %%a == sum[] set printString=!printString:sum[]=call fclib_list_sum.bat!
+		if %%a == arr_max[] set printString=!printString:arr_max[]=call fclib_array_max.bat!
+		if %%a == arr_min[] set printString=!printString:arr_min[]=call fclib_array_min.bat!
+		if %%a == arr_sum[] set printString=!printString:arr_sum[]=call fclib_array_sum.bat!
+		if %%a == arr_length[] set printString=!printString:arr_length[]=call fclib_array_len.bat!
 		if %%a == insert[] (
 			type !printString:insert[] =!>>%a%.bat
 			set deniedToken=true
@@ -454,6 +455,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == fndstr[] set printString=!printString:ndfstr[]=findstr!
 		if %%a == fnd[] set printString=!printString:fnd[]=find!
 		if %%a == ps[] set printString=!printString:ps[]=powershell!
+		if %%a == enb_delay[] set printString=!printString:enb_delay[]=setlocal enabledelayedexpansion!
 	)
 	if "!procadd!" == "true" (
 		if !procval! == 0 (

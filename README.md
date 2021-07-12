@@ -17,11 +17,17 @@ FreakC is a transpiled multi-paradigm scripting language that... has nothing to 
 <a href="https://discord.gg/8PjqmzVFer">Proceed to Discord...</a>
 
 ## Why FreakC ?
-If you're familiar with Batch, you are probably having a hard day doing stuffs, but FreakC fixes some problems that Batch has, and:
+FreakC's just an experimental language at this stage and the performance is not that great, so it can be suitable for scripting and console-based applications. I usually fire up  FreakC to solve some small coding problems, or create a build/config file for my other projects. 
+
+Furthermore, you can use the FreakC's source code to create your own programming language with ease, as FreakC is really short and there're not much complicated algorithms.
+
+Also, if you're familiar with Batch, you are probably having a hard day doing stuffs, but FreakC fixes some problems that Batch has, and:
 
 * Many prebuilt standard libraries to make scripting easier.
 * Compatibility with Batch (You can embed Batch codes in FreakC).
 * Easy to use
+
+FreakC's not created to be revolutionary or game-changing or anything like that, it's just created as a fun project by a high school student :) to make scripting easy, to upgrade Batch a little bit and to help people create their own language from FreakC's really simple source code.
 
 ### Language preview
 Hello World:

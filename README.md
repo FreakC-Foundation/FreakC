@@ -19,7 +19,7 @@ FreakC is a transpiled multi-paradigm scripting language that... has nothing to 
 ## Why FreakC ?
 FreakC's just an experimental language at this stage and the performance is not that great, so it can be suitable for scripting and console-based applications. I usually fire up  FreakC to solve some small coding problems, or create a build/config file for my other projects. 
 
-Furthermore, you can use the FreakC's source code to create your own programming language with ease, as FreakC is really short and there're not much complicated algorithms.
+Furthermore, you can use the FreakC's source code to create your own programming language with ease, as FreakC is really short and there're not much complicated algorithms. Also, because it was built with Batch, you don't have to download any dependencies, any complicated build tools, you can just clone the repo and everything's already up and running!
 
 Also, if you're familiar with Batch, you are probably having a hard day doing stuffs, but FreakC fixes some problems that Batch has, and:
 

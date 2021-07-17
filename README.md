@@ -64,11 +64,14 @@ To check out more samples, click <a href=https://github.com/FreakC-Foundation/Fr
 ## Frameworks
 Note that all Batch frameworks can integrate well with FreakC, so you can use them just like in Batch smoothly. There are some in the **Utilities** folder (on Github repo only, not included in the release) (which I don't own).
 
-### Cool frameworks/libraries
+### Official FreakC's frameworks
+* <a href="https://github.com/FreakC-Foundation/discord.fclang">discord.fclang</a> - A library for creating discord bots
+
+### Cool Batch frameworks/libraries
 * <a href="https://github.com/timlg07/Number.cmd">Number.cmd</a> - A library for handling floats
 * <a href="https://github.com/mininmobile/discord.bat">Discord.bat</a> - A library for creating discord bots
 
-### Game frameworks
+### Batch game frameworks
 There are many existing game engines for Batch/FreakC:
 
 * <a href="https://github.com/Berry2460/cmd-berryengine">Berry</a>

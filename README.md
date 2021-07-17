@@ -8,13 +8,13 @@
   <a href="https://github.com/FreakC-Foundation/FreakC/search?l=batchfile"><img alt="language" src="https://img.shields.io/badge/language-Batchfile-purple.svg"></a>
   <a href="https://github.com/FreakC-Foundation/FreakC/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/FreakC-Foundation/FreakC?color=gold"></a>
   <a href="https://github.com/FreakC-Foundation/FreakC/blob/master/.github/CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"></a>
-  <a href="https://discord.gg/8PjqmzVFer"><img src="https://img.shields.io/discord/845855288245878784.svg"/></a>
+  <a href="https://discord.gg/eNwqK4APsD"><img src="https://img.shields.io/discord/845855288245878784.svg"/></a>
   <img alt="Windows" src="https://img.shields.io/static/v1?label=&message=Windows&color=0078D6&logo=Windows">
 </div>
 
 ## What is FreakC ?
 FreakC is a transpiled multi-paradigm scripting language that... has nothing to do with the C programming language. It is very similar to Batch, it is written in Batch, and it is transpiled to Batch.
-<a href="https://discord.gg/8PjqmzVFer">Proceed to Discord...</a>
+<a href="https://discord.gg/eNwqK4APsD">Proceed to Discord...</a>
 
 ## Why FreakC ?
 FreakC's just an experimental language at this stage and the performance is not that great, so it can be suitable for scripting and console-based applications. I usually fire up  FreakC to solve some small coding problems, or create a build/config file for my other projects. 
@@ -84,7 +84,7 @@ If you like FreakC, it would be great if you leave a star here ❤️.
 ## Social medias
 * <a href="https://npmgames.itch.io/freakc">Itch.io</a>
 * <a href="https://www.facebook.com/FreakC-Programming-Language-111425377421861">Facebook</a>
-* <a href="https://discord.gg/8PjqmzVFer">Discord</a>
+* <a href="https://discord.gg/eNwqK4APsD">Discord</a>
 * <a href="https://dev.to/freakcdev297/freakc-the-esolang-that-can-do-stuffs-3f9c">Dev.to</a>
 * <a href="https://freakc-foundation.github.io/">Offical Website</a>
 

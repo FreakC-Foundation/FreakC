@@ -91,6 +91,8 @@ The command is compiled to `echo.`, if you just want to use the traditional `ech
 
 	uprint[] string
 
+It's worth noticing that `print[]` might not work well with delayed expansion, but `uprint[]` does, so try using `uprint[]` if your program starts going weird
+
 ## Store data 
 You can actually store data to a file by using:
 
@@ -444,7 +446,7 @@ This code would still work eventhough it contains special character
 	label[] dsasd$ 123213 323
 	goto[] dsasd$ 123213 323
 
-## Better call statement
+## Another call statement
 You can replace
 
 	call[] function_name "arg1" "arg2"
@@ -457,7 +459,7 @@ There's also one for calling labels:
 
 	label_name[::] "arg1" "arg2"
 	
-The feature's still in Beta, if stuffs don't work, or there's a duplicated "[..]" in your code's content that supposed to work, just change it to "[.^.]" and problems fixed :)
+The feature's still in Beta, it is still a better idea using `call[]`.
 	
 # Procedural programming
 

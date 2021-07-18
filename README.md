@@ -13,7 +13,7 @@
 </div>
 
 ## What is FreakC ?
-FreakC is a transpiled multi-paradigm scripting language that... has nothing to do with the C programming language. It is very similar to Batch, it is written in Batch, and it is transpiled to Batch.
+FreakC is a transpiled multi-paradigm scripting language that... has nothing to do with the C programming language. It is a superset of Batch, it is written in Batch, and it is transpiled to Batch.
 <a href="https://discord.gg/eNwqK4APsD">Proceed to Discord...</a>
 
 ## Why FreakC ?

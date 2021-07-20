@@ -13,8 +13,9 @@
 </div>
 
 ## What is FreakC ?
-FreakC is a transpiled multi-paradigm scripting language that... has nothing to do with the C programming language. It is a superset of Batch, it is written in Batch, and it is transpiled to Batch.
-<a href="https://discord.gg/eNwqK4APsD">Proceed to Discord...</a>
+FreakC is a transpiled multi-paradigm scripting language that... has nothing to do with the C programming language. It is a superset of Batch, it is written in Batch, and it is transpiled to Batch. If you're wondering why the language is tagged "esolang" and "esoteric-language", it's because this language used to be an esolang, but it started getting to much features that it shouldn't just be an esolang anymore, it should be used for everyday's scripting 😃. <a href="https://discord.gg/eNwqK4APsD">Proceed to Discord...</a>
+
+[The original version](https://github.com/FreakC-Foundation/Old-FreakC)
 
 ## Why FreakC ?
 FreakC's just an experimental language at this stage and the performance is not that great, so it can be suitable for scripting and console-based applications. I usually fire up  FreakC to solve some small coding problems, or create a build/config file for my other projects. 

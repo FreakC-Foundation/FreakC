@@ -416,7 +416,7 @@ Or:
 
 	lcall[] label_name
 
-call[] can also targets file, while lcall[] can only targets label/function. For example, you can execute files like this:
+call[] can also targets file, while lcall[] can only targets label. For example, you can execute files like this:
 
 	call[] file_name
 
@@ -446,7 +446,7 @@ This code would still work eventhough it contains special character
 	label[] dsasd$ 123213 323
 	goto[] dsasd$ 123213 323
 
-## Another call statement
+## Shorter call statement
 You can replace
 
 	call[] function_name "arg1" "arg2"
@@ -459,9 +459,19 @@ There's also one for calling labels:
 
 	label_name[::] "arg1" "arg2"
 	
-The feature's still in Beta, it is still a better idea using `call[]`.
-	
 # Function
+## Function definition using `label[]`
+
+	label[] function_name
+		:: code
+	end[]
+	
+	:: Calling the function
+	lcall[] function_name
+	:: function_name[::]
+
+## Define function by creating a new Batch file
+You can create a new file and call it manually, or you can use:
 
 	function[] function_name
 		:: Code goes here
@@ -478,8 +488,48 @@ Example:
 	endfunc[]
 	:: Prints "Hello"
 	call[] SayHello
+	:: SayHello[..]
 
-It actually just generates a new file, and you call that file like a function. So technically you can create a Batch output file using function[].
+The upper code creates a file called "SayHello.bat" and just calls it.
+
+For many cases, you should add:
+
+	end[]
+
+to properly exit the function.
+	
+### Differences
+By using `function[]`, you are actually creating a new Batch file, but by using `label[]`, it's just calling a label, so it grants more speed. But by using `label[]`, the function will be defined locally in that specific file, while `function[]` generates a whole new file, so it can be accessed by other files with the given path.
+
+For example, you have a `Main.fclang` file:
+
+	function[] SayHello
+		print[] Hello
+	endfunc[]
+
+and a folder named 'stuffs' at the same scope, with `stuffs.fclang` in it:
+
+	:: You can call "SayHello" like this:
+	call[] ../SayHello.bat
+	
+## Notes
+But overall, it would be **much** better to create and call a label, but if you want to communicate with other files or you want to create a Batch file and do not lose any performance compared to Batch (since creating a new file in Batch happens in runtime, while in FreakC it happens during compile time), then `function[]` is good for you.
+
+## Return statement
+Functions in FreakC are accessed through the call statement, so it's not an expression, so you can "return" a value by assigning value to selected variable.
+
+Example:
+
+	label[] sum
+		var[] %~1=%~2+%~3
+ 	end[]
+	
+	:: Variable "sum" will be granted the value "3"
+	lcall[] sum "result" "1" "2"
+	:: sum[::] "result" "1" "2"
+	
+	:: Prints out 3
+	print[] %result%
 
 # Object Oriented Programming
 You can implement OOP like this:
@@ -499,10 +549,10 @@ You can implement OOP like this:
 	:: Prints out "age" property of "Mary", which is "3"
 	print[] Age: %Mary.age%
 	:: Call "Mary.BeingCute", which prints out "*Being cute*"
-	Mary.BeingCute[..]
+	call[] Mary.BeingCute
 
 # If statements
-To use if statement, type:
+To use if statement, check this out:
 
 	if[] condition command_to_execute
 	
@@ -688,6 +738,9 @@ For example, this program will print all the number from 0 to 10 then print out 
 	label[] nextcode
 	print[] Done^!
 
+## Notes
+- Using a goto statement will cause all for loops to stop, and because while loops require goto statement, for loop, while loop, and goto statements can not interact with each others safely, so you should probably only stick with for loop when you have many nested loops.
+- You can break through all the loop using "end[]"
 
 # Import pre-built libraries
 To import a pre-built library, use:
@@ -821,45 +874,6 @@ It's just like nul in Batch, so if you want to make your console not print out a
 To hide errors, you can do this:
 
 	Command >nul 2>nul
-
-# Creating and Inserting modules
-You can create a module file using:
-
-	deny[]
-
-Note: The "deny[]" command needs to stay at the top of the file.
-
-Then, include it in the main file using:
-
-	insert[] module_name.bat
-	::Note: You have to replace .fclang with .bat
-
-Then, compile the module file first, then compile the main file at the end.
-
-### Example:
-Create a file called "module.fclang" with:
-
-	deny[]
-	print[] World
-
-Create a file called "program.fclang" with:
-
-	print[] Hello
-	insert[] module.bat
-
-In the command window, type:
-
-	freakc module --compile
-	freakc program
-
-It will prints out:
-
-	Hello
-	World
-
-If you are a C++ dev, this would be an equivalent to "#include".
-
-A demo can be found <a href="https://github.com/FreakC-Foundation/FreakC/tree/master/Examples/Module">here.</a>
 
 # Find strings in a file 
 fnd[]:

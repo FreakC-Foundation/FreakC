@@ -461,7 +461,7 @@ There's also one for calling labels:
 	
 The feature's still in Beta, it is still a better idea using `call[]`.
 	
-# Procedural programming
+# Function
 
 	function[] function_name
 		:: Code goes here

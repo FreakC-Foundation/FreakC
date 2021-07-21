@@ -1,4 +1,0 @@
-Cancer[fnc]
-PoopString[fnc] %~1.age=%~2
-PoopString[fnc] %~1.weight=%~3
-Die[fnc] /b

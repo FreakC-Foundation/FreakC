@@ -463,15 +463,14 @@ There's also one for calling labels:
 ## Function definition using `label[]`
 
 	:: main code goes here
+	:: Calling the function
+	lcall[] function_name
+	:: function_name[::]
 	end[]
 	
 	label[] function_name
 		:: function's code goes here
 	end[]
-	
-	:: Calling the function
-	lcall[] function_name
-	:: function_name[::]
 
 ## Define function by creating a new Batch file
 You can create a new file and call it manually, or you can use:

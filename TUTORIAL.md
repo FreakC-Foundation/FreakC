@@ -462,15 +462,18 @@ There's also one for calling labels:
 # Function
 ## Function definition using `label[]`
 
+	:: main code goes here
+	end[]
+	
 	label[] function_name
-		:: code
+		:: function's code goes here
 	end[]
 	
 	:: Calling the function
 	lcall[] function_name
 	:: function_name[::]
 
-## Define function by creating a new Batch file (better way)
+## Define function by creating a new Batch file
 You can create a new file and call it manually, or you can use:
 
 	function[] function_name
@@ -511,8 +514,8 @@ and a folder named 'stuffs' at the same scope, with `stuffs.fclang` in it:
 
 	:: You can call "SayHello" like this:
 	call[] ../SayHello.bat
-	
-Also, `function[]` is much more stable compared to `label[]` so I'd recommend using `function[]`.
+
+`function[]` is slightly slower than `label[]`, since it's calling a file. But if you're working with files, `function[]` is probably more suitable since it's creating new Batch files.
 
 ## Return statement
 Functions in FreakC are accessed through the call statement, so it's not an expression, so you can "return" a value by assigning value to selected variable.

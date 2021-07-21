@@ -37,11 +37,11 @@ Hello World:
 
 Function definition
 
-    function[] SayHello
+    label[] SayHello
         print[] Hello
-    endfunc[]
+    end[]
     :: Prints "Hello"
-    SayHello[..]
+    SayHello[::]
     
 To check out more samples, click <a href=https://github.com/FreakC-Foundation/FreakC/tree/master/Examples>here.</a>
 

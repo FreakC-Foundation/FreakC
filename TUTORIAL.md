@@ -470,7 +470,7 @@ There's also one for calling labels:
 	lcall[] function_name
 	:: function_name[::]
 
-## Define function by creating a new Batch file
+## Define function by creating a new Batch file (better way)
 You can create a new file and call it manually, or you can use:
 
 	function[] function_name
@@ -492,7 +492,7 @@ Example:
 
 The upper code creates a file called "SayHello.bat" and just calls it.
 
-For many cases, you should add:
+For some cases, you should add:
 
 	end[]
 
@@ -512,24 +512,32 @@ and a folder named 'stuffs' at the same scope, with `stuffs.fclang` in it:
 	:: You can call "SayHello" like this:
 	call[] ../SayHello.bat
 	
-## Notes
-But overall, it would be **much** better to create and call a label, but if you want to communicate with other files or you want to create a Batch file and do not lose any performance compared to Batch (since creating a new file in Batch happens in runtime, while in FreakC it happens during compile time), then `function[]` is good for you.
+Also, `function[]` is much more stable compared to `label[]` so I'd recommend using `function[]`.
 
 ## Return statement
 Functions in FreakC are accessed through the call statement, so it's not an expression, so you can "return" a value by assigning value to selected variable.
 
 Example:
 
-	label[] sum
+	function[] sum
 		eq[] %~1=%~2+%~3
- 	end[]
+ 	endfunc[]
 	
 	:: Variable "sum" will be granted the value "3"
-	lcall[] sum "result" "1" "2"
-	:: sum[::] "result" "1" "2"
+	call[] sum "result" "1" "2"
+	:: sum[..] "result" "1" "2"
 	
 	:: Prints out 3
 	print[] %result%
+	
+## Recursion
+You can implement recursion by simply calling the function inside of it. For example, this is a program which will prints a string for "n" times:
+
+	function[] printLoop
+		print[] %~1
+		eq[] n=%~2-1
+		call printLoop "%~1" "%n%"
+	endfunc[]
 
 # Object Oriented Programming
 You can implement OOP like this:

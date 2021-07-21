@@ -82,6 +82,7 @@ if "%fccreate%" == "true" (
 set fccomment=false
 set wloopnum=0
 set wloopnum2=0
+set sth=123
 echo @echo off>%a%.bat
 echo :FreakCCompiled>>%a%.bat
 for /f "tokens=* delims= " %%x in (%a%.fclang) do (
@@ -89,8 +90,14 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 	set printString=%%x
 	for %%a in (%%x) do (
 		set ch=%%a
-		if "!ch:~-4!" == "[..]" set printString=call !printString:[..]=!
-		if "!ch:~-4!" == "[::]" set printString=call :!printString:[::]=!
+		if "!ch:~-4!" == "[..]" (
+			set ch=!ch:[..]=!
+			for %%i in (!ch!) do set printString=!printString:%%a=call %%i!
+		)
+		if "!ch:~-4!" == "[::]" (
+			set ch=!ch:[::]=!
+			for %%i in (!ch!) do set printString=!printString:%%a=call :%%i!
+		)
 		if "%%a" == "c[]" (
 			set fccomment=true
 			set printString=!printString:c[]=!
@@ -107,6 +114,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			)
 			set deniedToken=true
 		)
+		if %%a == end[] set printString=!printString:end[]=exit /b 0!
 		if %%a == import[] (
 			set lib=!printString:import[] =!
 			if "!lib!" == "float" (
@@ -328,10 +336,6 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == arr_min[] set printString=!printString:arr_min[]=call fclib_array_min.bat!
 		if %%a == arr_sum[] set printString=!printString:arr_sum[]=call fclib_array_sum.bat!
 		if %%a == arr_length[] set printString=!printString:arr_length[]=call fclib_array_len.bat!
-		if %%a == insert[] (
-			type !printString:insert[] =!>>%a%.bat
-			set deniedToken=true
-		)
 		if %%a == deny[] (
 			echo.>%a%.bat
 			set deniedToken=true

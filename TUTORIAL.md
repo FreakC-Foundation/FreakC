@@ -514,7 +514,7 @@ and a folder named 'stuffs' at the same scope, with `stuffs.fclang` in it:
 	:: You can call "SayHello" like this:
 	call[] ../SayHello.bat
 
-`function[]` is slightly slower than `label[]`, since it's calling a file. But if you're working with files, `function[]` is probably more suitable since it's creating new Batch files.
+Both ways are fine, `label[]`'s speed is bad when the main file's too large, `function[]`'s speed is bad when the user's drive has a lot of latency.
 
 ## Return statement
 Functions in FreakC are accessed through the call statement, so it's not an expression, so you can "return" a value by assigning value to selected variable.

@@ -521,7 +521,7 @@ Functions in FreakC are accessed through the call statement, so it's not an expr
 Example:
 
 	label[] sum
-		var[] %~1=%~2+%~3
+		eq[] %~1=%~2+%~3
  	end[]
 	
 	:: Variable "sum" will be granted the value "3"

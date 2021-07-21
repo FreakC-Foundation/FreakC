@@ -421,7 +421,7 @@ call[] can also targets file, while lcall[] can only targets label. For example,
 	call[] file_name
 
 ### Differences between goto[] and call[]
-goto[] jumps to a function and will not execute the previous code while call[] use code from the function but still execute the previous code.
+goto[] jumps to a label and will not execute the previous code while call[] use code from the label but still execute the previous code.
 
 Also, goto[] also supports parameters, which helps you a lot of time.
 
@@ -487,7 +487,7 @@ Example:
 		:: Using the arguments
 		print[] %~1
 		:: Safely exit the function
-		quit[] /b
+		:: end[]
 	endfunc[]
 	:: Prints "Hello"
 	call[] SayHello
@@ -499,8 +499,8 @@ For some cases, you should add:
 
 	end[]
 
-to properly exit the function.
-	
+to properly exit the function. But technically, the function should works fine most of the time with out `end[]`.
+
 ### Differences
 By using `function[]`, you are actually creating a new Batch file, but by using `label[]`, it's just calling a label, so it grants more speed. But by using `label[]`, the function will be defined locally in that specific file, while `function[]` generates a whole new file, so it can be accessed by other files with the given path.
 

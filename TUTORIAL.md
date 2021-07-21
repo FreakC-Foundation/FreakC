@@ -500,7 +500,7 @@ For some cases, you should add:
 
 to properly exit the function. But technically, the function should works fine most of the time with out `end[]`.
 
-### Differences
+## Differences between labels and files
 By using `function[]`, you are actually creating a new Batch file, but by using `label[]`, it's just calling a label, so it grants more speed. But by using `label[]`, the function will be defined locally in that specific file, while `function[]` generates a whole new file, so it can be accessed by other files with the given path.
 
 For example, you have a `Main.fclang` file:
@@ -514,7 +514,7 @@ and a folder named 'stuffs' at the same scope, with `stuffs.fclang` in it:
 	:: You can call "SayHello" like this:
 	call[] ../SayHello.bat
 
-Both ways are fine, `label[]`'s speed is bad when the main file's too large, `function[]`'s speed is bad when the user's drive has a lot of latency.
+Both ways are fine, `label[]`'s speed is bad when the main file's too large, `function[]`'s speed is bad when the user's drive has a lot of latency. If you want your code to be more structured, you should probably go with labels, but FreakC's mainly used for scripting, not something too big so both, again, are fine.
 
 ## Return statement
 Functions in FreakC are accessed through the call statement, so it's not an expression, so you can "return" a value by assigning value to selected variable.

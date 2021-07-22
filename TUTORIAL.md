@@ -752,6 +752,18 @@ For example, this program will print all the number from 0 to 10 then print out 
 - Using a goto statement will cause all for loops to stop, and because while loops require goto statement, for loop, while loop, and goto statements can not interact with each others safely, so you should probably only stick with for loop when you have many nested loops.
 - You can break through all the loop using "end[]"
 
+# Modules and include
+Create a module:
+
+	deny[]
+	:: code goes here
+
+Include the compiled content of the module:
+
+	include[] file_with_no_fclang_extension
+
+`include[]` gives you the same effect you would get from `#include` from C/C++, but there're some differences. #include takes the code of the other file and put it in the main file and then the main file is compiled, while include[] compiles the other file first and then take that compiled codes and put it in the compiled main file.
+
 # Import pre-built libraries
 To import a pre-built library, use:
 

@@ -27,6 +27,7 @@ Also, if you're familiar with Batch, you are probably having a hard day doing st
 * Many prebuilt standard libraries to make scripting easier.
 * Compatibility with Batch (You can embed Batch codes in FreakC).
 * Easy to use
+* Some modern functionalities
 
 FreakC's not created to be revolutionary or game-changing or anything like that, it's just created as a fun project by a high school student :) to make scripting easy, to upgrade Batch a little bit and to help people create their own language from FreakC's really simple source code.
 

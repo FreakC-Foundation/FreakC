@@ -114,6 +114,14 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			)
 			set deniedToken=true
 		)
+		if %%a == include[] (
+			set targetFile=!printString:include[] =!
+			if exist !targetFile!.fclang (
+				call createFile.bat "!targetFile!"
+				type !targetFile!.bat>>%a%.bat
+			)
+			set deniedToken=true
+		)
 		if %%a == end[] set printString=!printString:end[]=exit /b 0!
 		if %%a == import[] (
 			set lib=!printString:import[] =!
@@ -480,5 +488,5 @@ if "%fcread%" == "true" type %a%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 0.3.1
+echo FreakC DevKit Version 0.4.0
 exit /b

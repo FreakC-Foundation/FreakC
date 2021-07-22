@@ -12,13 +12,13 @@
   <array>
     <dict>
       <key>match</key>
-      <string>function|endfunc|uprint|print|if_not_el|if_not_defined|if_not_exist|if_not|if_defined|if_exist|if_el|if|elif|EQU|LEQ|LSS|GEQ|GTR|NEQ|while|endwhile|repeat|until|\=\=|\+\+|\-\-|</string>
+      <string>function|endfunc|uprint|print|if_not_el|if_not_defined|if_not_exist|if_not|if_defined|if_exist|if_el|if|elif|EQU|LEQ|LSS|GEQ|GTR|NEQ|while|endwhile|repeat|until|\=\=|\+\+|\-\-|el\[\]</string>
       <key>name</key>
       <string>keyword.control</string>
     </dict>
     <dict>
       <key>match</key>
-      <string>import|eq|var|inp|label|float|define|goto|call|lcall|end</string>
+      <string>import|eq|var|inp|label|float|define|goto|call|lcall|end|deny</string>
       <key>name</key>
       <string>support.constant</string>
     </dict>

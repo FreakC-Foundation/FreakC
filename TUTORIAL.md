@@ -602,6 +602,14 @@ Example:
 		print[] abc is equal to 100
 	)
 	
+	:: With strings
+	var[] str=Hello
+	if[] "%str%" == "Hello" (
+		print[] Hello there
+	)
+
+It's actually a good practice to have the values in the comparison quoted.
+ 	
 You can actually use a Batch command in if[]. Example:
 
 	var[] abc=20
@@ -611,12 +619,24 @@ You can actually use a Batch command in if[]. Example:
 	
 ## All the comparison operators:
 * "==" - Equal
-* "EQU" - Equal
+* "EQU" - Equal/numeric equal
 * "NEQ" - Not equal
 * "LSS" - Less than
 * "LEQ" - Less than or equal
 * "GTE" - Greater than
 * "GEQ" - Greater than or equal
+
+## Ternary operator
+Note that this is not actually "ternary operator", but some thing close to it:
+
+	var[] variable_name=condition ?? "value1" -- "value2"
+
+Example:
+
+	var[] result=1 EQU 2 ?? "1 is equal to 2" -- "1 is not equal to 2"
+	print[] %result% :: Will print out "1 is not equal to 2"
+
+**It will not work if you have "--" in one of two values, will fix this soon 😢.**
 
 ## Other kinds or if statements:
 

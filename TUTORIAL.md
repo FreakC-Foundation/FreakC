@@ -82,7 +82,7 @@ You can type in whatever you want, it will be stored in "tar.fclang". You can ty
 * wipe[] - Resets codes
 * clr[] - Clear console
 
-# Print text=
+# Print text
 To print out a string or text, you can do it like this:
 
 	print[] string
@@ -97,6 +97,15 @@ It's worth noticing that `print[]` might not work well with delayed expansion, b
 You can actually store data to a file by using:
 
 	print[] data>>file
+	
+	:: Overwrite:
+	print[] data>file
+	
+	:: Multi-line
+	(
+	print[] data1
+	print[] data2
+	)>file_name
 
 # Special characters
 Unlike any characters, "!" requires "^", for example:
@@ -174,6 +183,17 @@ To declare a variable from user's input, try:
 Note: If you do this, it will prints out "Enter name:" right next to the input
 
 	inp[] variable_name=Enter name:
+
+To read data from a file:
+
+	inp[] variable_name=<file_name
+
+Multi-line:
+
+	<file_name (
+	inp[] var1=
+	inp[] var2=
+	)
 
 ### Maths 
 You can do Math equations with FreakC like this:

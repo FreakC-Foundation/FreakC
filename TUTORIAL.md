@@ -536,7 +536,14 @@ and a folder named 'stuffs' at the same scope, with `stuffs.fclang` in it:
 
 Both ways are fine, `label[]`'s speed is bad when the main file's too large, `function[]`'s speed is bad when the user's drive has a lot of latency. If you want your code to be more structured, you should probably go with labels, but FreakC's mainly used for scripting, not something too big so both, again, are fine.
 
-But note that with labels, it's a good practice to add "local[]", but with `function[]` it's not really necessary, since you're calling a file.
+Note that with both labels and `function[]`(files), you should use `local[]` and `endloc[]` to define the variables locally, So you can do something like this:
+
+	function[] hello
+		local[]
+		var[] sth=hello
+		:: End local environment and return a value
+		endloc[] & var[] %~1=%sth%
+	endfunc[]
 
 ## Return statement
 Functions in FreakC are accessed through the call statement, so it's not an expression, so you can "return" a value by assigning value to selected variable.

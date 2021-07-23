@@ -413,7 +413,37 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == logoff[] set printString=!printString:logoff[]=SHUTDOWN /l!
 		if %%a == hibernate_shutdown[] set printString=!printString:hibernate_shutdown[]=SHUTDOWN /h!
 		if %%a == float[] set printString=!printString:float[]=call fclib_float.bat!
-		if %%a == var[] set printString=!printString:var[]=set!
+		if %%a == var[] (
+			set printString=!printString:var[]=set!
+			if not "!printString:??=!" == "!printString!" (
+				if not "!printString:--=!" == "!printString!" (
+					if "!procadd!" == "true" (
+						set outtar=!proctar!.bat
+					) else (
+						set outtar=%a%.bat
+					)
+					set process=!printString:var[] =!
+					for /f "tokens=1 delims==" %%k in ("!process!") do set varname=%%k
+					for /f "tokens=2 delims==" %%k in ("!process!") do (
+						for /f "tokens=1 delims=??" %%i in ("%%k") do set cond=%%i
+						for /f "tokens=2 delims=??" %%i in ("%%k") do (
+							for /f "tokens=1 delims=--" %%j in ("%%i") do for %%l in (%%j) do set value1=%%l
+							for /f "tokens=2 delims=--" %%j in ("%%i") do for %%l in (%%j) do set value2=%%l
+						)
+					)
+					set value1=!value1:~1,-1!
+					set value2=!value2:~1,-1!
+					(
+					echo if !cond! (
+					echo 	!varname!=!value1!
+					echo ^) else (
+					echo 	!varname!=!value2!
+					echo ^)
+					)>>!outtar!
+				)
+				set deniedToken=true
+			)
+		)
 		if %%a == inp[] set printString=!printString:inp[]=set /p!
 		if %%a == goto[] set printString=!printString:goto[]=goto!
 		if %%a == call[] set printString=!printString:call[]=call!
@@ -488,5 +518,5 @@ if "%fcread%" == "true" type %a%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 0.4.0
+echo FreakC DevKit Version 0.5.0
 exit /b

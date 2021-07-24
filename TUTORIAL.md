@@ -641,17 +641,15 @@ You can actually use a Batch command in if[]. Example:
 * "GTE" - Greater than
 * "GEQ" - Greater than or equal
 
-## Ternary operator
-Note that this is not actually "ternary operator", but some thing close to it:
+## Conditional expression
+There are no actual "conditional expression" in FreakC, but here's something close to a "ternary operator":
 
-	var[] variable_name=condition ?? "value1" -- "value2"
+	cnd[] var_name "condition" "value1" "value2"
 
 Example:
 
-	var[] result=1 EQU 2 ?? "1 is equal to 2" -- "1 is not equal to 2"
+	cnd[] result "1 EQU 2" "1 is equal to 2" "1 is not equal to 2"
 	print[] %result% :: Will print out "1 is not equal to 2"
-
-**The feature only works if both comparison values and return values don't contain "??" or "--".**
 
 ## Other kinds or if statements:
 

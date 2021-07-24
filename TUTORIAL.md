@@ -636,7 +636,7 @@ Example:
 	var[] result=1 EQU 2 ?? "1 is equal to 2" -- "1 is not equal to 2"
 	print[] %result% :: Will print out "1 is not equal to 2"
 
-**It will not work if you use `==`, or have `--` in one of two values, will fix this soon 😢. You can resolve the first problem using `EQU`**
+**It will not work if you use `==`, or have `--`, `??` in one of two values, will fix this soon 😢. You can resolve the first problem using `EQU`. For now, it's best to use it for numbers.**
 
 ## Other kinds or if statements:
 

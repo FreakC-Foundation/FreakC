@@ -423,21 +423,21 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 						set outtar=%a%.bat
 					)
 					set process=!printString:var[] =!
-					for /f "tokens=1 delims==" %%k in ("!process!") do set varname=%%k
-					for /f "tokens=2 delims==" %%k in ("!process!") do (
-						for /f "tokens=1 delims=??" %%i in ("%%k") do set cond=%%i
-						for /f "tokens=2 delims=??" %%i in ("%%k") do (
-							for /f "tokens=1 delims=--" %%j in ("%%i") do for %%l in (%%j) do set value1=%%l
-							for /f "tokens=2 delims=--" %%j in ("%%i") do for %%l in (%%j) do set value2=%%l
+					for /f "tokens=1-2 delims==" %%k in ("!process!") do (
+						set varname=%%k
+						for /f "tokens=1-2 delims=??" %%b in ("%%l") do (
+							set cond=%%b
+							for /f "tokens=1-2 delims=--" %%i in ("%%c") do (
+								for %%x in (%%i) do set value1=%%x
+								for %%x in (%%j) do set value2=%%x
+							)
 						)
 					)
-					set value1=!value1:~1,-1!
-					set value2=!value2:~1,-1!
 					(
 					echo if !cond! (
-					echo 	!varname!=!value1!
+					echo 	!varname!=!value1:~1,-1!
 					echo ^) else (
-					echo 	!varname!=!value2!
+					echo 	!varname!=!value2:~1,-1!
 					echo ^)
 					)>>!outtar!
 				)

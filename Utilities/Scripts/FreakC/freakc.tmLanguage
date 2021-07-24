@@ -18,7 +18,7 @@
     </dict>
     <dict>
       <key>match</key>
-      <string>import|eq|var|inp|label|float|define|goto|call|lcall|end|deny</string>
+      <string>import|eq|var|cnd|inp|label|float|define|goto|call|lcall|end|deny</string>
       <key>name</key>
       <string>support.constant</string>
     </dict>

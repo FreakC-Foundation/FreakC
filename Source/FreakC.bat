@@ -82,7 +82,6 @@ if "%fccreate%" == "true" (
 set fccomment=false
 set wloopnum=0
 set wloopnum2=0
-set sth=123
 echo @echo off>%a%.bat
 echo :FreakCCompiled>>%a%.bat
 for /f "tokens=* delims= " %%x in (%a%.fclang) do (
@@ -416,28 +415,39 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == var[] (
 			set printString=!printString:var[]=set!
 			if not "!printString:??=!" == "!printString!" (
+				if "!procadd!" == "true" (
+					set outtar=!proctar!.bat
+				) else (
+					set outtar=%a%.bat
+				)
 				if not "!printString:--=!" == "!printString!" (
-					if "!procadd!" == "true" (
-						set outtar=!proctar!.bat
-					) else (
-						set outtar=%a%.bat
-					)
-					set process=!printString:var[] =!
-					for /f "tokens=1-2 delims==" %%k in ("!process!") do (
-						set varname=%%k
-						for /f "tokens=1-2 delims=??" %%b in ("%%l") do (
-							set cond=%%b
-							for /f "tokens=1-2 delims=--" %%i in ("%%c") do (
-								for %%x in (%%i) do set value1=%%x
-								for %%x in (%%j) do set value2=%%x
+					set process=!printString!
+					set denied=false
+					call getLength "strlen" "!process!"
+					for /l %%i in (0,1,!strlen!) do (
+						if "!process:~%%i,1!" == "=" (
+							if !denied! == false (
+								set /a ind=%%i+1
+								for %%j in (!ind!) do (
+									set varname=!process:~0,%%j!
+									set value=!process:~%%j!
+									set denied=true
+								)
 							)
+						)
+					)
+					for /f "tokens=1-2 delims=??" %%b in ("!value!") do (
+						set cond=%%b
+						for /f "tokens=1-2 delims=--" %%i in ("%%c") do (
+							for %%x in (%%i) do set value1=%%x
+							for %%x in (%%j) do set value2=%%x
 						)
 					)
 					(
 					echo if !cond! (
-					echo 	!varname!=!value1:~1,-1!
+					echo 	!varname!!value1:~1,-1!
 					echo ^) else (
-					echo 	!varname!=!value2:~1,-1!
+					echo 	!varname!!value2:~1,-1!
 					echo ^)
 					)>>!outtar!
 				)

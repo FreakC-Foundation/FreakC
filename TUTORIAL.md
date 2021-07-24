@@ -651,7 +651,7 @@ Example:
 	var[] result=1 EQU 2 ?? "1 is equal to 2" -- "1 is not equal to 2"
 	print[] %result% :: Will print out "1 is not equal to 2"
 
-**The feature only works well with numeric values and numeric comparison at the moment, it might not work if you use it with strings. If you use it with strings, please assure that both the return values and the comparison values don't contain any special characters.**
+**The feature only works if both comparison values and return values don't contain "??" or "--".**
 
 ## Other kinds or if statements:
 

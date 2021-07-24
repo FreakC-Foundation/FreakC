@@ -514,6 +514,21 @@ Example:
 
 The upper code creates a file called "SayHello.bat" and just calls it.
 
+This also works:
+
+	(
+	print[] print[] Hello
+	print[] :: Using the arguments
+	print[] print[] %~1
+	print[] :: Safely exit the function
+	print[] :: end[]
+	)>SayHello.bat
+	:: Prints "Hello"
+	call[] SayHello
+	:: SayHello[..]
+
+So what's the difference? `function[]` is processed in compile time, but storing into the file manually is executed during runtime, so it's much faster and more convenient to just use `function[]`.
+
 For some cases, you should add:
 
 	end[]

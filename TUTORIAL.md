@@ -813,8 +813,7 @@ For example, this program will print all the number from 0 to 10 then print out 
 	print[] Done^!
 
 ## Notes
-- Using a goto statement will cause all for loops to stop, and because while loops require goto statement, for loop, while loop, and goto statements can not interact with each others safely, so you should probably only stick with for loop when you have many nested loops.
-- You can break through all the loop using "end[]"
+- Using a goto statement will cause all for loops to stop, and because while loops require goto statement, for loop, while loop, and goto statements can not interact with each others safely, however, there's a simple way to solve this. If you put the while loops or goto statements inside a file (or a `function[]`), and you call that file inside the for loop, then it would work normally.
 
 # Modules and include
 Create a module:

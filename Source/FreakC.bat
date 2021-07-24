@@ -18,6 +18,7 @@ if "%1" == "" (
 	pause >nul
 	exit /b
 )
+set constlist=
 set proctar=java
 if "%1" == "--help" (
 	echo. Usage: freakc {option/name} {option}
@@ -412,47 +413,30 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == logoff[] set printString=!printString:logoff[]=SHUTDOWN /l!
 		if %%a == hibernate_shutdown[] set printString=!printString:hibernate_shutdown[]=SHUTDOWN /h!
 		if %%a == float[] set printString=!printString:float[]=call fclib_float.bat!
-		if %%a == var[] (
-			set printString=!printString:var[]=set!
-			if not "!printString:??=!" == "!printString!" (
-				if "!procadd!" == "true" (
-					set outtar=!proctar!.bat
-				) else (
-					set outtar=%a%.bat
-				)
-				if not "!printString:--=!" == "!printString!" (
-					set process=!printString!
-					set denied=false
-					call getLength "strlen" "!process!"
-					for /l %%i in (0,1,!strlen!) do (
-						if "!process:~%%i,1!" == "=" (
-							if !denied! == false (
-								set /a ind=%%i+1
-								for %%j in (!ind!) do (
-									set varname=!process:~0,%%j!
-									set value=!process:~%%j!
-									set denied=true
-								)
-							)
-						)
-					)
-					for /f "tokens=1-2 delims=??" %%b in ("!value!") do (
-						set cond=%%b
-						for /f "tokens=1-2 delims=--" %%i in ("%%c") do (
-							for %%x in (%%i) do set value1=%%x
-							for %%x in (%%j) do set value2=%%x
-						)
-					)
-					(
-					echo if !cond! (
-					echo 	!varname!!value1:~1,-1!
-					echo ^) else (
-					echo 	!varname!!value2:~1,-1!
-					echo ^)
-					)>>!outtar!
-				)
-				set deniedToken=true
+		if %%a == var[] set printString=!printString:var[]=set!
+		if %%a == cnd[] (
+			if "!procadd!" == "true" (
+				set outtar=!proctar!.bat
+			) else (
+				set outtar=%a%.bat
 			)
+			set process=!printString:cnd[] =!
+			set turn=0
+			set deniedToken=true
+			for %%i in (!process!) do (
+				if !turn! == 0 set varname=%%i
+				if !turn! == 1 set cond=%%i
+				if !turn! == 2 set v1=%%i
+				if !turn! == 3 set v2=%%i
+				set /a turn+=1
+			)
+			(
+			echo if !cond:~1,-1! (
+			echo 	set !varname!=!v1:~1,-1!
+			echo ^) else (
+			echo 	set !varname!=!v2:~1,-1!
+			echo ^)
+			)>!outtar!
 		)
 		if %%a == inp[] set printString=!printString:inp[]=set /p!
 		if %%a == goto[] set printString=!printString:goto[]=goto!
@@ -528,5 +512,5 @@ if "%fcread%" == "true" type %a%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 0.5.0
+echo FreakC DevKit Version 0.6.0
 exit /b

@@ -151,11 +151,41 @@ Or:
 
 	var[] "variable_name=string_value"
 
+Multi-line strings:
+
+	var[] multi_line_string=Line 1^
+	!
+	Line 2^
+	!
+	Line 3
+
+With normal Batch, you don't need the `!`, you just need a blank line. But with FreakC, the compiler skips through the new lines, so what it's doing is that it force the compiler to include that line (since that line still contain a character), and because `!` is skipped, it's an equivalent to an empty line.
+
+Note that indentation will break the codes 😢:
+
+	function[] something
+		var[] multi_line_string=Line 1^
+		!
+		Line 2^
+		!
+		Line 3
+	endfunc[]
+
+But this works:
+
+	function[] something
+		var[] multi_line_string=Line 1^
+	!
+	Line 2^
+	!
+	Line 3
+	endfunc[]
+
 To do math equations, do:
 
 	eq[] equation
 
-To store in a variable(which you should use and it's highly recommended):
+to store in a variable(which you should use and it's highly recommended):
 
 	eq[] variable_name=equation
 	
@@ -174,7 +204,7 @@ Ex:
 	var[] arr[0]=Hello
 	var[] arr[1]=100
 
-You should only make array start at 1, or else it might not work with prebuilt libraries.
+You should only make array start at 0, or else it might not work with prebuilt libraries.
 
 To declare a variable from user's input, try:
 

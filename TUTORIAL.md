@@ -304,9 +304,9 @@ To declare a variable locally, you will need to use:
 
 	local[] 
 	eq[] ans=100
-	CloseHouse[]
+	endloc[]
 	
-local[] and CloseHouse[] helps create a local environment.
+local[] and endloc[] helps create a local environment.
 
 In Batch, to use variable in for loops, or enables command prosessor's extensions, you would need:
 
@@ -336,7 +336,7 @@ But it doesn't work, because you'd need to use:
 
 Also, if you change a value/declare a variable in a block of code locally in a normal way, it'd often not work outside the scope, so you should use delayed expansion pretty much all the time.
 
-Notice that you're using local[], which makes all the values defined local, so remember to always add `CloseHouse[]` (mostly when creating a function) to ensure everything works fine, like a `return` statement for example.
+Notice that you're using local[], which makes all the values defined local, so remember to always add `endloc[]` (mostly when creating a function) to ensure everything works fine, like a `return` statement for example.
 
 An example of sorting an array:
 
@@ -359,11 +359,7 @@ An example of sorting an array:
 	loop[] %%i IN (1,1,%n%) DO print[] Element %%i: ^!arr[%%i]^!
 
 ### Special variables
-* %numpiss% - A variable with the value as random numbers from 1 to 9
-* %numpuke% - A variable with the value as random numbers from 1 to 99
-* %numpoop% - A variable with the value as random numbers from 1 to 999
-* %numdiarrhea% - A variable with the value as random numbers from 1 to 9999
-* %numbutt% - A variable with the value as random numbers from 1 to 99999
+* %random% - A variable with the value as random numbers from 1 to 99999
 * %time% - A variable with the value as the current timer
 * %date% - A variable with the value as the current date
 * %cd% - A variable with the value as the current directory

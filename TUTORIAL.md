@@ -767,7 +767,7 @@ to use if not.
 	
 ### Loops through files rooted in a folder
 
-	scan_dir drive/directory %%parameters in (file) do (
+	scan_dir[] drive/directory %%parameters in (file) do (
 	)
 	
 ### Loops through strings or strings in a file

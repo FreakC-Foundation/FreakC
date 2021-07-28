@@ -842,6 +842,49 @@ For example, this program will print all the number from 0 to 10 then print out 
 ## Notes
 - Using a goto statement will cause all for loops to stop, and because while loops require goto statement, for loop, while loop, and goto statements can not interact with each others safely, however, there's a simple way to solve this. If you put the while loops or goto statements inside a file (or a `function[]`), and you call that file inside the for loop, then it would work normally.
 
+# Escaping characters
+## Escaping special characters
+To escape characters like `&|><` and most other characters, you can use the caret character:
+
+	:: Prints out "&"
+	print[] ^&
+	:: Prints out "|"
+	print[] ^|
+
+### Escaping the caret character itself
+
+	print[] ^^
+
+## Escaping % and !
+With `%`, you can just double it up to escape it. Example:
+
+	:: Will print out "%LOL%"
+	print[] %%LOL%%
+
+If you use `!` not for variables, then one caret character will do the job:
+
+	:: Will print out "Hello!"
+	print[] Hello^!
+	
+With `!` for variables, you can add 5 caret characters:
+
+	:: Will print out "!Hello!"
+	var[] hello=hello freakc
+	print[] ^^^^^!hello^^^^^!
+
+## Escaping quotation marks
+If you pass in arguments for functions (or for loops) like this:
+
+	func_name[..] "Arg1" "Arg2" "Arg3 "  "
+
+then there would be errors.
+
+Instead, you must double the quotes:
+
+	func_name[..] "Arg1" "Arg2" "Arg3 ""  "
+
+Then just replace 2 quotes with one.
+
 # Modules and include
 Create a module:
 

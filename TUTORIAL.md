@@ -615,11 +615,40 @@ You can implement recursion by simply calling the function inside of it. For exa
 Both using labels and `function[]` are fairly slow, if you want to improve performance, just use a normal Batch macro since it's much faster.
 
 # Object Oriented Programming
-You can implement OOP like this:
+## Objects
+Note that there are no such things as "objects" in FreakC/Batch, but you can use the FreakC variable to gain the same effect as seen in other languages:
+
+	var[] dog.name=Mary
+	var[] dog.age=3
+	function[] dog.move
+		print[] *Moving*
+	endfunc[]
+	
+Or you may have it like this (technically you can do it however you want because of how FreakC's variables work):
+
+	var[] dog["name"]=Mary
+	var[] dog["age"]=3
+	function[] dog["move"]
+		print[] *Moving*
+	endfunc[]
+
+You can access the elements normally:
+
+	enb_delay[]
+	
+	print[] %dog.age%
+	
+	:: An example with getting an element from input
+	inp[] input=
+	print[] ^!dog.%input%^!
+	:: If the input is "name" then the output will be "Mary"
+
+## Classes
+You can implement a "class" like this:
 
 	:: Create a procedure called "Dog"
 	function[] Dog
-		::Set properties
+		::Set properties, implementing "this" as the first argurment passed (%~1)
 		var[] %~1.age=%~2
 		var[] %~1.weight=%~3
 		(
@@ -633,6 +662,8 @@ You can implement OOP like this:
 	print[] Age: %Mary.age%
 	:: Call "Mary.BeingCute", which prints out "*Being cute*"
 	call[] Mary.BeingCute
+	
+Keep it in mind that there have been many attempts implementing OOP in Batch, the upper one is just my way to do it.
 
 # If statements
 To use if statement, check this out:

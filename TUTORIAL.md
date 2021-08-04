@@ -93,7 +93,7 @@ The command is compiled to `echo.`, if you just want to use the traditional `ech
 
 It's worth noticing that `print[]` might not work well with delayed expansion, but `uprint[]` does, so try using `uprint[]` if your program starts going weird
 
-# Print Different Colored Text
+## Print Different Colored Text
 You can use multiple color on the same window sucha as white, black and yellow at the same time with the instruction `bcol[]`
 
   bcol[] col :code: string

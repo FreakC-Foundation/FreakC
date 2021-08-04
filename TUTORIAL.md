@@ -99,9 +99,18 @@ You can use multiple color on the same window sucha as white, black and yellow a
   bcol[] col :code: string
   bcol[] col :code: text
   bcol[] col :code: "text with space"
+  bcol[] scol :code: string
+  bcol[] scol :code: text
+  bcol[] scol :code: "text with space"
+  bcol[] bg :code: string
+  bcol[] bg :code: text
+  bcol[] bg :code: "text with space"
+  bcol[] sbg :code: string
+  bcol[] sbg :code: text
+  bcol[] sbg :code: "text with space"
 
-  :code: is a number
-  code for col:
+  :code: is a number or a word
+  code for col (foreground), scol (strong foreground), bg (background) and sbg (strong background):
     0 : black
 	1 : red
 	2 : green

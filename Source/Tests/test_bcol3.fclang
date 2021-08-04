@@ -1,0 +1,8 @@
+bcol[] col 3 "Test 0"
+bcol[] scol 3 "Test 1"
+bcol[] bg 3 "Test 2"
+bcol[] sbg 3 "Test 3"
+bcol[] col yellow "Test 0"
+bcol[] scol yellow "Test 1"
+bcol[] bg yellow "Test 2"
+bcol[] sbg yellow "Test 3"

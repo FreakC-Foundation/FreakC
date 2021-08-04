@@ -1212,6 +1212,8 @@ fndstr[]:
 
 	change_mode[] size_number
 	change_mode[] con cols=columns_or_width lines=lines_or_height
+	:: Shorter one
+	change_mode[] columns_or_width,lines_or_height
 	
 ### Rename a file
 

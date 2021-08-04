@@ -93,6 +93,24 @@ The command is compiled to `echo.`, if you just want to use the traditional `ech
 
 It's worth noticing that `print[]` might not work well with delayed expansion, but `uprint[]` does, so try using `uprint[]` if your program starts going weird
 
+# Print Different Colored Text
+You can use multiple color on the same window sucha as white, black and yellow at the same time with the instruction `bcol[]`
+
+  bcol[] col :code: string
+  bcol[] col :code: text
+  bcol[] col :code: "text with space"
+
+  :code: is a number
+  code for col:
+    0 : black
+	1 : red
+	2 : green
+	3 : yellow
+	4 : blue
+	5 : magenta
+	6 : cyan
+	7 : white
+
 ## Store data 
 You can actually store data to a file by using:
 

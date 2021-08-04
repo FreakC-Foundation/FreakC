@@ -344,6 +344,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == arr_min[] set printString=!printString:arr_min[]=call fclib_array_min.bat!
 		if %%a == arr_sum[] set printString=!printString:arr_sum[]=call fclib_array_sum.bat!
 		if %%a == arr_length[] set printString=!printString:arr_length[]=call fclib_array_len.bat!
+		if %%a == bcol[] set printString=!printString:bcol[]=call better_styles.bat!
 		if %%a == deny[] (
 			echo.>%a%.bat
 			set deniedToken=true

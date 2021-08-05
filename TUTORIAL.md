@@ -928,15 +928,13 @@ Include the compiled content of the module:
 
 `include[]` gives you the same effect you would get from `#include` from C/C++, but there're some differences. #include takes the code of the other file and put it in the main file and then the main file is compiled, while include[] compiles the other file first and then take that compiled codes and put it in the compiled main file.
 
-# Import pre-built libraries
-To import a pre-built library, use:
+# Pre-built libraries
+## Float
 
-	import[] lib_name
+	float[] "variable_name" "some_value"
 
-## Using list
+## List
 
-	import[] list
-	
 	:: Find sum of list of numbers, seperated by a space character.
 	sum[] "variable_name" "list"
 	
@@ -951,10 +949,8 @@ To import a pre-built library, use:
 	:: This will prints out "8"
 	print[] %max_num%
 
-## Using array
+## Array
 
-	import[] array
-	
 	:: Find sum of every elements in an array
 	arr_sum[] "variable_name" "array" "length"
 	
@@ -975,9 +971,7 @@ To import a pre-built library, use:
 ### Note
 All the functions above only works with list with all integers. String or floats will cause errors.
 	
-## Using math
-
-	import[] math
+## Math
 
 	:: Absolute
 	abs[] "variable_name" "number"
@@ -994,10 +988,8 @@ All the functions above only works with list with all integers. String or floats
 	:: Factorial
 	factorial[] "variable_name" "number"
 	
-## Using string
+## String
 
-	import[] string
-	
 	:: Length of string
 	string_length[] "variable_name" "string"
 	
@@ -1010,12 +1002,24 @@ All the functions above only works with list with all integers. String or floats
 	:: Reverse
 	string_reverse[] "variable_name" "string"
 	
-## Loading lib entirely with file
-Example:
+## Import keyword and generating methods
+From v0.6.1, `import[]` has been obsolete since commands can generate their own independent method files. But you can still use it if you want, it will generate a bunch of files even when you don't need them though:
 
-	:: Check if a number is odd
-	fclib_math_odd.bat[..] "variable_name" "number"
+	:: Will generate all method files for math
+	import[] math
 
+But I guess if you want to call files normally, you can use import for that:
+
+	import[] math
+	fclib_math_pow[..] "some_var" "some_value"
+
+But you can use `gen_lib_func[]` which is much cleaner, and only generates the needed method:
+
+	gen_lib_func[]
+	fclib_math_pow[..] "some_var" "some_value"
+
+But for real, why would you need to do that, just type in `pow[] "some_var" "some_value"`. It's shorter and it's basically the same thing.
+	
 # Command-line argument
 You can use %1, %2, %3,... for command-line args
 

@@ -184,6 +184,26 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			call libgen string lower
 			set printString=!printString:string_lower[]=call fclib_string_lower.bat!
 		)
+		if %%a == string_chr[] (
+			call libgen string chr
+			set printString=!printString:string_chr[]=call fclib_string_chr.bat!
+		)
+		if %%a == string_indexOf[] (
+			call libgen string indexOf
+			set printString=!printString:string_indexOf[]=call fclib_string_indexOf.bat!
+		)
+		if %%a == string_trim[] (
+			call libgen string trim
+			set printString=!printString:string_trim[]=call fclib_string_trim.bat!
+		)
+		if %%a == string_startswith[] (
+			call libgen string startwith
+			set printString=!printString:string_startswith[]=call fclib_string_startwith.bat!
+		)
+		if %%a == string_endswith[] (
+			call libgen string endwith
+			set printString=!printString:string_endswith[]=call fclib_string_endwith.bat!
+		)
 		if %%a == factorial[] (
 			call libgen math fact
 			set printString=!printString:factorial[]=call fclib_math_fact.bat!
@@ -228,9 +248,17 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			call libgen array sum
 			set printString=!printString:arr_sum[]=call fclib_array_sum.bat!
 		)
+		if %%a == arr_join[] (
+			call libgen array join
+			set printString=!printString:arr_join[]=call fclib_array_join.bat!
+		)
 		if %%a == arr_length[] (
 			call libgen array len
 			set printString=!printString:arr_length[]=call fclib_array_len.bat!
+		)
+		if %%a == arr_indexOf[] (
+			call libgen array indexOf
+			set printString=!printString:arr_indexOf[]=call fclib_array_indexOf.bat!
 		)
 		if %%a == deny[] (
 			echo.>%a%.bat
@@ -300,7 +328,10 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		)
 		if %%a == logoff[] set printString=!printString:logoff[]=SHUTDOWN /l!
 		if %%a == hibernate_shutdown[] set printString=!printString:hibernate_shutdown[]=SHUTDOWN /h!
-		if %%a == float[] set printString=!printString:float[]=call fclib_float.bat!
+		if %%a == float[] (
+			call libgen float float
+			set printString=!printString:float[]=call fclib_float.bat!
+		)
 		if %%a == var[] set printString=!printString:var[]=set!
 		if %%a == cnd[] (
 			if "!procadd!" == "true" (
@@ -380,6 +411,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == fnd[] set printString=!printString:fnd[]=find!
 		if %%a == ps[] set printString=!printString:ps[]=powershell!
 		if %%a == enb_delay[] set printString=!printString:enb_delay[]=setlocal enabledelayedexpansion!
+		if %%a == dis_delay[] set printString=!printString:enb_delay[]=setlocal disabledelayedexpansion!
 	)
 	if "!procadd!" == "true" (
 		if !procval! == 0 (

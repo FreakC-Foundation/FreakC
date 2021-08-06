@@ -17,7 +17,7 @@ exit /b 0
 echo set /a len=%%~3-1
 echo setlocal enabledelayedexpansion
 echo set min=^^!%%~2[0]^^!
-echo for %%%%i in (0,1,%%len%%^) do if ^^!%%~2[%%%%i]^^! LSS %%max%% set min=^^!%%~2[%%%%i]^^!
+echo for %%%%i in (0,1,%%len%%^) do if ^^!%%~2[%%%%i]^^! LSS %%min%% set min=^^!%%~2[%%%%i]^^!
 echo (endlocal ^& set %%~1=%%min%%^)
 )>fclib_array_min.bat
 exit /b 0
@@ -30,17 +30,41 @@ echo for %%%%i in (0,1,%%len%%^) do set /a sum+=^^!%%~2[%%%%i]^^!
 echo (endlocal ^& set %%~1=%%sum%%^)
 )>fclib_array_sum.bat
 exit /b 0
+:array_join
+(
+echo set /a len=%%~3-1
+echo setlocal enabledelayedexpansion
+echo for %%%%i in (0,1,%%len%%^) do set res=^^!res^^!^^!%%~2[%%%%i]^^!
+echo (endlocal ^& set %%~1=%%res%%^)
+)>fclib_array_join.bat
+exit /b 0
 :array_len
 (
 echo set res_len=0
 echo :loop
 echo if not defined %%~2[%%res_len%%] (
-echo	set %%~1=%%res_len%%
-echo	exit /b
+echo 	set %%~1=%%res_len%%
+echo 	exit /b
 echo ^)
 echo set /a res_len+=1
 echo goto :loop
 )>fclib_array_len.bat
+exit /b 0
+:array_indexOf
+(
+echo set res_len=0
+echo setlocal enabledelayedexpansion
+echo :loop
+echo if "^!%%~3[%%res_len%%]^!" == "%%~2" (
+echo 	endlocal ^& set %%~1=%%res_len%%
+echo 	exit /b
+echo ^) else if %%res_len%% GEQ %%~4 (
+echo 	endlocal ^& set %%~1=-1
+echo 	exit /b
+echo ^)
+echo set /a res_len+=1
+echo goto :loop
+)>fclib_array_indexOf.bat
 exit /b 0
 :math_abs
 (
@@ -172,6 +196,106 @@ echo for /l %%%%i in (%%strlen%%,-1,0^) do set newstr=^^!newstr^^!^^!str:^~%%%%i
 echo (endlocal ^& set %%~1=%%newstr%%^)
 )>fclib_string_reverse.bat
 exit /b 0
+:string_chr
+(
+echo if "%%~2"=="" exit /b
+echo if %%~2 LSS 32 exit /b
+echo if %%~2 GTR 126 exit /b
+echo set alphabet= ^^!"#$%%%%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
+echo setlocal enabledelayedexpansion
+echo set /a var=%%~2-32
+echo set char=^^!alphabet:~%%var%%,1^^!
+echo endlocal ^& set %%~1=^^%%char%%
+)>fclib_string_chr.bat
+exit /b 0
+:string_startwith
+(
+echo set str=%%~2
+echo call :length "len" "%%~3"
+echo setlocal enabledelayedexpansion
+echo if "^!str:~%%~4,%%len%%^!" == "%%~3" (
+echo 	(endlocal ^& set %%~1=true^)
+echo ^) else (
+echo 	(endlocal ^& set %%~1=false^)
+echo ^)
+echo exit /b
+echo :length
+echo setlocal enabledelayedexpansion
+echo set len=0
+echo set str=%%~2
+echo :loop
+echo if not "^!str:~%%len%%^!" == "" set /a len+=1 ^& goto loop
+echo (endlocal ^& set %%~1=%%len%%^)
+echo exit /b
+)>fclib_string_startwith.bat
+exit /b
+:string_endwith
+(
+echo set str=%%~2
+echo call :length "len" "%%~3"
+echo setlocal enabledelayedexpansion
+echo set str=^^!str:~0,19^^!
+echo if "^!str:~-%%len%%^!" == "%%~3" (
+echo 	(endlocal ^& set %%~1=true^)
+echo ^) else (
+echo 	(endlocal ^& set %%~1=false^)
+echo ^)
+echo exit /b
+echo :length
+echo setlocal enabledelayedexpansion
+echo set len=0
+echo set str=%%~2
+echo :loop
+echo if not "^!str:~%%len%%^!" == "" set /a len+=1 ^& goto loop
+echo (endlocal ^& set %%~1=%%len%%^)
+exit /b
+)>fclib_string_endwith.bat
+exit /b
+:string_indexOf
+(
+echo set res_len=0
+echo set str=%%~3
+echo call :length sublen "%%~2"
+echo call :length strlen "%%~3"
+echo setlocal enabledelayedexpansion
+echo :loop1
+echo set /a res_len1=%%res_len%% - %%sublen%%
+echo if "^!str:~%%res_len%%,%%sublen%%^!" == "%%~2" (
+echo 	endlocal ^& set %%~1=%%res_len%%
+echo 	exit /b
+echo ^) else if %%res_len1%% GEQ %%strlen%% (
+echo 	endlocal ^& set %%~1=-1
+echo 	exit /b
+echo ^)
+echo set /a res_len+=1
+echo goto :loop1
+echo :length
+echo setlocal enabledelayedexpansion
+echo set len=0
+echo set str=%%~2
+echo :loop
+echo if not "^!str:~%%len%%^!" == "" set /a len+=1 ^& goto loop
+echo (endlocal ^& set %%~1=%%len%%^)
+echo exit /b
+)>fclib_string_indexOf.bat
+:string_trim
+(
+echo setlocal enabledelayedexpansion
+echo set str=%%~2
+echo :loop
+echo if "^!str:~0,1^!" == " " (
+echo 	set str=^^!str:~1^^!
+echo 	goto loop
+echo ^)
+echo :loop2
+echo if "^!str:~-1^!" == " " (
+echo 	set str=^^!str:~0,-1^^!
+echo 	goto loop2
+echo ^)
+echo (endlocal ^& set %%~1=%%str%%^)
+echo exit /b
+)>fclib_string_trim.bat
+exit /b
 :list_max
 (
 echo set max=1

@@ -960,6 +960,9 @@ Include the compiled content of the module:
 	:: Find smallest element in an array
 	arr_min[] "variable_name" "array" "length"
 	
+	:: Find length of an array
+	arr_length[] "variable_name" "array"
+	
 	:: Example:
 	var[] arr[0]=1
 	var[] arr[1]=0

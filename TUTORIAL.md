@@ -321,6 +321,10 @@ You can also do that with local[]
 You can shorten `local[] ENABLEDELAYEDEXPANSION` with:
 
 	enb_delay[]
+
+Same with disable delayed expansion:
+
+	dis_delay[]
 	
 ### Delayed expansion
 You have seen some `^!` above, that's an essential feature gained from delayed expansion.

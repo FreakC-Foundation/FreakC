@@ -960,9 +960,16 @@ Include the compiled content of the module:
 	:: Find smallest element in an array
 	arr_min[] "variable_name" "array" "length"
 	
+	:: Find first index of an element, return -1 if find none
+	arr_indexOf[] "variable_name" "value" "array" "length"
+	
+	:: Return a value which concatenated all elements in an array
+	arr_join[] "variable_name" "array" "length"
+	
 	:: Find length of an array
 	arr_length[] "variable_name" "array"
-	
+
+
 	:: Example:
 	var[] arr[0]=1
 	var[] arr[1]=0
@@ -1004,6 +1011,25 @@ All the functions above only works with list with all integers. String or floats
 	
 	:: Reverse
 	string_reverse[] "variable_name" "string"
+	
+	:: First index of a substring in a string
+	string_indexOf[] "variable_name" "substring" "string"
+	
+	:: Trim all excess spaces from both side of a string
+	string_trim[] "variable_name" "string"
+	
+	:: Return true if string starts with a substring, false if it doesn't
+	string_startswith[] "variable_name" "string" "substring" "position"
+	
+	:: Return true if string ends with a substring, false if it doesn't
+	string_endswith[] "variable_name" "string" "substring" "position"
+	
+	:: Return a character equivalent to its ascii value
+	string_chr[] "variable_name" "value"
+	:: Note that you would probably need a caret character for escaping some special characters like "<>&^" like this:
+	string_chr[] "variable_name" "value"
+	print[] ^%variable_name% :: This is safe and highly recommended
+
 	
 ## Import keyword and generating methods
 From v0.6.1, `import[]` has been obsolete since commands can generate their own independent method files. But you can still use it if you want, it will generate a bunch of files even when you don't need them though:

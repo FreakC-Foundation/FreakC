@@ -967,6 +967,9 @@ Include the compiled content of the module:
 	:: Find first index of an element, return -1 if find none
 	arr_indexOf[] "variable_name" "value" "array" "length"
 	
+	:: Find last index of an element, return -1 if find none
+	arr_indexOf[] "variable_name" "value" "array" "length"
+	
 	:: Return a value which concatenated all elements in an array
 	arr_join[] "variable_name" "array" "length"
 	
@@ -1016,8 +1019,11 @@ All the functions above only works with list with all integers. String or floats
 	:: Reverse
 	string_reverse[] "variable_name" "string"
 	
-	:: First index of a substring in a string
+	:: First first index of a substring in a string
 	string_indexOf[] "variable_name" "substring" "string"
+	
+	:: First last index of a substring in a string
+	string_lastIndexOf[] "variable_name" "substring" "string"
 	
 	:: Trim all excess spaces from both side of a string
 	string_trim[] "variable_name" "string"

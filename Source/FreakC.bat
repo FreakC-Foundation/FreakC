@@ -192,6 +192,10 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			call libgen string indexOf
 			set printString=!printString:string_indexOf[]=call fclib_string_indexOf.bat!
 		)
+		if %%a == string_lastIndexOf[] (
+			call libgen string lastIndexOf
+			set printString=!printString:string_lastIndexOf[]=call fclib_string_lastIndexOf.bat!
+		)
 		if %%a == string_trim[] (
 			call libgen string trim
 			set printString=!printString:string_trim[]=call fclib_string_trim.bat!
@@ -259,6 +263,10 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == arr_indexOf[] (
 			call libgen array indexOf
 			set printString=!printString:arr_indexOf[]=call fclib_array_indexOf.bat!
+		)
+		if %%a == arr_lastIndexOf[] (
+			call libgen array lastIndexOf
+			set printString=!printString:arr_lastIndexOf[]=call fclib_array_lastIndexOf.bat!
 		)
 		if %%a == deny[] (
 			echo.>%a%.bat
@@ -432,5 +440,5 @@ if "%fcread%" == "true" type %a%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 0.6.0
+echo FreakC DevKit Version 0.7.1
 exit /b

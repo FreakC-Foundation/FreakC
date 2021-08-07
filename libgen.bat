@@ -66,6 +66,22 @@ echo set /a res_len+=1
 echo goto :loop
 )>fclib_array_indexOf.bat
 exit /b 0
+:array_lastIndexOf
+(
+echo set /a res_len=%%~4-1
+echo setlocal enabledelayedexpansion
+echo :loop
+echo if "^!%%~3[%%res_len%%]^!" == "%%~2" (
+echo 	endlocal ^& set %%~1=%%res_len%%
+echo 	exit /b
+echo ^) else if %%res_len%% LEQ 0 (
+echo 	endlocal ^& set %%~1=-1
+echo 	exit /b
+echo ^)
+echo set /a res_len-=1
+echo goto :loop
+)>fclib_array_lastIndexOf.bat
+exit /b 0
 :math_abs
 (
 echo set tar=%%~2
@@ -278,6 +294,33 @@ echo if not "^!str:~%%len%%^!" == "" set /a len+=1 ^& goto loop
 echo (endlocal ^& set %%~1=%%len%%^)
 echo exit /b
 )>fclib_string_indexOf.bat
+:string_lastIndexOf
+(
+echo set str=%%~3
+echo call :length sublen "%%~2"
+echo call :length strlen "%%~3"
+echo set /a res_len=%%strlen%% - %%sublen%%
+echo setlocal enabledelayedexpansion
+echo :loop1
+echo if "^!str:~%%res_len%%,%%sublen%%^!" == "%%~2" (
+echo 	endlocal ^& set %%~1=%%res_len%%
+echo 	exit /b
+echo ^) else if %%res_len%% LSS 0 (
+echo 	endlocal ^& set %%~1=-1
+echo 	exit /b
+echo ^)
+echo set /a res_len+=1
+echo goto :loop1
+echo :length
+echo setlocal enabledelayedexpansion
+echo set len=0
+echo set str=%%~2
+echo :loop
+echo if not "^!str:~%%len%%^!" == "" set /a len+=1 ^& goto loop
+echo (endlocal ^& set %%~1=%%len%%^)
+echo exit /b
+)>fclib_string_lastIndexOf.bat
+exit /b
 :string_trim
 (
 echo setlocal enabledelayedexpansion

@@ -9,7 +9,7 @@ echo.
 set /p inp=
 if "%inp%" == "start[]" (
 	start freakc tar.fclang
-) else if "%inp%" == "end[]" (
+) else if "%inp%" == "endcli[]" (
 	del /q tar.fclang
 	if exist tar.bat (
 		del /q tar.bat

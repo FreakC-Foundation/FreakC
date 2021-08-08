@@ -340,7 +340,13 @@ But it doesn't work, because you'd need to use:
 
 Also, if you change a value/declare a variable in a block of code locally in a normal way, it'd often not work outside the scope, so you should use delayed expansion pretty much all the time.
 
-Notice that you're using local[], which makes all the values defined local, so remember to always add `endloc[]` (mostly when creating a function) to ensure everything works fine, like a `return` statement for example.
+Notice that you're using `local[]`, which makes all the values defined local, so remember to always add `endloc[]` (mostly when creating a function) to ensure everything works fine, like a `return` statement for example.
+
+	function[] getHello
+		local[] enabledelayedexpansion
+		:: Returning a value
+		endloc[] & var[] %~1=Hello
+	endfunc[]
 
 An example of sorting an array:
 
@@ -655,6 +661,7 @@ You can implement a "class" like this:
 		::Set properties, implementing "this" as the first argurment passed (%~1)
 		var[] %~1.age=%~2
 		var[] %~1.weight=%~3
+		:: Storing the codes inside a Batch file, which creates something like a method
 		(
 			print[] print[] *Being cute*
 		)>%~1.BeingCute.bat
@@ -666,8 +673,10 @@ You can implement a "class" like this:
 	print[] Age: %Mary.age%
 	:: Call "Mary.BeingCute", which prints out "*Being cute*"
 	call[] Mary.BeingCute
-	
-Keep it in mind that there have been many attempts implementing OOP in Batch, the upper one is just my way to do it.
+
+With inheritance and polymorphism, I guess you can create an init function and call it inside the classes you're creating. With encapsulation, you can implement getter/setter functions to implement a crappy version of protected and private.
+
+Keep it in mind that there have been many attempts implementing OOP in Batch, the upper one is just my way to do it in FreakC.
 
 # If statements
 To use if statement, check this out:

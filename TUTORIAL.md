@@ -153,6 +153,7 @@ Or:
 
 Multi-line strings:
 
+	local[] enabledelayedexpansion
 	var[] multi_line_string=Line 1^
 	!
 	Line 2^
@@ -164,6 +165,7 @@ With normal Batch, you don't need the `!`, you just need a blank line. But with 
 Note that indentation will break the codes 😢:
 
 	function[] something
+		local[] enabledelayedexpansion
 		var[] multi_line_string=Line 1^
 		!
 		Line 2^
@@ -174,12 +176,22 @@ Note that indentation will break the codes 😢:
 But this works:
 
 	function[] something
+		local[] enabledelayedexpansion
 		var[] multi_line_string=Line 1^
 	!
 	Line 2^
 	!
 	Line 3
 	endfunc[]
+
+It sucks right? So now we have a better solution: Creating a variable that contains a newline. It can be done like this:
+
+	enb_delay[]
+	var[] n=sad^
+	!
+	!
+	print[] Hello%n%
+	print[] World
 
 To do math equations, do:
 
@@ -400,21 +412,36 @@ You can join commands together like this:
 
 	var[] hello= print[] Hello ^& print[] Hell yeah^!
 
-### True procedural macro
+You can also pass arguments in by doing:
+
+	var[] macro_with_argument=for %%i in (argv) do echo %%i
+	%macro_with_argument:argv=1 2 3% :: Will print out 1, 2, 3 on each new lines.
+
+What it did is simply just repace the macro with the command (of course), and `argv` in the string has been replaced by `1 2 3` which are now the arguments.
+
+You can also create a mutli-line macro like how I did with multi-line string from above.
+
+### True macro
 The Batch-style macro is the one being replaced in runtime. While it helps the program to run faster compared to calling functions, it's still kinda slow, so here comes the FreakC's true macro which is replaced during compile time:
 
 	:: A macro which prints out "Hello"
 	define[] hello= print[] Hello
 	!hello!
 
-Remember that procedural macros "kinda" require a " " in the back, but a normal macro doesn't:
+Remember that macros which acts like commands "kinda" require a " " in the back, but a normal macro doesn't:
 
 	define[] key=124123
 	print[] The key is !key!
 
-### Notes
-There are variables that you CAN NOT USE like: %a%, %printString%, %fccompile%, %fccompilename%, %fcread%.
+FreakC's macro still works just like normal Batch variables, so you can also do stuffs like replace strings, generate substrings,...
 
+	define[] key=124123
+	print[] The key is !key:~1,2!
+	:: The result will be "The key is 24"
+
+But however, FreakC's macro currently doesn't have multi lines 😢.
+
+### Notes
 Also, spaces in FreakC is extremely important, so if you declare a variable like this:
 
 	eq[] abc = 100

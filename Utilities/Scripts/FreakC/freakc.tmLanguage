@@ -24,7 +24,7 @@
     </dict>
     <dict>
       <key>match</key>
-      <string>arr_max|arr_min|arr_sum|arr_join|arr_indexOf|arr_lastIndexOf|arr_length|enb_delay|sum|max|min|abs|odd|even|pow|factorial|fib_seq|fib|string_indexOf|string_lastIndexOf|string_endswith|string_startswith|string_trim|string_chr|string_length|string_upper|string_lower|reverse_string|ps|curl|key|clrscr|change_mode|change_color|insert|change_title|stop|hello_world|ipinf|sysinf|ping|scan_files|scan_strs|scan_str|scan_dir|loop|wait|ls|change_date|change_time|see_date|see_time|RestartSystem|ShutdownSystem|inf_loop|quit|open|copy|mov|fnd|fncstr|rename|read_file|remove_dir|del|change_dir|create_dir|local|endloc|drive</string>
+      <string>arr_max|arr_min|arr_sum|arr_join|arr_indexOf|arr_lastIndexOf|arr_length|enb_delay|sum|max|min|abs|odd|even|pow|factorial|fib_seq|fib|string_indexOf|string_lastIndexOf|string_endswith|string_startswith|string_trim|string_chr|string_slice|string_length|string_upper|string_lower|reverse_string|ps|curl|key|clrscr|change_mode|change_color|insert|change_title|stop|hello_world|ipinf|sysinf|ping|scan_files|scan_strs|scan_str|scan_dir|loop|wait|ls|change_date|change_time|see_date|see_time|RestartSystem|ShutdownSystem|inf_loop|quit|open|copy|mov|fnd|fncstr|rename|read_file|remove_dir|del|change_dir|create_dir|local|endloc|drive</string>
       <key>name</key>
       <string>entity.name.function</string>
     </dict>

@@ -176,6 +176,10 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			call libgen string length
 			set printString=!printString:string_length[]=call fclib_string_length.bat!
 		)
+		if %%a == string_slice[] (
+			call libgen string slice
+			set printString=!printString:string_slice[]=call fclib_string_slice.bat!
+		)
 		if %%a == string_upper[] (
 			call libgen string upper
 			set printString=!printString:string_upper[]=call fclib_string_upper.bat!
@@ -440,5 +444,5 @@ if "%fcread%" == "true" type %a%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 0.7.1
+echo FreakC DevKit Version 0.7.2
 exit /b

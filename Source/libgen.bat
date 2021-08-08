@@ -189,6 +189,15 @@ echo set upper=%%upper:z=Z%%
 echo set %%~1=%%upper%%
 )>fclib_string_upper.bat
 exit /b 0
+:string_slice
+(
+echo set /a len=%%~4-%%~3
+echo set str=%%~2
+echo setlocal enabledelayedexpansion
+echo set str=^^!str:~%%~3,%%len%%^^!
+echo endlocal ^& set %%~1=%%str%%
+)>fclib_string_slice.bat
+exit /b 0
 :string_length
 (
 echo setlocal enabledelayedexpansion

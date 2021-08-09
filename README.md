@@ -13,30 +13,31 @@
 </div>
 
 ## What is FreakC ?
-FreakC is a transpiled multi-paradigm scripting language that... has nothing to do with the C programming language. It is a superset of Batch, it is written in Batch, and it is transpiled to Batch. If you're wondering why the language is tagged `esolang` and `esoteric-language`, it's because this language used to be an esolang, but it started getting too much features that it shouldn't just be an esolang anymore, it should be used for everyday's scripting 😃. <a href="https://discord.gg/eNwqK4APsD">Proceed to Discord...</a>
+FreakC is a small, experimental programming language created by me when I was/am a student. It's a fun project with the idea of trying to create a full-blown programming language in such a small language like Batch, which has a lot of limitations. It is transpiled to Batch, and acts as a superset language to Batch, which means that most Batch codes should run well in FreakC, while FreakC has added a tiny bit more features to improve your experience with Batch scripting (you would understand the pain of Batch if you are a hardcore Batch coder). These features are: macros, some additional operators and commands, more functions/commands for arrays, strings and math, and the support for floats too.
 
-[The original version](https://github.com/FreakC-Foundation/Old-FreakC)
+But overall, I would say FreakC is just an experimental (or "toy") programming language that I had had fun in developing. I think FreakC doesn't really handle common day tasks that great, and so does Batch actually. But it's rather just a small project for the Batch community and my "fun" as I have said earlier. However, if you think that FreakC is suitable for you, or maybe you are a Batch developer who think FreakC has enhanced your coding experience with Batch, then I would really appreciate if you have used and like it.
 
-## Why FreakC ?
-FreakC's just an experimental language at this stage and the performance is not that great, so it's probably only suitable for scripting and console-based applications. I usually fire up FreakC to solve some small coding problems, or to create a build/config file for my other projects. 
+If you like to create a toy language from FreakC's source code, go ahead, I would love if you do so. But just be sure to follow the conditions from the GPLv3 License.
 
-Furthermore, you can use the FreakC's source code to create your own programming language with ease, as FreakC is really short and there're not much complicated algorithms. Also, because it was built with Batch, you don't have to download any dependencies, any complicated build tools, you can just clone the repo and everything's already up and running!
+### A small story behind FreakC's development
+Because Batch doesn't really have modern features like C++, Java or Javascript, and there are some really weird quirks to the language. And the biggest middle finger to the devs was the incapablity to do equation with floating point numbers. So FreakC follows a whole different way in creating its compiler. It acts more like a "weird preprocessor", it doesn't really have a parser, but I guess if it works fine then it works fine, this is Batch anyway, it's hard 🙂. And that should answer why the compiler's kind of strange. But still, being a Batch superset itself makes the development process a lot easier.
 
-Also, if you're familiar with Batch, you are probably having a hard day doing stuffs, but FreakC fixes some problems that Batch has, and:
+Another thing that you would want to note is that FreakC doesn't really have big updates normally, but if you have any suggestions, please let us know!
 
-* Many prebuilt standard libraries to make scripting easier.
-* Compatibility with Batch (You can embed Batch codes in FreakC).
-* Easy to use
-* Some modern functionalities
+### The esolang
+Originally, FreakC was just an esolang. But as I learn more and more about Batch scripting, I had re-designed the whole thing to become a somewhat "usable" language. There's still a repo containing the old version though, I'll leave a link down below.
 
-FreakC's not created to be revolutionary or game-changing or anything like that, it's just created as a fun project by a high school student :) to make scripting easy, to upgrade Batch a little bit and to help people create their own language from FreakC's really simple source code.
+[The esoteric version](https://github.com/FreakC-Foundation/Old-FreakC)
+
+
+[Join the small community on Discord!!!](https://discord.gg/eNwqK4APsD)
 
 ### Language preview
 Hello World:
 
     print[] Hello, World!
 
-Function definition
+Function definition:
 
     function[] SayHello
         print[] Hello
@@ -44,34 +45,29 @@ Function definition
     :: Prints "Hello"
     SayHello[..]
     
-To check out more samples, click <a href=https://github.com/FreakC-Foundation/FreakC/tree/master/Examples>here.</a>
+[More samples](https://github.com/FreakC-Foundation/FreakC/tree/master/Examples)
 
 ## What comes with the devkit ?
 * A compiler.
 * An interactive shell.
-* A full-blown cli.
+* A command line interface.
 * Some utilities.
 * Some examples.
 
-## What FreakC has that Batch doesn't ?
-- It adds additional commands.
-- It has many helpful libraries that Batch should have from the start.
-- It comes with cool features like true functions, while loops, do-while loops, floats and even macros.
-
-## Important resources
+## Language resources
 * [Tutorials](https://github.com/FreakC-Foundation/FreakC/blob/master/TUTORIAL.md)
 * [Samples](https://github.com/FreakC-Foundation/FreakC/tree/master/Examples)
 * [IDEs](IDE.md)
 
 ## Frameworks
-Note that all Batch frameworks can integrate well with FreakC, so you can use them just like in Batch smoothly. There are some in the **Utilities** folder (on Github repo only, not included in the release) (which I don't own).
+Note that most Batch frameworks should integrate well with FreakC, so you can use them just like in Batch smoothly. There are some in the **Utilities** folder (which I don't own and they're on this Github repo only, not included in the release zip file)
 
 ### Official FreakC's frameworks
-* <a href="https://github.com/FreakC-Foundation/discord.fclang">discord.fclang</a> - A library for creating discord bots
+* <a href="https://github.com/FreakC-Foundation/discord.fclang">discord.fclang</a> - A discord api wrapper built on top of Discord.net, can be used for bot dev.
 
 ### Cool Batch frameworks/libraries
-* <a href="https://github.com/timlg07/Number.cmd">Number.cmd</a> - A library for handling floats
-* <a href="https://github.com/mininmobile/discord.bat">Discord.bat</a> - A library for creating discord bots
+* <a href="https://github.com/timlg07/Number.cmd">Number.cmd</a> - A library for evaluating floating point number.
+* <a href="https://github.com/mininmobile/discord.bat">Discord.bat</a> - A discord api wrapper built on top of Discord.net, can be used for bot dev.
 
 ### Batch game frameworks
 There are many existing game engines for Batch/FreakC:
@@ -85,20 +81,19 @@ There are many existing game engines for Batch/FreakC:
 We would love to have you as a contributor! Please consider checking out [contribution guidelines](https://github.com/FreakC-Foundation/FreakC/blob/master/.github/CONTRIBUTING.md) first!
 
 ## Support the project!
-If you like FreakC, it would be great if you leave a star here ❤️.
+If you like FreakC, it would be great if you leave a star here ❤️. I'd love if you follow me as well 😘.
 
-## Social medias
-* <a href="https://npmgames.itch.io/freakc">Itch.io</a>
+## Resources
 * <a href="https://www.facebook.com/FreakC-Programming-Language-111425377421861">Facebook</a>
 * <a href="https://discord.gg/eNwqK4APsD">Discord</a>
-* <a href="https://dev.to/freakcdev297/freakc-the-esolang-that-can-do-stuffs-3f9c">Dev.to</a>
 * <a href="https://freakc-foundation.github.io/">Offical Website</a>
 
 ## Languages based on FreakC
+I've created this tiny language for Vietnamese using the FreakC's codebase:
 * <a href="https://github.com/nguyenphuminh/VNC">VNC</a>
 
 ## Contributors
-* Owner/Developer: Nguyen Phu Minh
+* Owner/Developer: Phu Minh
 * VSCode contributor: anapple96
 
 In association with the <a href="https://github.com/joliorg">Jolio</a> dev team.
@@ -109,6 +104,6 @@ In association with the <a href="https://github.com/joliorg">Jolio</a> dev team.
 </a>
 
 ## Copyrights and License
-Copyright © 2020 Nguyen Phu Minh
+Copyright © 2020-2021 Nguyen Phu Minh
 
 This language is licensed under the GPLv3 License

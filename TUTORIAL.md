@@ -1004,7 +1004,7 @@ Include the compiled content of the module:
 	arr_indexOf[] "variable_name" "value" "array" "length"
 	
 	:: Find last index of an element, return -1 if find none
-	arr_indexOf[] "variable_name" "value" "array" "length"
+	arr_lastIndexOf[] "variable_name" "value" "array" "length"
 	
 	:: Return a value which concatenated all elements in an array
 	arr_join[] "variable_name" "array" "length"

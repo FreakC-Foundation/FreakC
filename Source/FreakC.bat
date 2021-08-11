@@ -136,6 +136,9 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 				call libgen array min
 				call libgen array sum
 				call libgen array len
+				call libgen array join
+				call libgen array indexOf
+				call libgen array lastIndexOf
 			)
 			if "!lib!" == "list" (
 				call libgen list max
@@ -147,6 +150,12 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 				call libgen string reverse
 				call libgen string upper
 				call libgen string lower
+				call libgen string chr
+				call libgen string endswith
+				call libgen string startswith
+				call libgen string indexOf
+				call libgen string lastIndexOf
+				call libgen string trim
 			)
 			if "!lib!" == "float" (
 				call libgen float float

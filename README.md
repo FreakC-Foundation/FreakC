@@ -48,7 +48,7 @@ Function definition:
 [More samples](https://github.com/FreakC-Foundation/FreakC/tree/master/Examples)
 
 ### Switching from Batch to FreakC
-Fairly simple not gonna lie, you just need to replace all "!" with "^!", "^^!" with "^^^^^!" (the second one is only required in delayed expansion). If you use codes that depends on blank lines, then just change them to the "!" character.
+While FreakC is compatible with Batch, but it's not 100% compatible, you just need to replace all "!" with "^!", "^^!" with "^^^^^!" (the second one is only required in delayed expansion). If you use codes that depends on blank lines, then just change them to the "!" character. I'll fix this problem in the future, making FreakC 100% compatible with Batch!
 
 ## What comes with the devkit ?
 * A compiler.

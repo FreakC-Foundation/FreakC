@@ -13,13 +13,17 @@
 </div>
 
 ## What is FreakC ?
+`print[] The language itself:`
 FreakC is a small, experimental programming language created by me when I was/am a student. It's a fun project with the idea of trying to create a full-blown programming language in such a small language like Batch, which has a lot of limitations. It is transpiled to Batch, and acts as a superset language to Batch, which means that most Batch codes should run well in FreakC, while FreakC has added a tiny bit more features to improve your experience with Batch scripting (you would understand the pain of Batch if you are a hardcore Batch coder). These features are: macros, some additional operators and commands, more functions/commands for arrays, strings and math, and the support for floats too.
 
+`print[] Some nice infos:`
 But overall, I would say FreakC is just an experimental (or "toy") programming language that I had had fun in developing. I think FreakC doesn't really handle common day tasks that great, and so does Batch actually. But it's rather just a small project for the Batch community and my "fun" as I have said earlier. However, if you think that FreakC is suitable for you, or maybe you are a Batch developer who think FreakC has enhanced your coding experience with Batch, then I would really appreciate if you have used and like it.
 
 If you like to create a toy language from FreakC's source code, go ahead, I would love if you do so. But just be sure to follow the conditions from the GPLv3 License.
 
 ### A small story behind FreakC's development
+`print[] Loading dev stories...`
+`stop >nul`
 Because Batch doesn't really have modern features like C++, Java or Javascript, and there are some really weird quirks to the language. And the biggest middle finger to the devs was the incapablity to do equation with floating point numbers. So FreakC follows a whole different way in creating its compiler. It acts more like a "weird preprocessor", it doesn't really have a parser, but I guess if it works fine then it works fine, this is Batch anyway, it's hard 🙂. And that should answer why the compiler's kind of strange. But still, being a Batch superset itself makes the development process a lot easier.
 
 Another thing that you would want to note is that FreakC doesn't really have big updates normally, but if you have any suggestions, please let us know!

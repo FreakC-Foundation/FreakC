@@ -25,6 +25,7 @@ If you like to create a toy language from FreakC's source code, go ahead, I woul
 
 ### A small story behind FreakC's development
 `print[] Loading dev stories...`
+
 `stop >nul`
 
 Because Batch doesn't really have modern features like C++, Java or Javascript, and there are some really weird quirks to the language. And the biggest middle finger to the devs was the incapablity to do equation with floating point numbers. So FreakC follows a whole different way in creating its compiler. It acts more like a "weird preprocessor", it doesn't really have a parser, but I guess if it works fine then it works fine, this is Batch anyway, it's hard 🙂. And that should answer why the compiler's kind of strange. But still, being a Batch superset itself makes the development process a lot easier.

@@ -715,7 +715,11 @@ You can implement a "class" like this:
 	:: Call "Mary.BeingCute", which prints out "*Being cute*"
 	call[] Mary.BeingCute
 
-With inheritance and polymorphism, I guess you can create an init function and call it inside the classes you're creating. With encapsulation, you can implement getter/setter functions to implement a crappy version of protected and private.
+## Inhertitance and polymorphism
+With inheritance and polymorphism, I guess you can create an init function and call it inside the "classes"(functions) you're creating.
+
+## Encapsulation
+With encapsulation, you can implement getter/setter functions to implement protected, everytime the data got accessed it must go through a getter/setter function. With private, you do the same thing as protected, however, rather than putting it inside the init function, only add it in one specific "class"(function).
 
 Keep it in mind that there have been many attempts implementing OOP in Batch, the upper one is just my way to do it in FreakC.
 

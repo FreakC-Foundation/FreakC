@@ -1,5 +1,9 @@
 @echo off
 setlocal enabledelayedexpansion
+set NLM=^
+
+
+set NL=^^^%NLM%%NLM%^%NLM%%NLM%
 if "%1" == "" (
 	echo. Usage: freakc {option/name} {option}
 	echo.
@@ -18,7 +22,8 @@ if "%1" == "" (
 	pause >nul
 	exit /b
 )
-set proctar=java
+set proctar=something
+set fchcomment=false
 if "%1" == "--help" (
 	echo. Usage: freakc {option/name} {option}
 	echo.
@@ -68,23 +73,23 @@ if "%2" == "--compile" (
 	exit /b
 )
 set fccompilename=%1
-set a=%fccompilename:.fclang=%
+set output=%fccompilename:.fclang=%
 if "%fccreate%" == "true" (
-	md %a%
-	cd %a%
+	md %output%
+	cd %output%
 	if "%3" == "--empty" (
-		echo.>%a%.fclang
+		echo.>%output%.fclang
 	) else (
-		echo print[] Hello World, Hello FreakC^^!>%a%.fclang
+		echo print[] Hello World, Hello FreakC^^!>%output%.fclang
 	)
 	exit /b
 )
 set fccomment=false
 set wloopnum=0
 set wloopnum2=0
-echo @echo off>%a%.bat
-echo :FreakCCompiled>>%a%.bat
-for /f "tokens=* delims= " %%x in (%a%.fclang) do (
+echo @echo off>%output%.bat
+echo :FreakCCompiled>>%output%.bat
+for /f "tokens=* delims= " %%x in (%output%.fclang) do (
 	set deniedToken=false
 	set printString=%%x
 	for %%a in (%%x) do (
@@ -105,19 +110,17 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			set fccomment=false
 			set printString=!printString:e[]=!
 		)
-		if "%%a" == "h[]" (
-			if "!procadd!" == "true" (
-				echo.>>!proctar!.bat
-			) else (
-				echo.>>%a%.bat
-			)
+		if "%%a" == "h[]" set deniedToken=true
+		if "%%a" == "ch[]" set fchcomment=true
+		if "%%a" == "ce[]" (
+			set fchcomment=false
 			set deniedToken=true
 		)
 		if %%a == include[] (
 			set targetFile=!printString:include[] =!
 			if exist !targetFile!.fclang (
 				call createFile.bat "!targetFile!"
-				type !targetFile!.bat>>%a%.bat
+				type !targetFile!.bat>>%output%.bat
 			)
 			set deniedToken=true
 		)
@@ -282,7 +285,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			set printString=!printString:arr_lastIndexOf[]=call fclib_array_lastIndexOf.bat!
 		)
 		if %%a == deny[] (
-			echo.>%a%.bat
+			echo.>%output%.bat
 			set deniedToken=true
 		)
 		if %%a == drive[] set printString=!printString:drive[] =!:
@@ -290,7 +293,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			if "!procadd!" == "true" (
 				set outtar=!proctar!.bat
 			) else (
-				set outtar=%a%.bat
+				set outtar=%output%.bat
 			)
 			set fccondition=!printString:while[] =!
 			echo :WhileLoop!wloopnum!>>!outtar!
@@ -301,7 +304,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			if "!procadd!" == "true" (
 				set outtar=!proctar!.bat
 			) else (
-				set outtar=%a%.bat
+				set outtar=%output%.bat
 			)
 			echo goto WhileLoop!wloopnum!>>!outtar!
 			echo :EndLoop!wloopnum!>>!outtar!
@@ -312,7 +315,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			if "!procadd!" == "true" (
 				set outtar=!proctar!.bat
 			) else (
-				set outtar=%a%.bat
+				set outtar=%output%.bat
 			)
 			echo :repeat!wloopnum!>>!outtar!
 			set deniedToken=true
@@ -321,7 +324,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			if "!procadd!" == "true" (
 				set outtar=!proctar!.bat
 			) else (
-				set outtar=%a%.bat
+				set outtar=%output%.bat
 			)
 			set fccondition2=!printString:until[] =!
 			echo if not !fccondition2! goto until!wloopnum2!>>!outtar!
@@ -358,7 +361,7 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 			if "!procadd!" == "true" (
 				set outtar=!proctar!.bat
 			) else (
-				set outtar=%a%.bat
+				set outtar=%output%.bat
 			)
 			set process=!printString:cnd[] =!
 			set turn=0
@@ -434,24 +437,31 @@ for /f "tokens=* delims= " %%x in (%a%.fclang) do (
 		if %%a == enb_delay[] set printString=!printString:enb_delay[]=setlocal enabledelayedexpansion!
 		if %%a == dis_delay[] set printString=!printString:enb_delay[]=setlocal disabledelayedexpansion!
 	)
-	if "!procadd!" == "true" (
-		if !procval! == 0 (
-			set procval=1
-			echo.>!proctar!.bat
+	if not "!fchcomment!" == "true" (
+		if "!procadd!" == "true" (
+			if !procval! == 0 (
+				set procval=1
+				echo.>!proctar!.bat
+			) else (
+				if "!fccomment!" == "true" (
+					echo.::!printString!>>!proctar!.bat
+				) else if not "!deniedToken!" == "true" (
+					echo.!printString!>>!proctar!.bat
+				)
+			)
 		) else (
-			if not "!deniedToken!" == "true" echo.!printString!>>!proctar!.bat
+			if "!fccomment!" == "true" (
+				echo.::!printString!>>%output%.bat
+			) else if not "!deniedToken!" == "true" (
+				echo.!printString!>>%output%.bat
+			)
 		)
-	)
-	if "!fccomment!" == "false" (
-		if not "!procadd!" == "true" if not "!deniedToken!" == "true" echo.!printString!>>%a%.bat
-	) else (
-		if not "!procadd!" == "true" echo.::!printString!>>%a%.bat
 	)
 )
 setlocal disabledelayedexpansion
-if "%fcread%" == "true" type %a%.bat
-if not "%fccompile%" == "true" if not "%fcread%" == "true" call %a%.bat
+if "%fcread%" == "true" type %output%.bat
+if not "%fccompile%" == "true" if not "%fcread%" == "true" call %output%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 0.7.2
+echo FreakC DevKit Version 0.8.0 BETA
 exit /b

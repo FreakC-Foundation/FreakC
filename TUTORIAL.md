@@ -162,6 +162,12 @@ Multi-line strings:
 
 With normal Batch, you don't need the `!`, you just need a blank line. But with FreakC, the compiler skips through the new lines, so what it's doing is that it force the compiler to include that line (since that line still contain a character), and because `!` is skipped, it's an equivalent to an empty line.
 
+Though you can also use:
+
+	var[] multi_line_string=Line 1!NL!Line 2!NL!Line 3
+
+`!NL!` is a built-in macro.
+
 Note that indentation will break the codes 😢:
 
 	function[] something
@@ -184,7 +190,7 @@ But this works:
 	Line 3
 	endfunc[]
 
-It sucks right? So now we have a better solution: Creating a variable that contains a newline. It can be done like this:
+You can also implement something like this:
 
 	enb_delay[]
 	var[] n=sad^
@@ -192,6 +198,8 @@ It sucks right? So now we have a better solution: Creating a variable that conta
 	!
 	print[] Hello%n%
 	print[] World
+
+But the `!NL!` macro is fine enough.
 
 To do math equations, do:
 
@@ -398,11 +406,9 @@ There are a lot of special variables left, but you might not find uses for them
 * %variable_name:~-5% - would extract the last 5 characters of the variable
 * %variable_name:~5% - would remove the first 5 characters of the variable
 * %variable_name:str1=str2% - would replace str1 with str2
-* %PATH:~10,5% - would expand the PATH environment variable, and then use only the 5 characters that begin at the 11th (offset 10) character of the expanded result.  If the length is not specified, then it defaults to the remainder of the variable value.  If either number (offset or length) is negative, then the number used is the length of the environment variable value added to the offset or length specified/li>
+* %PATH:~10,5% - would expand the PATH environment variable, and then use only the 5 characters that begin at the 11th (offset 10) character of the expanded result.  If the length is not specified, then it defaults to the remainder of the variable value.  If either number (offset or length) is negative, then the number used is the length of the environment variable value added to the offset or length specified
 
-And if you're asking yourself why add more dumb commands like this, well, because FreakC's bs.
-
-### Batch-style procedural macro
+### Batch-style macro
 
 	:: A macro which prints out "Hello"
 	var[] hello= print[] Hello
@@ -419,9 +425,11 @@ You can also pass arguments in by doing:
 
 What it did is simply just repace the macro with the command (of course), and `argv` in the string has been replaced by `1 2 3` which are now the arguments.
 
-You can also create a mutli-line macro like how I did with multi-line string from above.
+You can also create a mutli-line macro like how I did with multi-line string from above:
 
-### True macro
+	var[] macro_with_multi_commands=for %%i in (argv) do echo %%i!NL!echo Macro power %%i
+
+### FreakC's macro
 The Batch-style macro is the one being replaced in runtime. While it helps the program to run faster compared to calling functions, it's still kinda slow, so here comes the FreakC's true macro which is replaced during compile time:
 
 	:: A macro which prints out "Hello"
@@ -439,7 +447,7 @@ FreakC's macro still works just like normal Batch variables, so you can also do 
 	print[] The key is !key:~1,2!
 	:: The result will be "The key is 24"
 
-But however, FreakC's macro currently doesn't have multi lines 😢.
+Basically, it should work like normal Batch's variables.
 
 ### Notes
 Also, spaces in FreakC is extremely important, so if you declare a variable like this:
@@ -463,7 +471,7 @@ Other thing that you should notice is that
 would return any variable begins with "text"
 
 # Comments
-Single-line comment:
+Single-line Batch comment:
 
 	:: Comment
 
@@ -471,14 +479,20 @@ Another way:
 
 	rem comment
 
-Multi-line comment:
+Multi-line comment that's transpiled to Batch comments:
 
 	c[] comment
 	e[]
 
 To write a comment that won't show up in the compiled codes, use:
 
-	h[cmt] comment
+	h[] comment
+	
+Multi-line version:
+
+	ch[] comment1
+	comment2
+	ce[]
 
 # Labels and Goto statement
 Labels helps you to jump to a state or pass parameters to execute tasks (somewhat procedural programming).

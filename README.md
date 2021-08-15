@@ -15,18 +15,16 @@
 ## What is FreakC ?
 `print[] The language itself:`
 
-FreakC is a small, experimental programming language created by me when I was/am a student. It's a fun project with the idea of trying to create a full-blown programming language in such a small language like Batch, which has a lot of limitations. It is transpiled to Batch, and acts as a superset language to Batch, which means that most Batch codes should run well in FreakC, while FreakC has added a tiny bit more features to improve your experience with Batch scripting (you would understand the pain of Batch if you are a hardcore Batch coder). These features are: macros, some additional operators and commands, more functions/commands for arrays, strings and math, and the support for floats too.
+FreakC is a small, experimental programming language created by me when I was/am a student. It's a fun project with the idea of trying to create a full-blown programming language in such a small language like Batch, which has a lot of limitations. It is transpiled to Batch, and looks/works pretty much the same as Batch, which means that you can switch from Batch to FreakC easily, while FreakC has added a tiny bit more features to improve your experience with Batch scripting (you would understand the pain of Batch if you are a hardcore Batch coder). These features are: macro definition, some additional operators, commands and macros, more functions/commands for arrays, strings and math, and the support for floats too.
 
-`print[] Some nice infos:`
+`print[] Overall...`
 
-But overall, I would say FreakC is just an experimental (or "toy") programming language that I had had fun in developing. I think FreakC doesn't really handle common day tasks that great, and so does Batch actually. But it's rather just a small project for the Batch community and my "fun" as I have said earlier. However, if you think that FreakC is suitable for you, or maybe you are a Batch developer who think FreakC has enhanced your coding experience with Batch, then I would really appreciate if you have used and like it.
+I would say FreakC is just an experimental (or "toy") programming language that I had had fun in developing. I think FreakC doesn't really handle common day tasks that great, and so does Batch actually. But it's rather just a small project for the Batch community and my "fun" as I have said earlier. However, if you think that FreakC is suitable for you, or maybe you are a Batch developer who think FreakC has enhanced your coding experience with Batch, then I would really appreciate if you have used and like it.
 
 If you like to create a toy language from FreakC's source code, go ahead, I would love if you do so. But just be sure to follow the conditions from the GPLv3 License.
 
 ### A small story behind FreakC's development
 `print[] Loading dev stories...`
-
-`stop >nul`
 
 Because Batch doesn't really have modern features like C++, Java or Javascript, and there are some really weird quirks to the language. And the biggest middle finger to the devs was the incapablity to do equation with floating point numbers. So FreakC follows a whole different way in creating its compiler. It acts more like a "weird preprocessor", it doesn't really have a parser, but I guess if it works fine then it works fine, this is Batch anyway, it's hard 🙂. And that should answer why the compiler's kind of strange. But still, being a Batch superset itself makes the development process a lot easier.
 
@@ -56,7 +54,7 @@ Function definition:
 [More samples](https://github.com/FreakC-Foundation/FreakC/tree/master/Examples)
 
 ### Switching from Batch to FreakC
-While FreakC is compatible with Batch, but it's not 100% compatible, you just need to replace all "!" with "^!", "^^!" with "^^^^^!" (the second one is only required in delayed expansion). If you use codes that depends on blank lines, then just change them to the "!" character. I'll fix this problem in the future, making FreakC 100% compatible with Batch!
+While FreakC is compatible with Batch, but it's not 100% compatible, you just need to replace all "!" with "^!", "^^!" with "^^^^^!" (the second one is only required in delayed expansion). If you use codes that depends on blank lines, then just change them to the "!" character. This problem can be easily fixed, but I'm thinking whether I should make it compatible or not, since the compatiblity with Batch means incompatiblity with previous FreakC versions.
 
 ## What comes with the devkit ?
 * A compiler.

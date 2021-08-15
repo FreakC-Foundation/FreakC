@@ -24,7 +24,7 @@
     </dict>
     <dict>
       <key>match</key>
-      <string>([A-Za-z])\w+(?=\[\.\.\])|([A-Za-z])\w+(?=\[\:\:\])|(?&#60;=(call\[\] ))([A-Za-z_])\w+</string>
+      <string>([A-Za-z])\w+(?=\[\.\.\])|([A-Za-z])\w+(?=\[\:\:\])|(?&#60;=(call\[\] ))([A-Za-z_])\w+|(?&#60;=(^))([a-zA-Z_])+(?=(\.([A-Za-z_]+)\[\.\.\]))</string>
       <key>name</key>
       <string>support.function</string>
     </dict>

@@ -885,14 +885,14 @@ While loops can be created using:
 
 Of course, the loops will run when the condition is still true, stop when false.
 
-### Do-While loop
+### Repeat-until loop
 
 	repeat[]
 	::code
 	until[] condition
 
-### Differences between While and Do-While
-While loop is executed only when given condition is true. Whereas, do-while loop is executed for first time irrespective of the condition. After executing while loop for first time, then condition is checked.
+### Differences between While and Repeat Until
+While loop is executed only when given condition is true. While repeat-until executes the codes first before caring about the condition, and it loops until the condition is true.
 
 ### Notes when using while loops
 <b>YOU CAN NOT USE NESTED WHILE LOOPS</b>

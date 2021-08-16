@@ -824,6 +824,8 @@ To perform any actions, you will need to use a special if statement:
 
 	if_el[] position_of_key_in_key[]
 
+Note: actually, `if_el` gets the errorlevel variable's value.
+
 Example:
 
 	key[] wsad
@@ -847,11 +849,28 @@ You can use:
 	
 to use if not.
 
+# Switch case
+If you're familiar with C, then this is FreakC's way on how to use a switch case:
+
+	match[] value
+		case[] value1
+		:: Code
+		endcase[]
+		case[] value2
+		:: Code
+		endcase[]
+		default[]
+		:: Code executed when no case is match, and this block is optional
+		endcase[]
+	endmatch[]
+
+But currently there's limitations with this command, as it currently can't check multiple cases :/, will update the feature soon!!
+
 # Loops
 
-## For loops
+## For loops (in Batch)
 
-### Loops from m to n
+### Loops from "start" to "end" by "step"
 
 	loop[] %%parameters in (start,step,end) do (
 	)
@@ -861,14 +880,19 @@ to use if not.
 	scan_dir[] drive/directory %%parameters in (file) do (
 	)
 	
-### Loops through strings or strings in a file
+### Loops through files, strings, or even the returned result of a command
 
-	scan_strs[] drive/directory %%parameters in (string/file) do (
+	scan_strs[] "tokens=position-position delims=delimiter" %%parameters in (something) do (	
 	)
-	
-### Loops through a file 
 
-	scan_file[] %%parameters in (set) do (
+If `something` is double-quoted, then it is a string.
+If `something` is single-quoted, then it is a command to be executed, and the parameter will be the returned content of the command.
+If `something` is not quoted, then it will loops through every lines in a file.
+`tokens` are the tokens you want to take, set it to a number if you want to get the token at that position set it to `*` if you want to get all tokens, set it to `number1-number2` if you want to get the tokens start from position number1 to position number2, and to access those tokens, use paratemeters in alphabetical order.
+	
+### Loops through a set of parameters
+
+	scan_str[] %%parameters in (set) do (
 	)
 	
 ### Loops through a folder
@@ -894,19 +918,18 @@ Of course, the loops will run when the condition is still true, stop when false.
 ### Differences between While and Repeat Until
 While loop is executed only when given condition is true. While repeat-until executes the codes first before caring about the condition, and it loops until the condition is true.
 
-### Notes when using while loops
-<b>YOU CAN NOT USE NESTED WHILE LOOPS</b>
-<br/>
-This will not work:
+### Nesting while loops
+This will work just fine:
 
 	while[] condition
-	while[] condition
-	endwhile[]
+		while[] condition
+		endwhile[]
 	endwhile[]
 
-<b>(Same with Do-While)</b>
+<b>(Same with repeat-until)</b>
 
-## The better way for while loops
+## Batch's way to create whiles loops.
+FreakC's while loops are compiled down to goto statements and labels, so you can also create a while loop using normal Batch:
 
 	eq[] i=start_number
 	label[] loop
@@ -917,6 +940,8 @@ This will not work:
 	
 	label[] nextcode
 	command
+
+But this would be too bulky, just stick with FreakC's whilee loop.
 	
 For example, this program will print all the number from 0 to 10 then print out "Done!":
 
@@ -931,7 +956,7 @@ For example, this program will print all the number from 0 to 10 then print out 
 	print[] Done^!
 
 ## Notes
-- Using a goto statement will cause all for loops to stop, and because while loops require goto statement, for loop, while loop, and goto statements can not interact with each others safely, however, there's a simple way to solve this. If you put the while loops or goto statements inside a file (or a `function[]`), and you call that file inside the for loop, then it would work normally.
+- Using a goto statement will cause all for loops to stop, and because while loops is compiled down to goto statements, for loop, while loop, and goto statements can not interact with each others safely, however, there's a simple way to solve this. If you put the while loops or goto statements inside a file (or a `function[]`), and you call that file inside the for loop, then it would work normally.
 
 # Inlining commands
 Note that all commands can be inlined normally, except all FreakC-exclusive commands that uses its own kind of block statement.
@@ -939,6 +964,9 @@ These includes:
 * `function[]` - `endfunc[]`
 * `while[]` - `endwhile[]`
 * `repeat[]` - `until[]`
+* `match[]` - `endmatch[]`
+* `case[]` - `endcase[]`
+
 
 This will not work
 
@@ -946,17 +974,28 @@ This will not work
 
 or this:
 
-	if 1 == 1 while[] 1 > 0
+	if[] 1 == 1 while[] 1 > 0
 		print[] OMG
 	endwhile[]
 
 it should have been:
 
-	if 1 == 1 (
+	if[] 1 == 1 (
 		while 1 > 0
 			print[] OMG
 		endwhile[]
 	)
+
+# Parentheses
+Because FreakC uses more "human-friendly" syntax, but Batch uses parentheses for creating blocks of codes, so I've decided to add a crappy "human version" of this:
+
+	if[] 1 == 1 begin[]
+		while 1 > 0
+			print[] OMG
+		endwhile[]
+	done[]
+
+`begin[]` and `done[]` are direct equivalents of `(` and `)`, so they both work the same, but if you prefer codes to be more "human-readable", then this would be pretty good.
 
 # Escaping characters
 ## Escaping special characters

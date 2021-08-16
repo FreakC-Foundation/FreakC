@@ -15,7 +15,7 @@
 ## What is FreakC ?
 `print[] The language itself:`
 
-FreakC is a small, experimental programming language created by me when I was/am a student. It's a fun project with the idea of trying to create a full-blown programming language in such a small language like Batch, which has a lot of limitations. It is transpiled to Batch, and looks/works pretty much the same as Batch, which means that you can switch from Batch to FreakC easily, while FreakC has added a tiny bit more features to improve your experience with Batch scripting (you would understand the pain of Batch if you are a hardcore Batch coder). These features are: macro definition, some additional operators, commands and macros, more functions/commands for arrays, strings and math, and the support for floats too.
+FreakC is a small, experimental programming language created by me when I was/am a student. It's a fun project with the idea of trying to create a full-blown programming language in such a small language like Batch, which has a lot of limitations. It is transpiled to Batch, and looks/works pretty much the same as Batch, which means that you can switch from Batch to FreakC easily, while FreakC has added a tiny bit more features to improve your experience with Batch scripting (you would understand the pain of Batch if you are a hardcore Batch coder). These features are: macro definition, while loops, repeat-until loops, switch case, some additional operators, commands and macros, more functions/commands for arrays, strings and math, and the support for floats too.
 
 `print[] Overall...`
 

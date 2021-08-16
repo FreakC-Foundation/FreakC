@@ -58,7 +58,12 @@ if "%2" == "--compile" (
 ) else if "%1" == "--clrbat" (
 	for /r %%i in (*.bat) do (
 		set name=%%i
-		if "!name:FreakC.bat=!" NEQ "!name!" if "!name:FCShell.bat=!" NEQ "!name!" if "!name:createFile.bat=!" NEQ "!name!" if "!name:libgen.bat=!" NEQ "!name!" del /q %%i
+		set clearCheck=false
+		if "!name:FreakC.bat=!" NEQ "!name!" set clearCheck=true
+		if "!name:FCShell.bat=!" NEQ "!name!" set clearCheck=true
+		if "!name:createFile.bat=!" NEQ "!name!" set clearCheck=true
+		if "!name:libgen.bat=!" NEQ "!name!" set clearCheck=true
+		if "!clearCheck!" == "false" del /q %%i
 	)
 	exit /b
 )
@@ -79,6 +84,9 @@ set wloopnum=0
 set wloopnum2=0
 set proctar=something
 set fchcomment=false
+set matchInd=0
+set wloopInd=0
+set wloopInd2=0
 echo @echo off>%output%.bat
 echo :FreakCCompiled>>%output%.bat
 for /f "tokens=* delims= " %%x in (%output%.fclang) do (
@@ -287,48 +295,81 @@ for /f "tokens=* delims= " %%x in (%output%.fclang) do (
 		)
 		if %%a == drive[] set printString=!printString:drive[] =!:
 		if %%a == while[] (
-			if "!procadd!" == "true" (
-				set outtar=!proctar!.bat
-			) else (
-				set outtar=%output%.bat
-			)
+			if "!procadd!" == "true" (set outtar=!proctar!.bat) else (set outtar=%output%.bat)
 			set fccondition=!printString:while[] =!
-			echo :WhileLoop!wloopnum!>>!outtar!
-			echo if not !fccondition! goto EndLoop!wloopnum!>>!outtar!
+			set fcpos[!wloopInd!]=!wloopnum!
+			for %%i in (!wloopInd!) do (
+				echo :WhileLoop!fcpos[%%i]!>>!outtar!
+				echo if not !fccondition! goto EndLoop!fcpos[%%i]!>>!outtar!
+			)
+			set /a wloopnum+=1
+			set /a wloopInd+=1
 			set deniedToken=true
 		)
 		if %%a == endwhile[] (
-			if "!procadd!" == "true" (
-				set outtar=!proctar!.bat
-			) else (
-				set outtar=%output%.bat
+			if "!procadd!" == "true" (set outtar=!proctar!.bat) else (set outtar=%output%.bat)
+			set /a _wloopInd=!wloopInd!-1
+			for %%i in (!_wloopInd!) do (
+				echo goto WhileLoop!fcpos[%%i]!>>!outtar!
+				echo :EndLoop!fcpos[%%i]!>>!outtar!
 			)
-			echo goto WhileLoop!wloopnum!>>!outtar!
-			echo :EndLoop!wloopnum!>>!outtar!
-			set /a wloopnum=!wloopnum!+1
+			set /a wloopInd-=1
 			set deniedToken=true
 		)
 		if %%a == repeat[] (
-			if "!procadd!" == "true" (
-				set outtar=!proctar!.bat
-			) else (
-				set outtar=%output%.bat
-			)
-			echo :repeat!wloopnum!>>!outtar!
+			if "!procadd!" == "true" (set outtar=!proctar!.bat) else (set outtar=%output%.bat)
+			set fcpos2[!wloopInd2!]=!wloopnum2!
+			for %%i in (!wloopInd2!) do echo :RepeatLoop!fcpos2[%%i]!>>!outtar!
+			set /a wloopnum2+=1
+			set /a wloopInd2+=1
 			set deniedToken=true
 		)
 		if %%a == until[] (
-			if "!procadd!" == "true" (
-				set outtar=!proctar!.bat
-			) else (
-				set outtar=%output%.bat
-			)
+			if "!procadd!" == "true" (set outtar=!proctar!.bat) else (set outtar=%output%.bat)
+			set /a _wloopInd2=!wloopInd2!-1
 			set fccondition2=!printString:until[] =!
-			echo if not !fccondition2! goto until!wloopnum2!>>!outtar!
-			echo goto repeat!wloopnum2!>>!outtar!
-			echo :until!wloopnum2!>>!outtar!
-			set /a wloopnum2=!wloopnum2!+1
+			for %%i in (!_wloopInd2!) do (
+				echo if !fccondition2! goto UntilLoop!fcpos2[%%i]!>>!outtar!
+				echo goto RepeatLoop!fcpos2[%%i]!>>!outtar!
+				echo :UntilLoop!fcpos2[%%i]!>>!outtar!
+			)
+			set /a wloopInd2-=1
 			set deniedToken=true
+		)
+		if %%a == begin[] set printString=!printString:begin[]=(!
+		if %%a == done[] set printString=!printString:done[]=^)!
+		if %%a == match[] (
+			if "!procadd!" == "true" (set outtar=!proctar!.bat) else (set outtar=%output%.bat)
+			set matchConds[!matchInd!]=!printString:match[] =!
+			echo set matchChecked!matchInd!=false>>!outtar!
+			set /a matchInd+=1
+			set deniedToken=true
+		)
+		if %%a == case[] (
+			if "!procadd!" == "true" (set outtar=!proctar!.bat) else (set outtar=%output%.bat)
+			set /a _matchInd=!matchInd!-1
+			for %%i in (!_matchInd!) do (
+				(
+				echo if !matchConds[%%i]! == !printString:case[] =! (
+				echo set matchChecked%%i=true
+				)>>!outtar!
+			)
+			set deniedToken=true
+		)
+		if %%a == default[] (
+			if "!procadd!" == "true" (set outtar=!proctar!.bat) else (set outtar=%output%.bat)
+			set /a _matchInd=!matchInd!-1
+			for %%i in (!_matchInd!) do echo if "^!matchChecked%%i^!" == "false" (>>!outtar!
+			set deniedToken=true
+		)
+		if %%a == endcase[] (
+			if "!procadd!" == "true" (set outtar=!proctar!.bat) else (set outtar=%output%.bat)
+			echo ^)>>!outtar!
+			set deniedToken=true
+		)
+		if %%a == endmatch[] (
+			set deniedToken=true
+			set /a matchInd-=1
 		)
 		if %%a == key[] set printString=!printString:key[] =CHOICE /C:! /N
 		if %%a == uprint[] set printString=!printString:uprint[]=echo!
@@ -440,5 +481,5 @@ if "%fcread%" == "true" type %output%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %output%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 0.8.0 BETA
+echo FreakC DevKit Version 0.10.0 BETA
 exit /b

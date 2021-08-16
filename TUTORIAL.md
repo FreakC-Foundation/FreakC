@@ -168,7 +168,7 @@ Though you can also use:
 
 `!NL!` is a built-in macro.
 
-Note that indentation will break the codes 😢:
+If you're using tabs as indentation, note that indentation will break the codes 😢:
 
 	function[] something
 		local[] enabledelayedexpansion
@@ -189,6 +189,8 @@ But this works:
 	!
 	Line 3
 	endfunc[]
+
+But if you use spaces for indent, it should work fine right from the start.
 
 You can also implement something like this:
 
@@ -930,6 +932,31 @@ For example, this program will print all the number from 0 to 10 then print out 
 
 ## Notes
 - Using a goto statement will cause all for loops to stop, and because while loops require goto statement, for loop, while loop, and goto statements can not interact with each others safely, however, there's a simple way to solve this. If you put the while loops or goto statements inside a file (or a `function[]`), and you call that file inside the for loop, then it would work normally.
+
+# Inlining commands
+Note that all commands can be inlined normally, except all FreakC-exclusive commands that uses its own kind of block statement.
+These includes:
+* `function[]` - `endfunc[]`
+* `while[]` - `endwhile[]`
+* `repeat[]` - `until[]`
+
+This will not work
+
+	function[] something endfunc[]
+
+or this:
+
+	if 1 == 1 while[] 1 > 0
+		print[] OMG
+	endwhile[]
+
+it should have been:
+
+	if 1 == 1 (
+		while 1 > 0
+			print[] OMG
+		endwhile[]
+	)
 
 # Escaping characters
 ## Escaping special characters

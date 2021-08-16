@@ -223,7 +223,7 @@ echo (endlocal ^& set %%~1=%%newstr%%^)
 exit /b 0
 :string_chr
 (
-echo if "%%~2"=="" exit /b
+echo if "%%~2" == "" exit /b
 echo if %%~2 LSS 32 exit /b
 echo if %%~2 GTR 126 exit /b
 echo set alphabet= ^^!"#$%%%%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
@@ -232,6 +232,15 @@ echo set /a var=%%~2-32
 echo set char=^^!alphabet:~%%var%%,1^^!
 echo endlocal ^& set %%~1=^^%%char%%
 )>fclib_string_chr.bat
+exit /b 0
+:string_ord
+(
+echo setlocal enabledelayedexpansion
+echo set target=%%~2
+echo set alphabet= ^^^^^^^^^^!"#$%%%%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
+echo for /l %%%%i in (0,1,94^) do if "^!alphabet:~%%%%i,1^!" == "^!target:~0,1^!" set /a res=%%%%i+32
+echo endlocal ^& set %%~1=%%res%%
+)>fclib_string_ord.bat
 exit /b 0
 :string_startwith
 (
@@ -335,12 +344,18 @@ exit /b
 echo setlocal enabledelayedexpansion
 echo set str=%%~2
 echo :loop
-echo if "^!str:~0,1^!" == " " (
+echo set check=false
+echo if "^!str:~0,1^!" == "	" set check=true
+echo if "^!str:~0,1^!" == " " set check=true
+echo if "^!check^!" == "true" (
 echo 	set str=^^!str:~1^^!
 echo 	goto loop
 echo ^)
 echo :loop2
-echo if "^!str:~-1^!" == " " (
+echo set check=false
+ echo if "^!str:~-1^!" == "	" set check=true
+echo if "^!str:~-1^!" == " " set check=true
+echo if "^!check^!" == "true" (
 echo 	set str=^^!str:~0,-1^^!
 echo 	goto loop2
 echo ^)
@@ -351,39 +366,34 @@ exit /b
 :list_max
 (
 echo set max=1
-echo for %%%%i in ^(%%~2^) DO (
+echo for %%%%i in ^(%%~2^) do (
 echo 	set max=%%%%i
 echo 	goto fcmaxend
 echo ^)
 echo :fcmaxend
-echo for %%%%i in (%%~2^) DO (
-echo 	if %%%%i GTR %%max%% (
-echo 		set max=%%%%i
-echo 	^)
-echo ^)
+echo for %%%%i in (%%~2^) do if %%%%i GTR %%max%% set max=%%%%i
 echo set %%~1=%%max%%
 )>fclib_list_max.bat
 exit /b 0
 :list_min
 (
 echo set min=1
-echo for %%%%i in ^(%%~2^) DO (
+echo for %%%%i in ^(%%~2^) do (
 echo 	set min=%%%%i
 echo 	goto fcminend
 echo ^)
 echo :fcminend
-echo for %%%%i in (%%~2^) DO (
-echo 	if %%%%i LSS %%min%% (
-echo 		set min=%%%%i
-echo 	^)
-echo ^)
+echo for %%%%i in (%%~2^) do if %%%%i LSS %%min%% set min=%%%%i
 echo set %%~1=%%min%%
 )>fclib_list_min.bat
 exit /b 0
 :list_sum
 (
 echo set sum=0
-echo for %%%%i in ^(%%~2^) DO set /a sum+=%%%%i
+echo for %%%%i in ^(%%~2^) do set /a sum+=%%%%i
 echo set %%~1=%%sum%%
 )>fclib_list_sum.bat
+exit /b 0
+:util_cnd
+echo if %%~2 (set %%~1=%%~3^) else set %%~1=%%~4>fclib_util_cnd.bat
 exit /b 0

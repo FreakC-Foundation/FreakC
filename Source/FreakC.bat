@@ -22,8 +22,6 @@ if "%1" == "" (
 	pause >nul
 	exit /b
 )
-set proctar=something
-set fchcomment=false
 if "%1" == "--help" (
 	echo. Usage: freakc {option/name} {option}
 	echo.
@@ -52,24 +50,16 @@ if "%2" == "--compile" (
 	FCShell
 	exit /b
 ) else if "%1" == "--clrlib" (
-	del /q fclib_list_sum.bat 2>nul
-	del /q fclib_list_max.bat 2>nul
-	del /q fclib_list_min.bat 2>nul
-	del /q fclib_math_abs.bat 2>nul
-	del /q fclib_math_odd.bat 2>nul
-	del /q fclib_math_even.bat 2>nul
-	del /q fclib_math_fact.bat 2>nul
-	del /q fclib_math_pow.bat 2>nul
-	del /q fclib_math_fib.bat 2>nul
-	del /q fclib_math_fibseq.bat 2>nul
-	del /q fclib_string_upper.bat 2>nul
-	del /q fclib_string_lower.bat 2>nul
-	del /q fclib_string_length.bat 2>nul
-	del /q fclib_string_reverse.bat 2>nul
-	del /q fclib_float.bat 2>nul
+	for /r %%i in (*.bat) do (
+		set name=%%i
+		if "!name:fclib=!" NEQ "!name!" del /q %%i
+	)
 	exit /b
 ) else if "%1" == "--clrbat" (
-	del *.bat
+	for /r %%i in (*.bat) do (
+		set name=%%i
+		if "!name:FreakC.bat=!" NEQ "!name!" if "!name:FCShell.bat=!" NEQ "!name!" if "!name:createFile.bat=!" NEQ "!name!" if "!name:libgen.bat=!" NEQ "!name!" del /q %%i
+	)
 	exit /b
 )
 set fccompilename=%1
@@ -87,6 +77,8 @@ if "%fccreate%" == "true" (
 set fccomment=false
 set wloopnum=0
 set wloopnum2=0
+set proctar=something
+set fchcomment=false
 echo @echo off>%output%.bat
 echo :FreakCCompiled>>%output%.bat
 for /f "tokens=* delims= " %%x in (%output%.fclang) do (
@@ -154,6 +146,7 @@ for /f "tokens=* delims= " %%x in (%output%.fclang) do (
 				call libgen string upper
 				call libgen string lower
 				call libgen string chr
+				call libgen string ord
 				call libgen string endswith
 				call libgen string startswith
 				call libgen string indexOf
@@ -203,6 +196,10 @@ for /f "tokens=* delims= " %%x in (%output%.fclang) do (
 		if %%a == string_chr[] (
 			call libgen string chr
 			set printString=!printString:string_chr[]=call fclib_string_chr.bat!
+		)
+		if %%a == string_ord[] (
+			call libgen string ord
+			set printString=!printString:string_ord[]=call fclib_string_ord.bat!
 		)
 		if %%a == string_indexOf[] (
 			call libgen string indexOf
@@ -358,28 +355,8 @@ for /f "tokens=* delims= " %%x in (%output%.fclang) do (
 		)
 		if %%a == var[] set printString=!printString:var[]=set!
 		if %%a == cnd[] (
-			if "!procadd!" == "true" (
-				set outtar=!proctar!.bat
-			) else (
-				set outtar=%output%.bat
-			)
-			set process=!printString:cnd[] =!
-			set turn=0
-			set deniedToken=true
-			for %%i in (!process!) do (
-				if !turn! == 0 set varname=%%i
-				if !turn! == 1 set cond=%%i
-				if !turn! == 2 set v1=%%i
-				if !turn! == 3 set v2=%%i
-				set /a turn+=1
-			)
-			(
-			echo if !cond:~1,-1! (
-			echo 	set !varname!=!v1:~1,-1!
-			echo ^) else (
-			echo 	set !varname!=!v2:~1,-1!
-			echo ^)
-			)>!outtar!
+			call libgen util cnd
+			set printString=!printString:cnd[]=call fclib_util_cnd.bat!
 		)
 		if %%a == inp[] set printString=!printString:inp[]=set /p!
 		if %%a == goto[] set printString=!printString:goto[]=goto!

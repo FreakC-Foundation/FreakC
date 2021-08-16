@@ -1088,6 +1088,9 @@ All the functions above only works with list with all integers. String or floats
 	:: Return true if string ends with a substring, false if it doesn't
 	string_endswith[] "variable_name" "string" "substring" "position"
 	
+	:: Return an ASCII value equivalent to the character, if passed a string, it will return the value of the first character only, so if you pass in """" it will give you the ASCII value of the double quote character
+	string_ord[] "variable_name" "value"
+	
 	:: Return a character equivalent to its ascii value
 	string_chr[] "variable_name" "value"
 	:: Note that you would probably need a caret character for escaping some special characters like "<>&^" like this:

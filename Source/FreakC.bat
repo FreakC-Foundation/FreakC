@@ -4,25 +4,13 @@ set NLM=^
 
 
 set NL=^^^%NLM%%NLM%^%NLM%%NLM%
+set helpCheck=false
 if "%1" == "" (
-	echo. Usage: freakc {option/name} {option}
-	echo.
-	echo. Options:
-	echo.
-	echo.  --help     :Have to be the first parameter, shows all options
-	echo.  --shell    :Have to be the first parameter, open shell.
-	echo.  --version  :Have to be the first parameter, shows the current version of the DevKit.
-	echo.  --compile  :Have to be the second parameter, compile the file only.
-	echo.  --candr    :Have to be the second parameter, compile and shows compiled code.
-	echo.  --create   :Have to be the second parameter, create a new FreakC project.
-	echo.  --clrlib   :Have to be the first parameter, delete all standard libraries in the folder.
-	echo.  --clrbat   :Have to be the first parameter, delete all Batch files in the folder.
-	echo.
-	echo. [Leave the second {option} blank if you want to both compile and run the file]
-	pause >nul
-	exit /b
+	set helpCheck=true
+	set pauseAcp=true
 )
-if "%1" == "--help" (
+if "%1" == "--help" set helpCheck=true
+if "%helpCheck%" == "true" (
 	echo. Usage: freakc {option/name} {option}
 	echo.
 	echo. Options:
@@ -37,25 +25,25 @@ if "%1" == "--help" (
 	echo.  --clrbat   :Have to be the first parameter, delete all Batch files in the folder.
 	echo.
 	echo. [Leave the second {option} blank if you want to both compile and run the file]
+	if "%pauseAcp%" == "true" pause >nul
 	exit /b
 )
 if "%1" == "--version" goto fcversion
-if "%2" == "--compile" (
-	set fccompile=true
-) else if "%2" == "--candr" (
-	set fcread=true
-) else if "%2" == "--create" (
-	set fccreate=true
-) else if "%1" == "--shell" (
+if "%2" == "--compile" set fccompile=true
+if "%2" == "--candr" set fcread=true
+if "%2" == "--create" set fccreate=true
+if "%1" == "--shell" (
 	FCShell
 	exit /b
-) else if "%1" == "--clrlib" (
+)
+if "%1" == "--clrlib" (
 	for /r %%i in (*.bat) do (
 		set name=%%i
 		if "!name:fclib=!" NEQ "!name!" del /q %%i
 	)
 	exit /b
-) else if "%1" == "--clrbat" (
+)
+if "%1" == "--clrbat" (
 	for /r %%i in (*.bat) do (
 		set name=%%i
 		set clearCheck=false

@@ -28,6 +28,8 @@ If you like to create a toy language from FreakC's source code, go ahead, I woul
 
 Because Batch doesn't really have modern features like C++, Java or Javascript, and there are some really weird quirks to the language. And the biggest middle finger to the devs was the incapablity to do equation with floating point numbers. So FreakC follows a whole different way in creating its compiler. It acts more like a "weird preprocessor", it doesn't really have a parser, but I guess if it works fine then it works fine, this is Batch anyway, it's hard 🙂. And that should answer why the compiler's kind of strange. But still, being a Batch superset itself makes the development process a lot easier.
 
+Many people suggested that I should use another language other than Batch to create the language, no, because FreakC's an experimental lang, being written in Batch is the "experimental" part, so I wouldn't switch to another language. And seriously, people don't really need "upgraded" Batch, many peeps have never heard about Batch before lol. If you want something good for both scripting and SysAdmin, use Powershell, Bash, or even Python when it has adapted so much features.
+
 Another thing that you would want to note is that FreakC doesn't really have big updates normally, but if you have any suggestions, please let us know!
 
 ### The esolang

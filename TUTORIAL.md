@@ -360,9 +360,26 @@ But it doesn't work, because you'd need to use:
 	local[] ENABLEDELAYEDEXPANSION
 	print[] ^!arr[%i%]^!
 
-Also, if you change a value/declare a variable in a block of code locally in a normal way, it'd often not work outside the scope, so you should use delayed expansion pretty much all the time.
+Also, if you change a value/declare a variable in a block of code locally in a normal way, it'd often not work outside the scope, so you should use delayed expansion pretty much all the time. Example:
 
-Notice that you're using `local[]`, which makes all the values defined local, so remember to always add `endloc[]` (mostly when creating a function) to ensure everything works fine, like a `return` statement for example.
+Suppose this code:
+
+	if[] "%getOption%" EQU  "yes" (
+		inp[] option=Enter option: 
+		print[] Option read: %option%
+	)
+
+Previous code will NOT work becase %option% value is replaced just one time when the IF command is parsed (before it is executed). You need to "delay" variable value expansion until SET /P command had modified variable value:
+
+	local[] EnableDelayedExpansion
+	if "%getOption%" EQU "yes" (
+		inp[] option=Enter option: 
+		print[] Option read: ^!option^!
+	)
+
+This problem is taken from [this source](https://stackoverflow.com/questions/22278456/enable-and-disable-delayed-expansion-what-does-it-do)
+
+Notice that you're using `local[]`, which makes all the values defined locally, so remember to always add `endloc[]` (mostly when creating a function) to ensure everything works fine, like a `return` statement for example.
 
 	function[] getHello
 		local[] enabledelayedexpansion
@@ -863,6 +880,8 @@ If you're familiar with C, then this is FreakC's way on how to use a switch case
 		:: Code executed when no case is match, and this block is optional
 		endcase[]
 	endmatch[]
+
+Note that if you want to nest switch-case, you must have delayed expansion turned on, since FreakC's switch case uses a variable to keep track of stuffs.
 
 But currently there's limitations with this command, as it currently can't check multiple cases :/, will update the feature soon!!
 

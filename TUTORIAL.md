@@ -77,10 +77,10 @@ To open interactive shell, type:
     
 You can type in whatever you want, it will be stored in "tar.fclang". You can type in any of these commands to execute tasks:
 
-* start[] - Runs all the codes written
-* end[] - Delete tar.fclang and exit
-* wipe[] - Resets codes
-* clr[] - Clear console
+* `start[]` - Runs all the codes written
+* `endcli[]` - Delete tar.fclang and exit
+* `wipe[]` - Resets codes
+* `clr[]` - Clear console
 
 # Print text
 To print out a string or text, you can do it like this:
@@ -167,30 +167,6 @@ Though you can also use:
 	var[] multi_line_string=Line 1!NL!Line 2!NL!Line 3
 
 `!NL!` is a built-in macro.
-
-If you're using tabs as indentation, note that indentation will break the codes 😢:
-
-	function[] something
-		local[] enabledelayedexpansion
-		var[] multi_line_string=Line 1^
-		!
-		Line 2^
-		!
-		Line 3
-	endfunc[]
-
-But this works:
-
-	function[] something
-		local[] enabledelayedexpansion
-		var[] multi_line_string=Line 1^
-	!
-	Line 2^
-	!
-	Line 3
-	endfunc[]
-
-But if you use spaces for indent, it should work fine right from the start.
 
 You can also implement something like this:
 

@@ -488,7 +488,7 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 		if %%a == fnd[] set printString=!printString:fnd[]=find!
 		if %%a == ps[] set printString=!printString:ps[]=powershell!
 		if %%a == enb_delay[] set printString=!printString:enb_delay[]=setlocal enabledelayedexpansion!
-		if %%a == dis_delay[] set printString=!printString:enb_delay[]=setlocal disabledelayedexpansion!
+		if %%a == dis_delay[] set printString=!printString:dis_delay[]=setlocal disabledelayedexpansion!
 	)
 	if not "!fchcomment!" == "true" (
 		if "!procadd!" == "true" (

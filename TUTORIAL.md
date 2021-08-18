@@ -1089,6 +1089,12 @@ Include the compiled content of the module:
 	
 	:: Find length of an array
 	arr_length[] "variable_name" "array"
+	
+	:: Append a value into an array
+	arr_push[] "array" "value"
+	
+	:: Remove a value from an array
+	arr_pop[] "array"
 
 
 	:: Example:

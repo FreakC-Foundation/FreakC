@@ -869,6 +869,7 @@ to use if not.
 # Switch case
 If you're familiar with C, then this is FreakC's way on how to use a switch case:
 
+	enb_delay[]
 	match[] value
 		case[] value1
 		:: Code
@@ -880,8 +881,6 @@ If you're familiar with C, then this is FreakC's way on how to use a switch case
 		:: Code executed when no case is match, and this block is optional
 		endcase[]
 	endmatch[]
-
-Note that if you want to nest switch-case, you must have delayed expansion turned on, since FreakC's switch case uses a variable to keep track of stuffs.
 
 But currently there's limitations with this command, as it currently can't check multiple cases :/, will update the feature soon!!
 

@@ -949,8 +949,33 @@ For example, this program will print all the number from 0 to 10 then print out 
 	label[] nextcode
 	print[] Done^!
 
-## Notes
-- Using a goto statement will cause all for loops to stop, and because while loops is compiled down to goto statements, for loop, while loop, and goto statements can not interact with each others safely, however, there's a simple way to solve this. If you put the while loops or goto statements inside a file (or a `function[]`), and you call that file inside the for loop, then it would work normally.
+## FreakC's for loop
+
+	enb_delay[]
+	for[] var_name start step end
+		:: some code
+	endfor[]
+
+Why? Because FreakC's while loops are compiled down to labels and goto statements, which means that Batch's for will not work well with FreakC's while, unless you create a function containing that while loop, and then call it inside the Batch-style's for loop, then it would work, but that's tedious. However, FreakC's for loop is compiled down to the same format as while loops, so you can nest while and for loops together easily. Also, by using FreakC's for loop, you can gain some features which I will cover in the next section.
+
+But there's some drawbacks, the biggest one is probably performance loss because FreakC's for is compiled down to goto statments and labels, which are way slower than Batch-styl for loops. But if you prefer convenience to performance then `for[]` is good for you, same with macros and functions lol.
+
+## Break, continue statement
+To break out a FreakC's for loop or while loop, simply use `breakl[]`:
+
+	enb_delay[]
+	for[] i 0 1 5
+		if[] ^!i^! == 3 breakl[]
+	endfor[]
+	:: This will print out 1, 2
+
+To skip one iteration, use `continue[]`:
+
+	enb_delay[]
+	for[] i 0 1 5
+		if[] ^!i^! == 3 continue[]
+	endfor[]
+	:: This will print out 1, 2, 4
 
 # Inlining commands
 Note that all commands can be inlined normally, except all FreakC-exclusive commands that uses its own kind of block statement.

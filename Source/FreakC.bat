@@ -127,6 +127,8 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 				call libgen array min
 				call libgen array sum
 				call libgen array len
+				call libgen array push
+				call libgen array pop
 				call libgen array join
 				call libgen array indexOf
 				call libgen array lastIndexOf
@@ -302,15 +304,52 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 			set /a wloopInd+=1
 			set deniedToken=true
 		)
-		if %%a == endwhile[] (
+		if %%a == for[] (
+			if "!procadd!" == "true" (set outtar=!proctar!.bat) else (set outtar=%output%.bat)
+			set turn=0
+			set process=!printString:for[] =!
+			for %%i in (!process!) do (
+				if !turn! == 0 set varname=%%i
+				if !turn! == 1 set start=%%i
+				if !turn! == 2 set step=%%i
+				if !turn! == 3 set end=%%i
+				set /a turn+=1
+			)
+			set fcpos[!wloopInd!]=!wloopnum!
+			for %%i in (!wloopInd!) do (
+				echo set !varname!=!start!>>!outtar!
+				echo :WhileLoop!fcpos[%%i]!>>!outtar!
+				echo if ^^!!varname!^^! GEQ !end! goto EndLoop!fcpos[%%i]!>>!outtar!
+			)
+			set /a wloopnum+=1
+			set /a wloopInd+=1
+			set deniedToken=true
+		)
+		set whileCheck=false
+		set acceptFor=false
+		if %%a == endfor[] (
+			set whileCheck=true
+			set acceptFor=true
+		)
+		if %%a == endwhile[] set whileCheck=true
+		if "!whileCheck!" == "true" (
 			if "!procadd!" == "true" (set outtar=!proctar!.bat) else (set outtar=%output%.bat)
 			set /a _wloopInd=!wloopInd!-1
 			for %%i in (!_wloopInd!) do (
+				if "!acceptFor!" == "true" echo set /a !varname!+=!step!>>!outtar!
 				echo goto WhileLoop!fcpos[%%i]!>>!outtar!
 				echo :EndLoop!fcpos[%%i]!>>!outtar!
 			)
 			set /a wloopInd-=1
 			set deniedToken=true
+		)
+		if %%a == breakl[] (
+			set /a _wloopInd=!wloopInd!-1
+			for %%y in (!_wloopInd!) do for %%s in (!fcpos[%%y]!) do set printString=!printString:breakl[]=goto EndLoop%%s!
+		)
+		if %%a == continue[] (
+			set /a _wloopInd=!wloopInd!-1
+			for %%y in (!_wloopInd!) do for %%s in (!fcpos[%%y]!) do for %%z in (!varname!) do for %%q in (!varname!) do for %%z in (!step!) do set printString=!printString:continue[]=set /a %%q+=%%z ^& goto WhileLoop%%s!
 		)
 		if %%a == repeat[] (
 			if "!procadd!" == "true" (set outtar=!proctar!.bat) else (set outtar=%output%.bat)
@@ -477,5 +516,5 @@ if "%fcread%" == "true" type %output%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %output%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 0.10.1 BETA
+echo FreakC DevKit Version 0.11.0 BETA
 exit /b

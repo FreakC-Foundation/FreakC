@@ -1,7 +1,7 @@
 inp[] n=The amount of element:
 loop[] %%i in (1,1,%n%) do inp[] arr[%%i]=Element %%i:
 
-local[] enabledelayedexpansion
+enb_delay[]
 loop[] %%i in (1,1,%n%) do (
 	eq[] ind=%%i+1
 	loop[] %%j in (^!ind^!,1,%n%) do (

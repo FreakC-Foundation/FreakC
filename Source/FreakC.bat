@@ -77,7 +77,7 @@ set wloopInd=0
 set wloopInd2=0
 echo @echo off>%output%.bat
 echo :FreakCCompiled>>%output%.bat
-for /f "tokens=* delims= " %%x in (%output%.fclang) do (
+for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 	set deniedToken=false
 	set printString=%%x
 	for %%a in (%%x) do (
@@ -264,6 +264,14 @@ for /f "tokens=* delims= " %%x in (%output%.fclang) do (
 		if %%a == arr_join[] (
 			call libgen array join
 			set printString=!printString:arr_join[]=call fclib_array_join.bat!
+		)
+		if %%a == arr_push[] (
+			call libgen array push
+			set printString=!printString:arr_push[]=call fclib_array_push.bat!
+		)
+		if %%a == arr_pop[] (
+			call libgen array pop
+			set printString=!printString:arr_pop[]=call fclib_array_pop.bat!
 		)
 		if %%a == arr_length[] (
 			call libgen array len
@@ -469,5 +477,5 @@ if "%fcread%" == "true" type %output%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %output%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 0.10.0 BETA
+echo FreakC DevKit Version 0.10.1 BETA
 exit /b

@@ -82,6 +82,30 @@ echo set /a res_len-=1
 echo goto :loop
 )>fclib_array_lastIndexOf.bat
 exit /b 0
+:array_push
+(
+echo set res_len=0
+echo :loop
+echo if not defined %%~1[%%res_len%%] (
+echo    set %%~1[%%res_len%%]=%%~2
+echo    exit /b
+echo ^)
+echo set /a res_len+=1
+echo goto :loop
+)>fclib_array_push.bat
+exit /b
+:array_pop
+(
+echo set res_len=0
+echo :loop
+echo if not defined %%~1[%%res_len%%] goto end
+echo set /a res_len+=1
+echo goto :loop
+echo :end
+echo set /a res_len-=1
+echo set %%~1[%%res_len%%]^=
+)>fclib_array_pop.bat
+exit /b
 :math_abs
 (
 echo set tar=%%~2

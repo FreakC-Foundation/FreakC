@@ -1,33 +1,25 @@
 change_title[] 99 Bottles Of Beer
 
 var[] count=99
-label[] loop
-
-if_not[] %count% GTR 0 goto[] end
-if[] %count% LEQ 1 (
-	var[] word=bottle
-) el[] (
-	var[] word=bottles
-)
-
-print[] %count% %word% of beer on the wall
-print[] %count% %word% of beer,
-print[] Take one down, pass it around,
-eq[] count--
-
-if[] %count% LEQ 1 (
-	var[] word=bottle
-) el[] (
-	var[] word=bottles
-)
-
-if[] %count% GTR 0 (
-	print[] %count% %word% of beer on the wall.
-) el[] (
-	print[] No more %word% of beer on the wall.
-)
-
-goto[] loop
-
-label[] end
+while[] %count% GTR 0
+	if[] %count% LEQ 1 (
+		var[] word=bottle
+	) el[] (
+		var[] word=bottles
+	)
+	print[] %count% %word% of beer on the wall
+	print[] %count% %word% of beer,
+	print[] Take one down, pass it around,
+	eq[] count--
+	if[] %count% LEQ 1 (
+		var[] word=bottle
+	) el[] (
+		var[] word=bottles
+	)
+	if[] %count% GTR 0 (
+		print[] %count% %word% of beer on the wall.
+	) el[] (
+		print[] No more %word% of beer on the wall.
+	)
+endwhile[]
 stop[] >nul

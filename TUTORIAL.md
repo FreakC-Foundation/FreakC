@@ -162,7 +162,13 @@ Multi-line strings:
 
 With normal Batch, you don't need the `!`, you just need a blank line. But with FreakC, the compiler skips through the new lines, so what it's doing is that it force the compiler to include that line (since that line still contain a character), and because `!` is skipped, it's an equivalent to an empty line.
 
-Though you can also use:
+But that way is just outdated, you can do that in a prettier way with a built-in `LF` macro:
+
+	var[] multi_line_string=Line 1!LF!
+	Line 2!LF!
+	Line 3!LF!
+
+Though you can also use something kind of an equivalent to `\n` in other languages:
 
 	var[] multi_line_string=Line 1!NL!Line 2!NL!Line 3
 
@@ -174,10 +180,12 @@ You can also implement something like this:
 	var[] n=sad^
 	!
 	!
-	print[] Hello%n%
+	print[] Hello^!n^!
 	print[] World
 
 But the `!NL!` macro is fine enough.
+
+But note that if you're using variables, make sure to enable delayed expansion or else it won't work!
 
 To do math equations, do:
 
@@ -424,6 +432,12 @@ You can also create a mutli-line macro like how I did with multi-line string fro
 
 	var[] macro_with_multi_commands=for %%i in (argv) do echo %%i!NL!echo Macro power %%i
 
+This also work:
+
+	var[] macro_with_multi_commands=for %%i in (argv) do (!LF!
+		echo %%i!NL!echo Macro power %%i!LF!
+	)
+
 ### FreakC's macro
 The Batch-style macro is the one being replaced in runtime. While it helps the program to run faster compared to calling functions, it's still kinda slow, so here comes the FreakC's true macro which is replaced during compile time:
 
@@ -442,7 +456,7 @@ FreakC's macro still works just like normal Batch variables, so you can also do 
 	print[] The key is !key:~1,2!
 	:: The result will be "The key is 24"
 
-Basically, it should work like normal Batch's variables.
+Basically, it should work like normal Batch's variables. But currently, multi-line macro doesn't work :(
 
 ### Notes
 Also, spaces in FreakC is extremely important, so if you declare a variable like this:

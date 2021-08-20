@@ -93,6 +93,8 @@ The command is compiled to `echo.`, if you just want to use the traditional `ech
 
 It's worth noticing that `print[]` might not work well with delayed expansion, but `uprint[]` does, so try using `uprint[]` if your program starts going weird. Also, since `uprint[]` is `echo`, it should work way faster than `print[]`. But `print[]` can print out an empty line easier, so it might worth combining them in your code.
 
+There's also `fprint[]`, which is the fastest one, but however this one doesn't work with delayed expansion variables at all.
+
 ## Store data 
 You can actually store data to a file by using:
 

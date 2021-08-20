@@ -4,6 +4,7 @@ set NLM=^
 
 
 set NL=^^^%NLM%%NLM%^%NLM%%NLM%
+set LF=^^%NL%
 set helpCheck=false
 if "%1" == "" (
 	set helpCheck=true
@@ -409,6 +410,7 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 		if %%a == key[] set printString=!printString:key[] =CHOICE /C:! /N
 		if %%a == uprint[] set printString=!printString:uprint[]=echo!
 		if %%a == print[] set printString=!printString:print[] =echo.!
+		if %%a == fprint[] set printString=!printString:fprint[] =echo:!
 		if %%a == create_dir[] set printString=!printString:create_dir[]=md!
 		if %%a == change_dir[] set printString=!printString:change_dir[]=cd!
 		if %%a == del[] set printString=!printString:del[]=del!

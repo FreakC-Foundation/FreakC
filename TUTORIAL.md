@@ -91,7 +91,7 @@ The command is compiled to `echo.`, if you just want to use the traditional `ech
 
 	uprint[] string
 
-It's worth noticing that `print[]` might not work well with delayed expansion, but `uprint[]` does, so try using `uprint[]` if your program starts going weird
+It's worth noticing that `print[]` might not work well with delayed expansion, but `uprint[]` does, so try using `uprint[]` if your program starts going weird. Also, since `uprint[]` is `echo`, it should work way faster than `print[]`. But `print[]` can print out an empty line easier, so it might worth combining them in your code.
 
 ## Store data 
 You can actually store data to a file by using:

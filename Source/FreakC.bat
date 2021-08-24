@@ -123,8 +123,6 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 				call libgen math even
 				call libgen math odd
 				call libgen math abs
-				call libgen math nmin
-				call libgen math nmax
 			)
 			if "!lib!" == "array" (
 				call libgen array max
@@ -242,14 +240,6 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 		if %%a == abs[] (
 			call libgen math abs
 			set printString=!printString:abs[]=call fclib_math_abs.bat!
-		)
-		if %%a == nmax[] (
-			call libgen math nmax
-			set printString=!printString:nmax[]=call fclib_math_nmax.bat!
-		)
-		if %%a == nmin[] (
-			call libgen math nmin
-			set printString=!printString:nmin[]=call fclib_math_nmin.bat!
 		)
 		if %%a == max[] (
 			call libgen list max
@@ -546,5 +536,5 @@ if "%fcread%" == "true" type %output%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %output%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 0.13.0 BETA
+echo FreakC DevKit Version 0.12.1 BETA
 exit /b

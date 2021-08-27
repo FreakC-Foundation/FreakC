@@ -214,6 +214,13 @@ Ex:
 
 You should only make array start at 0, or else it might not work with prebuilt libraries.
 
+Note that this not actually array, it's using the flexibility in naming of Batch/FreakC variables to have the same effect.
+
+### FreakC standard's namings
+* List: Multiple arguments delimitted by spaces, tails or semicolons.
+* Array: Variables that follow an order, which should make a collections of data.
+* Tuple: A list but should only be accessed through `scan_strs[]` or `for /f`.
+
 To declare a variable from user's input, try:
 
 	inp[] variable_name=
@@ -297,12 +304,21 @@ To print out every element of an array, you can write something like this:
    		print[] ^!a[%%n]^! 
 	)
 
-Actually, you can use foreach with splitted strings:
+Actually, you can use foreach with splitted strings for **List**:
 
-	var[] arr=1 2 3 4 5
-	scan_strs[] %%i in (%arr%) do (
+	var[] list=1 2 3 4 5
+	scan_str[] %%i in (%list%) do (
 		::Print out every elements
 		print[] %%i
+	)
+	
+Tuples:
+
+	Actually, you can use foreach with splitted strings for **List**:
+
+	var[] list=1 2 3 4 5
+	scan_strs[] %%a in (%list%) do (
+		print[] %%a %%b %%c...
 	)
 	
 ### Local and global variables

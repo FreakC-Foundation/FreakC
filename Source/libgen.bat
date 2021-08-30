@@ -50,8 +50,25 @@ echo set /a res_len+=1
 echo goto :loop
 )>fclib_array_len.bat
 exit /b 0
+:array_includes
+(
+echo set res_len=0
+echo setlocal enabledelayedexpansion
+echo :loop
+echo if "^!%%~3[%%res_len%%]^!" == "%%~2" (
+echo    endlocal ^& set %%~1=true
+echo    exit /b
+echo ^) else if %%res_len%% GEQ %%~4 (
+echo    endlocal ^& set %%~1=false
+echo    exit /b
+echo ^)
+echo set /a res_len+=1
+echo goto :loop
+)>fclib_array_includes.bat
+exit /b
 :array_indexOf
 (
+    exit /b 0
 echo set res_len=0
 echo setlocal enabledelayedexpansion
 echo :loop

@@ -62,9 +62,11 @@ if "%fccreate%" == "true" (
 	md %output%
 	cd %output%
 	if "%3" == "--empty" (
-		echo.>%output%.fclang
+		if "%4" == "--de-enabled" echo enb_delay[]>%output%.fclang
+		echo.>>%output%.fclang
 	) else (
-		echo print[] Hello World, Hello FreakC^^!>%output%.fclang
+		if "%3" == "--de-enabled" echo enb_delay[]>%output%.fclang
+		echo print[] Hello World, Hello FreakC^^!>>%output%.fclang
 	)
 	exit /b
 )
@@ -78,6 +80,8 @@ set forInd=0
 set wloopInd=0
 set wloopInd2=0
 echo @echo off>%output%.bat
+if "%2" == "--de-enabled" echo setlocal enabledelayedexpansion>>%output%.bat
+if "%3" == "--de-enabled" echo setlocal enabledelayedexpansion>>%output%.bat
 echo :FreakCCompiled>>%output%.bat
 for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 	set deniedToken=false
@@ -276,6 +280,18 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 		if %%a == arr_pop[] (
 			call libgen array pop
 			set printString=!printString:arr_pop[]=call fclib_array_pop.bat!
+		)
+		if %%a == arr_shift[] (
+			call libgen array shift
+			set printString=!printString:arr_shift[]=call fclib_array_shift.bat!
+		)
+		if %%a == arr_unshift[] (
+			call libgen array unshift
+			set printString=!printString:arr_unshift[]=call fclib_array_unshift.bat!
+		)
+		if %%a == arr_clear[] (
+			call libgen array clear
+			set printString=!printString:arr_clear[]=call fclib_array_clear.bat!
 		)
 		if %%a == arr_length[] (
 			call libgen array len
@@ -540,5 +556,5 @@ if "%fcread%" == "true" type %output%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %output%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 0.12.2 BETA
+echo FreakC DevKit Version 0.13.0 BETA
 exit /b

@@ -123,6 +123,56 @@ echo set /a res_len-=1
 echo set %%~1[%%res_len%%]^=
 )>fclib_array_pop.bat
 exit /b
+:array_shift
+(
+echo call :length len %%~1
+echo for /l %%%%i in (0 1 ^^!len^^!^) do (
+echo     set /a ind=%%%%i+1
+echo     for %%%%j in (^^!ind^^!^) do set %%~1[%%%%i]=^^!%%~1[%%%%j]^^!
+echo ^)
+echo exit /b
+echo :length
+echo set res_len=0
+echo :loop
+echo if not defined %%~2[%%res_len%%] (
+echo     set %%~1=%%res_len%%
+echo     exit /b
+echo ^)
+echo set /a res_len+=1
+echo goto :loop
+)>fclib_array_shift.bat
+:array_unshift
+(
+echo call :length len %%~1
+echo for /l %%%%i in (1 1 ^^!len^^!^) do (
+echo     set /a ind=%%%%i-1
+echo     for %%%%j in (^^!ind^^!^) do set _arr[%%%%i]=^^!%%~1[%%%%j]^^!
+echo ^)
+echo for /l %%%%i in (1 1 ^^!len^^!^) do set %%~1[%%%%i]=^^!_arr[%%%%i]^^!
+echo set %%~1[0]=%%~2
+echo exit /b
+echo :length
+echo set res_len=0
+echo :loop
+echo if not defined %%~2[%%res_len%%] (
+echo     set %%~1=%%res_len%%
+echo     exit /b
+echo ^)
+echo set /a res_len+=1
+echo goto :loop
+)>fclib_array_unshift.bat
+exit /b
+:array_clear
+(
+echo set ind=0
+echo :loop
+echo if defined %%~1[%%ind%%] (
+echo     set %%~1[%%ind%%]=
+echo ^) else exit /b
+echo set /a ind+=1
+echo goto loop
+)>fclib_array_clear.bat
+exit /b
 :math_abs
 (
 echo set tar=%%~2

@@ -1138,6 +1138,9 @@ Include the compiled content of the module:
 	:: Find smallest element in an array
 	arr_min[] "variable_name" "array" "length"
 	
+	:: Return true if array include a value, false if not
+	arr_includes[] "variable_name" "value" "array" "length"
+	
 	:: Find first index of an element, return -1 if find none
 	arr_indexOf[] "variable_name" "value" "array" "length"
 	

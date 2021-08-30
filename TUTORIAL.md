@@ -53,6 +53,12 @@ Notice that it will generate a file with a Hello World example in it, if you jus
 
     freakc project_name --create --empty 
 
+You can enable delayed expansion in the output with:
+
+    freakc file_name <some-option>(create/compile/candr or nothing) --de-enabled
+
+this would be better than `enb_delay[]` in some cases.
+
 To delete all stdlib files generated, type:
 
     freakc --clrlib
@@ -1156,14 +1162,14 @@ Include the compiled content of the module:
 	:: Append a value into an array
 	arr_push[] "array" "value"
 	
-	:: Prepend a value into an array
+	:: Prepend a value into an array (requires delayed expansion being enabled)
 	arr_unshift[] "array" "value"
 	
 	:: Remove the last value from an array
 	arr_pop[] "array"
 	
-	:: Remove the first value from an array
-	arr_pop[] "array"
+	:: Remove the first value from an array (requires delayed expansion being enabled)
+	arr_shift[] "array"
 	
 	:: Clear an array
 	arr_clear[] "array"

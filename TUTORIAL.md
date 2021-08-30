@@ -1156,8 +1156,17 @@ Include the compiled content of the module:
 	:: Append a value into an array
 	arr_push[] "array" "value"
 	
-	:: Remove a value from an array
+	:: Prepend a value into an array
+	arr_unshift[] "array" "value"
+	
+	:: Remove the last value from an array
 	arr_pop[] "array"
+	
+	:: Remove the first value from an array
+	arr_pop[] "array"
+	
+	:: Clear an array
+	arr_clear[] "array"
 
 
 	:: Example:

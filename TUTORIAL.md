@@ -1159,6 +1159,9 @@ Include the compiled content of the module:
 	:: Find length of an array
 	arr_length[] "variable_name" "array"
 	
+	:: Reverse array
+	arr_length[] "array"
+	
 	:: Append a value into an array
 	arr_push[] "array" "value"
 	
@@ -1170,6 +1173,12 @@ Include the compiled content of the module:
 	
 	:: Remove the first value from an array (requires delayed expansion being enabled)
 	arr_shift[] "array"
+	
+	:: Remove an amount value from a specified index from an array
+	arr_splice[] "array" "index" "amount"
+	
+	:: Fill the array from index1 to index2 with a value
+	arr_fill[] "array" "value" "index1" "index2"
 	
 	:: Clear an array
 	arr_clear[] "array"

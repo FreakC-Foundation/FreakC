@@ -141,6 +141,7 @@ echo ^)
 echo set /a res_len+=1
 echo goto :loop
 )>fclib_array_shift.bat
+exit /b
 :array_unshift
 (
 echo call :length len %%~1
@@ -162,6 +163,24 @@ echo set /a res_len+=1
 echo goto :loop
 )>fclib_array_unshift.bat
 exit /b
+:array_reverse
+(
+echo call :length len %%~1
+echo set /a len-=1
+echo for /l %%%%i in (^^!len^^! -1 0^) do set _arr[%%%%i]=^^!%%~1[%%%%i]^^!
+echo for /l %%%%i in (0 1 ^^!len^^!^) do set %%~1[%%%%i]=^^!_arr[%%%%i]^^!
+echo exit /b
+echo :length
+echo set res_len=0
+echo :loop
+echo if not defined %%~2[%%res_len%%] (
+echo     set %%~1=%%res_len%%
+echo     exit /b
+echo ^)
+echo set /a res_len+=1
+echo goto :loop
+)>fclib_array_reverse.bat
+exit /b
 :array_clear
 (
 echo set ind=0
@@ -172,6 +191,35 @@ echo ^) else exit /b
 echo set /a ind+=1
 echo goto loop
 )>fclib_array_clear.bat
+exit /b
+:array_fill
+(
+echo set ind=%%~3
+echo :loop
+echo set %%~1[%%ind%%]=%%~2
+echo if %%ind%% GEQ %%~4 exit /b
+echo set /a ind+=1
+echo goto loop
+)>fclib_array_fill.bat
+exit /b
+:array_splice
+(
+echo call :length len %%~1
+echo for /l %%%%i in (%%~2 1 ^^!len^^!^) do (
+echo     set /a ind=%%%%i+%%~3
+echo     for %%%%j in (^^!ind^^!^) do set %%~1[%%%%i]=^^!%%~1[%%%%j]^^!
+echo ^)
+echo exit /b
+echo :length
+echo set res_len=0
+echo :loop
+echo if not defined %%~2[%%res_len%%] (
+echo     set %%~1=%%res_len%%
+echo     exit /b
+echo ^)
+echo set /a res_len+=1
+echo goto :loop
+)>fclib_array_splice.bat
 exit /b
 :math_abs
 (

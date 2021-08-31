@@ -119,49 +119,6 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 			set deniedToken=true
 		)
 		if %%a == end[] set printString=!printString:end[]=exit /b 0!
-		if %%a == import[] (
-			set lib=!printString:import[] =!
-			if "!lib!" == "math" (
-				call libgen math fact
-				call libgen math pow
-				call libgen math even
-				call libgen math odd
-				call libgen math abs
-			)
-			if "!lib!" == "array" (
-				call libgen array max
-				call libgen array min
-				call libgen array sum
-				call libgen array len
-				call libgen array push
-				call libgen array pop
-				call libgen array join
-				call libgen array indexOf
-				call libgen array lastIndexOf
-			)
-			if "!lib!" == "list" (
-				call libgen list max
-				call libgen list min
-				call libgen list sum
-			)
-			if "!lib!" == "string" (
-				call libgen string length
-				call libgen string reverse
-				call libgen string upper
-				call libgen string lower
-				call libgen string chr
-				call libgen string ord
-				call libgen string endswith
-				call libgen string startswith
-				call libgen string indexOf
-				call libgen string lastIndexOf
-				call libgen string trim
-			)
-			if "!lib!" == "float" (
-				call libgen float float
-			)
-			set deniedToken=true
-		)
 		if %%a == gen_lib_func[] (
 			call libgen !printString:gen_lib_func[] =!
 			set deniedToken=true
@@ -177,9 +134,9 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 			set proctar=none
 			set deniedToken=true
 		)
-		if %%a == reverse_string[] (
+		if %%a == string_reverse[] (
 			call libgen string reverse
-			set printString=!printString:reverse_string[]=call fclib_string_reverse.bat!
+			set printString=!printString:string_reverse[]=call fclib_string_reverse.bat!
 		)
 		if %%a == string_length[] (
 			call libgen string length
@@ -292,6 +249,18 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 		if %%a == arr_clear[] (
 			call libgen array clear
 			set printString=!printString:arr_clear[]=call fclib_array_clear.bat!
+		)
+		if %%a == arr_fill[] (
+			call libgen array fill
+			set printString=!printString:arr_fill[]=call fclib_array_fill.bat!
+		)
+		if %%a == arr_splice[] (
+			call libgen array splice
+			set printString=!printString:arr_splice[]=call fclib_array_splice.bat!
+		)
+		if %%a == arr_reverse[] (
+			call libgen array reverse
+			set printString=!printString:arr_reverse[]=call fclib_array_reverse.bat!
 		)
 		if %%a == arr_length[] (
 			call libgen array len
@@ -556,5 +525,5 @@ if "%fcread%" == "true" type %output%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %output%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 0.13.0 BETA
+echo FreakC DevKit Version 0.14.0 BETA
 exit /b

@@ -1014,9 +1014,8 @@ To skip one iteration, use `continue[]`:
 		if[] ^!i^! == 3 continue[]
 	endfor[]
 	:: This will print out 1, 2, 4
-	
-With while loop, `continue[]` must be `wcontinue[]`.
-With repeat-until, `breakl[]` must be `breakr[]`, `continue[]` must be `rcontinue[]`.
+
+`continue[]` and `breakl[]` can work well with while loops and repeat-until loops.
 
 # Inlining commands
 Note that all commands can be inlined normally, except all FreakC-exclusive commands that uses its own kind of block statement.

@@ -79,6 +79,7 @@ set matchInd=0
 set forInd=0
 set wloopInd=0
 set wloopInd2=0
+set prevLoopInd=0
 echo @echo off>%output%.bat
 if "%2" == "--de-enabled" echo setlocal enabledelayedexpansion>>%output%.bat
 if "%3" == "--de-enabled" echo setlocal enabledelayedexpansion>>%output%.bat
@@ -284,6 +285,7 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 		)
 		if %%a == drive[] set printString=!printString:drive[] =!:
 		if %%a == while[] (
+			set prevLoop[!prevLoopInd!]=while
 			if "!procadd!" == "true" (set outtar=!proctar!.bat) else (set outtar=%output%.bat)
 			set fccondition=!printString:while[] =!
 			set fcpos[!wloopInd!]=!wloopnum!
@@ -293,9 +295,11 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 			)
 			set /a wloopnum+=1
 			set /a wloopInd+=1
+			set /a prevLoopInd+=1
 			set deniedToken=true
 		)
 		if %%a == for[] (
+			set prevLoop[!prevLoopInd!]=for
 			if "!procadd!" == "true" (set outtar=!proctar!.bat) else (set outtar=%output%.bat)
 			set turn=0
 			set process=!printString:for[] =!
@@ -315,6 +319,7 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 			set /a wloopnum+=1
 			set /a wloopInd+=1
 			set /a forInd+=1
+			set /a prevLoopInd+=1
 			set deniedToken=true
 		)
 		set whileCheck=false
@@ -340,30 +345,33 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 		)
 		if %%a == breakl[] (
 			set /a _wloopInd=!wloopInd!-1
-			for %%y in (!_wloopInd!) do for %%s in (!fcpos[%%y]!) do set printString=!printString:breakl[]=goto EndLoop%%s!
-		)
-		if %%a == breakr[] (
 			set /a _wloopInd2=!wloopInd2!-1
-			for %%y in (!_wloopInd2!) do for %%s in (!fcpos2[%%y]!) do set printString=!printString:breakr[]=goto UntilLoop%%s!
+			set /a prevLoopInd-=1
+			for %%i in (!prevLoopInd!) do (
+				if "!prevLoop[%%i]!" == "for" for %%y in (!_wloopInd!) do for %%s in (!fcpos[%%y]!) do set printString=!printString:breakl[]=goto EndLoop%%s!
+				if "!prevLoop[%%i]!" == "while" for %%y in (!_wloopInd!) do for %%s in (!fcpos[%%y]!) do set printString=!printString:breakl[]=goto EndLoop%%s!
+				if "!prevLoop[%%i]!" == "repeat" for %%y in (!_wloopInd2!) do for %%s in (!fcpos2[%%y]!) do set printString=!printString:breakl[]=goto UntilLoop%%s!
+			)
 		)
 		if %%a == continue[] (
 			set /a _forInd=!forInd!-1
 			set /a _wloopInd=!wloopInd!-1
-			for %%y in (!_wloopInd!) do for %%s in (!fcpos[%%y]!) do for %%k in (!_forInd!) do for %%q in (!varname[%%k]!) do for %%z in (!step[%%k]!) do set printString=!printString:continue[]=set /a %%q+=%%z ^& goto WhileLoop%%s!
-		)
-		if %%a == wcontinue[] (
-			set /a _wloopInd=!wloopInd!-1
-			for %%y in (!_wloopInd!) do for %%s in (!fcpos[%%y]!) do set printString=!printString:wcontinue[]=goto WhileLoop%%s!
-		)
-		if %%a == rcontinue[] (
 			set /a _wloopInd2=!wloopInd2!-1
-			for %%y in (!_wloopInd2!) do for %%s in (!fcpos2[%%y]!) do set printString=!printString:rcontinue[]=goto RepeatLoop%%s!
+			set /a prevLoopInd-=1
+			for %%i in (!prevLoopInd!) do (
+				if "!prevLoop[%%i]!" == "for" for %%y in (!_wloopInd!) do for %%s in (!fcpos[%%y]!) do for %%k in (!_forInd!) do for %%q in (!varname[%%k]!) do for %%z in (!step[%%k]!) do set printString=!printString:continue[]=set /a %%q+=%%z ^& goto WhileLoop%%s!
+				if "!prevLoop[%%i]!" == "while" for %%y in (!_wloopInd!) do for %%s in (!fcpos[%%y]!) do set printString=!printString:continue[]=goto WhileLoop%%s!
+				if "!prevLoop[%%i]!" == "repeat" for %%y in (!_wloopInd2!) do for %%s in (!fcpos2[%%y]!) do set printString=!printString:continue[]=goto RepeatLoop%%s!
+			)
 		)
 		if %%a == repeat[] (
+			set prevLoop[!prevLoopInd!]=repeat
+			set prevLoop=repeat
 			if "!procadd!" == "true" (set outtar=!proctar!.bat) else (set outtar=%output%.bat)
 			set fcpos2[!wloopInd2!]=!wloopnum2!
 			for %%i in (!wloopInd2!) do echo :RepeatLoop!fcpos2[%%i]!>>!outtar!
 			set /a wloopnum2+=1
+			set /a prevLoopInd+=1
 			set /a wloopInd2+=1
 			set deniedToken=true
 		)
@@ -525,5 +533,5 @@ if "%fcread%" == "true" type %output%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %output%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 0.14.0 BETA
+echo FreakC DevKit Version 0.14.1 BETA
 exit /b

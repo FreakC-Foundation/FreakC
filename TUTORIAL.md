@@ -1178,7 +1178,10 @@ Include the compiled content of the module:
 	
 	:: Fill the array from index1 to index2 with a value
 	arr_fill[] "array" "value" "index1" "index2"
-	:: Come to think of it, you can create a whole new array using arr_fill
+	:: Come to think of it, you can create a whole new array filled with some value using arr_fill with out declaration
+	
+	:: Sort an array using the quick sort algorithm
+	arr_qsort[] "array" "low" "high"
 	
 	:: Clear an array
 	arr_clear[] "array"

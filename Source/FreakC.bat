@@ -215,6 +215,10 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 			call libgen list sum
 			set printString=!printString:sum[]=call fclib_list_sum.bat!
 		)
+		if %%a == arr_qsort[] (
+			call libgen array qsort
+			set printString=!printString:arr_qsort[]=call fclib_array_qsort.bat!
+		)
 		if %%a == arr_max[] (
 			call libgen array max
 			set printString=!printString:arr_max[]=call fclib_array_max.bat!
@@ -533,5 +537,5 @@ if "%fcread%" == "true" type %output%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %output%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 0.14.1 BETA
+echo FreakC DevKit Version 0.15.0 BETA
 exit /b

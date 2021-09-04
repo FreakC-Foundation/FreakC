@@ -6,7 +6,13 @@ exit /b 0
 :array_qsort
 (
 echo set /a l=%%~2, h=%%~3, a=^^!h^^!-^^!l^^!+1, top=-1
-echo call :arr_fill stack 0 0 ^^!a^^!
+echo set ind=0
+echo :loop
+echo set stack[^^!ind^^!]=0
+echo if ^^!ind^^! GEQ ^^!a^^! goto end
+echo set /a ind+=1
+echo goto loop
+echo :end
 echo set /a top+=1
 echo set stack[^^!top^^!]=^^!l^^!
 echo set /a top+=1
@@ -15,50 +21,35 @@ echo :WhileLoop0
 echo if not ^^!top^^! GEQ 0 goto EndLoop0
 echo for %%%%j in (^^!top^^!^) do set /a h=^^!stack[%%%%j]^^!, top-=1
 echo for %%%%j in (^^!top^^!^) do set /a l=^^!stack[%%%%j]^^!, top-=1
-echo call :partition p %%~1 ^^!l^^! ^^!h^^!
+echo for %%%%j in (^^!h^^!^) do set pivot=^^!%%~1[%%%%j]^^!
+echo set /a i=^^!l^^!-1, _high=^^!h^^!-1
+echo for /l %%%%i in (^^!l^^! 1 ^^!_high^^!^) do (
+echo if ^^!%%~1[%%%%i]^^! LEQ ^^!pivot^^! (
+echo set /a i+=1
+echo for %%%%j in (^^!i^^!^) do (
+echo set temp=^^!%%~1[%%%%j]^^!
+echo set %%~1[%%%%j]=^^!%%~1[%%%%i]^^!
+echo set %%~1[%%%%i]=^^!temp^^!^)^)^)
+echo set /a _i=^^!i^^!+1
+echo for %%%%m in (^^!_i^^!^) do (
+echo set temp=^^!%%~1[%%%%m]^^!
+echo for %%%%j in (^^!h^^!^) do set %%~1[%%%%m]=^^!%%~1[%%%%j]^^!
+echo set %%~1[^^!h^^!]=^^!temp^^!^)
+echo set /a p=^^!i^^!+1
 echo set /a _res1=^^!p^^!-1, _res2=^^!p^^!+1
 echo if ^^!_res1^^! GTR ^^!l^^! (
 echo set /a top+=1
 echo set stack[^^!top^^!]=^^!l^^!
 echo set /a top+=1
-echo set stack[^^!top^^!]=^^!_res1^^!
-echo ^)
+echo set stack[^^!top^^!]=^^!_res1^^!^)
 echo if ^^!_res2^^! LSS ^^!h^^! (
 echo set /a top+=1
 echo set stack[^^!top^^!]=^^!_res2^^!
 echo set /a top+=1
-echo set stack[^^!top^^!]=^^!h^^!
-echo ^)
+echo set stack[^^!top^^!]=^^!h^^!^)
 echo goto WhileLoop0
 echo :EndLoop0
 echo exit /b 0
-echo :partition
-echo set /a pivot=^^!%%~2[%%~4]^^!, i=%%~3-1, _high=%%~4-1
-echo for /l %%%%i in (%%~3 1 ^^!_high^^!^) do (
-echo if ^^!%%~2[%%%%i]^^! LEQ ^^!pivot^^! (
-echo set /a i+=1
-echo for %%%%j in (^^!i^^!^) do (
-echo set temp=^^!%%~2[%%%%j]^^!
-echo set %%~2[%%%%j]=^^!%%~2[%%%%i]^^!
-echo set %%~2[%%%%i]=^^!temp^^!
-echo ^)
-echo ^)
-echo ^)
-echo set /a _i=^^!i^^!+1
-echo for %%%%m in (^^!_i^^!^) do (
-echo set temp=^^!%%~2[%%%%m]^^!
-echo set %%~2[%%%%m]=^^!%%~2[%%~4]^^!
-echo set %%~2[%%~4]=^^!temp^^!
-echo ^)
-echo set /a %%~1=^^!i^^!+1
-echo exit /b 0
-echo :arr_fill
-echo set ind=%%~3
-echo :loop
-echo set %%~1[%%ind%%]=%%~2
-echo if %%ind%% GEQ %%~4 exit /b
-echo set /a ind+=1
-echo goto loop
 )>fclib_array_qsort.bat
 exit /b
 :array_max

@@ -482,6 +482,11 @@ FreakC's macro still works just like normal Batch variables, so you can also do 
 
 Basically, it should work like normal Batch's variables. But currently, multi-line macro doesn't work :(
 
+### Alternative to macro
+If you want an alternative, try reading at the [#Function] section. There will be docs about inlined functions, which are as fast as macros, but as nice as normal functions.
+
+So why macro if inlined function is better? Well, simple, just don't use macro for any function-like stuffs, but macros can be good for stuffs like shorter naming, or really small tasks that usually just come as a form a single command :v
+
 ### Notes
 Also, spaces in FreakC is extremely important, so if you declare a variable like this:
 
@@ -697,6 +702,19 @@ You can implement recursion by simply calling the function inside of it. For exa
 	
 ## Performance issues
 Both using labels and `function[]` are fairly slow, if you want to improve performance, just use a normal Batch macro since it's much faster.
+
+## Inline function
+To boost the speed up, I **highly suggest** using inlined functions. It's as fast as macros, and works just like normal functions :D
+
+	inlinef[] somefunc
+		:: Arg1
+		print[] 1[]
+		:: Arg2
+		print[] 2[]
+	endfunc[]
+	
+	somefunc[//] arg1 arg2
+	:: icall[] somefunc arg1 arg2
 
 # Object Oriented Programming
 ## Objects

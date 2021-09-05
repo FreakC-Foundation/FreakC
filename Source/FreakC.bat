@@ -559,7 +559,6 @@ for /f "tokens=* delims=	 " %%x in ('type %output%.fclang') do (
 	)
 	if not "!fchcomment!" == "true" (
 		if "!procadd!" == "true" (
-			echo wtf
 			if !procval! == 0 (
 				set procval=1
 				echo.>!proctar!.bat
@@ -591,7 +590,7 @@ for /f "tokens=* delims=	 " %%x in ('type %output%.fclang') do (
 		)
 	)
 )
-del /q *.inline
+if exist *.inline del /q *.inline
 setlocal disabledelayedexpansion
 if "%fcread%" == "true" type %output%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %output%.bat

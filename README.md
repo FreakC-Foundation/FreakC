@@ -58,6 +58,16 @@ Function definition:
 ### Switching from Batch to FreakC
 While FreakC is compatible with Batch, but it's not 100% compatible, you just need to replace all "!" with "^!", "^^!" with "^^^^^!" (the second one is only required in delayed expansion). If you use codes that depends on blank lines, then just change them to the "!" character. This problem can be easily fixed, but I'm thinking whether I should make it compatible or not, since the compatiblity with Batch means incompatiblity with previous FreakC versions.
 
+### FreakC's selling points
+If you came from the C#, Python, Java, C++,... worlds, these will not be "selling points" to you, but if you're a Batch coder, then here they are:
+* While loops, repeat-until loops, and FreakC's own for loops with break/continue supports
+* Switch cases
+* A bunch of utility functions for you to use
+* Inline functions
+* Macros
+* Some minimal operators
+* Floating-point number
+
 ## What comes with the devkit ?
 * A compiler.
 * An interactive shell.

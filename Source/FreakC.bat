@@ -589,7 +589,7 @@ for /f "tokens=* delims=	 " %%x in ('type %output%.fclang') do (
 		)
 	)
 )
-:: if exist *.inline del /q *.inline
+if exist *.inline del /q *.inline
 setlocal disabledelayedexpansion
 if "%fcread%" == "true" type %output%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %output%.bat

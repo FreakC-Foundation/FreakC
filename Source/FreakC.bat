@@ -74,6 +74,7 @@ set fccomment=false
 set wloopnum=0
 set wloopnum2=0
 set proctar=something
+set inlftar=something
 set fchcomment=false
 set matchInd=0
 set forInd=0
@@ -84,7 +85,7 @@ echo @echo off>%output%.bat
 if "%2" == "--de-enabled" echo setlocal enabledelayedexpansion>>%output%.bat
 if "%3" == "--de-enabled" echo setlocal enabledelayedexpansion>>%output%.bat
 echo :FreakCCompiled>>%output%.bat
-for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
+for /f "tokens=* delims=	 " %%x in ('type %output%.fclang') do (
 	set deniedToken=false
 	set printString=%%x
 	for %%a in (%%x) do (
@@ -134,6 +135,51 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 			set procadd=false
 			set proctar=none
 			set deniedToken=true
+		)
+		if %%a == inlinef[] (
+			set inlfval=0
+			set inlfadd=true
+			set inlftar=!printString:inlinef[] =!
+			set deniedToken=true
+		)
+		if %%a == endinlf[] (
+			set inlfadd=false
+			set inlftar=none
+			set deniedToken=true
+		)
+		set icall=false
+		if "!ch:~-4!" == "[//]" (
+			set icall=true
+			set iprocess=!printString:[//]=!
+		)
+		if %%a == icall[] (
+			set icall=true
+			set iprocess=!printString:icall[] =!
+		)
+		if "!icall!" == "true" (
+			if "!procadd!" == "true" (set outtar=!proctar!.bat) else if "!inlftar!" == "true" (set outtar=!inlftar!.inline) else (set outtar=%output%.bat)
+			set deniedToken=true
+			set turn=0
+			for %%i in (!iprocess!) do (
+				if !turn! LEQ 0 (
+					set inltar=%%i
+				) else set inlargs[!turn!]=%%i
+				set /a turn+=1
+			)
+			set /a turn-=1
+			for /f "delims=" %%n in ('find /c /v "" !inltar!.inline') do set "len=%%n"
+			set "len=!len:*: =!"
+			<"!inltar!.inline" (
+				for /L %%c in (1 1 !len!) do (
+					set /p line=
+					if !turn! == 0 (
+						echo.!line!>>!outtar!
+					) else (
+						for %%z in (1 1 !turn!) do for %%v in (!inlargs[%%z]!) do if %%c GEQ 2 set line=!line:%%z[]=%%v!
+						echo.!line!>>!outtar!
+					)
+				)
+			)
 		)
 		if %%a == string_reverse[] (
 			call libgen string reverse
@@ -290,7 +336,7 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 		if %%a == drive[] set printString=!printString:drive[] =!:
 		if %%a == while[] (
 			set prevLoop[!prevLoopInd!]=while
-			if "!procadd!" == "true" (set outtar=!proctar!.bat) else (set outtar=%output%.bat)
+			if "!procadd!" == "true" (set outtar=!proctar!.bat) else if "!inlftar!" == "true" (set outtar=!inlftar!.inline) else (set outtar=%output%.bat)
 			set fccondition=!printString:while[] =!
 			set fcpos[!wloopInd!]=!wloopnum!
 			for %%i in (!wloopInd!) do (
@@ -304,7 +350,7 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 		)
 		if %%a == for[] (
 			set prevLoop[!prevLoopInd!]=for
-			if "!procadd!" == "true" (set outtar=!proctar!.bat) else (set outtar=%output%.bat)
+			if "!procadd!" == "true" (set outtar=!proctar!.bat) else if "!inlftar!" == "true" (set outtar=!inlftar!.inline) else (set outtar=%output%.bat)
 			set turn=0
 			set process=!printString:for[] =!
 			for %%i in (!process!) do (
@@ -334,7 +380,7 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 		)
 		if %%a == endwhile[] set whileCheck=true
 		if "!whileCheck!" == "true" (
-			if "!procadd!" == "true" (set outtar=!proctar!.bat) else (set outtar=%output%.bat)
+			if "!procadd!" == "true" (set outtar=!proctar!.bat) else if "!inlftar!" == "true" (set outtar=!inlftar!.inline) else (set outtar=%output%.bat)
 			set /a _wloopInd=!wloopInd!-1
 			for %%i in (!_wloopInd!) do (
 				if "!acceptFor!" == "true" (
@@ -371,7 +417,7 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 		if %%a == repeat[] (
 			set prevLoop[!prevLoopInd!]=repeat
 			set prevLoop=repeat
-			if "!procadd!" == "true" (set outtar=!proctar!.bat) else (set outtar=%output%.bat)
+			if "!procadd!" == "true" (set outtar=!proctar!.bat) else if "!inlftar!" == "true" (set outtar=!inlftar!.inline) else (set outtar=%output%.bat)
 			set fcpos2[!wloopInd2!]=!wloopnum2!
 			for %%i in (!wloopInd2!) do echo :RepeatLoop!fcpos2[%%i]!>>!outtar!
 			set /a wloopnum2+=1
@@ -380,7 +426,7 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 			set deniedToken=true
 		)
 		if %%a == until[] (
-			if "!procadd!" == "true" (set outtar=!proctar!.bat) else (set outtar=%output%.bat)
+			if "!procadd!" == "true" (set outtar=!proctar!.bat) else if "!inlftar!" == "true" (set outtar=!inlftar!.inline) else (set outtar=%output%.bat)
 			set /a _wloopInd2=!wloopInd2!-1
 			set fccondition2=!printString:until[] =!
 			for %%i in (!_wloopInd2!) do (
@@ -394,14 +440,14 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 		if %%a == begin[] set printString=!printString:begin[]=(!
 		if %%a == done[] set printString=!printString:done[]=^)!
 		if %%a == match[] (
-			if "!procadd!" == "true" (set outtar=!proctar!.bat) else (set outtar=%output%.bat)
+			if "!procadd!" == "true" (set outtar=!proctar!.bat) else if "!inlftar!" == "true" (set outtar=!inlftar!.inline) else (set outtar=%output%.bat)
 			set matchConds[!matchInd!]=!printString:match[] =!
 			echo set matchChecked!matchInd!=false>>!outtar!
 			set /a matchInd+=1
 			set deniedToken=true
 		)
 		if %%a == case[] (
-			if "!procadd!" == "true" (set outtar=!proctar!.bat) else (set outtar=%output%.bat)
+			if "!procadd!" == "true" (set outtar=!proctar!.bat) else if "!inlftar!" == "true" (set outtar=!inlftar!.inline) else (set outtar=%output%.bat)
 			set /a _matchInd=!matchInd!-1
 			for %%i in (!_matchInd!) do (
 				(
@@ -412,13 +458,13 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 			set deniedToken=true
 		)
 		if %%a == default[] (
-			if "!procadd!" == "true" (set outtar=!proctar!.bat) else (set outtar=%output%.bat)
+			if "!procadd!" == "true" (set outtar=!proctar!.bat) else if "!inlftar!" == "true" (set outtar=!inlftar!.inline) else (set outtar=%output%.bat)
 			set /a _matchInd=!matchInd!-1
 			for %%i in (!_matchInd!) do echo if "^!matchChecked%%i^!" == "false" (>>!outtar!
 			set deniedToken=true
 		)
 		if %%a == endcase[] (
-			if "!procadd!" == "true" (set outtar=!proctar!.bat) else (set outtar=%output%.bat)
+			if "!procadd!" == "true" (set outtar=!proctar!.bat) else if "!inlftar!" == "true" (set outtar=!inlftar!.inline) else (set outtar=%output%.bat)
 			echo ^)>>!outtar!
 			set deniedToken=true
 		)
@@ -513,6 +559,7 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 	)
 	if not "!fchcomment!" == "true" (
 		if "!procadd!" == "true" (
+			echo wtf
 			if !procval! == 0 (
 				set procval=1
 				echo.>!proctar!.bat
@@ -521,6 +568,18 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 					echo.::!printString!>>!proctar!.bat
 				) else if not "!deniedToken!" == "true" (
 					echo.!printString!>>!proctar!.bat
+				)
+			)
+		)
+		if "!inlfadd!" == "true" (
+			if !inlfval! == 0 (
+				set inlfval=1
+				echo.>!inlftar!.inline
+			) else (
+				if "!fccomment!" == "true" (
+					echo.::!printString!>>!inlftar!.inline
+				) else if not "!deniedToken!" == "true" (
+					echo.!printString!>>!inlftar!.inline
 				)
 			)
 		) else (
@@ -532,10 +591,11 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 		)
 	)
 )
+del /q *.inline
 setlocal disabledelayedexpansion
 if "%fcread%" == "true" type %output%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %output%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 0.15.0 BETA
+echo FreakC DevKit Version 0.16.0 BETA
 exit /b

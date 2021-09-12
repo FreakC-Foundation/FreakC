@@ -202,6 +202,15 @@ To do math equations, do:
 to store in a variable(which you should use and it's highly recommended):
 
 	eq[] variable_name=equation
+
+note that you can do multiple equations at once:
+
+	eq[] variable_name1=equation1, variable_name2=equation2
+
+also, if you want to use variables that are assigned in that exact same line, you must not use "%":
+
+	eq[] age=1, intel=age+1
+	:: Variable "age" will have the value of 2.
 	
 Note that eq[] will always round up number, to do equation or to declare a variable as a float, do:
 

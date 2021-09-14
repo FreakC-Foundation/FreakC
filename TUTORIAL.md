@@ -725,6 +725,8 @@ To boost the speed up, I **highly suggest** using inlined functions. It's as fas
 	somefunc[//] arg1 arg2
 	:: icall[] somefunc arg1 arg2
 
+However, there's currently a severe limitation: inline funtions can't be used with delayed expansion variables, it can only work with normal values and normal variables. I'll work hard to fix this problem soon!
+
 # Object Oriented Programming
 ## Objects
 Note that there are no such things as "objects" in FreakC/Batch, but you can use the FreakC variable to gain the same effect as seen in other languages:

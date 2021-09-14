@@ -175,7 +175,7 @@ for /f "tokens=* delims=	 " %%x in ('type %output%.fclang') do (
 					if !turn! == 0 (
 						echo.!line!>>!outtar!
 					) else (
-						for %%z in (1 1 !turn!) do for %%v in (!inlargs[%%z]!) do if %%c GEQ 2 set line=!line:%%z[]=%%v!
+						for /l %%z in (1 1 !turn!) do for %%v in (!inlargs[%%z]!) do if %%c GEQ 2 set line=!line:%%z[]=%%v!
 						echo.!line!>>!outtar!
 					)
 				)
@@ -595,5 +595,5 @@ if "%fcread%" == "true" type %output%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %output%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 0.16.0 BETA
+echo FreakC DevKit Version 0.16.1 BETA
 exit /b

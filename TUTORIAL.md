@@ -708,7 +708,9 @@ You can implement recursion by simply calling the function inside of it. For exa
 		eq[] n=%~2-1
 		call printLoop "%~1" "%n%"
 	endfunc[]
-	
+
+Note that using `call` will give you a recursion limit of about 339. To fix this problem you can use `cmd /c`, or just implement a goto command to exit the function, store the current state in a variable and call it again, that should give you infinite recursion limit.
+
 ## Performance issues
 Both using labels and `function[]` are fairly slow, if you want to improve performance, just use a normal Batch macro since it's much faster.
 

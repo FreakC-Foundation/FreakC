@@ -229,7 +229,17 @@ Ex:
 
 You should only make array start at 0, or else it might not work with prebuilt libraries.
 
-Note that this not actually array, it's using the flexibility in naming of Batch/FreakC variables to have the same effect.
+Note that this not actually array, it's using the flexibility in naming of Batch/FreakC variables to receive the same effect.
+
+Multi-dimensional:
+
+	:: A 2D array
+	var[] arr[0][0]=a
+	var[] arr[0][1]=b
+	var[] arr[1][0]=c
+	var[] arr[1][1]=d
+
+Also, keep it in mind that this is the standard way of creating arrays in FreakC in order to receive a more "defined" structure to the code, as well as to make stuffs work well with the stdlib. You can also just do something like `var[] a\1=0` then it would still work, but will not work with the stdlib.
 
 ### FreakC standard's namings
 * List: Multiple arguments delimitted by spaces, tails or semicolons.

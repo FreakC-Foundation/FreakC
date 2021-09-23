@@ -81,8 +81,6 @@ If you came from the C#, Python, Java, C++,... worlds, these will not be "sellin
 * [IDEs](IDE.md)
 
 ## Frameworks
-Note that most Batch frameworks should integrate well with FreakC, so you can use them just like in Batch smoothly. There are some in the **Utilities** folder (which I don't own and they're on this Github repo only, not included in the release zip file)
-
 ### Official FreakC's frameworks
 * <a href="https://github.com/FreakC-Foundation/discord.fclang">discord.fclang</a> - A discord api wrapper built on top of Discord.net, can be used for bot dev.
 

@@ -102,6 +102,8 @@ We would love to have you as a contributor! Please consider checking out [contri
 ## Support the project!
 If you like FreakC, it would be great if you leave a star here ❤️. I'd love if you follow me as well 😘.
 
+To push the project's development faster, I'd love if you buy me a coffee by sending me some cryptos into my BEP-20 wallet: 0x029B93211e7793759534452BDB1A74b58De22C9c
+
 ## Resources
 * <a href="https://www.facebook.com/FreakC-Programming-Language-111425377421861">Facebook</a>
 * <a href="https://discord.gg/eNwqK4APsD">Discord</a>

@@ -771,6 +771,30 @@ You can access the elements normally:
 ## Classes
 You can implement a "class" like this:
 
+	:: Create a class called "Dog"
+	class[] Dog
+		:: Init method
+		method[] init
+			::Set properties, implementing "this" as the first argurment passed (%~1)
+			var[] %~1.age=%~2
+			var[] %~1.weight=%~3
+		endmethod[]
+		
+		method[] BeingCute
+			print[] *Being cute*
+		endmethod[]
+	endclass[]
+	
+	:: Create an object
+	new[] Dog "Mary" "3" "4kg"
+	:: Prints out "age" property of "Mary", which is "3"
+	print[] Age: %Mary.age%
+	:: Call "Mary.BeingCute", which prints out "*Being cute*"
+	call[] Mary.BeingCute
+
+## Old crappy function-based oop
+You can implement a "class" like this:
+
 	:: Create a procedure called "Dog"
 	function[] Dog
 		::Set properties, implementing "this" as the first argurment passed (%~1)
@@ -789,8 +813,12 @@ You can implement a "class" like this:
 	:: Call "Mary.BeingCute", which prints out "*Being cute*"
 	call[] Mary.BeingCute
 
+## Class-based or function-based OOP?
+Just use classes, don't use functions, function is the old way. Classes are much more readable, and they are in fact faster, since the methods are generated in compile time, while in the function's way, it is generated in runtime, and creating/writing to files in runtime is **incredibly slow**.
+
 ## Inhertitance and polymorphism
-With inheritance and polymorphism, I guess you can create an init function and call it inside the "classes"(functions) you're creating.
+* The new way: Just call the init method of the class.
+* The old function way: You can create an init function and call it inside the "classes"(functions) you're creating.
 
 ## Encapsulation
 With encapsulation, you can implement getter/setter functions to implement protected, everytime the data got accessed it must go through a getter/setter function. With private, you do the same thing as protected, however, rather than putting it inside the init function, only add it in one specific "class"(function).

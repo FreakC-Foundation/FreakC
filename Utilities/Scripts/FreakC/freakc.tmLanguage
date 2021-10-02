@@ -18,13 +18,13 @@
     </dict>
     <dict>
       <key>match</key>
-      <string>(?&#60;=(function\[\] ))([A-Za-z_])\w+|(?&#60;=(label\[\] ))([A-Za-z_])\w+|</string>
+      <string>(?&#60;=(function\[\] ))([A-Za-z_])\w+|(?&#60;=(label\[\] ))([A-Za-z_])\w+|(?&#60;=(class\[\] ))([A-Za-z_])\w+|(?&#60;=(method\[\] ))([A-Za-z_])\w+</string>
       <key>name</key>
       <string>entity.name.function</string>
     </dict>
     <dict>
       <key>match</key>
-      <string>([A-Za-z])\w+(?=\[\.\.\])|([A-Za-z])\w+(?=\[\:\:\])|(?&#60;=(call\[\] ))([A-Za-z_])\w+|(?&#60;=(^))([a-zA-Z_])+(?=(\.([A-Za-z_]+)\[\.\.\]))</string>
+      <string>([A-Za-z])\w+(?=\[\.\.\])|([A-Za-z])\w+(?=\[\:\:\])|(?&#60;=(call\[\] ))([A-Za-z_])\w+|(?&#60;=(^))([a-zA-Z_])+(?=(\.([A-Za-z_]+)\[\.\.\]))|(?&#60;=(icall\[\] ))([A-Za-z_])\w+|(?&#60;=(new\[\] ))([A-Za-z_])\w+|(?&#60;=(goto\[\] ))([A-Za-z_])\w+</string>
       <key>name</key>
       <string>support.function</string>
     </dict>

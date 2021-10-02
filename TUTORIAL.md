@@ -798,8 +798,8 @@ You can implement a "class" like this:
 	:: Create a procedure called "Dog"
 	function[] Dog
 		::Set properties, implementing "this" as the first argurment passed (%~1)
-		var[] %~1.age=%~2
-		var[] %~1.weight=%~3
+		var[] $this.age=%~2
+		var[] $this.weight=%~3
 		:: Storing the codes inside a Batch file, which creates something like a method
 		(
 			print[] print[] *Being cute*
@@ -817,7 +817,7 @@ You can implement a "class" like this:
 Just use classes, don't use functions, function is the old way. Classes are much more readable, and they are in fact faster, since the methods are generated in compile time, while in the function's way, it is generated in runtime, and creating/writing to files in runtime is **incredibly slow**.
 
 ## Inhertitance and polymorphism
-* The new way: Just call the init method of the class.
+* The new way: `extends[] parent_class`
 * The old function way: You can create an init function and call it inside the "classes"(functions) you're creating.
 
 ## Encapsulation

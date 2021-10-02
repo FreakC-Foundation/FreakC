@@ -59,15 +59,15 @@ FreakC's commands end with `[]` or a special operator to indicate that it's Frea
 While FreakC is compatible with Batch, but it's not 100% compatible, you just need to replace all `!` with `^!`, `^^!` with `^^^^^!` (the second one is only required in delayed expansion). If you use codes that depends on blank lines, then just change them to the `!` character. This problem can be easily fixed, but I'm thinking whether I should make it compatible or not, since the compatiblity with Batch means incompatiblity with previous FreakC versions.
 
 ### FreakC's added features compared to Batch
-* While loops, repeat-until loops, and FreakC's own for loops with break/continue supports
-* Switch cases
-* Class-based OOP
-* A bunch of utility functions for you to use
-* Inline functions
-* Macros
-* Some minimal operators
-* Floating-point numbers
-* Some additional commands
+* While loops, repeat-until loops, and FreakC's own for loops with break/continue supports.
+* Switch cases.
+* Class-based OOP.
+* A bunch of utility functions for you to use.
+* Inline functions.
+* Macros.
+* Some minimal operators.
+* Floating-point numbers.
+* Some additional commands.
 
 There are still more! [Get started now!](https://github.com/FreakC-Foundation/FreakC/blob/master/TUTORIAL.md)
 
@@ -128,8 +128,8 @@ I've created this tiny language for Vietnamese using the FreakC's codebase:
 * <a href="https://github.com/nguyenphuminh/VNC">VNC</a>
 
 ## Contributors
-* Owner/Developer: @nguyenphuminh
-* VSCode contributor: @anapple96
+* Owner/Developer: @nguyenphuminh.
+* VSCode contributor: @anapple96.
 
 ## Repo's contributors
 <a href="https://github.com/FreakC-Foundation/FreakC/graphs/contributors">
@@ -137,6 +137,4 @@ I've created this tiny language for Vietnamese using the FreakC's codebase:
 </a>
 
 ## Copyrights and License
-Copyright © 2020-2021 Nguyen Phu Minh
-
-This language is licensed under the GPLv3 License
+Copyright © 2020-2021 Nguyen Phu Minh published under the GPLv3 License

@@ -77,6 +77,11 @@ There are still more! [Get started now!](https://github.com/FreakC-Foundation/Fr
 * As a beginner to programming: No, just no, Batch and FreakC are things created by dark magic.
 * AS a real deal programmer: No, Batch and FreakC are slow and weird, their community is small, and there are not much good frameworks out there.
 
+### Todos
+* Concurrent model.
+* More utility functions.
+* Nicer inheritance and polymorphism for OOP.
+
 ## What comes with the devkit ?
 * A compiler.
 * A command line shell.

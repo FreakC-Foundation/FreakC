@@ -45,11 +45,12 @@ While FreakC is compatible with Batch, but it's not 100% compatible, you just ne
 ### FreakC's added features compared to Batch
 * While loops, repeat-until loops, and FreakC's own for loops with break/continue supports
 * Switch cases
+* Class-based OOP
 * A bunch of utility functions for you to use
 * Inline functions
 * Macros
 * Some minimal operators
-* Floating-point number
+* Floating-point numbers
 * Some additional commands
 
 There are still more! [Get started now!](https://github.com/FreakC-Foundation/FreakC/blob/master/TUTORIAL.md)

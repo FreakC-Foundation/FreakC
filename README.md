@@ -38,17 +38,17 @@ Class-based object-oriented programming:
 
     :: Create a class called "Dog"
     class[] Dog
-		    :: Init method
-		    method[] init
-		    	  ::Set properties, implementing "this" as the first argurment passed (%~1)
-		    	  var[] %~1.age=%~2
-		    	  var[] %~1.weight=%~3
-		    endmethod[]
+        :: Init method
+        method[] init
+            ::Set properties, implementing "this" as the first argurment passed (%~1)
+            var[] %~1.age=%~2
+            var[] %~1.weight=%~3
+        endmethod[]
 		
-		    method[] BeingCute
-		    	  print[] *Being cute*
-		    endmethod[]
-	  endclass[]
+        method[] BeingCute
+            print[] *Being cute*
+        endmethod[]
+    endclass[]
 
 FreakC's commands end with `[]` or a special operator to indicate that it's FreakC code, not to cause confusion with Batch codes in your code.
     

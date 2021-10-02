@@ -183,12 +183,48 @@ for /f "tokens=* delims=	 " %%x in ('type %output%.fclang') do (
 			for /r %%i in (*.method) do (
 				set name=%%i
 				set name=!name:%cd%\=!
+				set _name=!name:.method=.bat!
 				call :get_len len !target!
 				for %%j in (!len!) do if "!name:~0,%%j!" == "!target!" ( 
-					call disDelayedStore !name! !objname!!name:~%%j!
+					for /f "delims=" %%n in ('find /c /v "" !name!') do set "slen=%%n"
+					set "slen=!slen:*: =!"
+					echo.>!_name!
+					echo.>!objname!!_name:~%%j!
+					<"!name!" (
+						for /L %%c in (1 1 !slen!) do (
+							set /p line=
+							if "!line!" NEQ "" for %%v in (!objname!) do (
+								if "!line:$this=!" NEQ "!line!" (
+									echo !line:$this=%%v!>>!objname!!_name:~%%j!
+								) else echo !line!>>!objname!!_name:~%%j!
+							)
+						)
+					)
 				)
+				set line=
 			)
 			for %%i in (!target!) do for %%j in (!objname!) do set printString=!printString:new[] %%i =call %%j.init.bat !
+		)
+		if %%a == extends[] (
+			set target=!printString:extends[] =!
+			for /r %%i in (*.method) do (
+				set name=%%i
+				set name=!name:%cd%\=!
+				call :get_len len !target!
+				for %%j in (!len!) do if "!name:~0,%%j!" == "!target!" ( 
+					for /f "delims=" %%n in ('find /c /v "" !name!') do set "slen=%%n"
+					set "slen=!slen:*: =!"
+					echo.>!classtar!!name:~%%j!
+					<"!name!" (
+						for /L %%c in (1 1 !slen!) do (
+							set /p line=
+							if "!line!" NEQ "" for %%v in (!classtar!) do echo !line!>>!classtar!!name:~%%j!
+						)
+					)
+				)
+				set line=
+			)
+			set deniedToken=true
 		)
 		set icall=false
 		if "!ch:~-4!" == "[//]" (
@@ -650,7 +686,7 @@ if "%fcread%" == "true" type %output%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %output%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 0.17.0 BETA
+echo FreakC DevKit Version 0.18.0 BETA
 exit /b
 
 :get_len

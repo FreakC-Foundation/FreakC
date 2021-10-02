@@ -41,8 +41,8 @@ Class-based object-oriented programming:
         :: Init method
         method[] init
             ::Set properties, implementing "this" as the first argurment passed (%~1)
-            var[] %~1.age=%~2
-            var[] %~1.weight=%~3
+            var[] $this.age=%~2
+            var[] $this.weight=%~3
         endmethod[]
 		
         method[] BeingCute

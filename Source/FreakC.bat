@@ -123,6 +123,11 @@ for /f "tokens=* delims=	 " %%x in ('type %output%.fclang') do (
 			)
 			set deniedToken=true
 		)
+		if %%a == compile[] (
+			set targetFile=!printString:compile[] =!
+			if exist !targetFile!.fclang call createFile.bat "!targetFile!"
+			set deniedToken=true
+		)
 		if %%a == end[] set printString=!printString:end[]=exit /b 0!
 		if %%a == gen_lib_func[] (
 			call libgen !printString:gen_lib_func[] =!
@@ -188,7 +193,6 @@ for /f "tokens=* delims=	 " %%x in ('type %output%.fclang') do (
 				for %%j in (!len!) do if "!name:~0,%%j!" == "!target!" ( 
 					for /f "delims=" %%n in ('find /c /v "" !name!') do set "slen=%%n"
 					set "slen=!slen:*: =!"
-					echo.>!_name!
 					echo.>!objname!!_name:~%%j!
 					<"!name!" (
 						for /L %%c in (1 1 !slen!) do (
@@ -203,7 +207,9 @@ for /f "tokens=* delims=	 " %%x in ('type %output%.fclang') do (
 				)
 				set line=
 			)
-			for %%i in (!target!) do for %%j in (!objname!) do set printString=!printString:new[] %%i =call %%j.init.bat !
+			if exist !objname!.init.bat (
+				for %%i in (!target!) do for %%j in (!objname!) do set printString=!printString:new[] %%i =call %%j.init.bat !
+			) else set deniedToken=true
 		)
 		if %%a == extends[] (
 			set target=!printString:extends[] =!
@@ -214,7 +220,6 @@ for /f "tokens=* delims=	 " %%x in ('type %output%.fclang') do (
 				for %%j in (!len!) do if "!name:~0,%%j!" == "!target!" ( 
 					for /f "delims=" %%n in ('find /c /v "" !name!') do set "slen=%%n"
 					set "slen=!slen:*: =!"
-					echo.>!classtar!!name:~%%j!
 					<"!name!" (
 						for /L %%c in (1 1 !slen!) do (
 							set /p line=
@@ -662,7 +667,6 @@ for /f "tokens=* delims=	 " %%x in ('type %output%.fclang') do (
 		) else if "!methodadd!" == "true" (
 			if !methodval! == 0 (
 				set methodval=1
-				echo.>!classtar!.!methodtar!.method
 			) else (
 				if "!fccomment!" == "true" (
 					echo.::!printString!>>!classtar!.!methodtar!.method

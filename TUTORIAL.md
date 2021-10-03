@@ -1180,6 +1180,12 @@ Include the compiled content of the module:
 
 `include[]` gives you the same effect you would get from `#include` from C/C++, but there're some differences. #include takes the code of the other file and put it in the main file and then the main file is compiled, while include[] compiles the other file first and then take that compiled codes and put it in the compiled main file.
 
+You can also compile a file without including it:
+
+	compile[] file_with_no_fclang_extension
+
+This might come in handy if you have files as functions. (Batch style)
+
 # Pre-built libraries
 ## Float
 

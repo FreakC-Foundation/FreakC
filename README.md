@@ -74,7 +74,7 @@ There are still more! [Get started now!](https://github.com/FreakC-Foundation/Fr
 
 ### Should you use FreakC?
 * As a Batch developer: Sure, but be aware that this project is still in BETA, and hasn't reached 1.0. 
-* As a open-source developer: You can 100% use my code for your project, but please follow the conditions from GPLv3 License.
+* As a open-source developer: You can 100% use my code for your project, but please follow the conditions from GPLv3 License, and at least credit me in the README.
 * As a beginner to programming: No, just no, Batch and FreakC are things created by dark magic.
 * AS a real deal programmer: No, Batch and FreakC are slow and weird, their community is small, and there are not much good frameworks out there.
 

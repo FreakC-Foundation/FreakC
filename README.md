@@ -40,7 +40,6 @@ Class-based object-oriented programming:
     class[] Dog
         :: Init method
         method[] init
-            ::Set properties, implementing "this" as the first argurment passed (%~1)
             var[] $this.age=%~2
             var[] $this.weight=%~3
         endmethod[]

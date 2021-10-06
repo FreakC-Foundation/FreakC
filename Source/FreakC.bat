@@ -200,7 +200,7 @@ for /f "tokens=* delims=	 " %%x in ('type %output%.fclang') do (
 							if "!line!" NEQ "" for %%v in (!objname!) do (
 								if "!line:$this=!" NEQ "!line!" (
 									echo !line:$this=%%v!>>!objname!!_name:~%%j!
-								) else echo !line!>>!objname!!_name:~%%j!
+								) else echo.!line!>>!objname!!_name:~%%j!
 							)
 						)
 					)
@@ -223,7 +223,7 @@ for /f "tokens=* delims=	 " %%x in ('type %output%.fclang') do (
 					<"!name!" (
 						for /L %%c in (1 1 !slen!) do (
 							set /p line=
-							if "!line!" NEQ "" for %%v in (!classtar!) do echo !line!>>!classtar!!name:~%%j!
+							if "!line!" NEQ "" for %%v in (!classtar!) do echo.!line!>>!classtar!!name:~%%j!
 						)
 					)
 				)

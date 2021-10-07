@@ -1240,8 +1240,8 @@ This might come in handy if you have files as functions. (Batch style)
 	:: Find length of an array (will crash if an element is empty)
 	arr_length[] "variable_name" "array"
 	
-	:: Reverse array (will crash if an element is empty)
-	arr_reverse[] "array"
+	:: Reverse array
+	arr_reverse[] "array" "length"
 	
 	:: Append a value into an array (will crash if an element is empty)
 	arr_push[] "array" "value"
@@ -1266,7 +1266,7 @@ This might come in handy if you have files as functions. (Batch style)
 	arr_qsort[] "array" "low" "high"
 	
 	:: Clear an array (will crash if an element is empty)
-	arr_clear[] "array"
+	arr_clear[] "array" "length"
 
 
 	:: Example:

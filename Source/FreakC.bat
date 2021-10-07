@@ -52,7 +52,6 @@ if "%1" == "--clrbat" (
 		if "!name:FCShell.bat=!" NEQ "!name!" set clearCheck=true
 		if "!name:createFile.bat=!" NEQ "!name!" set clearCheck=true
 		if "!name:libgen.bat=!" NEQ "!name!" set clearCheck=true
-		if "!name:disDelayedStore.bat=!" NEQ "!name!" set clearCheck=true
 		if "!clearCheck!" == "false" del /q %%i
 	)
 	exit /b

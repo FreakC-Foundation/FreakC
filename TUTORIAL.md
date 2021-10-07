@@ -1237,25 +1237,25 @@ This might come in handy if you have files as functions. (Batch style)
 	:: Return a value which concatenated all elements in an array
 	arr_join[] "variable_name" "array" "length"
 	
-	:: Find length of an array
+	:: Find length of an array (will crash if an element is empty)
 	arr_length[] "variable_name" "array"
 	
-	:: Reverse array
-	arr_length[] "array"
+	:: Reverse array (will crash if an element is empty)
+	arr_reverse[] "array"
 	
-	:: Append a value into an array
+	:: Append a value into an array (will crash if an element is empty)
 	arr_push[] "array" "value"
 	
-	:: Prepend a value into an array (requires delayed expansion being enabled)
+	:: Prepend a value into an array (requires delayed expansion being enabled) (will crash if an element is empty)
 	arr_unshift[] "array" "value"
 	
-	:: Remove the last value from an array
+	:: Remove the last value from an array (will crash if an element is empty)
 	arr_pop[] "array"
 	
-	:: Remove the first value from an array (requires delayed expansion being enabled)
+	:: Remove the first value from an array (requires delayed expansion being enabled) (will crash if an element is empty)
 	arr_shift[] "array"
 	
-	:: Remove an amount value from a specified index from an array
+	:: Remove an "amount" value from a specified "index" from "array" 
 	arr_splice[] "array" "index" "amount"
 	
 	:: Fill the array from index1 to index2 with a value
@@ -1265,7 +1265,7 @@ This might come in handy if you have files as functions. (Batch style)
 	:: Sort an array using the quick sort algorithm
 	arr_qsort[] "array" "low" "high"
 	
-	:: Clear an array
+	:: Clear an array (will crash if an element is empty)
 	arr_clear[] "array"
 
 
@@ -1274,7 +1274,7 @@ This might come in handy if you have files as functions. (Batch style)
 	var[] arr[1]=0
 	var[] arr[2]=10
 	arr_max[] "max_num" "arr" "3"
-	:: This will prints out "10"
+	:: This will print out "10"
 	print[] %max_num%
 
 ### Note

@@ -667,6 +667,7 @@ for /f "tokens=* delims=	 " %%x in ('type %output%.fclang') do (
 		) else if "!methodadd!" == "true" (
 			if !methodval! == 0 (
 				set methodval=1
+				if !methodtar! NEQ init echo.>!classtar!.!methodtar!.method
 			) else (
 				if "!fccomment!" == "true" (
 					echo.::!printString!>>!classtar!.!methodtar!.method

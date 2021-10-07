@@ -817,8 +817,15 @@ You can implement a "class" like this:
 Just use classes, don't use functions, function is the old way. Classes are much more readable, and they are in fact faster, since the methods are generated in compile time, while in the function's way, it is generated in runtime, and creating/writing to files in runtime is **incredibly slow**.
 
 ## Inhertitance and polymorphism
-* The new way: `extends[] parent_class`
-* The old function way: You can create an init function and call it inside the "classes"(functions) you're creating.
+### The new way: 
+
+	extends[] parent_class
+
+### What will it do?
+It will inherit all the methods from the parent class. Since there are no actual properties in FreakC's classes, it will simply copy the init function from the parent class and paste it in the one in the child class (if the child class has an init function lol). So technically you can say classes in FreakC are just things that create collections of methods.
+
+### The old way:
+The old function way: You can create an init function and call it inside the "classes"(functions) you're creating.
 
 ## Encapsulation
 With encapsulation, you can implement getter/setter functions to implement protected, everytime the data got accessed it must go through a getter/setter function. With private, you do the same thing as protected, however, rather than putting it inside the init function, only add it in one specific "class"(function).

@@ -119,6 +119,9 @@ If you like FreakC, it would be great if you leave a star here ❤️. I'd love 
 
 To push the project's development faster, I'd love if you buy me a coffee by sending me some cryptos into my BEP-20 wallet: `0x1848Ba922d6eD66D4910176998fF4fa77AEb82D5`
 
+### Sponsors
+* Top sponsor: @anapple96
+
 ## Resources
 * <a href="https://www.facebook.com/FreakC-Programming-Language-111425377421861">Facebook</a>
 * <a href="https://discord.gg/eNwqK4APsD">Discord</a>

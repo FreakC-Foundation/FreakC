@@ -214,29 +214,21 @@ echo goto :loop
 exit /b
 :array_reverse
 (
-echo call :length len %%~1
-echo set /a len-=1
-echo for /l %%%%i in (^^!len^^! -1 0^) do set _arr[%%%%i]=^^!%%~1[%%%%i]^^!
+echo set /a len=%%~2-1, _len=0
+echo for /l %%%%i in (^^!len^^! -1 0^) do (
+echo     for %%%%j in (^^!_len^^!^) do set _arr[%%%%j]=^^!%%~1[%%%%i]^^!
+echo     set /a _len+=1
+echo ^)
 echo for /l %%%%i in (0 1 ^^!len^^!^) do set %%~1[%%%%i]=^^!_arr[%%%%i]^^!
 echo exit /b
-echo :length
-echo set res_len=0
-echo :loop
-echo if not defined %%~2[%%res_len%%] (
-echo     set %%~1=%%res_len%%
-echo     exit /b
-echo ^)
-echo set /a res_len+=1
-echo goto :loop
 )>fclib_array_reverse.bat
 exit /b
 :array_clear
 (
 echo set ind=0
 echo :loop
-echo if defined %%~1[%%ind%%] (
-echo     set %%~1[%%ind%%]=
-echo ^) else exit /b
+echo if %%ind%% GEQ %%~2 exit /b
+echo set %%~1[%%ind%%]=
 echo set /a ind+=1
 echo goto loop
 )>fclib_array_clear.bat

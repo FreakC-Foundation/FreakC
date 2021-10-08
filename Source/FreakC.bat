@@ -690,7 +690,7 @@ if "%fcread%" == "true" type %output%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %output%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 0.18.0 BETA
+echo FreakC DevKit Version 0.19.0 BETA
 exit /b
 
 :get_len

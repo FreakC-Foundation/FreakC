@@ -1243,17 +1243,17 @@ This might come in handy if you have files as functions. (Batch style)
 	:: Reverse array
 	arr_reverse[] "array" "length"
 	
-	:: Append a value into an array (will crash if an element is empty)
-	arr_push[] "array" "value"
+	:: Append a value into an array
+	arr_push[] "array" "value" "length"
 	
-	:: Prepend a value into an array (requires delayed expansion being enabled) (will crash if an element is empty)
-	arr_unshift[] "array" "value"
+	:: Prepend a value into an array (requires delayed expansion being enabled) 
+	arr_unshift[] "array" "value" "length"
 	
-	:: Remove the last value from an array (will crash if an element is empty)
-	arr_pop[] "array"
+	:: Remove the last value from an array 
+	arr_pop[] "array" "length"
 	
-	:: Remove the first value from an array (requires delayed expansion being enabled) (will crash if an element is empty)
-	arr_shift[] "array"
+	:: Remove the first value from an array (requires delayed expansion being enabled) 
+	arr_shift[] "array" "length"
 	
 	:: Remove an "amount" value from a specified "index" from "array" 
 	arr_splice[] "array" "index" "amount"

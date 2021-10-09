@@ -151,6 +151,7 @@ It won't print out "print[]", but it will print out "echo", because FreakC will 
 # Variables
 
 ## Variables
+### String
 To declare a variable, you can use:
 
 	var[] variable_name=string_value
@@ -195,6 +196,7 @@ But the `!NL!` macro is fine enough.
 
 But note that if you're using variables, make sure to enable delayed expansion or else it won't work!
 
+### Evaluate
 To do math equations, do:
 
 	eq[] equation
@@ -217,7 +219,35 @@ Note that eq[] will always round up number, to do equation or to declare a varia
 	:: Import float
 	import[] float
 	float[] "variable_name" "equation"
-	
+
+### Console input
+To declare a variable from user's input, try:
+
+	inp[] variable_name=
+
+Note: If you do this, it will prints out "Enter name:" right next to the input
+
+	inp[] variable_name=Enter name:
+
+To read data from a file:
+
+	inp[] variable_name=<file_name
+
+Multi-line:
+
+	<file_name (
+	inp[] var1=
+	inp[] var2=
+	)
+
+
+### Arrays, lists and tuples
+#### FreakC standard's naming
+* List: Multiple arguments delimitted by spaces, tails or semicolons.
+* Array: Variables that follow an order, which should make a collection of data.
+* Tuple: A list but should only be accessed through `scan_strs[]` or `for /f`.
+
+#### Arrays
 To declare a variable as an array, use:
 
 	var[] arr[array_index]=
@@ -241,29 +271,49 @@ Multi-dimensional:
 
 Also, keep it in mind that this is the standard way of creating arrays in FreakC in order to receive a more "defined" structure to the code, as well as to make stuffs work well with the stdlib. You can also just do something like `var[] a\1=0` then it would still work, but will not work with the stdlib.
 
-### FreakC standard's namings
-* List: Multiple arguments delimitted by spaces, tails or semicolons.
-* Array: Variables that follow an order, which should make a collections of data.
-* Tuple: A list but should only be accessed through `scan_strs[]` or `for /f`.
+#### List
+Creating a list:
+	
+	var[] list=1 2 3 4 5
 
-To declare a variable from user's input, try:
+Simplest way to iterate over **List**:
 
-	inp[] variable_name=
-
-Note: If you do this, it will prints out "Enter name:" right next to the input
-
-	inp[] variable_name=Enter name:
-
-To read data from a file:
-
-	inp[] variable_name=<file_name
-
-Multi-line:
-
-	<file_name (
-	inp[] var1=
-	inp[] var2=
+	var[] list=1 2 3 4 5
+	scan_str[] %%i in (%list%) do (
+		:: Print out every elements
+		print[] %%i
 	)
+
+It's basically just like a foreach loop.
+
+Indexing:
+
+	scan_strs[] "tokens=<position> delims=<delimiter>" %%i in (<list>) do (
+		:: Print out the element at position <position>
+		print[] %%i
+	)
+
+Example:
+
+	var[] list=1 2 3 4 5
+	scan_strs[] "tokens=3 delims= " %%i in (%list%) do (
+		:: Print out the element at position 3, which is 4
+		print[] %%i
+	)
+
+Given that, you can have another way to iterate over a list: just create a loop from 0 to the length of the list, and use indexing like this.
+
+List is extremely better in performance than array, and use much less memory since it doesn't create new variables, but it's not as convenient to just get a value from a specific index, and it's pretty hard to change values too. Make sure to use what serves you best.
+
+#### Tuples
+
+	var[] tuple=`Simon`Sawicki`
+	for /F "tokens=1,2 delims=`" %%a in ("!tuple!") do (
+		echo Name   : %%a
+		echo Surname: %%b
+	)
+
+Technically a tuple is a list but use a different delimitter, and can not be iteratable and should be immutable as well.
 
 ### Maths 
 You can do Math equations with FreakC like this:
@@ -327,23 +377,6 @@ To print out every element of an array, you can write something like this:
 	var[] a[2]=20
 	loop[] %%n in (0,1,2) do ( 
    		print[] ^!a[%%n]^! 
-	)
-
-Actually, you can use foreach with splitted strings for **List**:
-
-	var[] list=1 2 3 4 5
-	scan_str[] %%i in (%list%) do (
-		::Print out every elements
-		print[] %%i
-	)
-	
-Tuples:
-
-	Actually, you can use foreach with splitted strings for **List**:
-
-	var[] list=1 2 3 4 5
-	scan_strs[] %%a in (%list%) do (
-		print[] %%a %%b %%c...
 	)
 	
 ### Local and global variables

@@ -87,7 +87,7 @@ echo @echo off>%output%.bat
 if "%2" == "--de-enabled" echo setlocal enabledelayedexpansion>>%output%.bat
 if "%3" == "--de-enabled" echo setlocal enabledelayedexpansion>>%output%.bat
 echo :FreakCCompiled>>%output%.bat
-for /f "tokens=* delims=	 " %%x in ('type %output%.fclang') do (
+for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 	set deniedToken=false
 	set printString=%%x
 	for %%a in (%%x) do (
@@ -690,7 +690,7 @@ if "%fcread%" == "true" type %output%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %output%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 0.19.0 BETA
+echo FreakC DevKit Version 0.19.1 BETA
 exit /b
 
 :get_len

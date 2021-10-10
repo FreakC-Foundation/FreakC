@@ -57,7 +57,7 @@ FreakC's commands end with `[]` or a special operator to indicate that it's Frea
 [Join the small community on Discord!!!](https://discord.gg/eNwqK4APsD)
 
 ### Switching from Batch to FreakC
-While FreakC is compatible with Batch, but it's not 100% compatible, you just need to replace all `!` with `^!`, `^^!` with `^^^^^!` (the second one is only required in delayed expansion). If you use codes that depends on blank lines, then just change them to the `!` character. This problem can be easily fixed, but I'm thinking whether I should make it compatible or not, since the compatiblity with Batch means incompatiblity with previous FreakC versions.
+While FreakC is compatible with Batch, but it's not 100% compatible, you just need to replace all `!` with `^!`, `^^!` with `^^^^^!` (the second one is only required in enabled delayed expansion). If you use codes that depends on blank lines, then just change them to the `!` character to create a blank line entirely, or just use Batch's `^`.
 
 ### FreakC's added features compared to Batch
 * While loops, repeat-until loops, and FreakC's own for loops with break/continue supports.

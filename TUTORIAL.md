@@ -219,6 +219,10 @@ Note that eq[] will always round up number, to do equation or to declare a varia
 	:: Import float
 	import[] float
 	float[] "variable_name" "equation"
+	
+A prettier alternative is `int[]`:
+
+	int[] variable_name=equation
 
 ### Console input
 To declare a variable from user's input, try:

@@ -15,7 +15,7 @@
 ## What is FreakC ?
 `print[] Hello, World.`
 
-FreakC is a programming language that looks like Batch, compiles to Batch and is written in Batch as well. It is mainly built to be an experimental project with the idea of creating a programming language in such a limited language like Batch, but then it turns out that FreakC has added a little bit of features to Batch that might come in handy for some Batch developers. Batch's commands should work with FreakC most of the time, however, there are some quirks you should consider checking out which I have mentioned in the next part of this document.
+FreakC is a nice, little, multi-paradigm programming language that looks like Batch, compiles to Batch and is written in Batch as well. It is mainly built to be an experimental project with the idea of creating a programming language in such a limited language like Batch, but then it turns out that FreakC has added a little bit of features to Batch that might come in handy for some Batch developers. Batch's commands should work with FreakC most of the time, however, there are some quirks you should consider checking out which I have mentioned in the next part of this document.
 
 And yes, this is not a C dialect, it's more like `C` in `ArnoldC`.
 
@@ -72,6 +72,12 @@ While FreakC is compatible with Batch, but it's not 100% compatible, you just ne
 
 There are still more! [Get started now!](https://github.com/FreakC-Foundation/FreakC/blob/master/TUTORIAL.md)
 
+### Stuffs you would expect from a scripting language
+* Multi-paradigm (procedural, object-oriented,...).
+* General purpose.
+* Dynamically typed.
+* Short, simple, packed with utility functions to help coding easy.
+
 ### Should you use FreakC?
 * As a Batch developer: Sure, but be aware that this project is still in BETA, and hasn't reached 1.0. 
 * As a open-source developer: You can 100% use my code for your project, but please follow the conditions from GPLv3 License, and at least credit me in the README.
@@ -95,7 +101,7 @@ There are still more! [Get started now!](https://github.com/FreakC-Foundation/Fr
 * [Samples](https://github.com/FreakC-Foundation/FreakC/tree/master/Examples)
 * [IDEs](IDE.md)
 
-## Frameworks
+## Frameworks and libraries
 ### Official FreakC's frameworks
 * <a href="https://github.com/FreakC-Foundation/discord.fclang">discord.fclang</a> - A discord api wrapper built on top of Discord.net, can be used for bot dev.
 

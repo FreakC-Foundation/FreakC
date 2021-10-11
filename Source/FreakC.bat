@@ -564,6 +564,11 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 		if %%a == del[] set printString=!printString:del[]=del!
 		if %%a == remove_dir[] set printString=!printString:remove_dir[]=rmdir!
 		if %%a == read_file[] set printString=!printString:read_file[]=type!
+		if %%a == int[] (
+			set printString=!printString:int[]=set /a!
+			set printString=!printString:++=+=1!
+			set printString=!printString:--=-=1!
+		)
 		if %%a == eq[] (
 			set printString=!printString:eq[]=set /a!
 			set printString=!printString:++=+=1!
@@ -690,7 +695,7 @@ if "%fcread%" == "true" type %output%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %output%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 0.19.1 BETA
+echo FreakC DevKit Version 0.19.2 BETA
 exit /b
 
 :get_len

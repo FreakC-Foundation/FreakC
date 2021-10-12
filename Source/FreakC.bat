@@ -71,18 +71,12 @@ if "%fccreate%" == "true" (
 	exit /b
 )
 set fccomment=false
-set wloopnum=0
-set wloopnum2=0
 set proctar=something
 set inlftar=something
 set classtar=something
 set methodtar=something
 set fchcomment=false
-set matchInd=0
-set forInd=0
-set wloopInd=0
-set wloopInd2=0
-set prevLoopInd=0
+set /a wloopnum=0, wloopnum2=0, matchInd=0, forInd=0, wloopInd=0, wloopInd2=0, prevLoopInd=0
 echo @echo off>%output%.bat
 if "%2" == "--de-enabled" echo setlocal enabledelayedexpansion>>%output%.bat
 if "%3" == "--de-enabled" echo setlocal enabledelayedexpansion>>%output%.bat
@@ -264,73 +258,24 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 				)
 			)
 		)
-		if %%a == string_reverse[] (
-			call libgen string reverse
-			set printString=!printString:string_reverse[]=call fclib_string_reverse.bat!
-		)
-		if %%a == string_length[] (
-			call libgen string length
-			set printString=!printString:string_length[]=call fclib_string_length.bat!
-		)
-		if %%a == string_slice[] (
-			call libgen string slice
-			set printString=!printString:string_slice[]=call fclib_string_slice.bat!
-		)
-		if %%a == string_upper[] (
-			call libgen string upper
-			set printString=!printString:string_upper[]=call fclib_string_upper.bat!
-		)
-		if %%a == string_lower[] (
-			call libgen string lower
-			set printString=!printString:string_lower[]=call fclib_string_lower.bat!
-		)
-		if %%a == string_chr[] (
-			call libgen string chr
-			set printString=!printString:string_chr[]=call fclib_string_chr.bat!
-		)
-		if %%a == string_ord[] (
-			call libgen string ord
-			set printString=!printString:string_ord[]=call fclib_string_ord.bat!
-		)
-		if %%a == string_indexOf[] (
-			call libgen string indexOf
-			set printString=!printString:string_indexOf[]=call fclib_string_indexOf.bat!
-		)
-		if %%a == string_lastIndexOf[] (
-			call libgen string lastIndexOf
-			set printString=!printString:string_lastIndexOf[]=call fclib_string_lastIndexOf.bat!
-		)
-		if %%a == string_trim[] (
-			call libgen string trim
-			set printString=!printString:string_trim[]=call fclib_string_trim.bat!
-		)
-		if %%a == string_startswith[] (
-			call libgen string startwith
-			set printString=!printString:string_startswith[]=call fclib_string_startwith.bat!
-		)
-		if %%a == string_endswith[] (
-			call libgen string endwith
-			set printString=!printString:string_endswith[]=call fclib_string_endwith.bat!
-		)
-		if %%a == factorial[] (
-			call libgen math fact
-			set printString=!printString:factorial[]=call fclib_math_fact.bat!
-		)
-		if %%a == odd[] (
-			call libgen math odd
-			set printString=!printString:odd[]=call fclib_math_odd.bat!
-		)
-		if %%a == even[] (
-			call libgen math even
-			set printString=!printString:even[]=call fclib_math_even.bat!
-		)
-		if %%a == pow[] (
-			call libgen math pow
-			set printString=!printString:pow[]=call fclib_math_pow.bat!
-		)
-		if %%a == abs[] (
-			call libgen math abs
-			set printString=!printString:abs[]=call fclib_math_abs.bat!
+		if "!ch:~-2!" == "[]" (
+			call :get_len chlen !ch!
+			set /a chlen-=2
+			for %%i in (!chlen!) do set chl=!ch:~0,%%i!
+			for %%i in (!ch!) do (
+				if "!ch:~0,7!" == "string_" (
+					call libgen string !chl:~7!
+					for %%j in (!chl:~7!) do set printString=!printString:%%i=call fclib_string_%%j.bat!
+				)
+				if "!ch:~0,5!" == "math_" (
+					call libgen math !chl:~5!
+					for %%j in (!chl:~5!) do set printString=!printString:%%i=call fclib_math_%%j.bat!
+				)
+				if "!ch:~0,4!" == "arr_" (
+					call libgen array !chl:~4!
+					for %%j in (!chl:~4!) do set printString=!printString:%%i=call fclib_array_%%j.bat!
+				)
+			)
 		)
 		if %%a == max[] (
 			call libgen list max
@@ -344,74 +289,6 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 			call libgen list sum
 			set printString=!printString:sum[]=call fclib_list_sum.bat!
 		)
-		if %%a == arr_qsort[] (
-			call libgen array qsort
-			set printString=!printString:arr_qsort[]=call fclib_array_qsort.bat!
-		)
-		if %%a == arr_max[] (
-			call libgen array max
-			set printString=!printString:arr_max[]=call fclib_array_max.bat!
-		)
-		if %%a == arr_min[] (
-			call libgen array min
-			set printString=!printString:arr_min[]=call fclib_array_min.bat!
-		)
-		if %%a == arr_sum[] (
-			call libgen array sum
-			set printString=!printString:arr_sum[]=call fclib_array_sum.bat!
-		)
-		if %%a == arr_join[] (
-			call libgen array join
-			set printString=!printString:arr_join[]=call fclib_array_join.bat!
-		)
-		if %%a == arr_push[] (
-			call libgen array push
-			set printString=!printString:arr_push[]=call fclib_array_push.bat!
-		)
-		if %%a == arr_pop[] (
-			call libgen array pop
-			set printString=!printString:arr_pop[]=call fclib_array_pop.bat!
-		)
-		if %%a == arr_shift[] (
-			call libgen array shift
-			set printString=!printString:arr_shift[]=call fclib_array_shift.bat!
-		)
-		if %%a == arr_unshift[] (
-			call libgen array unshift
-			set printString=!printString:arr_unshift[]=call fclib_array_unshift.bat!
-		)
-		if %%a == arr_clear[] (
-			call libgen array clear
-			set printString=!printString:arr_clear[]=call fclib_array_clear.bat!
-		)
-		if %%a == arr_fill[] (
-			call libgen array fill
-			set printString=!printString:arr_fill[]=call fclib_array_fill.bat!
-		)
-		if %%a == arr_splice[] (
-			call libgen array splice
-			set printString=!printString:arr_splice[]=call fclib_array_splice.bat!
-		)
-		if %%a == arr_reverse[] (
-			call libgen array reverse
-			set printString=!printString:arr_reverse[]=call fclib_array_reverse.bat!
-		)
-		if %%a == arr_length[] (
-			call libgen array len
-			set printString=!printString:arr_length[]=call fclib_array_len.bat!
-		)
-		if %%a == arr_indexOf[] (
-			call libgen array indexOf
-			set printString=!printString:arr_indexOf[]=call fclib_array_indexOf.bat!
-		)
-		if %%a == arr_includes[] (
-			call libgen array includes
-			set printString=!printString:arr_includes[]=call fclib_array_includes.bat!
-		)
-		if %%a == arr_lastIndexOf[] (
-			call libgen array lastIndexOf
-			set printString=!printString:arr_lastIndexOf[]=call fclib_array_lastIndexOf.bat!
-		)
 		if %%a == deny[] (
 			echo.>%output%.bat
 			set deniedToken=true
@@ -423,8 +300,10 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 			set fccondition=!printString:while[] =!
 			set fcpos[!wloopInd!]=!wloopnum!
 			for %%i in (!wloopInd!) do (
-				echo :WhileLoop!fcpos[%%i]!>>!outtar!
-				echo if not !fccondition! goto EndLoop!fcpos[%%i]!>>!outtar!
+				(
+				echo :WhileLoop!fcpos[%%i]!
+				echo if not !fccondition! goto EndLoop!fcpos[%%i]!
+				)>>!outtar!
 			)
 			set /a wloopnum+=1
 			set /a wloopInd+=1
@@ -434,25 +313,24 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 		if %%a == for[] (
 			set prevLoop[!prevLoopInd!]=for
 			if "!procadd!" == "true" (set outtar=!proctar!.bat) else if "!inlfadd!" == "true" (set outtar=!inlftar!.inline) else (set outtar=%output%.bat)
-			set turn=0
 			set process=!printString:for[] =!
-			for %%i in (!process!) do (
-				if !turn! == 0 set varname[!forInd!]=%%i
-				if !turn! == 1 set start[!forInd!]=%%i
-				if !turn! == 2 set step[!forInd!]=%%i
-				if !turn! == 3 set end[!forInd!]=%%i
-				set /a turn+=1
+			for /f "tokens=1-4 delims= " %%i in ("!process!") do (
+				set varname[!forInd!]=%%i
+				set start[!forInd!]=%%j
+				set step[!forInd!]=%%k
+				set end[!forInd!]=%%l
 			)
 			set fcpos[!wloopInd!]=!wloopnum!
 			for %%i in (!wloopInd!) do (
-				for %%s in (!forInd!) do echo set !varname[%%s]!=!start[%%s]!>>!outtar!
-				for %%s in (!forInd!) do echo :WhileLoop!fcpos[%%i]!>>!outtar!
-				for %%s in (!forInd!) do echo if ^^!!varname[%%s]!^^! GEQ !end[%%s]! goto EndLoop!fcpos[%%i]!>>!outtar!
+				for %%s in (!forInd!) do (
+					(
+					echo set !varname[%%s]!=!start[%%s]!
+					echo :WhileLoop!fcpos[%%i]!
+					echo if ^^!!varname[%%s]!^^! GEQ !end[%%s]! goto EndLoop!fcpos[%%i]!
+					)>>!outtar!
+				)
 			)
-			set /a wloopnum+=1
-			set /a wloopInd+=1
-			set /a forInd+=1
-			set /a prevLoopInd+=1
+			set /a wloopnum+=1, wloopInd+=1, forInd+=1, prevLoopInd+=1
 			set deniedToken=true
 		)
 		set whileCheck=false
@@ -513,9 +391,11 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 			set /a _wloopInd2=!wloopInd2!-1
 			set fccondition2=!printString:until[] =!
 			for %%i in (!_wloopInd2!) do (
-				echo if !fccondition2! goto UntilLoop!fcpos2[%%i]!>>!outtar!
-				echo goto RepeatLoop!fcpos2[%%i]!>>!outtar!
-				echo :UntilLoop!fcpos2[%%i]!>>!outtar!
+				(
+				echo if !fccondition2! goto UntilLoop!fcpos2[%%i]!
+				echo goto RepeatLoop!fcpos2[%%i]!
+				echo :UntilLoop!fcpos2[%%i]!
+				)>>!outtar!
 			)
 			set /a wloopInd2-=1
 			set deniedToken=true
@@ -695,7 +575,7 @@ if "%fcread%" == "true" type %output%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %output%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 0.19.2 BETA
+echo FreakC DevKit Version 0.19.3 BETA
 exit /b
 
 :get_len

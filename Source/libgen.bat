@@ -87,7 +87,7 @@ echo for %%%%i in (0,1,%%len%%^) do set res=^^!res^^!^^!%%~2[%%%%i]^^!
 echo (endlocal ^& set %%~1=%%res%%^)
 )>fclib_array_join.bat
 exit /b 0
-:array_len
+:array_length
 (
 echo set res_len=0
 echo :loop
@@ -97,7 +97,7 @@ echo 	exit /b
 echo ^)
 echo set /a res_len+=1
 echo goto :loop
-)>fclib_array_len.bat
+)>fclib_array_length.bat
 exit /b 0
 :array_includes
 (
@@ -265,12 +265,12 @@ echo ^)
 echo set %%~1=%%res%%
 )>fclib_math_pow.bat
 exit /b 0
-:math_fact
+:math_factorial
 (
 echo set mul=1
 echo for /l %%%%i in (1,1,%%~2^) do set /a mul*=%%%%i
 echo set %%~1=%%mul%%
-)>fclib_math_fact.bat
+)>fclib_math_factorial.bat
 exit /b 0
 :string_lower
 (
@@ -389,7 +389,7 @@ echo for /l %%%%i in (0,1,94^) do if "^!alphabet:~%%%%i,1^!" == "^!target:~0,1^!
 echo endlocal ^& set %%~1=%%res%%
 )>fclib_string_ord.bat
 exit /b 0
-:string_startwith
+:string_startswith
 (
 echo set str=%%~2
 echo call :length "len" "%%~3"
@@ -408,9 +408,9 @@ echo :loop
 echo if not "^!str:~%%len%%^!" == "" set /a len+=1 ^& goto loop
 echo (endlocal ^& set %%~1=%%len%%^)
 echo exit /b
-)>fclib_string_startwith.bat
+)>fclib_string_startswith.bat
 exit /b
-:string_endwith
+:string_endswith
 (
 echo set str=%%~2
 echo call :length "len" "%%~3"
@@ -430,7 +430,7 @@ echo :loop
 echo if not "^!str:~%%len%%^!" == "" set /a len+=1 ^& goto loop
 echo (endlocal ^& set %%~1=%%len%%^)
 exit /b
-)>fclib_string_endwith.bat
+)>fclib_string_endswith.bat
 exit /b
 :string_indexOf
 (

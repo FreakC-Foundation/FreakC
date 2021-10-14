@@ -196,6 +196,10 @@ But the `!NL!` macro is fine enough.
 
 But note that if you're using variables, make sure to enable delayed expansion or else it won't work!
 
+There's also a command to enable Batch-style new line macros:
+
+	get_util[]
+
 ### Evaluate
 To do math equations, do:
 

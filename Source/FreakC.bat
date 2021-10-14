@@ -31,6 +31,11 @@ if "%helpCheck%" == "true" (
 )
 if "%1" == "--version" goto fcversion
 if "%2" == "--compile" set fccompile=true
+if "%2" == "--keep" (
+	set keepmethod=true
+	set keepinline=true
+	set fccompile=true
+)
 if "%2" == "--candr" set fcread=true
 if "%2" == "--create" set fccreate=true
 if "%1" == "--shell" (
@@ -121,6 +126,17 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 			if exist !targetFile!.fclang call createFile.bat "!targetFile!"
 			set deniedToken=true
 		)
+		if %%a == get_utils[] (
+			if "!procadd!" == "true" (set outtar=!proctar!.bat) else if "!inlfadd!" == "true" (set outtar=!inlftar!.inline) else (set outtar=%output%.bat)
+			(
+			echo.set NLM=^^
+			echo.
+			echo.
+			echo.set NL=^^^^^^%%NLM%%%%NLM%%^^%%NLM%%%%NLM%%
+			echo.set LF=^^^^%%NL%%
+			)>>!outtar!
+			set deniedToken=true
+		)
 		if %%a == end[] set printString=!printString:end[]=exit /b 0!
 		if %%a == gen_lib_func[] (
 			call libgen !printString:gen_lib_func[] =!
@@ -195,10 +211,10 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 									echo !line:$this=%%v!>>!objname!!_name:~%%j!
 								) else echo.!line!>>!objname!!_name:~%%j!
 							)
+							set line=
 						)
 					)
 				)
-				set line=
 			)
 			if exist !objname!.init.bat (
 				for %%i in (!target!) do for %%j in (!objname!) do set printString=!printString:new[] %%i =call %%j.init.bat !
@@ -217,10 +233,10 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 						for /L %%c in (1 1 !slen!) do (
 							set /p line=
 							if "!line!" NEQ "" for %%v in (!classtar!) do echo.!line!>>!classtar!!name:~%%j!
+							set line=
 						)
 					)
 				)
-				set line=
 			)
 			set deniedToken=true
 		)
@@ -568,14 +584,14 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 		)
 	)
 )
-if exist *.inline del /q *.inline
-if exist *.method del /q *.method
+if "%keepinline%" NEQ "true" if exist *.inline del /q *.inline
+if "%keepmethod%" NEQ "true" if exist *.method del /q *.method
 setlocal disabledelayedexpansion
 if "%fcread%" == "true" type %output%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %output%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 0.19.3 BETA
+echo FreakC DevKit Version 0.19.4 BETA
 exit /b
 
 :get_len

@@ -1,1 +1,1 @@
-freakc %~1 --compile
+freakc %~1 --keep

@@ -51,7 +51,7 @@ Class-based object-oriented programming:
         endmethod[]
     endclass[]
 
-FreakC's commands end with `[]` or a special operator to indicate that it's FreakC code, so it doesn't confusion with Batch codes in your code.
+FreakC's commands end with `[]` or a special operator to indicate that it's FreakC code, so it doesn't cause confusion with Batch codes in your code.
     
 [More samples](https://github.com/FreakC-Foundation/FreakC/tree/master/Examples)
 [Join the small community on Discord!!!](https://discord.gg/eNwqK4APsD)

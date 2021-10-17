@@ -76,7 +76,9 @@ There are still more! [Get started now!](https://github.com/FreakC-Foundation/Fr
 * Multi-paradigm (procedural, object-oriented,...).
 * General purpose.
 * Dynamically typed.
-* Short, simple, packed with utility functions to help coding easy.
+* Short, simple, packed with utility functions to help coding easier.
+* Easy to set up and use since it's written in Batch, you can just download the compiler and start coding.
+* Extremely light compiler which weighs less than 40kb! 
 
 ### Should you use FreakC?
 * As a Batch developer: Sure, but be aware that this project is still in BETA, and hasn't reached 1.0. 

@@ -73,7 +73,7 @@ While FreakC is compatible with Batch, but it's not 100% compatible, you just ne
 There are still more! [Get started now!](https://github.com/FreakC-Foundation/FreakC/blob/master/TUTORIAL.md)
 
 ### Stuffs you would expect from a scripting language
-* Multi-paradigm (procedural, object-oriented,...).
+* Multi-paradigm (procedural, object-oriented, data-oriented...).
 * General purpose.
 * Dynamically typed.
 * Short, simple, packed with utility functions to help coding easier.

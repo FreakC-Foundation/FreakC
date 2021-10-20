@@ -279,6 +279,16 @@ Multi-dimensional:
 
 Also, keep it in mind that this is the standard way of creating arrays in FreakC in order to receive a more "defined" structure to the code, as well as to make stuffs work well with the stdlib. You can also just do something like `var[] a\1=0` then it would still work, but will not work with the stdlib.
 
+Every time you create an array, you should create a variable that holds the length of the array (since `arr_length[]` doesn't work well if there's an empty element).
+
+	var[] arr[0]=1
+	var[] arr[1]=4
+	var[] arr[2]=0
+	:: You can name it whatever you like, but I would say naming it in a form like "name_len" or "name.len" is the best.
+	var[] arr.len=3
+
+If you make change to the array, be sure to update the length too since the length will matter a lot in many cases.
+
 #### List
 Creating a list:
 	
@@ -1286,12 +1296,23 @@ This might come in handy if you have files as functions. (Batch style)
 	
 	:: Append a value into an array
 	arr_push[] "array" "value" "length"
+	:: But this is not really a good way to append a value into an array, you can just do this and it's way better:
+	var[] array[length+1]=value
+	:: By doing this, you gain better performance, and you can have better control at the array's length:
+	:: Example:
+	int[] arr_len++
+	var[] arr[%len%]=5
 	
 	:: Prepend a value into an array (requires delayed expansion being enabled) 
 	arr_unshift[] "array" "value" "length"
 	
 	:: Remove the last value from an array 
 	arr_pop[] "array" "length"
+	:: Same with arr_push[], this function is not really good, this is a better way:
+	var[] array[length]=
+	:: Example:
+	var[] arr[%arr_len%]=
+	int[] arr_len--
 	
 	:: Remove the first value from an array (requires delayed expansion being enabled) 
 	arr_shift[] "array" "length"

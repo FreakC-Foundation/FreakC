@@ -59,6 +59,10 @@ You can enable delayed expansion in the output with:
 
 this would be better than `enb_delay[]` in some cases.
 
+To keep all the .inline files and .method files, type:
+
+    freakc --keep
+
 To delete all stdlib files generated, type:
 
     freakc --clrlib

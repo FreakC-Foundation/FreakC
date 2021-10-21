@@ -24,6 +24,7 @@ if "%helpCheck%" == "true" (
 	echo.  --create   :Have to be the second parameter, create a new FreakC project.
 	echo.  --clrlib   :Have to be the first parameter, delete all standard libraries in the folder.
 	echo.  --clrbat   :Have to be the first parameter, delete all Batch files in the folder.
+	echo.  --keep     :Have to be the first parameter, keep all the .inline files and .method files.
 	echo.
 	echo. [Leave the second {option} blank if you want to both compile and run the file]
 	if "%pauseAcp%" == "true" pause >nul
@@ -591,7 +592,7 @@ if "%fcread%" == "true" type %output%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %output%.bat
 exit /b
 :fcversion
-echo FreakC DevKit Version 0.19.4 BETA
+echo FreakC DevKit Version 0.19.5 BETA
 exit /b
 
 :get_len

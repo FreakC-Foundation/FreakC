@@ -221,16 +221,17 @@ also, if you want to use variables that are assigned in that exact same line, yo
 
 	eq[] age=1, intel=age+1
 	:: Variable "age" will have the value of 2.
-	
+
+A prettier alternative is `int[]`:
+
+	int[] variable_name=equation
+
 Note that eq[] will always round up number, to do equation or to declare a variable as a float, do:
 
 	:: Import float
 	import[] float
 	float[] "variable_name" "equation"
 	
-A prettier alternative is `int[]`:
-
-	int[] variable_name=equation
 
 ### Console input
 To declare a variable from user's input, try:

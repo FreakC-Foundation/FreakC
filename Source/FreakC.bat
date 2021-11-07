@@ -1,16 +1,29 @@
 @echo off
 setlocal enabledelayedexpansion
+
+::------------------------------------------------------------------------------
+:: Init macros
+::------------------------------------------------------------------------------
+
+:: New line
 set NLM=^
 
 
 set NL=^^^%NLM%%NLM%^%NLM%%NLM%
 set LF=^^%NL%
+
+
+::------------------------------------------------------------------------------
+:: Command line interface
+::------------------------------------------------------------------------------
+
 set helpCheck=false
 if "%1" == "" (
 	set helpCheck=true
 	set pauseAcp=true
 )
 if "%1" == "--help" set helpCheck=true
+
 if "%helpCheck%" == "true" (
 	echo. Usage: freakc {option/name} {option}
 	echo.
@@ -30,19 +43,23 @@ if "%helpCheck%" == "true" (
 	if "%pauseAcp%" == "true" pause >nul
 	exit /b
 )
+
 if "%1" == "--version" goto fcversion
+
 if "%2" == "--compile" set fccompile=true
+if "%2" == "--candr" set fcread=true
+if "%2" == "--create" set fccreate=true
 if "%2" == "--keep" (
 	set keepmethod=true
 	set keepinline=true
 	set fccompile=true
 )
-if "%2" == "--candr" set fcread=true
-if "%2" == "--create" set fccreate=true
+
 if "%1" == "--shell" (
 	FCShell
 	exit /b
 )
+
 if "%1" == "--clrlib" (
 	for /r %%i in (*.bat) do (
 		set name=%%i
@@ -50,6 +67,7 @@ if "%1" == "--clrlib" (
 	)
 	exit /b
 )
+
 if "%1" == "--clrbat" (
 	for /r %%i in (*.bat) do (
 		set name=%%i
@@ -62,8 +80,7 @@ if "%1" == "--clrbat" (
 	)
 	exit /b
 )
-set fccompilename=%1
-set output=%fccompilename:.fclang=%
+
 if "%fccreate%" == "true" (
 	md %output%
 	cd %output%
@@ -76,6 +93,17 @@ if "%fccreate%" == "true" (
 	)
 	exit /b
 )
+
+
+::------------------------------------------------------------------------------
+:: Compiling
+::------------------------------------------------------------------------------
+
+:: Get the input file
+set fccompilename=%1
+set output=%fccompilename:.fclang=%
+
+:: Config
 set fccomment=false
 set proctar=something
 set inlftar=something
@@ -83,10 +111,14 @@ set classtar=something
 set methodtar=something
 set fchcomment=false
 set /a wloopnum=0, wloopnum2=0, matchInd=0, forInd=0, wloopInd=0, wloopInd2=0, prevLoopInd=0
+
+:: Pre-stored codes
 echo @echo off>%output%.bat
 if "%2" == "--de-enabled" echo setlocal enabledelayedexpansion>>%output%.bat
 if "%3" == "--de-enabled" echo setlocal enabledelayedexpansion>>%output%.bat
 echo :FreakCCompiled>>%output%.bat
+
+:: Reading through each lines
 for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 	set deniedToken=false
 	set printString=%%x
@@ -542,6 +574,8 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 		if %%a == enb_delay[] set printString=!printString:enb_delay[]=setlocal enabledelayedexpansion!
 		if %%a == dis_delay[] set printString=!printString:dis_delay[]=setlocal disabledelayedexpansion!
 	)
+
+	:: Writing into output file
 	if not "!fchcomment!" == "true" (
 		if "!procadd!" == "true" (
 			if !procval! == 0 (
@@ -585,16 +619,23 @@ for /f "tokens=* delims=	 " %%x in (%output%.fclang) do (
 		)
 	)
 )
+
+:: Delete the inline and method files if needed.
 if "%keepinline%" NEQ "true" if exist *.inline del /q *.inline
 if "%keepmethod%" NEQ "true" if exist *.method del /q *.method
+
+:: Disable delayed expansion so that the code can work fine on the console.
 setlocal disabledelayedexpansion
+
 if "%fcread%" == "true" type %output%.bat
 if not "%fccompile%" == "true" if not "%fcread%" == "true" call %output%.bat
 exit /b
+
 :fcversion
 echo FreakC DevKit Version 0.19.5 BETA
 exit /b
 
+:: A function to calculate string's length
 :get_len
 set len=0
 set str=%~2

@@ -12,7 +12,7 @@
   <array>
     <dict>
       <key>match</key>
-      <string>^::.*$|^h\[\].*$</string>
+      <string>::.*$|h\[\].*$|\!\=.*\=\!</string>
       <key>name</key>
       <string>comment.line</string>
     </dict>
@@ -30,7 +30,7 @@
     </dict>
     <dict>
       <key>match</key>
-      <string>(%~1)+(?=(.[A-Za-z_])+)</string>
+      <string>(%~1)+(?=(.[A-Za-z_])+)|\$this</string>
       <key>name</key>
       <string>variable.language</string>
     </dict>

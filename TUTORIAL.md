@@ -584,17 +584,36 @@ Other thing that you should notice is that
 would return any variable begins with "text"
 
 # Comments
+## The best way
+
+	!= This is a comment =!
+
+Because an undefined macro returns nothing, all the stuffs inside is gone in the compiler nicely. And because there are no variables named `= varname =`, we can use it safely. It's also the fastest one, since it's removed in compile time lol.
+
+## Batch's way
 Single-line Batch comment:
 
 	:: Comment
 
+This might break in Batch's parenthesized block, but it's the fastest one.
+
 Another way:
 
 	rem comment
+	
+This is the slowest one.
 
+Another way:
+
+	%=  =%
+
+Its performance is decent, and work all the time.
+
+## Old dumb way
 Multi-line comment that's transpiled to Batch comments:
 
-	c[] comment
+	c[] line1
+	line2
 	e[]
 
 To write a comment that won't show up in the compiled codes, use:

@@ -220,7 +220,7 @@ note that you can do multiple equations at once:
 also, if you want to use variables that are assigned in that exact same line, you must not use "%":
 
 	eq[] age=1, intel=age+1
-	:: Variable "age" will have the value of 2.
+	:: Variable "intel" will have the value of 2.
 
 A prettier alternative is `int[]`:
 

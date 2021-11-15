@@ -6,12 +6,8 @@ exit /b 0
 :array_qsort
 (
 echo set /a l=%%~2, h=%%~3, a=^^!h^^!-^^!l^^!+1, top=-1
-echo set ind=0
-echo :loop
-echo set stack[^^!ind^^!]=0
-echo if ^^!ind^^! GEQ ^^!a^^! goto end
-echo set /a ind+=1
-echo goto loop
+echo for /l %%%%i in (0 1^) do (set stack[%%%%i]=0
+echo if %%%%i GEQ ^^!a^^! goto end^)
 echo :end
 echo set /a top+=1
 echo set stack[^^!top^^!]=^^!l^^!

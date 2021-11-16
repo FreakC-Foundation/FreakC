@@ -1196,7 +1196,17 @@ it should have been:
 		endwhile[]
 	)
 
+# Asynchronous process
+In Batch, you can run a Batch file asynchronously using:
+
+	start /B "" file.bat
+	
+the equivalent in FreakC would be:
+
+	open[] /B "" file.bat
+
 # Parentheses
+## An alternative
 Because FreakC uses more "human-friendly" syntax, but Batch uses parentheses for creating blocks of codes, so I've decided to add a crappy "human version" of this:
 
 	if[] 1 == 1 begin[]

@@ -369,7 +369,7 @@ exit /b 0
 echo if "%%~2" == "" exit /b
 echo if %%~2 LSS 32 exit /b
 echo if %%~2 GTR 126 exit /b
-echo set alphabet= ^^!"#$%%%%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
+echo set alphabet= ^^!"#$%%%%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^^^^_`abcdefghijklmnopqrstuvwxyz{|}~"
 echo setlocal enabledelayedexpansion
 echo set /a var=%%~2-32
 echo set char=^^!alphabet:~%%var%%,1^^!
@@ -380,7 +380,7 @@ exit /b 0
 (
 echo setlocal enabledelayedexpansion
 echo set target=%%~2
-echo set alphabet= ^^^^^^^^^^!"#$%%%%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
+echo set alphabet= ^^^^^^^^^^!"#$%%%%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^^^^_`abcdefghijklmnopqrstuvwxyz{|}~"
 echo for /l %%%%i in (0,1,94^) do if "^!alphabet:~%%%%i,1^!" == "^!target:~0,1^!" set /a res=%%%%i+32
 echo endlocal ^& set %%~1=%%res%%
 )>fclib_string_ord.bat

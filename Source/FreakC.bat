@@ -632,7 +632,7 @@ if not "%fccompile%" == "true" if not "%fcread%" == "true" call %output%.bat
 exit /b
 
 :fcversion
-echo FreakC DevKit Version 0.19.5 BETA
+echo FreakC DevKit Version 0.19.6 BETA
 exit /b
 
 :: A function to calculate string's length

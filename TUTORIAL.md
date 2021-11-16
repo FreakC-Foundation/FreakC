@@ -1205,6 +1205,26 @@ the equivalent in FreakC would be:
 
 	open[] /B "" file.bat
 
+Example with functions:
+
+	enb_delay[]
+
+	:: asynchronous code
+	open[] /b "" count[..] "Dog"
+	:: synchronous code
+	count[..] "Sheep"
+
+	:: Count function to print a string 10 times
+	function[] count
+		@echo off
+		loop[] %%i in (1 1 10) do (
+			print[] %%i %~1
+			wait[] 2 >nul
+		)
+	endfunc[]
+
+You would be able to see that it doesn't wait for 2 seconds to print out Dog and *then* Sheep, Dog and Sheep are printed at almost the same time. This is because the code is run asynchronously, it is non blocking. This helps a lot in improving performance because you can technically change "in-order" tasks into tasks that run together. Think of it as a bathtub, rather than making one people take a bath and then proceeds to the next one, you can just put all people into the bathtub, which should reduce a lot of time, and should scale well if given more people (who in real case, are users). Or if you are developing a videogame, the code can reacts to user's input while the game is still rendering normally.
+
 # Parentheses
 ## An alternative
 Because FreakC uses more "human-friendly" syntax, but Batch uses parentheses for creating blocks of codes, so I've decided to add a crappy "human version" of this:

@@ -13,7 +13,7 @@
 </div>
 
 ## What is FreakC ?
-`print[] Hello, World.`
+`print[] Hello, World!`
 
 FreakC is a nice, little, multi-paradigm programming language, which looks like Batch, compiles to Batch and is written in Batch as well. It is mainly built to be an experimental project with the idea of creating a programming language in such a limited language like Batch, but then it turns out that FreakC has added a little bit of features to Batch that might come in handy for some Batch developers. Batch's commands should work with FreakC most of the time, however, there are some quirks you should consider checking out which I have mentioned in the next part of this document.
 

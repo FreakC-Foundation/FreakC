@@ -16,7 +16,12 @@
 I have taken a little break from FreakC and Batch coding as a whole, I might do a rewrite for FreakC in the future when I'm free.
 
 Other than that, I'm working on JeChain, check it out if you are interested!
+
+<br/>
+
 <a href="https://github.com/nguyenphuminh/JeChain"><img src="https://github-readme-stats.vercel.app/api/pin/?username=nguyenphuminh&repo=JeChain"/></a>
+
+<br/>
 
 ## What is FreakC ?
 `print[] Hello, World.`

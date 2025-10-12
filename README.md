@@ -4,7 +4,7 @@
   <b>An experimental programming language</b>
   <br/>
   <br/>
-  <a href="https://github.com/FreakC-Foundation/FreakC/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-GPLv3-blue.svg"/></a>
+  <a href="https://github.com/FreakC-Foundation/FreakC/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-Apache-2.0-blue.svg"/></a>
   <a href="https://github.com/FreakC-Foundation/FreakC/search?l=batchfile"><img alt="language" src="https://img.shields.io/badge/language-Batchfile-purple.svg"></a>
   <a href="https://github.com/FreakC-Foundation/FreakC/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/FreakC-Foundation/FreakC?color=gold"></a>
   <a href="https://github.com/FreakC-Foundation/FreakC/blob/master/.github/CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"></a>
@@ -93,7 +93,7 @@ There are still more! [Get started now!](https://github.com/FreakC-Foundation/Fr
 
 ### Should you use FreakC?
 * As a Batch developer: Sure, but be aware that this project is still in BETA, and hasn't reached 1.0. 
-* As a open-source developer: You can 100% use my code for your project, but please follow the conditions from GPLv3 License, and at least credit me in the README.
+* As a open-source developer: You can 100% use my code for your project, but please follow the conditions from Apache 2.0 License, and at least credit me in the README.
 * As a beginner to programming: No, just no, Batch and FreakC are things created by dark magic.
 * AS a real deal programmer: No, Batch and FreakC are slow and weird, their community is small, and there are not much good frameworks out there.
 
@@ -160,4 +160,4 @@ I've created this tiny language for Vietnamese using the FreakC's codebase:
 </a>
 
 ## Copyrights and License
-Copyright © 2020-2021 Nguyen Phu Minh published under the GPLv3 License
+Copyright © 2020-2021 Nguyen Phu Minh published under the Apache 2.0 License
